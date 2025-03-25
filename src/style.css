@@ -86,3 +86,10 @@ Bleu clair secondaire : #569CD6 (idéal pour des éléments subtils, hover, bord
    position: relative;
    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.Loading {
+   font-family: var(--font-title);
+   color: var(--blue-principal);
+   font-size: 36px;
+   text-align: center;
+}

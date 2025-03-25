@@ -1,6 +1,6 @@
 #projects {
    background-color: var(--background-color-principal);
-   padding: 50px 0px 100px 0px;
+   padding: 60px 0px 60px 0px;
 }
 
 #projects>div {
@@ -18,8 +18,7 @@
       text-align: center;
       margin: auto;
       max-width: fit-content;
-      padding-top: 20px;
-      padding-bottom: 40px;
+      padding: 0px 0px 40px 0px;
 }
 
 #projects>div>div:nth-child(2) {

@@ -56,7 +56,7 @@
 }
 
 .description {
-   padding-bottom: 30px;
+   min-height: 300px;
 }
 
 .description>p:nth-child(3) {

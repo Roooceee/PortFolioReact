@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import '../styles/skills.css';
 import Skill from "./skill";
-import { motion } from "motion/react"
 
 
 function Skills(){
@@ -31,7 +30,7 @@ async function getSkills(){
 return (
 
    <div id='skills'>
-      <motion.h2 whileInView={{ scale: 1.4 }}>Compétences</motion.h2>
+      <h2>Compétences</h2>
       <div>
 
       {skills.map(element => {

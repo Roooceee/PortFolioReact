@@ -1,7 +1,7 @@
 #skills {
    background-color: var(--background-color-second);
-   padding: 50px 0px 100px 0px;
    display: grid;
+   padding: 40px 0px 60px 0px;
 }
 
 #skills>div {
@@ -16,6 +16,6 @@
    font-family: var(--font-title);
    color: var(--blue-principal);
    padding-top: 20px;
-   padding-bottom: 80px;
+   padding-bottom: 40px;
    margin: auto;
 }

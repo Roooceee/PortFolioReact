@@ -1,6 +1,7 @@
-import { motion } from "motion/react"
 import { useEffect, useState } from 'react'
 import '../styles/experience.css'
+import { motion } from "motion/react"
+
 
 function Experience({title , company , period , responsibilities , description}){
 
@@ -47,19 +48,19 @@ function Experience({title , company , period , responsibilities , description})
 
    return (
 
-      <motion.article initial={{ scale: 0.7 , opacity:0}} whileInView={{ scale: 1 ,opacity:1}} transition={{duration:0.5}} className='experience card'>
+      <article className='experience card'>
             <h3>{title}</h3>
             <p className='company'>{company}</p>      
             <p className='period'>{period}</p>
             <p className='description-experience'>{description}</p>
-            <motion.a whileHover={{scale:1.2}} className='button-blue' href="#" onClick={(e) => changeVisibility(e)}>{titleButton}</motion.a>
+            <a className='button-blue' href="#" onClick={(e) => changeVisibility(e)}>{titleButton}</a>
                <ul>
                {
                responsabilitesVisible.map((element, index) => {
                   return <motion.li initial={{opacity : 0}} whileInView={{opacity:1}} key={element+'_'+index} className='task-card'>{element}</motion.li>
                })}
                </ul>   
-      </motion.article>
+      </article>
 
    )
 }

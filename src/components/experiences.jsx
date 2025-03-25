@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import '../styles/experiences.css'
 import Experience from './experience';
-import { motion } from "motion/react"
 
 function Experiences(){
 
@@ -34,7 +33,7 @@ function Experiences(){
       <div id="experiences">
          <div className="contain-1440">
             
-            <motion.h2 whileInView={{scale:1.4}}>Expériences</motion.h2>
+            <h2>Expériences</h2>
 
             <div>
                   {experiences.map(element => {

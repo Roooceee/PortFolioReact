@@ -1,4 +1,4 @@
-import { motion } from "motion/react"
+
 import '../styles/project.css'
 import { useEffect, useState } from "react"
 
@@ -110,8 +110,8 @@ function Project({name, description,created, homepage, update , html_url}){
                   <p><span className="title">Crée : </span>{changeDateFormat(created)} | <span className="title">Mis à jour le</span> : {changeDateFormat(update)}</p>
             </div>
             <div className="links">
-               <motion.a whileHover={{scale:1.1}} href={homepage} className="button-blue">Voir la Démo</motion.a>
-               <motion.a whileHover={{scale:1.1}} href={html_url} className="button-blue">Lien vers le Repo</motion.a>
+               <a href={homepage} className="button-blue">Visiter le site</a>
+               <a href={html_url} className="button-blue">Lien vers le Repo</a>
             </div>
          </div>
       </article>

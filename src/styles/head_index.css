@@ -1,6 +1,6 @@
 #head_index {
    background-color: var(--background-color-second);
-   padding: 50px 0px 50px 0px;
+   padding: 60px 0px 60px 0px;
    min-height: 500px;
    display: grid;
 }
