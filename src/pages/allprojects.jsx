@@ -52,7 +52,7 @@ function Allprojects(){
             <div>
                {projects.map(e=> {
                      if(e.name != 'Roooceee'){
-                        return <Project key = {e.name} name = {e.name}  created= {e.created_at} description = {e.description} language = {e.language} homepage = {e.homepage} update = {e.updated_at} html_url = {e.html_url}/>
+                        return <Project key = {e.name} name = {e.name}  created= {e.created_at} description = {e.description} homepage = {e.homepage} update = {e.updated_at} html_url = {e.html_url}/>
                      }
                })}
             </div>

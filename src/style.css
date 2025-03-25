@@ -38,6 +38,9 @@ Bleu clair secondaire : #569CD6 (idéal pour des éléments subtils, hover, bord
    --color-white : #fff ;
    --blue-principal : #007ACC;
    --blue-second : #569CD6;
+
+   --borderRadius-medium: 0.375rem;
+   --bgColor-neutral-muted: #656c7633;
 }
 
 .uppercase {
@@ -48,6 +51,9 @@ Bleu clair secondaire : #569CD6 (idéal pour des éléments subtils, hover, bord
    text-transform: capitalize;
 }
 
+.list-style-none {
+   list-style: none;
+}
 
 .contain-1440 {
    max-width: 1440px;

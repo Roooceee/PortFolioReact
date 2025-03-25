@@ -2,33 +2,78 @@
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   height: auto; /* Assure que la carte prend toute la hauteur disponible */
+   gap: 50px;
+}
+
+.HTML_progress {
+   background-color: #e34c26 ;
+}
+
+.HTML_before::before {
+   content: "■";
+   margin-right: 10px;
+   color: #e34c26;
+}
+
+.JavaScript_progress {
+   background-color: #f1e05a; 
+}
+
+.JavaScript_before::before {
+   content: "■";
+   margin-right: 10px;
+   color: #f1e05a;
+}
+
+.CSS_before::before {
+   content: "■";
+   margin-right: 10px;
+   color: #663399;
+}
+
+.CSS_progress {
+   background-color: #663399 ;
+}
+
+.Progress {
+   background-color: var(--bgColor-neutral-muted);
+   border-radius: var(--borderRadius-medium);
+   display: flex;
+   height: 8px;
+   outline: 1px solid #0000;
+   overflow: hidden;
+   margin: 20px 0px 20px 0px;
 }
 
 .project h3 {
    font-family: var(--font-title);
    color: var(--blue-principal);
-   text-align: center;
+   padding-bottom: 50px;
 }
 
-.project p {
+.title {
+   font-family: var(--font-title);
+}
+
+.description {
+   padding-bottom: 30px;
+}
+
+.description>p:nth-child(3) {
+   padding-top: 10px;
    font-family: var(--font-classic);
 }
 
-.description_title_project {
-   padding-bottom: 20px;
+.percent {
+   font-family: var(--font-title);
 }
 
-.description_title_project , .project .language_project {
-   padding-top: 50px;
+.dates {
+   font-family: var(--font-title);
 }
 
-.project a {
-   text-align: center;
-}
-
-.project .links {
+.links {
    display: grid;
    grid-template-columns: 1fr 1fr;
-   gap: 20px;
+   gap: 50px;
 }

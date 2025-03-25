@@ -11,6 +11,7 @@ function Projects(){
    useEffect(()=>{
    
       getProjects()
+
    
    },[])
    // lorsqu'on fais des requetes réseaux via fetch dans un useEffect il faut utiliser un tableau de dépendance vide [] pour que la requete ne s'envoie que a la création du component
@@ -46,7 +47,7 @@ function Projects(){
             <div>
                {projects.length>0 ? 
                <>
-                  <Project key = {projects[0].name} name = {projects[0].name}  created= {projects[0].created_at} description = {projects[0].description} language = {projects[0].language} homepage = {projects[0].homepage} update = {projects[0].updated_at} html_url = {projects[0].html_url}/>
+                  <Project key = {projects[0].name} name = {projects[0].name}  created= {projects[0].created_at} description = {projects[0].description} homepage = {projects[0].homepage} update = {projects[0].updated_at} html_url = {projects[0].html_url}/>
                   <Project key = {projects[1].name} name = {projects[1].name}  created= {projects[1].created_at} description = {projects[1].description} language = {projects[1].language} homepage = {projects[1].homepage} update = {projects[1].updated_at} html_url = {projects[1].html_url}/>
                   <Project key = {projects[2].name} name = {projects[2].name}  created= {projects[2].created_at} description = {projects[2].description} language = {projects[2].language} homepage = {projects[2].homepage} update = {projects[2].updated_at} html_url = {projects[2].html_url}/>
                </>
@@ -54,7 +55,7 @@ function Projects(){
             </div>
 
             <div>
-               <Link to='/Projets' className="button-blue" >Voir tous mes Projets</Link>
+               <Link to='/Projets' className="button-blue">Voir tous mes Projets</Link>
             </div>
          </div>
    </div>
