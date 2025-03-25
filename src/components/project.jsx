@@ -89,7 +89,7 @@ function Project({name, description,created, homepage, update , html_url}){
 
 
    return(
-      <motion.article initial={{scale: 0.7 , opacity:0}} whileInView={{scale: 1 , opacity:1}} transition={{duration:0.5}} className="card project">
+      <article className="card project">
          <div className="description">
             <h3>{name}</h3>
             <p className="title">Description :</p>
@@ -115,7 +115,7 @@ function Project({name, description,created, homepage, update , html_url}){
                <motion.a whileHover={{scale:1.1}} href={html_url} className="button-blue">Lien vers le Repo</motion.a>
             </div>
          </div>
-      </motion.article>
+      </article>
    )
 }
 
