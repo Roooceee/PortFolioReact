@@ -14,12 +14,12 @@ function Header() {
             </div>
             <nav>
                <ul>
-                  <li><Link to='/#apropos'>A Propos</Link></li>
-                  <li><Link to='/#skills'>Compétences</Link></li>
-                  <li><Link to='/#projects'>Projets</Link></li>
-                  <li><Link to='/#experiences'>Expériences</Link></li>
-                  <li><Link to='/'>Formation</Link></li>
-                  <li><Link to='/'>Contact</Link></li>
+                  <li><a to='/#apropos'>A Propos</a></li>
+                  <li><a to='/#skills'>Compétences</a></li>
+                  <li><a to='/#projects'>Projets</a></li>
+                  <li><a to='/#experiences'>Expériences</a></li>
+                  <li><a to='/'>Formation</a></li>
+                  <li><a to='/'>Contact</a></li>
                </ul>
             </nav>
          </div>
