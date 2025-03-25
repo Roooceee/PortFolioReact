@@ -1,7 +1,6 @@
 import { motion } from "motion/react"
 import '../styles/project.css'
 import { useEffect, useState } from "react"
-import { object, text } from "motion/react-client"
 
 function Project({name, description,created, homepage, update , html_url}){
 

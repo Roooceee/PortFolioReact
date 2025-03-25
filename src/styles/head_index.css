@@ -23,6 +23,12 @@
    font-family: var(--font-title);
 }
 
+#head_index h2 {
+   color: var(--blue-second);
+   font-size: 32px;
+   font-family: var(--font-title);
+}
+
 #head_index p {
    color: var(--color-text-principal );
    font-family: var(--font-classic);
