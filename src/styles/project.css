@@ -2,7 +2,7 @@
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   gap: 50px;
+   gap: 20px;
 }
 
 .HTML_progress {
@@ -48,7 +48,7 @@
 .project h3 {
    font-family: var(--font-title);
    color: var(--blue-principal);
-   padding-bottom: 50px;
+   padding-bottom: 20px;
 }
 
 .title {
@@ -75,5 +75,5 @@
 .links {
    display: grid;
    grid-template-columns: 1fr 1fr;
-   gap: 50px;
+   gap: 25px;
 }

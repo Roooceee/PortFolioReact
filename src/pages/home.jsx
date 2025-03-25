@@ -16,7 +16,6 @@ function Home() {
       <Skills/>
       <Projects/>
       <Experiences/>
-
     </>
 )}
 

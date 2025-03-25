@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 function Project({name, description,created, homepage, update , html_url}){
 
    const [languages,setLanguages] = useState([])
-   
+   const [isVisible,setIsVisible] = useState(false)   
 
    useEffect(()=>{
    
@@ -89,6 +89,7 @@ function Project({name, description,created, homepage, update , html_url}){
 
    return(
       <article className="card project">
+
          <div className="description">
             <h3>{name}</h3>
             <p className="title">Description :</p>
@@ -106,8 +107,7 @@ function Project({name, description,created, homepage, update , html_url}){
 
          <div>
             <div className="dates">
-                  <p><span className="title">Crée le : </span>{changeDateFormat(created)}</p>
-                  <p><span className="title">Mis à jour le</span> : {changeDateFormat(update)}</p>
+                  <p><span className="title">Crée : </span>{changeDateFormat(created)} | <span className="title">Mis à jour le</span> : {changeDateFormat(update)}</p>
             </div>
             <div className="links">
                <motion.a whileHover={{scale:1.1}} href={homepage} className="button-blue">Voir la Démo</motion.a>

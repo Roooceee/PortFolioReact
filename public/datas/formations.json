@@ -1,0 +1,34 @@
+{
+   "formations": [
+     {
+       "periode": "Décembre 2024 - Avril 2025",
+       "etablissement": "laPlateforme.io",
+       "intitule": "Langage Informatique à la carte",
+       "competences": [
+         "Conception de sites web avec HTML et CSS",
+         "Création de sites responsive adaptés à tous les écrans",
+         "Intégration de l’interactivité avec JavaScript",
+         "Introduction au PHP et Python pour des fonctionnalités côté serveur"
+       ]
+     },
+     {
+       "periode": "2018",
+       "diplome": "BTS Services Informatiques aux Organisations",
+       "option": "Solutions Logicielles Applications Métier",
+       "competences": [
+         "Support et mise à disposition de services informatiques",
+         "Support Système des accès utilisateurs",
+         "Exploitation des données",
+         "Conception et adaptation d’une base de données",
+         "Programmation Orientée Objet",
+         "Conception et développement de Solutions Applicatives"
+       ]
+     },
+     {
+       "periode": "2013",
+       "diplome": "BAC Sciences et Technologies de l'Industrie et du Développement Durable",
+       "option": "Système d'Information et Numérique"
+     }
+   ]
+ }
+ 

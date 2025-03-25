@@ -23,8 +23,8 @@
 }
 
 #projects>div>div:nth-child(2) {
-   display: flex;
-   justify-content: space-between;
-   gap: 30px;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   gap: 70px;
 }
 
