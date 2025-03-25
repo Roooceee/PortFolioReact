@@ -1,0 +1,26 @@
+[
+   {  
+      "title": "Frontend",
+      "skills_details": [
+         "JavaScript",
+         "React.js",
+         "HTML5 & CSS3",
+         "Responsive Design"
+      ]
+   },
+   {  
+      "title": "Backend",
+      "skills_details": [
+         "PHP (bases)",
+         "MySQL (bases)",
+         "Node.js (initiation)"
+      ]
+   },
+   {  
+      "title": "Outils & Workflow",
+      "skills_details": [
+         "Git & GitHub",
+         "VS Code"
+      ]
+   }
+]

@@ -1,0 +1,31 @@
+#head_index {
+   background-color: var(--background-color-second);
+   padding: 50px 0px 50px 0px;
+   min-height: 500px;
+   display: grid;
+}
+
+#head_index>div {
+   margin: auto;
+   text-align: center;
+}
+
+#head_index>div>div:nth-child(2) {
+   display: flex;
+   justify-content: center;
+   gap: 30px;
+}
+
+
+#head_index h1 {
+   font-size: 36px;
+   color: var(--blue-principal);
+   font-family: var(--font-title);
+}
+
+#head_index p {
+   color: var(--color-text-principal );
+   font-family: var(--font-classic);
+   padding-bottom: 50px;
+}
+

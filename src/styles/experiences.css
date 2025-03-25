@@ -1,0 +1,23 @@
+#experiences {
+   background-color: var(--background-color-second);
+}
+
+#experiences>div {
+   padding: 50px 0px 100px 0px;
+   margin: auto;
+}
+
+#experiences>div>div {
+   display: grid;
+   gap: 50px;
+}
+
+#experiences h2 {
+   font-family: var(--font-title);
+   color: var(--blue-principal);
+   text-align: center;
+   margin: auto;
+   max-width: fit-content;
+   padding-top: 20px;
+   padding-bottom: 80px;
+}

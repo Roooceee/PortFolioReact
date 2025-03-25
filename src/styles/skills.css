@@ -1,0 +1,21 @@
+#skills {
+   background-color: var(--background-color-second);
+   padding: 50px 0px 100px 0px;
+   display: grid;
+}
+
+#skills>div {
+   display: flex;
+   gap: 100px;
+   margin: auto;
+   max-width: fit-content;
+}
+
+#skills h2 {
+   text-align: center;
+   font-family: var(--font-title);
+   color: var(--blue-principal);
+   padding-top: 20px;
+   padding-bottom: 80px;
+   margin: auto;
+}

@@ -1,0 +1,34 @@
+.project {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   height: auto; /* Assure que la carte prend toute la hauteur disponible */
+}
+
+.project h3 {
+   font-family: var(--font-title);
+   color: var(--blue-principal);
+   text-align: center;
+}
+
+.project p {
+   font-family: var(--font-classic);
+}
+
+.description_title_project {
+   padding-bottom: 20px;
+}
+
+.description_title_project , .project .language_project {
+   padding-top: 50px;
+}
+
+.project a {
+   text-align: center;
+}
+
+.project .links {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 20px;
+}

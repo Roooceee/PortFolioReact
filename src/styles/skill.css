@@ -1,0 +1,22 @@
+.skill {
+   max-width: fit-content;
+}
+
+.skill h3 {
+   font-family: var(--font-title);
+   color: var(--blue-principal);
+   margin-left: 10px;
+}
+
+.skill li {
+   padding: 10px;
+   list-style: none;
+   font-family: var(--font-classic);
+   color: var(--color-text-principal);
+}
+
+.skill li::before {
+   content: "■"; /* Petit carré */
+   margin-right: 10px;
+   color: var(--blue-principal);
+}

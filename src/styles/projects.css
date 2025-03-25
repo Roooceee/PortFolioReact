@@ -1,0 +1,29 @@
+#projects {
+   background-color: var(--background-color-principal);
+   padding: 50px 0px 100px 0px;
+}
+
+#projects>div {
+   margin: auto;
+}
+
+#projects > div > div:nth-child(3) {
+   text-align: right;
+   padding-top: 100px;
+}
+
+#projects h2 {
+      font-family: var(--font-title);
+      color: var(--blue-principal);
+      text-align: center;
+      margin: auto;
+      max-width: fit-content;
+      padding-top: 20px;
+      padding-bottom: 80px;
+}
+
+#projects>div>div:nth-child(2) {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   gap: 50px;
+}

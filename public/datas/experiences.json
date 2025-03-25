@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Technicien Helpdesk",
+    "company": "Groupe ADSN",
+    "period": "Mars 2023 - Juillet 2024 (17 mois)",
+    "responsibilities": [
+      "Support technique aux notaires de France.",
+      "Réponse aux demandes utilisateurs : diagnostic et résolution de problèmes.",
+      "Escalade des incidents complexes et suivi des tickets.",
+      "Formation et assistance aux utilisateurs.",
+      "Veille technologique et mise à jour des connaissances."
+    ],
+    "description": "En tant que Technicien Helpdesk, j'ai fourni un support technique à des notaires répartis sur toute la France, résolu divers incidents techniques et formé les utilisateurs. J'ai également acquis des compétences en gestion de tickets et en résolution de problèmes complexes, tout en restant à jour avec les nouvelles technologies."
+  },
+  {
+    "title": "Stagiaire Développeur Web AngularJS",
+    "company": "Calinda Software",
+    "period": "Janvier - Février 2018 (7 semaines)",
+    "responsibilities": [
+      "Création d’un formulaire dynamique pour optimiser la contractualisation SELL&SIGN.",
+      "Analyse des besoins et conception du système.",
+      "Développement, déploiement et tests de la solution."
+    ],
+    "description": "Lors de mon stage chez Calinda Software, j'ai conçu et développé un formulaire dynamique permettant d’optimiser le processus de contractualisation. J'ai participé à l'analyse des besoins, au développement de la solution, ainsi qu’à son déploiement et ses tests, tout en améliorant mes compétences en AngularJS."
+  },
+  {
+    "title": "Stagiaire Technicien Support Informatique",
+    "company": "AP-HM Institut Paoli Calmette",
+    "period": "Juin - Juillet 2017 (5 semaines)",
+    "responsibilities": [
+      "Diagnostic à distance des dysfonctionnements matériels/logiciels.",
+      "Assistance utilisateur à distance et résolution des problèmes.",
+      "Configuration des postes de travail et mise à jour des supports de suivi."
+    ],
+    "description": "Lors de mon stage en tant que Technicien Support Informatique, j'ai diagnostiqué et résolu des problèmes techniques à distance, tout en assurant l’assistance des utilisateurs. J'ai aussi configuré des postes de travail et mis à jour des documents de suivi, ce qui m'a permis de développer des compétences en dépannage à distance."
+  }
+]

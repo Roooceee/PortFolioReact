@@ -1,0 +1,29 @@
+#allprojects {
+   background-color: var(--background-color-second);
+}
+
+#allprojects h1 {
+   font-family: var(--font-title);
+   color: var(--blue-principal);
+   text-align: center;
+   margin: auto;
+   max-width: fit-content;
+   padding-top: 20px;
+   padding-bottom: 80px;
+}
+
+#allprojects>div {
+   padding: 80px 0px 40px 0px;
+   margin: auto;
+}
+
+#allprojects>div>div {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   padding: 100px 0px 100px 0px;
+   gap: 50px;
+}
+
+#allprojects>article a {
+   max-width: fit-content;
+}

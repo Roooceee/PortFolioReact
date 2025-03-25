@@ -1,0 +1,49 @@
+.experience {
+   max-width: 80%;
+   margin: auto;
+   max-height: fit-content;
+   text-align: center;
+   padding: 50px;
+}
+
+.experience h3 {
+   color: var(--blue-principal);
+   font-family: var(--font-title);
+}
+
+.experience .company {
+   color: var(--color-text-principal);
+   font-family: var(--font-title);
+   font-size: 22px;
+}
+
+.experience .period {
+   color: var(--blue-second);
+   font-family: var(--font-classic);
+   padding-bottom: 20px;
+}
+
+.experience .description-experience {
+   color: var(--color-text-principal);
+   font-family: var(--font-classic);
+   font-size: 18px;
+}
+
+.experience ul {
+   list-style: none;
+   display: grid;
+   gap: 5px;
+   padding-top: 20px;
+}
+
+.experience ul li {
+   color: var(--blue-principal);
+   font-family: var(--font-classic);
+}
+
+.task-card {
+   padding: 10px;
+   margin: 5px;
+   background-color: var(--color-white);
+   border-radius: 8px;
+}

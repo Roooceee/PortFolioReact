@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Code:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+   margin: 0;
+   /* background-color: var(--background-color-principal); */
+}
+
+ul {
+   padding: 0;
+}
+
+h1 {
+   font-size: 40px;
+}
+
+h2 {
+   font-size: 32px;
+}
+
+h3 {
+   font-size: 26px;
+}
+
+
+/* Fond principal : #1E1E1E (gris très foncé, identique à l’arrière-plan de VS Code)
+Texte principal : #D4D4D4 (gris clair pour une bonne lisibilité)
+Bleu accent : #007ACC (bleu VS Code, parfait pour les liens, boutons et surlignages)
+Bleu clair secondaire : #569CD6 (idéal pour des éléments subtils, hover, bordures fines) */
+
+:root {
+
+   --font-title : 'Bebas Neue';
+   --font-classic : 'Fira Code';
+
+   --background-color-principal : #1E1E1E;
+   --background-color-second : #252526 ;
+   --color-text-principal : #D4D4D4;
+   --color-white : #fff ;
+   --blue-principal : #007ACC;
+   --blue-second : #569CD6;
+}
+
+.uppercase {
+   text-transform: uppercase;
+}
+
+.capitalize {
+   text-transform: capitalize;
+}
+
+
+.contain-1440 {
+   max-width: 1440px;
+}
+
+.button-blue {
+   text-decoration: none;
+   color: var(--color-white);
+   font-family: var(--font-title);
+   border-radius: 20px;
+   background-color: var(--blue-principal);
+   padding: 10px 15px;
+   display: inline-block;
+   margin-top: 20px;
+}
+
+.button-blue:hover {
+   background-color: var(--blue-second );
+}
+
+.card {
+   background: #3A3A3C;
+   color: #ffffff;
+   padding: 20px;
+   border-radius: 12px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+   position: relative;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}

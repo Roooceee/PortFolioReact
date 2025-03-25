@@ -1,0 +1,32 @@
+#apropos {
+   background-color: var(--background-color-principal);
+}
+
+#apropos>div {
+   padding: 100px 0px 100px 0px;
+   margin: auto;
+   max-width: 900px;
+   display: flex;
+   align-items: center;
+   gap: 50px;
+}
+
+#apropos img {
+   max-width: 300px;
+   border-radius: 100%;
+}
+
+#apropos>div>div {
+   display: grid;
+   gap: 30px;
+}
+
+#apropos h2 {
+   font-family: var(--font-title);
+   color: var(--blue-principal);
+   text-align: center;
+}
+
+#apropos p {
+   color: var(--color-text-principal);
+}

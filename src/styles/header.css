@@ -1,0 +1,57 @@
+header {
+   background-color: var(--background-color-principal);
+}
+
+header>div {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin: auto;
+}
+
+header>div>div>a {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+header>div>div a:hover {
+   color: var(--blue-second);
+}
+ 
+header>div>p {
+   font-family: var(--font-title);
+   color: var(--color-text-principal);
+}
+
+.logo {
+   max-width: 90px;
+   padding-top: 8px;
+}
+
+header nav ul {
+   display: flex;
+   justify-content: end;
+   gap: 20px;
+   list-style: none;
+   align-items: center;
+}
+
+header nav ul li a {
+   padding: 35px 10px;
+}
+
+header nav ul li a:hover {
+   border-bottom: 5px solid var(--blue-second);
+}
+
+header a {
+   text-decoration: none;
+   font-family: var(--font-title);
+   color: var(--color-text-principal);
+}
+
+header nav ul a:hover {
+   color: var(--blue-second);
+}
+
