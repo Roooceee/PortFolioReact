@@ -1,4 +1,5 @@
 
+import { Calendar, Code, Github, RefreshCcw, SquareArrowOutUpRight } from 'lucide-react'
 import '../styles/project.css'
 import { useEffect, useState } from "react"
 
@@ -62,10 +63,10 @@ function Project({name, description,created, homepage, update , html_url}){
 
       // Utilisation de map pour générer le JSX
       return Object.keys(languages).map((language, index) => {
-         const percent = ((Object.values(languages)[index] / totalLanguages) * 100).toFixed(2);
+         const percent = Math.round((Object.values(languages)[index] / totalLanguages) * 100);
          return (
             <li key={index} className={language+'_before '+' list-style-none'}>
-               <span className="title">{language} : </span> <span className="percent">{percent}%</span>
+               <span>{language}</span> <span className="percent">{percent}%</span>
             </li>
          );
       });
@@ -79,7 +80,7 @@ function Project({name, description,created, homepage, update , html_url}){
 
       // Utilisation de map pour générer le JSX
       return Object.keys(languages).map((language, index) => {
-         const percent = ((Object.values(languages)[index] / totalLanguages) * 100).toFixed(2);
+         const percent = ((Object.values(languages)[index] / totalLanguages) * 100);
          return (
             <span key={index} className={language+'_progress'} style={{ width: percent+'%'}}></span>
          );
@@ -90,29 +91,28 @@ function Project({name, description,created, homepage, update , html_url}){
    return(
       <article className="card project">
 
-         <div className="description">
+         <div className='head_project'>
             <h3>{name}</h3>
-            <p className="title">Description :</p>
             <p>{description}</p>
          </div>
+         <hr />
 
-         <div>
-            <p className="title">Language Utilisé : </p>
+         <div className='languages'>
+            {languages.length === 1 ? <div className='language_title'><Code size={24} /><p>Language</p></div>:<div className='language_title'><Code size={24} /><p>Languages</p></div>}
                <span className="Progress">{languages.length>0 ? <span>Chargement</span> : calculPercentLanguagesProgress(languages)}</span>
             <ul>
                {languages.length>0 ? <span>Chargement</span> : calculPercentLanguagesList(languages)}
             </ul>
          </div>
             
-
-         <div>
-            <div className="dates">
-                  <p><span className="title">Crée : </span>{changeDateFormat(created)} | <span className="title">Mis à jour le</span> : {changeDateFormat(update)}</p>
-            </div>
-            <div className="links">
-               <a href={homepage} className="button-blue">Visiter le site</a>
-               <a href={html_url} className="button-blue">Lien vers le Repo</a>
-            </div>
+         <div className="links_project">
+            {homepage ? <a href={homepage} className="button-blue"><SquareArrowOutUpRight size={22} /> Visiter le site</a> : ''}
+            <a href={html_url} className="button-blue"><Github size={24} />Voir le code</a>
+         </div>
+         <hr />
+         <div className='dates_project'>
+            <div><Calendar size={18}/><p>Crée le : </p><p className='date'>{changeDateFormat(created)}</p></div> 
+            {update ? <div><RefreshCcw size={18}/><p>Modifier le : </p><p className='date'>{changeDateFormat(update)}</p></div> : ''}
          </div>
       </article>
    )

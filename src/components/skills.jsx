@@ -31,11 +31,13 @@ return (
 
    <div id='skills'>
       <h2>Compétences</h2>
+
       <div>
 
       {skills.map(element => {
+
          
-         return <Skill key={element.title} title={element.title} list={element.skills_details}/>
+         return <Skill key={element.title} logo={element.logo} title={element.title} list={element.skills_details}/>
          
          })}
 

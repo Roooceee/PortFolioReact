@@ -1,5 +1,6 @@
 [
    {  
+      "logo":"PanelTop",
       "title": "Frontend",
       "skills_details": [
          "JavaScript",
@@ -8,7 +9,8 @@
          "Responsive Design"
       ]
    },
-   {  
+   { 
+      "logo":"Server",
       "title": "Backend",
       "skills_details": [
          "PHP (bases)",
@@ -17,6 +19,7 @@
       ]
    },
    {  
+      "logo":"Wrench",
       "title": "Outils & Workflow",
       "skills_details": [
          "Git & GitHub",

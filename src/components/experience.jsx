@@ -48,7 +48,7 @@ function Experience({title , company , period , responsibilities , description})
 
    return (
 
-      <article className='experience card'>
+      <article className='experience card-principal'>
             <h3>{title}</h3>
             <p className='company'>{company}</p>      
             <p className='period'>{period}</p>

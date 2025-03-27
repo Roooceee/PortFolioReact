@@ -18,14 +18,12 @@
 
 
 #head_index h1 {
-   font-size: 36px;
    color: var(--blue-principal);
    font-family: var(--font-title);
 }
 
 #head_index h2 {
    color: var(--blue-second);
-   font-size: 32px;
    font-family: var(--font-title);
 }
 

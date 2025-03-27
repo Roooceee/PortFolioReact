@@ -2,7 +2,33 @@
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   gap: 20px;
+   gap: 30px;
+}
+
+/* CSS pour le head de la carte */
+
+.head_project {
+   display: grid;
+   gap: 30px;
+}
+
+.head_project h3 {
+   font-family: var(--font-title-2);
+}
+
+.head_project p {
+   font-family: var(--font-classic);
+   color: var(--color-text-principal);
+   font-size: 14px;
+}
+
+
+
+/* CSS pour Languages */
+
+.language_title p {
+   font-family: var(--font-title-2);
+   font-size: 16px;
 }
 
 .HTML_progress {
@@ -10,8 +36,8 @@
 }
 
 .HTML_before::before {
-   content: "■";
-   margin-right: 10px;
+   content: "●";
+   margin-right: 5px;
    color: #e34c26;
 }
 
@@ -20,14 +46,14 @@
 }
 
 .JavaScript_before::before {
-   content: "■";
-   margin-right: 10px;
+   content: "●";
+   margin-right: 5px;
    color: #f1e05a;
 }
 
 .CSS_before::before {
-   content: "■";
-   margin-right: 10px;
+   content: "●";
+   margin-right: 5px;
    color: #663399;
 }
 
@@ -45,35 +71,74 @@
    margin: 20px 0px 20px 0px;
 }
 
-.project h3 {
-   font-family: var(--font-title);
-   color: var(--blue-principal);
-   padding-bottom: 20px;
+.language_title {
+   display: flex;
+   gap: 10px;
+   align-items: center;
 }
 
-.title {
-   font-family: var(--font-title);
+.languages ul {
+   display: flex;
+   gap: 5px;
 }
 
-.description {
-   min-height: 300px;
-}
-
-.description>p:nth-child(3) {
-   padding-top: 10px;
+.languages ul li {
+   border-radius: 22px;
+   padding: 4px 8px;
+   background-color: var(--background-color-principal) ;
+   font-size: 16px;
    font-family: var(--font-classic);
 }
 
-.percent {
-   font-family: var(--font-title);
+.languages ul li .percent {
+   color: var(--color-text-principal);
 }
 
-.dates {
-   font-family: var(--font-title);
+/* CSS pour les liens */
+.links_project {
+   display: flex;
+   gap: 30px;
+   align-items: center;
 }
 
-.links {
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   gap: 25px;
+.links_project a {
+   display: flex;
+   align-items: center;
+   gap: 10px;
 }
+
+/* CSS pour les dates */
+.dates_project {
+   display: flex;
+   justify-content: space-between;
+}
+
+.dates_project>div {
+   display: flex;
+   align-items: center;
+   gap: 5px;
+}
+
+.dates_project>div>.date {
+   font-size: 14px;
+   font-family: var(--font-classic);
+   color: var(--color-text-principal);
+}
+
+.dates_project>div>p:nth-child(2){
+   font-family: var(--font-title-2);
+   font-size: 14px;
+}
+
+
+
+
+/* CSS pour les hr */
+
+hr {
+   border: none;
+   height: 2px; 
+   background-color: var(--background-color-third);
+   border-radius: 33px;
+}
+

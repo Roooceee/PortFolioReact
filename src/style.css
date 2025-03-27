@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Code:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Code:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 * {
@@ -12,32 +12,28 @@ ul {
 }
 
 h1 {
-   font-size: 40px;
+   font-size: 48px;
 }
 
 h2 {
-   font-size: 32px;
+   font-size: 40px;
 }
 
 h3 {
-   font-size: 26px;
+   font-size: 24px;
 }
-
-
-/* Fond principal : #1E1E1E (gris très foncé, identique à l’arrière-plan de VS Code)
-Texte principal : #D4D4D4 (gris clair pour une bonne lisibilité)
-Bleu accent : #007ACC (bleu VS Code, parfait pour les liens, boutons et surlignages)
-Bleu clair secondaire : #569CD6 (idéal pour des éléments subtils, hover, bordures fines) */
 
 :root {
 
    --font-title : 'Bebas Neue';
+   --font-title-2 : 'Raleway';
    --font-classic : 'Fira Code';
 
    --background-color-principal : #1E1E1E;
    --background-color-second : #252526 ;
+   --background-color-third : #5A5A5C ; 
    --color-text-principal : #D4D4D4;
-   --color-white : #fff ;
+   --color-white : #FFFF ; 
    --blue-principal : #007ACC;
    --blue-second : #569CD6;
 
@@ -65,7 +61,7 @@ Bleu clair secondaire : #569CD6 (idéal pour des éléments subtils, hover, bord
    text-decoration: none;
    color: var(--color-white);
    font-family: var(--font-title);
-   border-radius: 20px;
+   border-radius: 10px;
    background-color: var(--blue-principal);
    padding: 10px 15px;
    display: inline-block;
@@ -77,19 +73,22 @@ Bleu clair secondaire : #569CD6 (idéal pour des éléments subtils, hover, bord
    background-color: var(--blue-second );
 }
 
-.card {
-   background: #3A3A3C;
+.card-principal {
+   background: var(--background-color-principal);
    color: #ffffff;
    padding: 20px;
-   border-radius: 12px;
+   border-radius: 10px;
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
    position: relative;
    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.Loading {
-   font-family: var(--font-title);
-   color: var(--blue-principal);
-   font-size: 36px;
-   text-align: center;
+.card {
+   background: var(--background-color-second);
+   color: #ffffff;
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+   position: relative;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
