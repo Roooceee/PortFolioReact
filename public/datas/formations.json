@@ -1,34 +1,41 @@
-{
-   "formations": [
-     {
-       "periode": "Décembre 2024 - Avril 2025",
-       "etablissement": "laPlateforme.io",
-       "intitule": "Langage Informatique à la carte",
-       "competences": [
-         "Conception de sites web avec HTML et CSS",
-         "Création de sites responsive adaptés à tous les écrans",
-         "Intégration de l’interactivité avec JavaScript",
-         "Introduction au PHP et Python pour des fonctionnalités côté serveur"
-       ]
-     },
-     {
-       "periode": "2018",
-       "diplome": "BTS Services Informatiques aux Organisations",
-       "option": "Solutions Logicielles Applications Métier",
-       "competences": [
-         "Support et mise à disposition de services informatiques",
-         "Support Système des accès utilisateurs",
-         "Exploitation des données",
-         "Conception et adaptation d’une base de données",
-         "Programmation Orientée Objet",
-         "Conception et développement de Solutions Applicatives"
-       ]
-     },
-     {
-       "periode": "2013",
-       "diplome": "BAC Sciences et Technologies de l'Industrie et du Développement Durable",
-       "option": "Système d'Information et Numérique"
-     }
-   ]
- }
- 
+[
+    {
+      "intitule": "Langage Informatique à la carte",
+      "etablissement": "laPlateforme.io",
+      "debut": "Décembre 2024",
+      "fin": "Avril 2025",
+      "obtention":null,
+      "option": null,
+      "competences": [
+        "Conception de sites web avec HTML et CSS",
+        "Création de sites responsive adaptés à tous les écrans",
+        "Intégration de l’interactivité avec JavaScript",
+        "Introduction au PHP et Python pour des fonctionnalités côté serveur"
+      ]
+    },
+    {
+      "intitule": "BTS Services Informatiques aux Organisations",
+      "etablissement": "Lycée Charles Peguy",
+      "debut": "2016",
+      "fin": "2018",
+      "obtention":null,
+      "option": "Solutions Logicielles Applications Métier",
+      "competences": [
+        "Support et mise à disposition de services informatiques",
+        "Support Système des accès utilisateurs",
+        "Exploitation des données",
+        "Conception et adaptation d’une base de données",
+        "Programmation Orientée Objet",
+        "Conception et développement de Solutions Applicatives"
+      ]
+    },
+    {
+      "intitule": "BAC Sciences et Technologies de l'Industrie et du Développement Durable",
+      "obtention":true,
+      "etablissement": "Lycée Jean Perrin",
+      "debut": "2010",
+      "fin": "2013",
+      "option": "Système d'Information et Numérique",
+      "competences": []
+    }
+  ]

@@ -1,0 +1,14 @@
+.formation {
+   max-width: 80%;
+   margin: auto;
+   height: 200px;
+}
+
+.formation h3 {
+   font-family: var(--font-title-2);
+}
+
+.head_formation {
+   display: flex;
+   justify-content: space-between;
+}

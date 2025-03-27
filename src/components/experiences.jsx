@@ -22,7 +22,7 @@ function Experiences(){
             setExperiences(res)
       }
       catch(e){
-            console.log('Erreur '+e)
+            console.log('Erreur chargement experiences '+e)
       }
    }
 
@@ -36,11 +36,11 @@ function Experiences(){
             <h2>Expériences</h2>
 
             <div>
-                  {experiences.map(element => {
-               
-                     return <Experience key={element.title} title = {element.title} company = {element.company} period = {element.period} description={element.description} responsibilities = {element.responsibilities}/>
-                     
-                  })}       
+               {experiences.map(element => {
+            
+                  return <Experience key={element.title} title = {element.title} company = {element.company} period = {element.period} description={element.description} responsibilities = {element.responsibilities}/>
+                  
+               })}       
             </div>
 
          </div>

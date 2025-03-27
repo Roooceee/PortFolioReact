@@ -27,3 +27,10 @@
    gap: 70px;
 }
 
+@media screen and (max-width:1024px){
+
+   #projects>div>div:nth-child(2) {
+      grid-template-columns: 1fr;
+   }
+
+}

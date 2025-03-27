@@ -1,0 +1,31 @@
+.formations {
+   background-color: var(--background-color-principal);
+}
+
+.formations>div h2 {
+   font-family: var(--font-title);
+   color: var(--blue-principal);
+   text-align: center;
+   margin: auto;
+   max-width: fit-content;
+   padding-top: 20px;
+   padding-bottom: 40px;
+}
+
+.formations>div article {
+   position: relative;
+}
+
+.formations>div a {
+   position: absolute;
+}
+
+#root > div.formations > div > article > a.previous {
+   top: 50%;
+}
+
+#root > div.formations > div > article > a.next {
+   top: 50%;
+   right: 0
+}
+

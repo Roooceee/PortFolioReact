@@ -6,7 +6,7 @@ import { motion } from "motion/react"
 function Experience({title , company , period , responsibilities , description}){
 
    const [isVisible,setIsVisible] = useState(false)
-   const [titleButton,setTitleButton] = useState('Voir les tâches')
+   const [titleButton,setTitleButton] = useState('Afficher les missions')
    const [responsabilitesVisible, setResponsabilitesVisible] = useState([])
 
    function changeVisibility(e){

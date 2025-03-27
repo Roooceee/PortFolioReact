@@ -1,5 +1,6 @@
 import APropos from "../components/apropos"
 import Experiences from "../components/experiences"
+import Formations from "../components/formations"
 import Head_Index from "../components/head_index"
 import Header from "../components/header"
 import Projects from "../components/projects"
@@ -16,6 +17,7 @@ function Home() {
       <Skills/>
       <Projects/>
       <Experiences/>
+      {/* <Formations/> */}
     </>
 )}
 
