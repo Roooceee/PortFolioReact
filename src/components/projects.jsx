@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react"
+import { motion } from "motion/react";
+import { forwardRef, useEffect, useState } from "react"
 import Project from "./project";
 import { Link } from "react-router-dom";
 import '../styles/projects.css'
 
-function Projects(){
+function Projects(props,ref){
 
    const [projects,setProjects] = useState([])
 
@@ -13,10 +14,6 @@ function Projects(){
    
    },[])
    // lorsqu'on fais des requetes réseaux via fetch dans un useEffect il faut utiliser un tableau de dépendance vide [] pour que la requete ne s'envoie que a la création du component
-
-   function loading(){
-      setTextLoading('...')
-   }
 
    async function getProjects(){
 
@@ -43,7 +40,7 @@ function Projects(){
 
    return (
 
-      <div id='projects'>
+      <section id='projects' ref={ref}>
          <div className="contain-1440">
             <h2>Mes Derniers Projets</h2>
                {projects.length>0 ? 
@@ -59,9 +56,9 @@ function Projects(){
                <Link to='/Projets' className="button-blue">Voir tous mes Projets</Link>
             </div>
          </div>
-   </div>
+      </section>
    )
 
 }
 
-export default Projects
+export default forwardRef(Projects)

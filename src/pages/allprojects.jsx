@@ -1,8 +1,8 @@
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
-import Header from "../components/header"
+import Header from "../components/header";
 import Project from "../components/project";
-import '../styles/allprojects.css'
-import { motion } from "motion/react"
+import '../styles/allprojects.css';
 
 function Allprojects(){
 
@@ -12,6 +12,7 @@ function Allprojects(){
    
       useEffect(()=>{
       
+         document.title='Portfolio - Sébastien LUCAS - Mes Projets'
          getProjects()
       
       },[])

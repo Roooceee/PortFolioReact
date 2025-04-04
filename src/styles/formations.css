@@ -1,8 +1,14 @@
-.formations {
+#formations {
    background-color: var(--background-color-principal);
+   scroll-margin-top: 100px; /* Permet de compenser le header en position fixed via lien ancrage*/
 }
 
-.formations>div h2 {
+#formations>div {
+   padding: 50px 0px 100px 0px;
+   margin: auto;
+}
+
+#formations>div h2 {
    font-family: var(--font-title);
    color: var(--blue-principal);
    text-align: center;
@@ -12,20 +18,22 @@
    padding-bottom: 40px;
 }
 
-.formations>div article {
+#formations>div>div {
    position: relative;
 }
 
-.formations>div a {
+#formations > div > div > a.previous , #formations > div > div > a.next {
+   color: var(--blue-principal);
    position: absolute;
 }
 
-#root > div.formations > div > article > a.previous {
+#formations > div > div > a.previous {
    top: 50%;
+   right: 93%;
 }
 
-#root > div.formations > div > article > a.next {
+#formations > div > div > a.next {
    top: 50%;
-   right: 0
+   left: 93%;
 }
 

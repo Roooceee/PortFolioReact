@@ -19,11 +19,12 @@
       ]
    },
    {  
-      "logo":"Wrench",
-      "title": "Outils & Workflow",
+      "logo":"User",
+      "title": "Soft Skills",
       "skills_details": [
-         "Git & GitHub",
-         "VS Code"
+         "Communication",
+         "Gestion du temps",
+         "Travail en équipe"
       ]
    }
 ]

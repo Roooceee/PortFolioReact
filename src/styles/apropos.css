@@ -1,15 +1,16 @@
 #apropos {
    background-color: var(--background-color-principal);
+   scroll-margin-top: 100px; /* Permet de compenser le header en position fixed via lien ancrage*/
 }
 
 #apropos>div {
    padding: 60px 0px 60px 0px;
    margin: auto;
    max-width: 900px;
-   display: flex;
+   display: grid;
+   grid-template-columns: auto 1fr;
    align-items: center;
    gap: 50px;
-   max-width: 80%;
    margin: auto;
 }
 
@@ -32,3 +33,17 @@
 #apropos p {
    color: var(--color-text-principal);
 }
+
+@media (max-width: 767px) {
+
+   #apropos>div {
+      grid-template-columns: 1fr;
+      
+   }
+
+   #apropos img {
+      margin: auto;
+      max-width: 60%;
+   }
+
+ }

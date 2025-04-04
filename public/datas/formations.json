@@ -15,11 +15,11 @@
     },
     {
       "intitule": "BTS Services Informatiques aux Organisations",
+      "option": "Solutions Logicielles Applications Métier",
       "etablissement": "Lycée Charles Peguy",
       "debut": "2016",
       "fin": "2018",
-      "obtention":null,
-      "option": "Solutions Logicielles Applications Métier",
+      "obtention":true,
       "competences": [
         "Support et mise à disposition de services informatiques",
         "Support Système des accès utilisateurs",
@@ -31,11 +31,11 @@
     },
     {
       "intitule": "BAC Sciences et Technologies de l'Industrie et du Développement Durable",
+      "option": "Système d'Information et Numérique",
       "obtention":true,
       "etablissement": "Lycée Jean Perrin",
       "debut": "2010",
       "fin": "2013",
-      "option": "Système d'Information et Numérique",
       "competences": []
     }
   ]

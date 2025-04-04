@@ -6,12 +6,10 @@ import { useEffect, useState } from "react"
 function Project({name, description,created, homepage, update , html_url}){
 
    const [languages,setLanguages] = useState([])
-   const [isVisible,setIsVisible] = useState(false)   
 
    useEffect(()=>{
    
       getLanguageProjects()
-
 
    },[])
 
@@ -36,7 +34,7 @@ function Project({name, description,created, homepage, update , html_url}){
          console.log(`Il te reste ${remainingRequests} requêtes avant de dépasser la limite.`);
       }
       catch(e){
-         console.log('Erreur '+e)
+         console.log('Erreur Chargement languages '+e)
       }
    }
 
@@ -106,8 +104,8 @@ function Project({name, description,created, homepage, update , html_url}){
          </div>
             
          <div className="links_project">
-            {homepage ? <a href={homepage} className="button-blue"><SquareArrowOutUpRight size={22} /> Visiter le site</a> : ''}
-            <a href={html_url} className="button-blue"><Github size={24} />Voir le code</a>
+            {homepage ? <a href={homepage} target="_blank" className="button-blue"><SquareArrowOutUpRight size={22} /> Visiter le site</a> : ''}
+            <a href={html_url} target="_blank" className="button-blue"><Github size={24} />Voir le code</a>
          </div>
          <hr />
          <div className='dates_project'>

@@ -2,31 +2,52 @@
    max-width: 80%;
    margin: auto;
    max-height: fit-content;
-   text-align: center;
    padding: 50px;
 }
 
-.experience h3 {
-   color: var(--blue-principal);
-   font-family: var(--font-title);
+.experience>div:nth-child(1) {
+   display: flex;
+   justify-content: space-between;
 }
 
-.experience .company {
-   color: var(--color-text-principal);
-   font-family: var(--font-title);
-   font-size: 22px;
+.experience h3 {
+   font-family: var(--font-title-2);
+   color: var(--blue-principal);
 }
 
 .experience .period {
-   color: var(--blue-second);
+   font-size: 14px;
    font-family: var(--font-classic);
-   padding-bottom: 20px;
+   background-color: var(--blue-principal);
+   border-radius: 20px;
+   padding: 5px 10px;
+   display: flex;
+   align-items: center;
+   gap: 5px;
 }
 
+.experience .company {
+   font-family: var(--font-title-2);
+   padding-bottom: 30px;
+}
+
+
 .experience .description-experience {
-   color: var(--color-text-principal);
+   font-size: 14px;
    font-family: var(--font-classic);
-   font-size: 18px;
+   color: var(--color-text-principal);
+}
+
+.experience .tasks {
+   text-align: center;
+}
+
+.experience .tasks a {
+   display: flex;
+   align-items: center;
+   gap: 5px;
+   max-width: fit-content;
+   margin: 50px auto 0px auto; 
 }
 
 .experience ul {

@@ -1,26 +1,50 @@
+import { CircleCheckBig } from 'lucide-react'
 import '../styles/formation.css'
+import { useState } from 'react'
 
 function Formation({intitule , option , etablissement , debut , fin , obtention , competences} ){
+   
+   
+   const [isVisible,setIsVisible] = useState(false)
+   const [titleButton,setTitleButton] = useState('Afficher les compétences')
 
+
+   function changeVisibility(e){
+      e.preventDefault()
+      if(isVisible){
+         setIsVisible(false)
+         setTitleButton('Afficher les compétences')
+      }
+      else {
+         setIsVisible(true)
+         setTitleButton('Masquer les compétences')
+      }
+   }
 
    return(
 
-      <div className='formation card'>
-         <div className='head_formation'>
-            <h3>{intitule}</h3>
-            <p>{debut} à {fin}</p>
-         </div>
-         <p>{option}</p>
+      <article className='formation card'>
+         <h3>{intitule}</h3>
+         {option != null ? <p>{option}</p> : ''}
          <p>{etablissement}</p>
+         <hr />
+         <p>{debut} - {fin}</p>
          {obtention != null ? <p>Diplome obtenue</p> : ''}
-         {competences != null ? 
-            <ul>
-               {competences.map(element => {
-                  return <li key={element}>{element}</li>
-               })}
-            </ul>
+         <a href="" className='button-blue' onClick={(e) => changeVisibility(e)}>{titleButton}</a>
+         {competences != null && isVisible == true? 
+            <>
+            <div className='competences'>
+               <p>Compétences Acquise : </p>
+               <hr />
+               <ul>
+                  {competences.map(element => {
+                     return <li key={element}> <CircleCheckBig /> {element}</li>
+                  })}
+               </ul>
+            </div>
+            </>
          : ''}
-      </div>
+      </article>
 
    )
 

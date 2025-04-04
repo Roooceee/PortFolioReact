@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import '../styles/experience.css'
 import { motion } from "motion/react"
+import {Calendar, CircleArrowDown, CircleArrowUp } from 'lucide-react'
 
 
 function Experience({title , company , period , responsibilities , description}){
@@ -49,17 +50,23 @@ function Experience({title , company , period , responsibilities , description})
    return (
 
       <article className='experience card-principal'>
+         <div>
             <h3>{title}</h3>
+            <p className='period'><Calendar/>{period}</p>
+         </div>
             <p className='company'>{company}</p>      
-            <p className='period'>{period}</p>
             <p className='description-experience'>{description}</p>
-            <a className='button-blue' href="#" onClick={(e) => changeVisibility(e)}>{titleButton}</a>
-               <ul>
-               {
-               responsabilitesVisible.map((element, index) => {
-                  return <motion.li initial={{opacity : 0}} whileInView={{opacity:1}} key={element+'_'+index} className='task-card'>{element}</motion.li>
-               })}
-               </ul>   
+            <div className='tasks'>
+               <a className='button-blue' href="#" onClick={(e) => changeVisibility(e)}>{titleButton} {isVisible === false ? <CircleArrowDown/> : <CircleArrowUp/> } </a>
+                  {isVisible === false ? '' : 
+                  <ul>
+                  {
+                  responsabilitesVisible.map((element, index) => {
+                     return <motion.li initial={{opacity : 0}} whileInView={{opacity:1}} key={element+'_'+index} className='task-card'>{element}</motion.li>
+                  })}
+                  </ul>   
+                  }
+            </div>
       </article>
 
    )

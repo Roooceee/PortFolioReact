@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react"
+import { motion } from "motion/react";
+import { forwardRef, useEffect, useState } from "react"
 import Formation from "./formation"
 import '../styles/formations.css'
+import { CircleArrowLeft, CircleArrowRight } from "lucide-react"
 
-function Formations(){
+function Formations(props,ref){
 
    const [formations,setFormations] = useState([])
    const [currentIndex,SetCurrentIndex] = useState(0)
@@ -45,29 +47,27 @@ function Formations(){
 
    }
 
-   console.log(currentIndex)
-
    return (
    
-      <div className="formations">
-         <div>
-            <h2>Formations</h2>
+      <section id="formations">
+         <div className="contain-1440">
+            <h2 ref={ref}>Mes études et formations</h2>
                {formations.length > 0 ?
                   <>
-                  <article>
+                  <div>
                      <Formation key={formations[currentIndex].intitule} intitule={formations[currentIndex].intitule} option={formations[currentIndex].option} etablissement={formations[currentIndex].etablissement} debut={formations[currentIndex].debut} fin={formations[currentIndex].fin} obtention={formations[currentIndex].obtention} competences={formations[currentIndex].competences}/>
                      {/* Affiche le bouton "Précédent" uniquement si ce n'est pas la première formation chronologiquement[2] */}
-                     {currentIndex < formations.length-1 && <a className="previous" href="#" onClick={previous}>Précédent</a>}
+                     {currentIndex < formations.length-1 && <a className="previous" href="#" onClick={previous}><CircleArrowLeft size={48}/></a>}
                      {/* Affiche le bouton "Suivant" uniquement si ce n'est pas la derniere formation chronologiquement [0] */}
-                     {currentIndex > 0 && <a className="next" href="#" onClick={next}>Suivant</a>}
-                  </article>
+                     {currentIndex > 0 && <a className="next" href="#" onClick={next}><CircleArrowRight size={48}/></a>}
+                  </div>
                   </>
                : <p>Chargement</p>}
          </div>
-      </div>
+      </section>
    
    )
 }
 
 
-export default Formations
+export default forwardRef(Formations)

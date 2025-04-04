@@ -4,6 +4,7 @@
    justify-content: space-between;
    gap: 30px;
    margin: auto;
+   min-height: 630px;
 }
 
 /* CSS pour le head de la carte */
@@ -11,10 +12,12 @@
 .head_project {
    display: grid;
    gap: 30px;
+   min-height: 200px;
 }
 
 .head_project h3 {
    font-family: var(--font-title-2);
+   color: var(--blue-principal);
 }
 
 .head_project p {
@@ -87,7 +90,7 @@
    border-radius: 22px;
    padding: 4px 8px;
    background-color: var(--background-color-principal) ;
-   font-size: 16px;
+   font-size: 14px;
    font-family: var(--font-classic);
 }
 
@@ -131,15 +134,37 @@
    font-size: 14px;
 }
 
-
-
-
-/* CSS pour les hr */
-
-hr {
-   border: none;
-   height: 2px; 
-   background-color: var(--background-color-third);
-   border-radius: 33px;
+@media (max-width : 1024px) {
+   .project{
+      max-width: 80%;
+   }
 }
 
+
+@media (max-width: 767px) {
+
+
+   #projects > div > div > article {
+      max-width: 70%;
+   }
+
+   .dates_project {
+      display: grid;
+   }
+
+   .languages > ul {
+      display: grid;
+      max-width: fit-content;
+   }
+
+   .links_project {
+      display: grid;
+      max-width: fit-content;
+      gap: 5px;
+   }
+
+   #projects > div > div:nth-child(3) {
+      text-align: center!important;
+   }
+
+ }

@@ -1,5 +1,10 @@
 header {
    background-color: var(--background-color-principal);
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 1;
 }
 
 header>div {
@@ -7,6 +12,7 @@ header>div {
    justify-content: space-between;
    align-items: center;
    margin: auto;
+   padding: 10px 10px 0px 10px;
 }
 
 header>div>div>a {
@@ -55,3 +61,30 @@ header nav ul a:hover {
    color: var(--blue-second);
 }
 
+header nav ul a.active {
+   color: var(--blue-second);
+   border-bottom: 5px solid var(--blue-second);
+}
+
+/* 
+.burger-icon {
+   display: none;
+} */
+
+@media (max-width: 767px) {
+
+   #root > header > div > nav > ul {
+      display: none;
+   }
+
+   .burger-icon span {
+      display: block;
+      background-color: var(--color-text-principal);
+      width: 35px;
+      height: 5px;
+      margin: 6px 0;
+      border-radius: 20px;
+  }
+
+}
+   

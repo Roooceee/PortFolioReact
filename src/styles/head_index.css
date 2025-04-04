@@ -1,6 +1,7 @@
 #head_index {
+   scroll-margin-top: 100px; /* Permet de compenser le header en position fixed via lien ancrage*/
    background-color: var(--background-color-second);
-   padding: 60px 0px 60px 0px;
+   padding: 160px 0px 60px 0px;
    min-height: 500px;
    display: grid;
 }
@@ -8,6 +9,15 @@
 #head_index>div {
    margin: auto;
    text-align: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+#head_index > div > div:nth-child(1) {
+   min-height: 200px;
+   display: flex;
+   flex-direction: column;
 }
 
 #head_index>div>div:nth-child(2) {
@@ -21,6 +31,29 @@
    color: var(--blue-principal);
    font-family: var(--font-title);
 }
+
+.typing-text {
+   display: inline-block;
+   overflow: hidden; 
+   white-space: nowrap;
+   width: 0;
+   margin: auto;
+}
+
+.typing-text.active {
+   animation: typing 2.5s steps(36, end) forwards;
+}
+
+@keyframes typing {
+   from { width: 0; }
+   to { width: 100%; }
+ }
+
+ @keyframes typingReverse {
+    from { width: 100%; }
+    to { width: 0; }
+ }
+
 
 #head_index h2 {
    color: var(--blue-second);

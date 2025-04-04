@@ -1,14 +1,50 @@
 .formation {
    max-width: 80%;
    margin: auto;
-   height: 200px;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
 }
 
 .formation h3 {
    font-family: var(--font-title-2);
 }
 
-.head_formation {
+.formation hr {
+   margin: 20px 0px 20px 0px;
+}
+
+.formation > a.button-blue {
+   max-width: fit-content;
+   margin: 20px 10px 20px auto
+}
+
+.competences {
+   text-align: left;
+}
+
+.competences > p {
+   padding-bottom: 10px;
+}
+
+.competences > hr {
+   margin: 0px 0px 20px 0px;
+}
+
+.competences > ul {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 10px;
+}
+
+.competences > ul > li {
+   list-style: none;
    display: flex;
-   justify-content: space-between;
+   align-items: center;
+   gap: 5px;
+}
+
+.competences > ul > li > svg {
+   color: #2ECC71 ; 
 }

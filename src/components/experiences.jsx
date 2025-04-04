@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import { motion } from "motion/react";
+import { forwardRef, useEffect, useState } from 'react';
 import '../styles/experiences.css'
 import Experience from './experience';
 
-function Experiences(){
+function Experiences(props,ref){
 
    const [experiences,setExperiences] = useState([])
 
@@ -33,7 +34,7 @@ function Experiences(){
       <div id="experiences">
          <div className="contain-1440">
             
-            <h2>Expériences</h2>
+            <h2 ref={ref}>Mes Expériences Professionnelles</h2>
 
             <div>
                {experiences.map(element => {
@@ -49,4 +50,4 @@ function Experiences(){
    )
 }
 
-export default Experiences
+export default forwardRef(Experiences)

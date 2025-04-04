@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { forwardRef, useEffect, useRef, useState } from "react";
 import '../styles/skills.css';
 import Skill from "./skill";
+import useStoreSectionVisible from '../storeSectionVisible'
 
 
-function Skills(){
+function Skills({id},ref){
 
 const [skills,setSkills] = useState([])
 
@@ -13,7 +14,6 @@ useEffect(()=>{
 
 },[])
 // lorsqu'on fais des requetes réseaux via fetch dans un useEffect il faut utiliser un tableau de dépendance vide [] pour que la requete ne s'envoie que a la création du component
-
 
 async function getSkills(){
    
@@ -29,14 +29,11 @@ async function getSkills(){
 
 return (
 
-   <div id='skills'>
-      <h2>Compétences</h2>
-
+   <div  id='skills'>
+      <h2 ref={ref}>Compétences</h2>
       <div>
-
       {skills.map(element => {
 
-         
          return <Skill key={element.title} logo={element.logo} title={element.title} list={element.skills_details}/>
          
          })}
@@ -48,4 +45,4 @@ return (
 
 }
 
-export default Skills
+export default forwardRef(Skills)

@@ -2,13 +2,19 @@
    background-color: var(--background-color-second);
    display: grid;
    padding: 40px 0px 60px 0px;
+   scroll-margin-top: 100px; /* Permet de compenser le header en position fixed via lien ancrage*/
 }
 
 #skills>div {
-   display: flex;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
    gap: 100px;
    margin: auto;
    max-width: fit-content;
+}
+
+#skills > div > article {  
+   height: 100%;
 }
 
 #skills h2 {
@@ -19,3 +25,20 @@
    padding-bottom: 40px;
    margin: auto;
 }
+
+@media (max-width: 1024px){
+ 
+   #skills>div {
+      gap: 20px;
+      margin: auto;
+   }
+   
+}
+
+@media (max-width: 767px) {
+
+   #skills>div {
+      grid-template-columns: 1fr 1fr;
+   }
+
+ }
