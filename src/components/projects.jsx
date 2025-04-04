@@ -9,9 +9,7 @@ function Projects(props,ref){
    const [projects,setProjects] = useState([])
 
    useEffect(()=>{
-   
       getProjects()
-   
    },[])
    // lorsqu'on fais des requetes réseaux via fetch dans un useEffect il faut utiliser un tableau de dépendance vide [] pour que la requete ne s'envoie que a la création du component
 

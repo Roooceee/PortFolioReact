@@ -92,13 +92,3 @@ h3 {
    position: relative;
    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-
-/* CSS pour les hr */
-
-hr {
-   border: none;
-   height: 2px; 
-   background-color: var(--background-color-third);
-   border-radius: 33px;
-}

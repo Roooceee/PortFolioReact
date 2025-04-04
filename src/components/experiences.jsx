@@ -2,6 +2,8 @@ import { motion } from "motion/react";
 import { forwardRef, useEffect, useState } from 'react';
 import '../styles/experiences.css'
 import Experience from './experience';
+import Carousel from "./carousel";
+import { p } from "motion/react-client";
 
 function Experiences(props,ref){
 
@@ -36,13 +38,13 @@ function Experiences(props,ref){
             
             <h2 ref={ref}>Mes Expériences Professionnelles</h2>
 
-            <div>
-               {experiences.map(element => {
-            
-                  return <Experience key={element.title} title = {element.title} company = {element.company} period = {element.period} description={element.description} responsibilities = {element.responsibilities}/>
-                  
-               })}       
-            </div>
+            <>
+            {experiences.length > 0 ? 
+            <>
+            <Carousel items={experiences} ItemComponent={Experience}/>
+            </>
+            : <p>Chargement</p>}
+            </>
 
          </div>
       </div>

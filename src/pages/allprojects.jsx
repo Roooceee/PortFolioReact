@@ -3,16 +3,18 @@ import { useEffect, useState } from "react";
 import Header from "../components/header";
 import Project from "../components/project";
 import '../styles/allprojects.css';
+import useStoreSectionVisible from '../storeSectionVisible'
 
 function Allprojects(){
 
+      const {setActiveSection} = useStoreSectionVisible()
 
       const [projects,setProjects] = useState([])
-      const [filter, setFilter] = useState('')
    
       useEffect(()=>{
       
          document.title='Portfolio - Sébastien LUCAS - Mes Projets'
+         setActiveSection('projects')
          getProjects()
       
       },[])

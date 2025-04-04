@@ -18,22 +18,3 @@
    padding-bottom: 40px;
 }
 
-#formations>div>div {
-   position: relative;
-}
-
-#formations > div > div > a.previous , #formations > div > div > a.next {
-   color: var(--blue-principal);
-   position: absolute;
-}
-
-#formations > div > div > a.previous {
-   top: 50%;
-   right: 93%;
-}
-
-#formations > div > div > a.next {
-   top: 50%;
-   left: 93%;
-}
-

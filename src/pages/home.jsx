@@ -1,4 +1,4 @@
-import { useEffect, useRef} from "react"
+import { useEffect, useLayoutEffect, useRef} from "react"
 
 import APropos from "../components/apropos"
 import Experiences from "../components/experiences"
@@ -11,6 +11,7 @@ import Skills from "../components/skills"
 import '../style.css'
 
 import useStoreSectionVisible from '../storeSectionVisible'
+import { useLocation } from "react-router-dom"
 
 function Home() {
 
@@ -19,6 +20,24 @@ function Home() {
     checkIsInView()
     window.addEventListener('scroll',checkIsInView)
   },[])
+  
+  const location = useLocation()
+
+  useEffect(()=> {
+
+    if(location.hash){
+      setTimeout(()=>{
+        const target = document.querySelector(location.hash)
+        target.scrollIntoView({behavior : 'smooth'})
+      },500)
+    }
+    else {
+      window.scrollTo({
+        top : 0,
+        behavior: 'smooth'
+     })
+    }
+  },[location])
 
   const {setActiveSection} = useStoreSectionVisible()
 

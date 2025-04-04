@@ -1,5 +1,7 @@
 #allprojects {
    background-color: var(--background-color-second);
+   padding-top: 100px;
+   min-height: 100dvh;
 }
 
 #allprojects h1 {
@@ -12,7 +14,7 @@
 }
 
 #allprojects>div {
-   padding: 80px 0px 40px 0px;
+   padding: 80px 50px 40px 50px;
    margin: auto;
 }
 

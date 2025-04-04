@@ -30,8 +30,8 @@ function Formation({intitule , option , etablissement , debut , fin , obtention 
          <hr />
          <p>{debut} - {fin}</p>
          {obtention != null ? <p>Diplome obtenue</p> : ''}
-         <a href="" className='button-blue' onClick={(e) => changeVisibility(e)}>{titleButton}</a>
-         {competences != null && isVisible == true? 
+         {competences.length > 0 ? <a href="" className='button-blue' onClick={(e) => changeVisibility(e)}>{titleButton}</a> : ''}
+         {competences.length > 0 && isVisible == true? 
             <>
             <div className='competences'>
                <p>Compétences Acquise : </p>

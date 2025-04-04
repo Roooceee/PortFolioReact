@@ -2,17 +2,17 @@
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   gap: 30px;
+   gap: 0px;
    margin: auto;
-   min-height: 630px;
+   min-height: 535px
 }
 
 /* CSS pour le head de la carte */
 
 .head_project {
    display: grid;
-   gap: 30px;
-   min-height: 200px;
+   gap: 10px;
+   min-height: 170px;
 }
 
 .head_project h3 {
@@ -132,6 +132,13 @@
 .dates_project>div>p:nth-child(2){
    font-family: var(--font-title-2);
    font-size: 14px;
+}
+
+.project hr {
+   border: none;
+   height: 2px; 
+   background-color: var(--background-color-third);
+   border-radius: 33px;
 }
 
 @media (max-width : 1024px) {

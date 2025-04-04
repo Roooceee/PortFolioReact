@@ -1,11 +1,11 @@
 #projects {
    background-color: var(--background-color-principal);
-   scroll-margin-top: 100px; /* Permet de compenser le header en position fixed via lien ancrage*/
+   scroll-margin-top: 50px; /* Permet de compenser le header en position fixed via lien ancrage*/
 }
 
 #projects>div {
    margin: auto;
-   padding: 60px 0px 60px 0px;
+   padding: 60px 50px 60px 50px;
 }
 
 #projects h2 {
@@ -20,13 +20,16 @@
 #projects>div>div:nth-child(2) {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr;
-   padding: 0px 50px;
    gap: 70px;
 }
 
 #projects > div > div:nth-child(3) {
    text-align: right;
-   padding-top: 50px;
+   padding-top: 20px;
+}
+
+.linkAllProjects {
+   margin: 0;
 }
 
 
