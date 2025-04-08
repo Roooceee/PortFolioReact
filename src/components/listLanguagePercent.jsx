@@ -1,14 +1,12 @@
 
 import '../styles/listLanguage.css'
 
-function ListLanguage({ListLanguagesPercent}){
-
-   const finalClass = `list`
+function ListLanguagePercent({listLanguagesPercent}){
 
    return (
 
-      <ul className={finalClass}>
-         {ListLanguagesPercent.map((language)=> {
+      <ul>
+         {listLanguagesPercent.map((language)=> {
             return (
             <li key={language.language} className={language.language+'_before '+' list-style-none'}>
                <span>{language.language}</span> <span className="percent">{language.percentLanguage}%</span>
@@ -21,4 +19,4 @@ function ListLanguage({ListLanguagesPercent}){
 
 }
 
-export default ListLanguage
+export default ListLanguagePercent

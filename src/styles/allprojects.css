@@ -7,9 +7,7 @@
 #allprojects h1 {
    font-family: var(--font-title);
    color: var(--blue-principal);
-   text-align: center;
-   margin: auto;
-   max-width: fit-content;
+   text-align: left;
    padding-top: 20px;
 }
 
@@ -19,12 +17,7 @@
 }
 
 #allprojects>div>div {
+   padding: 50px 0px 50px 0px;
    display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
-   padding: 100px 0px 100px 0px;
-   gap: 50px;
-}
-
-#allprojects>article a {
-   max-width: fit-content;
+   gap: 30px;
 }

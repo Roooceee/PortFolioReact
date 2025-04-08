@@ -1,0 +1,53 @@
+
+.projectListItem {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.projectListItem div:nth-child(1){
+   display: grid;
+   gap: 10px;
+}
+
+.projectListItem h2 {
+   color: var(--blue-second);
+   font-size: 24px;
+   font-family: var(--font-title-2);
+}
+
+.projectListItem .dates {
+   display: grid;
+}
+
+.projectListItem .dates div p:nth-child(2){
+   font-family: var(--font-title-2);
+   font-size: 14px;
+}
+
+.projectListItem .dates div .date {
+   font-size: 14px;
+   font-family: var(--font-classic);
+   color: var(--color-text-principal);
+}
+
+.projectListItem .dates div {
+   display: flex;
+   align-items: center;
+   gap: 5px;
+}
+
+.projectListItem .dates svg {
+   color: var(--blue-principal);
+}
+
+.projectListItem .links {
+   display: flex;
+   gap: 10px;
+}
+
+.projectListItem .links a {
+   display: flex;
+   align-items: center;
+   gap: 5px;
+}

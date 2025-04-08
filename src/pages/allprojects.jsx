@@ -1,17 +1,22 @@
-import { motion } from "motion/react";
 import { useEffect, useState } from "react";
+
 import Header from "../components/header";
-import ProjectCard from "../components/projectCard";
-import '../styles/allprojects.css';
+import ProjectListItem from "../components/projectListItem";
+
 import useStoreSectionVisible from '../storeSectionVisible'
+import '../styles/allprojects.css';
 
 function Allprojects(){
 
       const {setActiveSection} = useStoreSectionVisible()
-
       const [projects,setProjects] = useState([])
    
       useEffect(()=>{
+
+      window.scrollTo({
+      top : 0,
+      behavior: 'smooth'
+      })
       
          document.title='Portfolio - Sébastien LUCAS - Mes Projets'
          setActiveSection('projects')
@@ -50,11 +55,11 @@ function Allprojects(){
 
          <div id="allprojects">
             <div className="contain-1440">
-            <motion.h1 whileInView={{scale:1.4}}>Tous Mes Projets</motion.h1>
+            <h1>Tous Mes Projets</h1>
             <div>
                {projects.map(e=> {
                      if(e.name != 'Roooceee'){
-                        return <ProjectCard key = {e.name} name = {e.name}  created= {e.created_at} description = {e.description} homepage = {e.homepage} update = {e.updated_at} html_url = {e.html_url}/>
+                        return <ProjectListItem key={e.name} name={e.name} description={e.description} languages={e.languages} homepage={e.homepage} html_url={e.html_url} created={e.created_at} update={e.updated_at} />
                      }
                })}
             </div>

@@ -8,17 +8,10 @@
    margin: auto;
 }
 
-#experiences>div>div {
-   display: grid;
-   gap: 50px;
-}
-
 #experiences h2 {
    font-family: var(--font-title);
    color: var(--blue-principal);
    text-align: center;
-   margin: auto;
-   max-width: fit-content;
    padding-top: 20px;
    padding-bottom: 40px;
 }

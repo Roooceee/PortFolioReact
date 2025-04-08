@@ -7,7 +7,7 @@
 .languages ul li {
    border-radius: 22px;
    padding: 4px 8px;
-   background-color: var(--background-color-principal) ;
+   background-color: black;
    font-size: 14px;
    font-family: var(--font-classic);
 }

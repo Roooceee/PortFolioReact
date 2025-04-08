@@ -41,6 +41,10 @@
    align-items: center;
 }
 
+.language_title svg {
+   color: var(--blue-principal);
+}
+
 /* CSS pour les liens */
 .projectCard .links_project {
    display: flex;
@@ -75,6 +79,10 @@
 .projectCard .dates_project>div>p:nth-child(2){
    font-family: var(--font-title-2);
    font-size: 14px;
+}
+
+.projectCard .dates_project svg {
+   color: var(--blue-principal);
 }
 
 .projectCard hr {

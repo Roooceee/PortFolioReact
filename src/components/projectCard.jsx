@@ -2,7 +2,7 @@
 import { Calendar, Code, Github, RefreshCcw, SquareArrowOutUpRight } from 'lucide-react'
 import { useEffect, useState } from "react"
 
-import ListLanguage from './listLanguage.jsx'
+import ListLanguage from './listLanguagePercent.jsx'
 import ProgressBarLanguage from './progressBarLanguage.jsx'
 
 import { calculPercentLanguages } from '../utils/calculPercentLangages.js'
@@ -60,7 +60,7 @@ function ProjectCard({name, description,created, homepage, update , html_url}){
                   {Object.values(languages).length > 1 ? <p>Languages</p> : <p>Language</p> }
                </div>
                <ProgressBarLanguage ListLanguagesPercent={calculPercentLanguages(languages)}/>
-               <ListLanguage ListLanguagesPercent={calculPercentLanguages(languages)}/>
+               <ListLanguage listLanguagesPercent={calculPercentLanguages(languages)}/>
          </div>
             
          <div className="links_project">
