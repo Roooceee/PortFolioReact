@@ -17,8 +17,18 @@ function Home() {
 
   useEffect(()=> {
     document.title = 'Portfolio - Sébastien LUCAS'
+
+    const handleScroll = () => {
+      checkIsInView()
+    }
+
     checkIsInView()
-    window.addEventListener('scroll',checkIsInView)
+    window.addEventListener('scroll',handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll',handleScroll)
+    }
+
   },[])
   
   const location = useLocation()
