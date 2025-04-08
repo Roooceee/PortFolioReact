@@ -5,7 +5,7 @@ import Experiences from "../components/experiences"
 import Formations from "../components/formations"
 import Head_Index from "../components/head_index"
 import Header from "../components/header"
-import Projects from "../components/projects"
+import ProjectsCard from "../components/projectsCard"
 import Skills from "../components/skills"
 
 import '../style.css'
@@ -97,7 +97,7 @@ function Home() {
       <Head_Index/> 
       <APropos ref={refAPropos}/>
       <Skills ref={refSkills}/>
-      <Projects ref={refProjects}/>
+      <ProjectsCard ref={refProjects}/>
       <Experiences ref={refExperiences}/>
       <Formations ref={refFormations}/>
     </>

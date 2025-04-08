@@ -1,7 +1,6 @@
 import { BrowserRouter as Rooter, Route, Routes } from "react-router-dom";
 import Home from "./pages/home";
 import Allprojects from "./pages/allprojects";
-import { useEffect } from "react";
 
 function App() {
 

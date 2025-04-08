@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import Header from "../components/header";
-import Project from "../components/project";
+import ProjectCard from "../components/projectCard";
 import '../styles/allprojects.css';
 import useStoreSectionVisible from '../storeSectionVisible'
 
@@ -32,7 +32,6 @@ function Allprojects(){
                })
    
             const res = await req.json()
-            console.log(res)
             setProjects(res)
    
             // Log le nombre de requêtes restantes
@@ -55,7 +54,7 @@ function Allprojects(){
             <div>
                {projects.map(e=> {
                      if(e.name != 'Roooceee'){
-                        return <Project key = {e.name} name = {e.name}  created= {e.created_at} description = {e.description} homepage = {e.homepage} update = {e.updated_at} html_url = {e.html_url}/>
+                        return <ProjectCard key = {e.name} name = {e.name}  created= {e.created_at} description = {e.description} homepage = {e.homepage} update = {e.updated_at} html_url = {e.html_url}/>
                      }
                })}
             </div>

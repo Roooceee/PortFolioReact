@@ -1,0 +1,84 @@
+
+.languages ul {
+   display: flex;
+   gap: 5px;
+}
+
+.languages ul li {
+   border-radius: 22px;
+   padding: 4px 8px;
+   background-color: var(--background-color-principal) ;
+   font-size: 14px;
+   font-family: var(--font-classic);
+}
+
+.languages ul li .percent {
+   color: var(--color-text-principal);
+}
+
+.HTML_before::before {
+   content: "●";
+   margin-right: 5px;
+   color: #e34c26;
+}
+
+.JavaScript_before::before {
+   content: "●";
+   margin-right: 5px;
+   color: #f1e05a;
+}
+
+.CSS_before::before {
+   content: "●";
+   margin-right: 5px;
+   color: #663399;
+}
+
+.Python_before::before {
+   content: "●";
+   margin-right: 5px;
+   color: #3572A5;
+}
+
+.Java_before::before {
+   content: "●";
+   margin-right: 5px;
+   color: #b07219;
+}
+
+.TypeScript_before::before {
+   content: "●";
+   margin-right: 5px;
+   color: #3178c6;
+}
+
+.PHP_before::before {
+   content: "●";
+   margin-right: 5px;
+   color: #4F5D95;
+}
+
+.C#_before::before {
+   content: "●";
+   margin-right: 5px;
+   color: #178600;
+}
+
+.C_before::before {
+   content: "●";
+   margin-right: 5px;
+   color: #555555;
+}
+
+.Ruby_before::before {
+   content: "●";
+   margin-right: 5px;
+   color: #701516;
+}
+
+.Markdown_before::before {
+   content: "●";
+   margin-right: 5px;
+   color: #083fa1;
+}
+

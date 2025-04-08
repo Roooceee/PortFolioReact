@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { forwardRef, useEffect, useState } from "react"
-import Project from "./project";
+import ProjectCard from "./projectCard";
 import { Link } from "react-router-dom";
 import '../styles/projects.css'
 
@@ -43,9 +43,9 @@ function Projects(props,ref){
             <h2>Mes Derniers Projets</h2>
                {projects.length>0 ? 
                <div>
-                  <Project key = {projects[0].name} name = {projects[0].name}  created= {projects[0].created_at} description = {projects[0].description} homepage = {projects[0].homepage} update = {projects[0].updated_at} html_url = {projects[0].html_url}/>
-                  <Project key = {projects[1].name} name = {projects[1].name}  created= {projects[1].created_at} description = {projects[1].description} homepage = {projects[1].homepage} update = {projects[1].updated_at} html_url = {projects[1].html_url}/>
-                  <Project key = {projects[2].name} name = {projects[2].name}  created= {projects[2].created_at} description = {projects[2].description} homepage = {projects[2].homepage} update = {projects[2].updated_at} html_url = {projects[2].html_url}/>
+                  <ProjectCard key = {projects[0].name} name = {projects[0].name}  created= {projects[0].created_at} description = {projects[0].description} homepage = {projects[0].homepage} update = {projects[0].updated_at} html_url = {projects[0].html_url}/>
+                  <ProjectCard key = {projects[1].name} name = {projects[1].name}  created= {projects[1].created_at} description = {projects[1].description} homepage = {projects[1].homepage} update = {projects[1].updated_at} html_url = {projects[1].html_url}/>
+                  <ProjectCard key = {projects[2].name} name = {projects[2].name}  created= {projects[2].created_at} description = {projects[2].description} homepage = {projects[2].homepage} update = {projects[2].updated_at} html_url = {projects[2].html_url}/>
                </div>
                : 
                <p>Chargement des données</p>}

@@ -1,0 +1,54 @@
+.HTML_progress {
+   background-color: #e34c26 ;
+}
+
+.JavaScript_progress {
+   background-color: #f1e05a; 
+}
+
+
+.CSS_progress {
+   background-color: #663399 ;
+}
+
+.Python_progress {
+   background-color: #3572A5;
+}
+
+.Java_progress {
+   background-color: #b07219;
+}
+
+.TypeScript_progress {
+   background-color: #3178c6;
+}
+
+.PHP_progress {
+   background-color: #4F5D95;
+}
+
+.C#_progress {
+   background-color: #178600;
+}
+
+.C_progress {
+   background-color: #555555;
+}
+
+.Ruby_progress {
+   background-color: #701516;
+}
+
+.Markdown_progress {
+   background-color: #083fa1;
+}
+
+.Progress {
+   background-color: var(--bgColor-neutral-muted);
+   border-radius: var(--borderRadius-medium);
+   display: flex;
+   height: 8px;
+   outline: 1px solid #0000;
+   overflow: hidden;
+   margin: 20px 0px 20px 0px;
+}
