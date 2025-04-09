@@ -2,6 +2,9 @@
    max-width: 80%;
    margin: auto;
    max-height: fit-content;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
 }
 
 .experience>div:nth-child(1) {
@@ -15,6 +18,7 @@
 }
 
 .experience .period {
+   height: min-content;
    font-size: 14px;
    font-family: var(--font-classic);
    background-color: var(--blue-principal);
@@ -37,33 +41,31 @@
    color: var(--color-text-principal);
 }
 
-.experience .tasks {
-   text-align: center;
-}
-
 .experience .tasks a {
+   width: fit-content;
+   margin: 20px auto 20px auto;
    display: flex;
    align-items: center;
    gap: 5px;
-   max-width: fit-content;
-   margin: 50px auto 0px auto; 
 }
 
-.experience ul {
-   list-style: none;
+.experience .tasks ul {
    display: grid;
+   grid-template-columns: 1fr auto;
+}
+
+.experience .tasks ul svg {
+   color: green;
+   /* Couleur a changer via une variable root */
+}
+
+.experience .tasks ul li {
+   display: flex;
+   align-items: center;
    gap: 5px;
-   padding-top: 20px;
-}
-
-.experience ul li {
-   color: var(--blue-principal);
+   list-style: none;
+   font-size: 14px;
    font-family: var(--font-classic);
-}
-
-.task-card {
-   padding: 10px;
-   margin: 5px;
-   background-color: var(--color-white);
-   border-radius: 8px;
+   color: var(--color-text-principal);
+   padding-bottom: 5px;
 }

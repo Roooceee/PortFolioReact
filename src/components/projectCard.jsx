@@ -7,6 +7,7 @@ import ProgressBarLanguage from './progressBarLanguage.jsx'
 
 import { calculPercentLanguages } from '../utils/calculPercentLangages.js'
 import { changeDateFormat } from '../utils/changeDateFormat.js'
+import {getDatas} from '../utils/getDatas.js'
 import '../styles/projectCard.css'
 
 function ProjectCard({name, description,created, homepage, update , html_url}){
@@ -15,34 +16,16 @@ function ProjectCard({name, description,created, homepage, update , html_url}){
 
    useEffect(()=>{
 
-      getLanguageProjects()
+      const loadData = async () => {
+
+         const token = import.meta.env.VITE_GITHUB_TOKEN;
+         const result = await getDatas(`https://api.github.com/repos/Roooceee/${name}/languages`,token)
+         setLanguages(result)
+      }
+      
+      loadData()
    
    },[])
-
-
-   async function getLanguageProjects(){
-
-      const token = import.meta.env.VITE_GITHUB_TOKEN;
-
-      try {         
-         const req = await fetch(`https://api.github.com/repos/Roooceee/${name}/languages`,{
-
-            headers:{
-               Authorization: `token ${token}`,
-            }
-            })
-
-         const res = await req.json()
-         setLanguages(res)
-
-         // Log le nombre de requêtes restantes
-         const remainingRequests = req.headers.get('X-RateLimit-Remaining');
-         console.log(`Il te reste ${remainingRequests} requêtes avant de dépasser la limite.`);
-      }
-      catch(e){
-         console.log('Erreur Chargement languages '+e)
-      }
-   }
 
    return(
       <article className="card projectCard">

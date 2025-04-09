@@ -1,40 +1,26 @@
-import { motion } from "motion/react";
 import { forwardRef, useEffect, useState } from "react"
 import ProjectCard from "./projectCard";
 import { Link } from "react-router-dom";
 import '../styles/projects.css'
+import {getDatas} from '../utils/getDatas.js'
 
 function Projects(props,ref){
 
    const [projects,setProjects] = useState([])
 
    useEffect(()=>{
-      getProjects()
+
+      const loadData = async () => {
+
+         const token = import.meta.env.VITE_GITHUB_TOKEN;
+         const result = await getDatas('https://api.github.com/users/Roooceee/repos?sort=created&direction=desc',token)
+         setProjects(result)
+      }
+      
+      loadData()
+
+
    },[])
-   // lorsqu'on fais des requetes réseaux via fetch dans un useEffect il faut utiliser un tableau de dépendance vide [] pour que la requete ne s'envoie que a la création du component
-
-   async function getProjects(){
-
-      const token = import.meta.env.VITE_GITHUB_TOKEN;
-      try {         
-         const req = await fetch('https://api.github.com/users/Roooceee/repos?sort=created&direction=desc',{
-
-            headers:{
-               Authorization: `token ${token}`,
-            }
-            })
-
-         const res = await req.json()
-         setProjects(res)
-
-         // Log le nombre de requêtes restantes
-         const remainingRequests = req.headers.get('X-RateLimit-Remaining');
-         console.log(`Il te reste ${remainingRequests} requêtes avant de dépasser la limite.`);
-      }
-      catch(e){
-         console.log('Erreur '+e)
-      }
-   }
 
    return (
 

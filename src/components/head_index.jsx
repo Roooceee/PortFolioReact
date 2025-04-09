@@ -25,7 +25,7 @@ function Head_Index() {
    },[currentText])
 
    return (
-      <div id="head_index">
+      <section id="head_index">
          <div>
             <div>
                <h2>Sébastien LUCAS</h2>
@@ -37,7 +37,7 @@ function Head_Index() {
                <a href="" className="button-blue">Me Contacter</a>
             </div>
          </div>
-      </div>
+      </section>
  )}
  
  export default Head_Index

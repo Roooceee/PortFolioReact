@@ -1,8 +1,10 @@
-import { motion } from "motion/react";
 import { forwardRef, useEffect, useState } from "react"
+
 import Formation from "./formation"
-import '../styles/formations.css'
 import Carousel from "./carousel";
+
+import '../styles/formations.css'
+import {getDatas} from '../utils/getDatas.js'
 
 function Formations(props,ref){
 
@@ -10,23 +12,15 @@ function Formations(props,ref){
 
    useEffect(()=> {
 
-      getFormations()
+      const loadData = async () => {
+
+         const result = await getDatas('/datas/formations.json')
+         setFormations(result)
+      }
+      
+      loadData()
 
    },[])
-
-   // Récupère les formations depuis le fichier JSON
-   // Du plus récent [0] au plus ancien [2]
-   async function getFormations(){
-
-      try {
-         const req = await fetch('/datas/formations.json')
-         const res = await req.json()
-         setFormations(res)
-      }
-      catch(e){
-         console.log('Erreur chargement formations '+e)
-      }
-   }
 
    return (
    

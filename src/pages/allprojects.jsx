@@ -53,18 +53,20 @@ function Allprojects(){
       <>
          <Header/>
 
-         <div id="allprojects">
-            <div className="contain-1440">
-            <h1>Tous Mes Projets</h1>
-            <div>
-               {projects.map(e=> {
-                     if(e.name != 'Roooceee'){
-                        return <ProjectListItem key={e.name} name={e.name} description={e.description} languages={e.languages} homepage={e.homepage} html_url={e.html_url} created={e.created_at} update={e.updated_at} />
-                     }
-               })}
-            </div>
-            </div>
-         </div>
+         <main>
+            <section id="allprojects">
+               <div className="contain-1440">
+               <h1>Tous Mes Projets</h1>
+               <div>
+                  {projects.map(e=> {
+                        if(e.name != 'Roooceee'){
+                           return <ProjectListItem key={e.name} name={e.name} description={e.description} languages={e.languages} homepage={e.homepage} html_url={e.html_url} created={e.created_at} update={e.updated_at} />
+                        }
+                  })}
+               </div>
+               </div>
+            </section>
+         </main>
 
       </>
 

@@ -29,10 +29,8 @@ function Carousel({items , ItemComponent}){
 
       <>
       <div className="carousel">
-         <div className="slide-content">
             <ItemComponent {...currentItemData}/>
             {/* operateur de décomposition passe toutes les clé/valeurs  de l'objet en props */}
-         </div>
          {/* Affiche le bouton "Précédent" uniquement si ce n'est pas la première formation chronologiquement[2] */}
          {currentIndex < items.length-1 && <a className="previous" href="#" onClick={previous}><CircleArrowLeft size={48}/></a>}
          {/* Affiche le bouton "Suivant" uniquement si ce n'est pas la derniere formation chronologiquement [0] */}

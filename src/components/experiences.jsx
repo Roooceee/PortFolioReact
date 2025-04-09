@@ -1,9 +1,10 @@
-import { motion } from "motion/react";
 import { forwardRef, useEffect, useState } from 'react';
-import '../styles/experiences.css'
+
 import Experience from './experience';
 import Carousel from "./carousel";
-import { p } from "motion/react-client";
+
+import {getDatas} from '../utils/getDatas.js'
+import '../styles/experiences.css'
 
 function Experiences(props,ref){
 
@@ -11,29 +12,18 @@ function Experiences(props,ref){
 
    useEffect(()=>{
 
-   getExperiences()
+      const loadData = async () => {
+         const result = await getDatas('/datas/experiences.json')
+         setExperiences(result)
+      }
+      
+      loadData()
 
    },[])
-   // lorsqu'on fais des requetes réseaux via fetch dans un useEffect il faut utiliser un tableau de dépendance vide [] pour que la requete ne s'envoie que a la création du component
-
-
-   async function getExperiences(){
-   
-      try {         
-            const req = await fetch('/datas/experiences.json')
-            const res = await req.json()
-            setExperiences(res)
-      }
-      catch(e){
-            console.log('Erreur chargement experiences '+e)
-      }
-   }
-
-
 
    return (
 
-      <div id="experiences">
+      <section id="experiences">
          <div className="contain-1440">
             
             <h2 ref={ref}>Mes Expériences Professionnelles</h2>
@@ -47,7 +37,7 @@ function Experiences(props,ref){
             </>
 
          </div>
-      </div>
+      </section>
 
    )
 }

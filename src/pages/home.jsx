@@ -104,12 +104,14 @@ function Home() {
   return (
     <>
       <Header/>
-      <Head_Index/> 
-      <APropos ref={refAPropos}/>
-      <Skills ref={refSkills}/>
-      <ProjectsCard ref={refProjects}/>
-      <Experiences ref={refExperiences}/>
-      <Formations ref={refFormations}/>
+      <main>
+        <Head_Index/> 
+        <APropos ref={refAPropos}/>
+        <Skills ref={refSkills}/>
+        <ProjectsCard ref={refProjects}/>
+        <Experiences ref={refExperiences}/>
+        <Formations ref={refFormations}/>
+      </main>
     </>
 )}
 
