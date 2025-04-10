@@ -1,6 +1,6 @@
 #experiences {
    background-color: var(--background-color-second);
-   scroll-margin-top: 100px; /* Permet de compenser le header en position fixed via lien ancrage*/
+   scroll-margin-top: 50px; /* Permet de compenser le header en position fixed via lien ancrage*/
 }
 
 #experiences>div {

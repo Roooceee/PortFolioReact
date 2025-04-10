@@ -26,8 +26,8 @@ function Experience({type , title , company , place , startDate , endDate
             <hr />
             <h4>Missions principales</h4>
             <ul>
-               {responsibilities.map(e=> {
-                     return <li><ClipboardCheck/> {e}</li>
+               {responsibilities.map((e,index)=> {
+                     return <li key={index}><ClipboardCheck/> {e}</li>
                   })}
             </ul>
          </div>
@@ -35,8 +35,8 @@ function Experience({type , title , company , place , startDate , endDate
             <hr />
             <h4>Technologies & Skills</h4>
             <ul>
-               {technologies.map(e=> {
-                  return <li>{e}</li>
+               {technologies.map((e,index)=> {
+                  return <li key={index}>{e}</li>
                })}
             </ul>
          </div>

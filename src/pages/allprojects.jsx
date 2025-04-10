@@ -5,6 +5,7 @@ import ProjectListItem from "../components/projectListItem";
 
 import useStoreSectionVisible from '../storeSectionVisible'
 import '../styles/allprojects.css';
+import Footer from "../components/footer";
 
 function Allprojects(){
 
@@ -67,6 +68,8 @@ function Allprojects(){
                </div>
             </section>
          </main>
+
+         <Footer/>
 
       </>
 

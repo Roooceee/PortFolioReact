@@ -1,0 +1,50 @@
+footer {
+   background-color: var(--background-color-principal);
+}
+
+footer>div {
+   margin: auto;
+   padding: 10px;
+   display: grid;
+   gap: 10px;
+}
+
+footer>div>div {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+footer>div>div a {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-decoration: none;
+   font-family: var(--font-title);
+   color: var(--color-text-principal);
+}
+
+footer>div>div a:hover {
+   color: var(--blue-second);
+}
+
+footer>div>div>ul {
+   display: flex;
+   list-style: none;
+   gap: 20px;
+}
+
+footer hr {
+   border: none;
+   height: 2px; 
+   background-color: var(--background-color-third);
+   border-radius: 33px;
+}
+
+footer>div>p {
+   color: var(--color-white);
+   font-family: var(--font-title-2);
+   font-size: 14px;
+   text-align: center;
+   padding: 20px 0px 50px 0px;
+}

@@ -8,11 +8,11 @@
 }
 
 .carousel > .previous {
-   top: 100px;
+   top: 50px;
    right: 93%;
 }
 
 .carousel > .next {
-   top: 100px;
+   top: 50px;
    left: 93%;
 }

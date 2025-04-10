@@ -32,7 +32,7 @@ function Header() {
                   <li><a className={activeSection === 'projects' ? 'active' : ''} href='/#projects' id='projectsLink' >Projets</a></li>
                   <li><a className={activeSection === 'experiences' ? 'active' : ''} href='/#experiences' id='experiencesLink'>Expériences</a></li>
                   <li><a className={activeSection === 'formations' ? 'active' : ''} href='/#formations' id='formationsLink'>Formation</a></li>
-                  <li><a className={activeSection === 'contact' ? 'active' : ''} href='/' id='contactLink'>Contact</a></li>
+                  <li><a className={activeSection === 'contact' ? 'active' : ''} href='/#contact' id='contactLink'>Contact</a></li>
                </ul>
             </nav>
          </div>

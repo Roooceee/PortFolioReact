@@ -1,5 +1,6 @@
 .experience {
    max-width: 80%;
+   min-height: 670px;
    margin: auto;
    max-height: fit-content;
    display: flex;

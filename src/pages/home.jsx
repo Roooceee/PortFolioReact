@@ -12,6 +12,8 @@ import '../style.css'
 
 import useStoreSectionVisible from '../storeSectionVisible'
 import { useLocation } from "react-router-dom"
+import Contact from "../components/contact"
+import Footer from "../components/footer"
 
 function Home() {
 
@@ -56,13 +58,15 @@ function Home() {
   const refProjects = useRef(null)
   const refExperiences = useRef(null)
   const refFormations = useRef(null)
+  const refContact = useRef(null)
 
   const sectionsRefs = [
     {id:'apropos' , ref:refAPropos},
     {id:'skills', ref:refSkills},
     {id:'projects', ref:refProjects},
     {id:'experiences', ref:refExperiences},
-    {id:'formations', ref:refFormations}
+    {id:'formations', ref:refFormations},
+    {id:'contact',ref:refContact}
   ]
 
   // Fonction a retravailler pour la simplifier au maximum
@@ -105,6 +109,8 @@ function Home() {
         <ProjectsCard ref={refProjects}/>
         <Experiences ref={refExperiences}/>
         <Formations ref={refFormations}/>
+        <Contact ref={refContact}/>
+        <Footer/>
       </main>
     </>
 )}
