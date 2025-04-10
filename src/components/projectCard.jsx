@@ -54,9 +54,9 @@ function ProjectCard({name, description,created, homepage, update , html_url}){
          </div>
          <hr />
          <div className='dates_project'>
-            <div><Calendar size={18}/><p>Crée le : </p><p className='date'>{changeDateFormat(created)}</p></div> 
+            <div><Calendar size={18}/><p>Crée le : </p><p className='date'>{changeDateFormat(created,false)}</p></div> 
             {update ? 
-            <div><RefreshCcw size={18}/><p>Modifier le : </p><p className='date'>{changeDateFormat(update)}</p></div> 
+            <div><RefreshCcw size={18}/><p>Modifier le : </p><p className='date'>{changeDateFormat(update,false)}</p></div> 
             : ''}
          </div>
       </article>

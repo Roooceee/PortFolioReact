@@ -33,9 +33,9 @@ function ProjectListItem({name , homepage , html_url , created , update}){
                <ListLanguagePercent listLanguagesPercent={calculPercentLanguages(languages)}/>
             </div>
                <div className="dates">
-               <div><Calendar size={18}/><p>Crée le : </p><p className="date">{changeDateFormat(created)}</p></div>
+               <div><Calendar size={18}/><p>Crée le : </p><p className="date">{changeDateFormat(created,false)}</p></div>
                {update ? 
-               <div><RefreshCcw size={18}/><p>Modifier le : </p><p className="date">{changeDateFormat(update)}</p></div>
+               <div><RefreshCcw size={18}/><p>Modifier le : </p><p className="date">{changeDateFormat(update,false)}</p></div>
                : ''}
             </div>
          </div>

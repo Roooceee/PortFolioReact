@@ -1,49 +1,75 @@
-import { CircleCheckBig } from 'lucide-react'
+import { CalendarCheck, CalendarDays,CircleCheckBig, GraduationCap, MapPin, School } from 'lucide-react'
+
 import '../styles/formation.css'
-import { useState } from 'react'
+import {changeDateFormat} from '../utils/changeDateFormat.js'
 
-function Formation({intitule , option , etablissement , debut , fin , obtention , competences} ){
+function Formation({type , intitule , option , description , etablissement , lieu ,  
+   debut , fin , obtention , competences} ){
+
    
-   
-   const [isVisible,setIsVisible] = useState(false)
-   const [titleButton,setTitleButton] = useState('Afficher les compétences')
 
+   let obtentionText = null
+   let obtentionLogo = null
 
-   function changeVisibility(e){
-      e.preventDefault()
-      if(isVisible){
-         setIsVisible(false)
-         setTitleButton('Afficher les compétences')
+   if(new Date(debut) > new Date){
+      obtentionText = 'A Venir'
+      obtentionLogo = <CalendarClock />
+   }
+   else {
+      if(new Date(debut) < new Date() && new Date(fin) < new Date()){
+         if(obtention === true){
+            obtentionText = 'Obtenu'
+            obtentionLogo = <GraduationCap/>
+         }
+         else {
+            obtentionText = 'Terminé'
+            obtentionLogo = <CalendarCheck/>
+         }
       }
       else {
-         setIsVisible(true)
-         setTitleButton('Masquer les compétences')
+         obtentionText = 'En cours'
+         obtentionLogo = <CalendarDays/>
       }
    }
-
+   
    return(
 
       <article className='formation card'>
-         <h3>{intitule}</h3>
-         {option != null ? <p>{option}</p> : ''}
-         <p>{etablissement}</p>
+
+      <div className='head_formation'>
+         <div>
+            <p className='type'>{type}</p>
+            <h3>{intitule}</h3>
+            {option != null ? <p className='option'>Option {option}</p> : ''}
+            <p className='description'>{description}</p>
+         </div>
+         {obtentionText ? <span className='obtention'>{obtentionLogo}{obtentionText}</span> : ''}
+      </div>
+
+      <div className='formation-context'>
+         <ul>
+            <li className='etablissement'><School/>{etablissement}</li>
+            <li className='lieu'><MapPin/>{lieu}</li>
+            <li className='periode'><CalendarDays/> {changeDateFormat(debut,true)} au {changeDateFormat(fin,true)}</li>
+         </ul>
+      </div>
+
+      {competences.length > 0 ? 
+
+      <div className='competences'>
          <hr />
-         <p>{debut} - {fin}</p>
-         {obtention != null ? <p>Diplome obtenue</p> : ''}
-         {competences.length > 0 ? <a href="" className='button-blue' onClick={(e) => changeVisibility(e)}>{titleButton}</a> : ''}
-         {competences.length > 0 && isVisible == true? 
-            <>
-            <div className='competences'>
-               <p>Compétences Acquise : </p>
-               <hr />
-               <ul>
-                  {competences.map(element => {
-                     return <li key={element}> <CircleCheckBig /> {element}</li>
-                  })}
-               </ul>
-            </div>
-            </>
-         : ''}
+         <h4>Compétences :</h4>
+            <ul>
+               {
+               competences.map((e,index)=> {
+                  return <li key={index}><CircleCheckBig/>{e}</li>
+               })
+            }
+            </ul>
+      </div>
+      
+      : ''}
+
       </article>
 
    )

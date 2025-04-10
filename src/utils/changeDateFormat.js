@@ -1,16 +1,39 @@
 
 
-export function changeDateFormat(pDate){
+export function changeDateFormat(pDate , pFormatComplet){
 
    let date = new Date(pDate)
-   let dateMonth = date.getMonth()+1
+   let dateMonth = date.getMonth()
    let dateDate = date.getDate()
 
-   dateMonth = dateMonth >= 10 ? dateMonth : '0'+dateMonth
-   dateDate = dateDate >= 10 ? dateDate : '0'+dateDate
+   const monthText = [
+      'Janvier',
+      'Fevrier',
+      'Mars',
+      'Avril',
+      'Mai',
+      'Juin',
+      'Juillet',
+      'Aout',
+      'Septembre',
+      'Octobre',
+      'Novembre',
+      'Décembre'
+    ];
 
-   let dateFormatFR = `${dateDate}/${dateMonth}/${date.getFullYear()}`
-
+   let dateFormatFR
+    
+    if(pFormatComplet){
+      dateDate = dateDate === 1 ? dateDate+'er' : dateDate
+      dateFormatFR = `${dateDate} ${monthText[dateMonth]} ${date.getFullYear()}`
+   }
+   else {
+      dateMonth+=1
+      dateMonth = dateMonth < 10 ? '0'+dateMonth : dateMonth
+      dateDate = dateDate < 10 ? '0'+dateDate : dateDate
+      dateFormatFR = `${dateDate}/${dateMonth}/${date.getFullYear()}`
+   }
+   
    return dateFormatFR
 
 }

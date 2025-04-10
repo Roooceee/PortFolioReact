@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef} from "react"
+import { useEffect, useRef} from "react"
 
 import APropos from "../components/apropos"
 import Experiences from "../components/experiences"
@@ -65,6 +65,7 @@ function Home() {
     {id:'formations', ref:refFormations}
   ]
 
+  // Fonction a retravailler pour la simplifier au maximum
   function checkIsInView(){
    
     let topRefHeight = null
@@ -81,24 +82,17 @@ function Home() {
   
         const rect = sectionsRefs[i].ref.current.getBoundingClientRect()
         const rectTop = rect.top
-        const rectBottom = rect.bottom
         const rectPlusOne = sectionsRefs[i+1].ref.current.getBoundingClientRect()
         const rectTopPlusOne = rectPlusOne.top
-  
   
         if(rectTop < 0 && i < sectionsRefs.length-1 && rectTopPlusOne < window.innerHeight ){
           topRefHeight = rectTopPlusOne
           topId = sectionsRefs[i+1].id
         }
-        if(rectBottom === window.innerHeight){
-          topId = sectionsRefs[i].id
-        }
       }
       setActiveSection(topId)
     
     }
-    
-
   }
   
   return (

@@ -1,50 +1,132 @@
 .formation {
    max-width: 80%;
    margin: auto;
-   text-align: center;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
-}
-
-.formation h3 {
-   font-family: var(--font-title-2);
-}
-
-.formation hr {
-   margin: 20px 0px 20px 0px;
-}
-
-.formation > a.button-blue {
-   max-width: fit-content;
-   margin: 20px 10px 20px auto
-}
-
-.competences {
-   text-align: left;
-}
-
-.competences > p {
-   padding-bottom: 10px;
-}
-
-.competences > hr {
-   margin: 0px 0px 20px 0px;
-}
-
-.competences > ul {
    display: grid;
-   grid-template-columns: 1fr 1fr;
-   gap: 10px;
+   gap: 40px;
 }
 
-.competences > ul > li {
-   list-style: none;
+/* Début CSS head formation */
+.formation .head_formation {
    display: flex;
-   align-items: center;
+   justify-content: space-between;  
    gap: 5px;
 }
 
-.competences > ul > li > svg {
-   color: #2ECC71 ; 
+.formation .head_formation>div {
+   display: grid;
+   gap: 5px;
 }
+
+.formation .head_formation div .type {
+   font-size: 18px;
+   border-radius: 20px;
+   background-color: var(--blue-principal);
+   width: fit-content;
+   padding: 5px 8px;
+   font-family: var(--font-title-2);
+}
+
+.formation .head_formation>div>div {
+   display: flex;
+   align-items: baseline;
+   gap: 10px;
+}
+
+.formation .head_formation div h3 {
+   color: var(--blue-principal);
+   font-family: var(--font-title-2);
+}
+
+.formation .head_formation div .option {
+   font-family: var(--font-title-2);
+}
+
+.formation .head_formation .description {
+   padding-top: 20px;
+   font-family: var(--font-title-2);
+   font-size: 14px;
+}
+
+.formation .head_formation .obtention {
+   border-radius: 18px;
+   background-color: var(--blue-principal);
+   font-family: var(--font-title-2);
+   width: fit-content;
+   height: fit-content;
+   padding: 5px 8px;
+   display: flex;
+   align-items: center;
+   gap: 5px;
+   white-space: nowrap;
+}
+/* Fin CSS head formation */
+
+/* Début CSS formation context */
+
+.formation .formation-context ul {
+   display: grid;
+   gap: 5px;
+}
+
+.formation .formation-context .etablissement , .formation .formation-context .lieu , .formation .formation-context .periode {
+   display: flex;
+   align-items: center;
+   gap: 5px;
+   font-family: var(--font-title-2);
+}
+
+.formation .formation-context .etablissement svg, .formation .formation-context .lieu svg, .formation .formation-context .periode svg  {
+   color: var(--blue-principal);
+}
+
+/* Fin CSS formation context */
+
+/* Début CSS compétences */
+
+.formation .competences {
+   display: grid;
+   gap : 20px;
+}
+
+.formation .competences h4 {
+   font-family: var(--font-title-2);
+   font-weight: 400;   
+}
+
+.formation .competences hr {
+   border: none;
+   height: 2px; 
+   background-color: var(--background-color-third);
+   border-radius: 33px;
+}
+
+.formation .competences a {
+   display: flex;
+   align-items: center;
+   gap: 5px;
+   text-align: center;
+   margin: 0px auto 20px auto ;
+   max-width: fit-content;
+}
+
+.formation .competences ul {
+   display: grid;
+   grid-template-columns: auto auto;
+   align-items: start;
+   gap: 10px;
+}
+
+.formation .competences ul li {
+   list-style: none;
+   display: flex;
+   gap: 5px;
+   align-items: center;
+   font-family: var(--font-title-2);
+   font-size: 15px
+}
+
+.formation .competences ul li svg {
+   color: green;
+   /* Couleur a changé via une variable root */
+}
+/* Fin CSS compétences */

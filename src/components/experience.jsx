@@ -1,52 +1,45 @@
-import { useState } from 'react'
 import '../styles/experience.css'
-import {Calendar, CircleArrowDown, CircleArrowUp, CircleCheckBig } from 'lucide-react'
+import {changeDateFormat} from '../utils/changeDateFormat.js'
+import { Building2, CalendarDays, ClipboardCheck, MapPin } from 'lucide-react'
 
 
-
-function Experience({title , company , period , responsibilities , description}){
-
-   const [isVisible,setIsVisible] = useState(false)
-   const [titleButton,setTitleButton] = useState('Afficher les missions')
-
-   function changeVisibility(e){
-      e.preventDefault()
-
-      if(isVisible){
-         setIsVisible(false)
-         setTitleButton('Afficher les missions')
-      }
-      else {
-         setIsVisible(true)
-         setTitleButton('Masquer les missions')
-      }
-   }
+function Experience({type , title , company , place , startDate , endDate 
+   , responsibilities , description , technologies}){
 
 
    return (
 
       <article className='experience card-principal'>
-         <div>
-            <div>
-               <h3>{title}</h3>
-               <p className='company'>{company}</p>      
-            </div>
-            <p className='period'><Calendar/>{period}</p>
+         <div className='head_experience'>
+            <p className='type'>{type}</p>
+            <h3 className='title'>{title}</h3>
+            <p className='description'>{description}</p>
          </div>
-            <p className='description-experience'>{description}</p>
-            <div className='tasks'>
-               <a className='button-blue' href="#" onClick={(e) => changeVisibility(e)}> {titleButton} {isVisible === false ? <CircleArrowDown/> : <CircleArrowUp/> } </a>
-                  {isVisible === false ? 
-                  '' 
-                  : 
-                  <ul>
-                  {
-                  responsibilities.map((element, index) => {
-                     return <li key={element+'_'+index}> <CircleCheckBig /> {element}</li>
+         <div className='experience_context'>
+            <ul>
+               <li className='company'><Building2/>{company}</li>
+               <li className='place'> <MapPin/> {place}</li>
+               <li className='date'><CalendarDays/> {changeDateFormat(startDate , true)} au {changeDateFormat(endDate , true)}</li>
+            </ul>
+         </div>
+         <div className='responsibilities'>
+            <hr />
+            <h4>Missions principales</h4>
+            <ul>
+               {responsibilities.map(e=> {
+                     return <li><ClipboardCheck/> {e}</li>
                   })}
-                  </ul>   
-                  }
-            </div>
+            </ul>
+         </div>
+         <div className='technologies'>
+            <hr />
+            <h4>Technologies & Skills</h4>
+            <ul>
+               {technologies.map(e=> {
+                  return <li>{e}</li>
+               })}
+            </ul>
+         </div>
       </article>
 
    )

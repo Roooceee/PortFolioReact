@@ -1,37 +1,75 @@
 [
   {
-    "title": "Technicien Helpdesk",
+    "type":"Interim",
+    "title": "Technicien Helpdesk N1",
     "company": "Groupe ADSN",
-    "period": "Mars 2023 - Juillet 2024 (17 mois)",
+    "place":"Venelles, France",
+    "startDate": "2023-03-01",
+    "endDate": "2024-07-31",
     "responsibilities": [
-      "Support technique aux notaires de France.",
-      "Réponse aux demandes utilisateurs : diagnostic et résolution de problèmes.",
-      "Escalade des incidents complexes et suivi des tickets.",
-      "Formation et assistance aux utilisateurs.",
-      "Veille technologique et mise à jour des connaissances."
+      "Support technique N1 sur applications métier ADSN (SignActe, AWR) et gestion du cycle de vie des clés CLE REAL.",
+      "Installation, configuration et mise à jour à distance des logiciels ADSN sur postes clients Windows 10/11.",
+      "Diagnostic et résolution d'incidents (via LogMeIn Rescue) : applicatifs ADSN, configuration Microsoft Outlook (POP), paramétrage proxy, connectivité de base.",
+      "Assistance utilisateurs sur plateformes web dédiées : administration messagerie (Mon Espace Real) et consultation ANF.",
+      "Escalade documentée des incidents complexes ou hors périmètre (N2, prestataires externes).",
+      "Gestion et suivi des tickets (~30/jour) via PSoft ITSM, avec approche pédagogique."
     ],
-    "description": "En tant que Technicien Helpdesk, j'ai fourni un support technique à des notaires répartis sur toute la France, résolu divers incidents techniques et formé les utilisateurs. J'ai également acquis des compétences en gestion de tickets et en résolution de problèmes complexes, tout en restant à jour avec les nouvelles technologies."
+    "description": "Support N1 pour études notariales (Windows 10/11) : installation, dépannage logiciels ADSN (SignActe, AWR), gestion CLE REAL, configuration Outlook (POP) et accès réseau (proxy). Diagnostic à distance (LogMeIn Rescue), assistance plateformes web (Mon Espace Real, ANF), suivi tickets via PSoft (~30/jour) et communication pédagogique.",
+    "technologies": [
+      "Windows 10/11",
+      "Logiciels ADSN",
+      "LogMeIn Rescue",
+      "PSoft ITSM",
+      "Microsoft Outlook (POP)",
+      "Gestion CLE REAL",
+      "Configuration Proxy"
+    ]
   },
   {
-    "title": "Stagiaire Développeur Web AngularJS",
-    "company": "Calinda Software",
-    "period": "Janvier - Février 2018 (7 semaines)",
-    "responsibilities": [
-      "Création d’un formulaire dynamique pour optimiser la contractualisation SELL&SIGN.",
-      "Analyse des besoins et conception du système.",
-      "Développement, déploiement et tests de la solution."
-    ],
-    "description": "Lors de mon stage chez Calinda Software, j'ai conçu et développé un formulaire dynamique permettant d’optimiser le processus de contractualisation. J'ai participé à l'analyse des besoins, au développement de la solution, ainsi qu’à son déploiement et ses tests, tout en améliorant mes compétences en AngularJS."
+      "type":"Stage",
+      "title": "Développeur Front-end AngularJS",
+      "company": "Calinda Software",
+      "place":"Marseille, France",
+      "startDate": "2018-01-01",
+      "endDate": "2018-02-01",
+      "responsibilities": [
+        "Développement de formulaires web multi-étapes (AngularJS) pour automatiser la génération de PDF.",
+        "Analyse de modèles PDF pour extraction des variables et définition des logiques de calcul.",
+        "Implémentation de la logique front-end AngularJS (validation, data-binding, calculs).",
+        "Réalisation des tests fonctionnels des formulaires et de la préparation des données.",
+        "Utilisation de l'IDE WebStorm en environnement de test."
+      ],
+      "description": "Stage de développement front-end AngularJS axé sur l'automatisation. Conception et réalisation de plusieurs formulaires web dynamiques pour la collecte de données, s'intégrant en amont de la solution de signature électronique SELL&SIGN. Montée en compétence sur AngularJS (v1.x), la manipulation de données client et les tests fonctionnels.",
+      "technologies": [
+        "AngularJS (v1.x)",
+        "JavaScript (ES5)",
+        "HTML5",
+        "CSS3",
+        "WebStorm"
+      ]
   },
   {
-    "title": "Stagiaire Technicien Support Informatique",
+    "type":"Stage",
+    "title": "Technicien Support de Proximité",
     "company": "AP-HM Institut Paoli Calmette",
-    "period": "Juin - Juillet 2017 (5 semaines)",
+    "place":"Marseille, France",
+    "startDate": "2017-06-01",
+    "endDate": "2017-07-01",
     "responsibilities": [
-      "Diagnostic à distance des dysfonctionnements matériels/logiciels.",
-      "Assistance utilisateur à distance et résolution des problèmes.",
-      "Configuration des postes de travail et mise à jour des supports de suivi."
+      "Interventions de support informatique de proximité en accompagnement du technicien référent, en milieu hospitalier.",
+      "Installation, remplacement et configuration de matériel informatique : postes de travail, écrans (y compris configurations multi-écrans), périphériques.",
+      "Configuration initiale de postes de travail utilisateurs en environnement virtualisé (VM).",
+      "Ajout et configuration d'imprimantes réseau dans les services.",
+      "Prise de connaissance et suivi des tickets d'incidents via l'outil interne."
     ],
-    "description": "Lors de mon stage en tant que Technicien Support Informatique, j'ai diagnostiqué et résolu des problèmes techniques à distance, tout en assurant l’assistance des utilisateurs. J'ai aussi configuré des postes de travail et mis à jour des documents de suivi, ce qui m'a permis de développer des compétences en dépannage à distance."
+    "description": "Premier stage pratique en support technique réalisé en milieu hospitalier. Accompagnement d'un technicien expérimenté sur des interventions de proximité : gestion du matériel (installation, remplacement), configuration de postes utilisateurs (y compris VM), et maintenance de base des imprimantes. Découverte des processus de suivi d'incidents.",
+    "technologies": [
+      "Windows 8/10",
+      "Matériel Informatique (Postes, Écrans, Périphériques)",
+      "Environnements Virtualisés (VM)",
+      "Imprimantes Réseau",
+      "Outil de Ticketing Interne"
+    ]
   }
 ]
+ 

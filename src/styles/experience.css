@@ -5,67 +5,118 @@
    display: flex;
    flex-direction: column;
    justify-content: space-between;
+   gap: 30px;
 }
 
-.experience>div:nth-child(1) {
-   display: flex;
-   justify-content: space-between;
+.experience hr {
+   border: none;
+   height: 2px; 
+   background-color: var(--background-color-third);
+   border-radius: 33px;
 }
 
-.experience h3 {
-   font-family: var(--font-title-2);
-   color: var(--blue-principal);
-}
-
-.experience .period {
-   height: min-content;
-   font-size: 14px;
-   font-family: var(--font-classic);
-   background-color: var(--blue-principal);
+/* Début CSS head_experience */
+.experience .head_experience .type {
+   font-size: 18px;
    border-radius: 20px;
-   padding: 5px 10px;
-   display: flex;
-   align-items: center;
-   gap: 5px;
-}
-
-.experience .company {
-   font-family: var(--font-title-2);
-   padding-bottom: 30px;
-}
-
-
-.experience .description-experience {
-   font-size: 14px;
-   font-family: var(--font-classic);
-   color: var(--color-text-principal);
-}
-
-.experience .tasks a {
+   background-color: var(--blue-principal);
    width: fit-content;
-   margin: 20px auto 20px auto;
-   display: flex;
-   align-items: center;
+   padding: 5px 8px;
+   font-family: var(--font-title-2);   
+}
+
+.experience .head_experience h3 {
+   color: var(--blue-principal);
+   font-family: var(--font-title-2);
+}
+
+.experience .head_experience .description {
+   padding-top: 20px;
+   font-family: var(--font-title-2);
+   font-size: 14px;
+}
+/* Fin CSS head_experience */
+
+/* Début CSS experience_context */
+.experience .experience_context {
+   display: grid;
    gap: 5px;
 }
 
-.experience .tasks ul {
+.experience .experience_context ul {
    display: grid;
-   grid-template-columns: 1fr auto;
-}
-
-.experience .tasks ul svg {
-   color: green;
-   /* Couleur a changer via une variable root */
-}
-
-.experience .tasks ul li {
-   display: flex;
-   align-items: center;
    gap: 5px;
    list-style: none;
-   font-size: 14px;
-   font-family: var(--font-classic);
-   color: var(--color-text-principal);
-   padding-bottom: 5px;
 }
+
+.experience .experience_context .company , .experience .experience_context .place , .experience .experience_context .date {
+   display: flex;
+   align-items: center;
+   gap: 5px;
+   font-family: var(--font-title-2);
+}
+
+.experience .experience_context .company svg , .experience .experience_context .place svg , .experience .experience_context .date svg {
+   color: var(--blue-principal);
+}
+/* Fin CSS experience_context */
+
+/* Début CSS responsibilities */
+
+.experience .responsibilities {
+   display: grid;
+   gap: 20px;
+}
+
+.experience .responsibilities h4 {
+   font-family: var(--font-title-2);
+   font-weight: 400;
+}
+
+.experience .responsibilities ul {
+   display: grid;
+   gap: 10px;
+}
+
+.experience .responsibilities ul li {
+   list-style: none;
+   display: flex;
+   gap: 5px;
+   align-items: center;
+   font-family: var(--font-title-2);
+   font-size: 15px;
+}
+
+.experience .responsibilities ul li svg {
+   color: var(--blue-principal);
+}
+/* Fin CSS responsibilities */
+
+/* Début CSS technologies */
+
+.experience .technologies {
+   display: grid;
+   gap: 20px;
+}
+
+.experience .technologies h4 {
+   font-family: var(--font-title-2);
+   font-weight: 400;
+}
+
+.experience .technologies ul {
+   list-style-type: none;
+   display: flex;
+   gap: 10px;
+}
+
+.experience .technologies ul li {
+   font-size: 14px;
+   border-radius: 20px;
+   background-color: var(--blue-principal);
+   width: fit-content;
+   padding: 5px 8px;
+   font-family: var(--font-title-2);   
+}
+
+/* Fin CSS technologies */
