@@ -34,7 +34,7 @@ function Head_Index() {
             </div>
             <div>
                <a href="#projects" className="button-blue">Découvrir mon travail</a>
-               <a href="" className="button-blue">Me Contacter</a>
+               <a href="#contact" className="button-blue">Me Contacter</a>
             </div>
          </div>
       </section>
