@@ -2,17 +2,17 @@
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   gap: 0px;
+   gap: 0;
    margin: auto;
-   min-height: 535px
+   min-height: 33.4375rem;
 }
 
 /* CSS pour le head de la carte */
 
 .projectCard .head_project {
    display: grid;
-   gap: 10px;
-   min-height: 170px;
+   gap: 0.625rem;
+   min-height: 10.625rem;
 }
 
 .projectCard .head_project h3 {
@@ -23,21 +23,19 @@
 .projectCard .head_project p {
    font-family: var(--font-classic);
    color: var(--color-text-principal);
-   font-size: 14px;
+   font-size: 0.875rem;
 }
-
-
 
 /* CSS pour Languages */
 
 .language_title p {
    font-family: var(--font-title-2);
-   font-size: 16px;
+   font-size: 1rem;
 }
 
 .language_title {
    display: flex;
-   gap: 10px;
+   gap: 0.625rem;
    align-items: center;
 }
 
@@ -48,14 +46,14 @@
 /* CSS pour les liens */
 .projectCard .links_project {
    display: flex;
-   gap: 30px;
+   gap: 1.875rem;
    align-items: center;
 }
 
 .projectCard .links_project a {
    display: flex;
    align-items: center;
-   gap: 10px;
+   gap: 0.625rem;
 }
 
 /* CSS pour les dates */
@@ -67,18 +65,18 @@
 .projectCard .dates_project>div {
    display: flex;
    align-items: center;
-   gap: 5px;
+   gap: 0.3125rem;
 }
 
 .projectCard .dates_project>div>.date {
-   font-size: 14px;
+   font-size: 0.875rem;
    font-family: var(--font-classic);
    color: var(--color-text-principal);
 }
 
 .projectCard .dates_project>div>p:nth-child(2){
    font-family: var(--font-title-2);
-   font-size: 14px;
+   font-size: 0.875rem;
 }
 
 .projectCard .dates_project svg {
@@ -87,7 +85,7 @@
 
 .projectCard hr {
    border: none;
-   height: 2px; 
+   height: 0.125rem;
    background-color: var(--background-color-third);
-   border-radius: 33px;
+   border-radius: 2.0625rem;
 }

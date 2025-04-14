@@ -2,35 +2,34 @@
    max-width: 80%;
    margin: auto;
    display: grid;
-   gap: 40px;
+   gap: 2.5rem;
 }
 
-/* Début CSS head formation */
 .formation .head_formation {
    display: flex;
    justify-content: space-between;  
-   gap: 5px;
+   gap: 0.3125rem;
 }
 
 .formation .head_formation>div {
    display: grid;
-   gap: 5px;
+   gap: 0.3125rem;
 }
 
 .formation .head_formation div .type {
-   font-size: 18px;
-   border-radius: 20px;
+   font-size: 1.125rem;
+   border-radius: 1.25rem;
    background-color: var(--blue-principal);
    width: fit-content;
    height: fit-content;
-   padding: 5px 8px;
+   padding: 0.3125rem 0.5rem;
    font-family: var(--font-title-2);
 }
 
 .formation .head_formation>div>div {
    display: flex;
    align-items: baseline;
-   gap: 10px;
+   gap: 0.625rem;
 }
 
 .formation .head_formation div h3 {
@@ -43,36 +42,33 @@
 }
 
 .formation .head_formation .description {
-   padding-top: 20px;
+   padding-top: 1.25rem;
    font-family: var(--font-title-2);
-   font-size: 14px;
+   font-size: 0.875rem;
 }
 
 .formation .head_formation .obtention {
-   border-radius: 18px;
+   border-radius: 1.125rem;
    background-color: var(--blue-principal);
    font-family: var(--font-title-2);
    width: fit-content;
    height: fit-content;
-   padding: 5px 8px;
+   padding: 0.3125rem 0.5rem;
    display: flex;
    align-items: center;
-   gap: 5px;
+   gap: 0.3125rem;
    white-space: nowrap;
 }
-/* Fin CSS head formation */
-
-/* Début CSS formation context */
 
 .formation .formation-context ul {
    display: grid;
-   gap: 5px;
+   gap: 0.3125rem;
 }
 
 .formation .formation-context .etablissement , .formation .formation-context .lieu , .formation .formation-context .periode {
    display: flex;
    align-items: center;
-   gap: 5px;
+   gap: 0.3125rem;
    font-family: var(--font-title-2);
 }
 
@@ -80,13 +76,9 @@
    color: var(--blue-principal);
 }
 
-/* Fin CSS formation context */
-
-/* Début CSS compétences */
-
 .formation .competences {
    display: grid;
-   gap : 20px;
+   gap: 1.25rem;
 }
 
 .formation .competences h4 {
@@ -96,17 +88,17 @@
 
 .formation .competences hr {
    border: none;
-   height: 2px; 
+   height: 0.125rem;
    background-color: var(--background-color-third);
-   border-radius: 33px;
+   border-radius: 2.0625rem;
 }
 
 .formation .competences a {
    display: flex;
    align-items: center;
-   gap: 5px;
+   gap: 0.3125rem;
    text-align: center;
-   margin: 0px auto 20px auto ;
+   margin: 0 auto 1.25rem auto;
    max-width: fit-content;
 }
 
@@ -114,20 +106,18 @@
    display: grid;
    grid-template-columns: auto auto;
    align-items: start;
-   gap: 10px;
+   gap: 0.625rem;
 }
 
 .formation .competences ul li {
    list-style: none;
    display: flex;
-   gap: 5px;
+   gap: 0.3125rem;
    align-items: center;
    font-family: var(--font-title-2);
-   font-size: 15px
+   font-size: 0.9375rem;
 }
 
 .formation .competences ul li svg {
    color: green;
-   /* Couleur a changé via une variable root */
 }
-/* Fin CSS compétences */

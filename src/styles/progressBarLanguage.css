@@ -6,7 +6,6 @@
    background-color: #f1e05a; 
 }
 
-
 .CSS_progress {
    background-color: #663399 ;
 }
@@ -47,8 +46,8 @@
    background-color: var(--bgColor-neutral-muted);
    border-radius: var(--borderRadius-medium);
    display: flex;
-   height: 8px;
-   outline: 1px solid #0000;
+   height: 0.5rem;
+   outline: 0.0625rem solid #0000;
    overflow: hidden;
-   margin: 20px 0px 20px 0px;
+   margin: 1.25rem 0 1.25rem 0;
 }

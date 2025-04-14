@@ -1,6 +1,6 @@
 #allprojects {
    background-color: var(--background-color-second);
-   padding-top: 100px;
+   padding-top: 6.25rem;
    min-height: 100dvh;
 }
 
@@ -8,16 +8,16 @@
    font-family: var(--font-title);
    color: var(--blue-principal);
    text-align: left;
-   padding-top: 20px;
+   padding-top: 1.25rem;
 }
 
 #allprojects>div {
-   padding: 80px 50px 40px 50px;
+   padding: 5rem 3.125rem 2.5rem 3.125rem;
    margin: auto;
 }
 
 #allprojects>div>div {
-   padding: 50px 0px 50px 0px;
+   padding: 3.125rem 0 3.125rem 0;
    display: grid;
-   gap: 30px;
+   gap: 1.875rem;
 }

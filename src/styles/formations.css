@@ -1,10 +1,10 @@
 #formations {
    background-color: var(--background-color-principal);
-   scroll-margin-top: 100px; /* Permet de compenser le header en position fixed via lien ancrage*/
+   scroll-margin-top: 6.25rem;
 }
 
 #formations>div {
-   padding: 50px 0px 100px 0px;
+   padding: 3.125rem 0 6.25rem 0;
    margin: auto;
 }
 
@@ -14,7 +14,6 @@
    text-align: center;
    margin: auto;
    max-width: fit-content;
-   padding-top: 20px;
-   padding-bottom: 40px;
+   padding-top: 1.25rem;
+   padding-bottom: 2.5rem;
 }
-

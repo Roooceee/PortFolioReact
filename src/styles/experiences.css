@@ -1,10 +1,10 @@
 #experiences {
    background-color: var(--background-color-second);
-   scroll-margin-top: 50px; /* Permet de compenser le header en position fixed via lien ancrage*/
+   scroll-margin-top: 3.125rem;
 }
 
 #experiences>div {
-   padding: 50px 0px 100px 0px;
+   padding: 3.125rem 0 6.25rem 0;
    margin: auto;
 }
 
@@ -12,7 +12,6 @@
    font-family: var(--font-title);
    color: var(--blue-principal);
    text-align: center;
-   padding-top: 20px;
-   padding-bottom: 40px;
+   padding-top: 1.25rem;
+   padding-bottom: 2.5rem;
 }
-

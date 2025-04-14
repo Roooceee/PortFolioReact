@@ -50,7 +50,7 @@ function Formation({type , intitule , option , description , etablissement , lie
          <ul>
             <li className='etablissement'><School/>{etablissement}</li>
             <li className='lieu'><MapPin/>{lieu}</li>
-            <li className='periode'><CalendarDays/> {changeDateFormat(debut,true)} au {changeDateFormat(fin,true)}</li>
+            <li className='periode'><CalendarDays/>Du {changeDateFormat(debut,true,true)} au {changeDateFormat(fin,true,true)}</li>
          </ul>
       </div>
 

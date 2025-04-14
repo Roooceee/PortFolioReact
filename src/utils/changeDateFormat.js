@@ -1,6 +1,6 @@
 
 
-export function changeDateFormat(pDate , pFormatComplet){
+export function changeDateFormat(pDate , pFormatComplet , pshowDate = null){
 
    let date = new Date(pDate)
    let dateMonth = date.getMonth()
@@ -24,8 +24,13 @@ export function changeDateFormat(pDate , pFormatComplet){
    let dateFormatFR
     
     if(pFormatComplet){
-      dateDate = dateDate === 1 ? dateDate+'er' : dateDate
-      dateFormatFR = `${dateDate} ${monthText[dateMonth]} ${date.getFullYear()}`
+      if(pshowDate){
+         dateDate = dateDate === 1 ? dateDate+'er' : dateDate
+         dateFormatFR = `${dateDate} ${monthText[dateMonth]} ${date.getFullYear()}`
+      }
+      else {
+         dateFormatFR = `${monthText[dateMonth]} ${date.getFullYear()}`
+      }
    }
    else {
       dateMonth+=1

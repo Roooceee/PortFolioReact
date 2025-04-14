@@ -1,28 +1,27 @@
 .experience {
    max-width: 80%;
-   min-height: 670px;
+   min-height: 41.875rem;
    margin: auto;
    max-height: fit-content;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   gap: 30px;
+   gap: 1.875rem;
 }
 
 .experience hr {
    border: none;
-   height: 2px; 
+   height: 0.125rem;
    background-color: var(--background-color-third);
-   border-radius: 33px;
+   border-radius: 2.0625rem;
 }
 
-/* Début CSS head_experience */
 .experience .head_experience .type {
-   font-size: 18px;
-   border-radius: 20px;
+   font-size: 1.125rem;
+   border-radius: 1.25rem;
    background-color: var(--blue-principal);
    width: fit-content;
-   padding: 5px 8px;
+   padding: 0.3125rem 0.5rem;
    font-family: var(--font-title-2);   
 }
 
@@ -32,41 +31,36 @@
 }
 
 .experience .head_experience .description {
-   padding-top: 20px;
+   padding-top: 1.25rem;
    font-family: var(--font-title-2);
-   font-size: 14px;
+   font-size: 0.875rem;
 }
-/* Fin CSS head_experience */
 
-/* Début CSS experience_context */
 .experience .experience_context {
    display: grid;
-   gap: 5px;
+   gap: 0.3125rem;
 }
 
 .experience .experience_context ul {
    display: grid;
-   gap: 5px;
+   gap: 0.3125rem;
    list-style: none;
 }
 
 .experience .experience_context .company , .experience .experience_context .place , .experience .experience_context .date {
    display: flex;
    align-items: center;
-   gap: 5px;
+   gap: 0.3125rem;
    font-family: var(--font-title-2);
 }
 
 .experience .experience_context .company svg , .experience .experience_context .place svg , .experience .experience_context .date svg {
    color: var(--blue-principal);
 }
-/* Fin CSS experience_context */
-
-/* Début CSS responsibilities */
 
 .experience .responsibilities {
    display: grid;
-   gap: 20px;
+   gap: 1.25rem;
 }
 
 .experience .responsibilities h4 {
@@ -76,28 +70,25 @@
 
 .experience .responsibilities ul {
    display: grid;
-   gap: 10px;
+   gap: 0.625rem;
 }
 
 .experience .responsibilities ul li {
    list-style: none;
    display: flex;
-   gap: 5px;
+   gap: 0.3125rem;
    align-items: center;
    font-family: var(--font-title-2);
-   font-size: 15px;
+   font-size: 0.9375rem;
 }
 
 .experience .responsibilities ul li svg {
    color: var(--blue-principal);
 }
-/* Fin CSS responsibilities */
-
-/* Début CSS technologies */
 
 .experience .technologies {
    display: grid;
-   gap: 20px;
+   gap: 1.25rem;
 }
 
 .experience .technologies h4 {
@@ -108,16 +99,14 @@
 .experience .technologies ul {
    list-style-type: none;
    display: flex;
-   gap: 10px;
+   gap: 0.625rem;
 }
 
 .experience .technologies ul li {
-   font-size: 14px;
-   border-radius: 20px;
+   font-size: 0.875rem;
+   border-radius: 1.25rem;
    background-color: var(--blue-principal);
    width: fit-content;
-   padding: 5px 8px;
+   padding: 0.3125rem 0.5rem;
    font-family: var(--font-title-2);   
 }
-
-/* Fin CSS technologies */

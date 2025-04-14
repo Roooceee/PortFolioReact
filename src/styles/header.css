@@ -23,31 +23,31 @@ header>div>div>a {
 header>div>div a:hover {
    color: var(--blue-second);
 }
- 
+
 header>div>p {
    font-family: var(--font-title);
    color: var(--color-text-principal);
 }
 
 .logo {
-   max-width: 90px;
-   padding-top: 8px;
+   max-width: 5.625rem;
+   padding-top: 0.5rem;
 }
 
 header nav ul {
    display: flex;
    justify-content: end;
-   gap: 20px;
+   gap: 1.25rem;
    list-style: none;
    align-items: center;
 }
 
 header nav ul li a {
-   padding: 35px 10px;
+   padding: 2.1875rem 0.625rem;
 }
 
 header nav ul li a:hover {
-   border-bottom: 5px solid var(--blue-second);
+   border-bottom: 0.3125rem solid var(--blue-second);
 }
 
 header a {
@@ -62,15 +62,10 @@ header nav ul a:hover {
 
 header nav ul a.active {
    color: var(--blue-second);
-   border-bottom: 5px solid var(--blue-second);
+   border-bottom: 0.3125rem solid var(--blue-second);
 }
 
-/* 
-.burger-icon {
-   display: none;
-} */
-
-@media (max-width: 767px) {
+@media (max-width: 47.1875em) {
 
    #root > header > div > nav > ul {
       display: none;
@@ -79,11 +74,10 @@ header nav ul a.active {
    .burger-icon span {
       display: block;
       background-color: var(--color-text-principal);
-      width: 35px;
-      height: 5px;
-      margin: 6px 0;
-      border-radius: 20px;
-  }
+      width: 2.1875rem;
+      height: 0.3125rem;
+      margin: 0.375rem 0;
+      border-radius: 1.25rem;
+   }
 
 }
-   

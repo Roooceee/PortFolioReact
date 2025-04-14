@@ -1,27 +1,27 @@
 #apropos {
    background-color: var(--background-color-principal);
-   scroll-margin-top: 100px; /* Permet de compenser le header en position fixed via lien ancrage*/
+   scroll-margin-top: 6.25rem;
 }
 
 #apropos>div {
-   padding: 60px 0px 60px 0px;
+   padding: 3.75rem 0 3.75rem 0;
    margin: auto;
-   max-width: 900px;
+   max-width: 56.25rem;
    display: grid;
    grid-template-columns: auto 1fr;
    align-items: center;
-   gap: 50px;
+   gap: 3.125rem;
    margin: auto;
 }
 
 #apropos img {
-   max-width: 300px;
+   max-width: 18.75rem;
    border-radius: 100%;
 }
 
 #apropos>div>div {
    display: grid;
-   gap: 30px;
+   gap: 1.875rem;
 }
 
 #apropos h2 {
@@ -35,15 +35,12 @@
 }
 
 @media (max-width: 767px) {
-
    #apropos>div {
       grid-template-columns: 1fr;
-      
    }
 
    #apropos img {
       margin: auto;
       max-width: 60%;
    }
-
- }
+}

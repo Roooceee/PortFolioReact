@@ -6,7 +6,7 @@
     "description":"Parcours débutant par les fondamentaux (HTML/CSS, Algo/Python), évoluant vers le JavaScript moderne (interactions DOM, appels API via fetch) et React.js, avec une initiation au côté serveur via PHP",
     "etablissement": "laPlateforme.io",
     "lieu": "Brignoles, France",
-    "debut": "2024-12-01",
+    "debut": "2024-09-01",
     "fin": "2025-04-11",
     "obtention":null,
 
@@ -27,7 +27,7 @@
     "description":"Diplôme de technicien supérieur (Bac+2) spécialisé dans la conception, le développement et la maintenance d'applications logicielles métier.",
     "etablissement": "Lycée Charles Peguy",
     "lieu": "Marseille, France", 
-    "debut": "2016-01-09",
+    "debut": "2016-09-01",
     "fin": "2018-06-30",
     "obtention":true,
 

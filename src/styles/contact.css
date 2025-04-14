@@ -1,12 +1,12 @@
 /* Début CSS Contact */
 #contact {
    background-color: var(--background-color-second);
-   scroll-margin-top: 50px;
+   scroll-margin-top: 3.125rem; /* 50px */
 }
 
 #contact>div {
    margin: auto;
-   padding: 60px 50px 60px 50px;
+   padding: 3.75rem 3.125rem 3.75rem 3.125rem; /* 60px 50px 60px 50px */
 }
 
 #contact>div>h2 {
@@ -15,14 +15,14 @@
    text-align: center;
    margin: auto;
    max-width: fit-content;
-   padding-top: 20px;
-   padding-bottom: 40px;
+   padding-top: 1.25rem; /* 20px */
+   padding-bottom: 2.5rem; /* 40px */
 }
 
 #contact>div>div {
    display: flex;
    justify-content: center;
-   gap: 50px;
+   gap: 3.125rem; /* 50px */
 }
 
 /* Début CSS contact_info */
@@ -35,17 +35,17 @@
 
 #contact>div>div .contact_info ul {
    display: grid;
-   gap: 10px;
+   gap: 0.625rem; /* 10px */
 }
 
 #contact>div>div .contact_info ul li{
    list-style: none;
    display: flex;
-   gap: 5px;
+   gap: 0.3125rem; /* 5px */
    align-items: center;
    font-family: var(--font-title-2);
    color: var(--color-text-principal);
-   font-size: 14px;
+   font-size: 0.875rem; /* 14px */
 }
 
 #contact>div>div .contact_info ul li svg {
@@ -60,15 +60,16 @@
 /* Début CSS contact form */
 #contact>div>div>form {
    display: grid;
-   padding: 30px;
+   padding: 1.875rem;
    grid-template-columns: 1fr 1fr;
    align-items: start;
-   gap: 20px;
+   gap: 1.25rem; /* 20px */
 }
 
 #contact>div>div>form>div {
    display: grid;
-   gap: 10px;
+   gap: 0.625rem; /* 10px */
+   min-height: 5.625rem; /* 90px */
 }
 
 #contact .head_form , #contact .email_form , #contact .company_form , #contact .reason_form , #contact .message_form , #contact>div>div>form input[type=submit] {
@@ -82,44 +83,48 @@
 
 #contact .head_form p , #contact .required-legend{
    font-family: var(--font-title-2);
-   font-size: 14px;
+   font-size: 0.875rem; /* 14px */
 }
 
 #contact>div>div>form>div>label {
    font-family: var(--font-title-2);
-   font-size: 14px;
+   font-size: 0.875rem; /* 14px */
 }
 
 form #name , form #lastname , form #lastname , form #email , #contact #company , form #reason, form #message  {
-   height: 30px;
-   border-radius: 5px;
-   border: 2px solid var(--blue-principal);
+   height: 1.875rem; /* 30px */
+   border-radius: 0.3125rem; /* 5px */
+   border: 0.125rem solid var(--blue-principal); /* 2px */
    background-color: var(--background-color-second);
    color: var(--color-white);
-   font-size: 14px;
+   font-size: 0.875rem; /* 14px */
    font-family: var(--font-title-2);
-   padding: 0px 10px;
+   padding: 0px 0.625rem; /* 10px */
 }
 
 #lastname::placeholder , #name::placeholder , #email::placeholder , #reason , #message::placeholder  {
-   font-size: 14px;
+   font-size: 0.875rem; /* 14px */
    font-family: var(--font-title-2);
+}
+
+#contact > div > div > form > div.message_form {
+   min-height: 14.375rem; /* 230px */
 }
 
 #contact>div>div>form textarea {
    resize: none;
-   min-height: 160px;
-   padding: 5px 10px;
+   min-height: 10rem; /* 160px */
+   padding: 0.3125rem 0.625rem; /* 5px 10px */
 }
 
 #contact form input[type=submit]{
    text-decoration: none;
    color: var(--color-white);
    font-family: var(--font-title);
-   font-size: 18px;
-   border-radius: 10px;
+   font-size: 1.125rem; /* 18px */
+   border-radius: 0.625rem; /* 10px */
    background-color: var(--blue-principal);
-   padding: 10px 15px;
+   padding: 0.625rem 0.9375rem; /* 10px 15px */
    display: inline-block;
    text-align: center;
    border: none;
@@ -133,14 +138,14 @@ form #name , form #lastname , form #lastname , form #email , #contact #company ,
 #contact .asterix {
    color: var(--blue-principal);
    font-family: Arial, Helvetica, sans-serif;
-   font-size: 18px;
+   font-size: 1.125rem; /* 18px */
    font-weight: 400;
 }
 
 #contact .error {
    color: red;
    font-family: var(--font-title-2);
-   font-size: 12px;
+   font-size: 0.75rem; /* 12px */
 }
 
 #contact .border-red {

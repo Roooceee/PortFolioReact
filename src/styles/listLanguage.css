@@ -1,14 +1,13 @@
-
 .languages ul {
    display: flex;
-   gap: 5px;
+   gap: 0.3125rem;
 }
 
 .languages ul li {
-   border-radius: 22px;
-   padding: 4px 8px;
+   border-radius: 1.375rem;
+   padding: 0.25rem 0.5rem;
    background-color: black;
-   font-size: 14px;
+   font-size: 0.875rem;
    font-family: var(--font-classic);
 }
 
@@ -18,67 +17,66 @@
 
 .HTML_before::before {
    content: "●";
-   margin-right: 5px;
+   margin-right: 0.3125rem;
    color: #e34c26;
 }
 
 .JavaScript_before::before {
    content: "●";
-   margin-right: 5px;
+   margin-right: 0.3125rem;
    color: #f1e05a;
 }
 
 .CSS_before::before {
    content: "●";
-   margin-right: 5px;
+   margin-right: 0.3125rem;
    color: #663399;
 }
 
 .Python_before::before {
    content: "●";
-   margin-right: 5px;
+   margin-right: 0.3125rem;
    color: #3572A5;
 }
 
 .Java_before::before {
    content: "●";
-   margin-right: 5px;
+   margin-right: 0.3125rem;
    color: #b07219;
 }
 
 .TypeScript_before::before {
    content: "●";
-   margin-right: 5px;
+   margin-right: 0.3125rem;
    color: #3178c6;
 }
 
 .PHP_before::before {
    content: "●";
-   margin-right: 5px;
+   margin-right: 0.3125rem;
    color: #4F5D95;
 }
 
 .C#_before::before {
    content: "●";
-   margin-right: 5px;
+   margin-right: 0.3125rem;
    color: #178600;
 }
 
 .C_before::before {
    content: "●";
-   margin-right: 5px;
+   margin-right: 0.3125rem;
    color: #555555;
 }
 
 .Ruby_before::before {
    content: "●";
-   margin-right: 5px;
+   margin-right: 0.3125rem;
    color: #701516;
 }
 
 .Markdown_before::before {
    content: "●";
-   margin-right: 5px;
+   margin-right: 0.3125rem;
    color: #083fa1;
 }
-

@@ -19,7 +19,7 @@ function Experience({type , title , company , place , startDate , endDate
             <ul>
                <li className='company'><Building2/>{company}</li>
                <li className='place'> <MapPin/> {place}</li>
-               <li className='date'><CalendarDays/> {changeDateFormat(startDate , true)} au {changeDateFormat(endDate , true)}</li>
+               <li className='date'><CalendarDays/> De {changeDateFormat(startDate , true,false)} à {changeDateFormat(endDate , true,false)}</li>
             </ul>
          </div>
          <div className='responsibilities'>
