@@ -17,7 +17,7 @@ function Header() {
             <div>
                <Link to="/">
                <img src="/img/logo.png" className='logo' alt="logo du portfolio"/>
-               <p>Sébastien LUCAS</p>
+               Sébastien LUCAS
                </Link>
             </div>
             <nav>

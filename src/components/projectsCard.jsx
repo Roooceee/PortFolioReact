@@ -26,7 +26,7 @@ function Projects(props,ref){
 
       <section id='projects' ref={ref}>
          <div className="contain-1440">
-            <h2>Mes Derniers Projets</h2>
+            <h2 className="title-section">Mes Derniers Projets</h2>
                {projects.length>0 ? 
                <div>
                   <ProjectCard key = {projects[0].name} name = {projects[0].name}  created= {projects[0].created_at} description = {projects[0].description} homepage = {projects[0].homepage} update = {projects[0].updated_at} html_url = {projects[0].html_url}/>

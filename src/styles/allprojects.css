@@ -1,13 +1,13 @@
 #allprojects {
-   background-color: var(--background-color-second);
-   padding-top: 6.25rem;
+   background-color: var(--color-bg-secondary);
+   padding-top: 3rem;
    min-height: 100dvh;
 }
 
 #allprojects h1 {
    font-family: var(--font-title);
-   color: var(--blue-principal);
-   text-align: left;
+   color: var(--color-blue-primary);
+   text-align: center;
    padding-top: 1.25rem;
 }
 

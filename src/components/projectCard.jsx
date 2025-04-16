@@ -28,35 +28,35 @@ function ProjectCard({name, description,created, homepage, update , html_url}){
    },[])
 
    return(
-      <article className="card projectCard">
+      <article className="card-secondary projectCard">
 
          <div className='head_project'>
             <h3>{name}</h3>
             <p>{description}</p>
          </div>
          
-         <hr />
+         <hr className='hr-grey' />
 
          <div className='languages'>
-               <div className='language_title'>
+               <h4 className='language_title'>
                   <Code size={24} />
-                  {Object.values(languages).length > 1 ? <p>Languages</p> : <p>Language</p> }
-               </div>
+                  {Object.values(languages).length > 1 ? 'Languages' : 'Language' }
+               </h4>
                <ProgressBarLanguage ListLanguagesPercent={calculPercentLanguages(languages)}/>
                <ListLanguage listLanguagesPercent={calculPercentLanguages(languages)}/>
          </div>
             
          <div className="links_project">
             {homepage ? 
-            <a href={homepage} target="_blank" className="button-blue"><SquareArrowOutUpRight size={22} /> Visiter le site</a> : 
+            <a href={homepage} target="_blank" className="button-blue"><SquareArrowOutUpRight size={18} /> Visiter le site</a> : 
             ''}
-            <a href={html_url} target="_blank" className="button-blue"><Github size={24} />Voir le code</a>
+            <a href={html_url} target="_blank" className="button-blue"><Github size={18} />Voir le code</a>
          </div>
-         <hr />
+         <hr className='hr-grey' />
          <div className='dates_project'>
-            <div><Calendar size={18}/><p>Crée le : </p><p className='date'>{changeDateFormat(created,false)}</p></div> 
+            <div><Calendar size={18}/><p>Crée le : </p><p className='numeric'>{changeDateFormat(created,false,false)}</p></div> 
             {update ? 
-            <div><RefreshCcw size={18}/><p>Modifier le : </p><p className='date'>{changeDateFormat(update,false)}</p></div> 
+            <div><RefreshCcw size={18}/><p>Modifier le : </p><p className='numeric'>{changeDateFormat(update,false,false)}</p></div> 
             : ''}
          </div>
       </article>

@@ -2,8 +2,12 @@
    position: relative;
 }
 
+.carousel>article {
+   max-width: 80%;
+}
+
 .carousel > a.previous , .carousel > a.next {
-   color: var(--blue-principal);
+   color: var(--color-blue-primary);
    position: absolute;
 }
 

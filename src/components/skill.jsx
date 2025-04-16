@@ -38,7 +38,7 @@ function Skill({title,list,logo=null}){
 
       <article className='skill'>
          {/* Affiche l'icone si Icon à chargé sinon affiche rien */}
-         <h3>{Icon != null? <Icon size={36}/> : ''}{title}</h3>
+         <h3 className='title-section'>{Icon != null? <Icon size={36}/> : ''}{title}</h3>
          <ul>
             {list.map(element => {
             return <li key={element}>{element}</li> 

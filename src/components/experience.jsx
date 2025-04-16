@@ -11,7 +11,7 @@ function Experience({type , title , company , place , startDate , endDate
 
       <article className='experience card-principal'>
          <div className='head_experience'>
-            <p className='type'>{type}</p>
+            <p className='type badge'>{type}</p>
             <h3 className='title'>{title}</h3>
             <p className='description'>{description}</p>
          </div>
@@ -23,7 +23,7 @@ function Experience({type , title , company , place , startDate , endDate
             </ul>
          </div>
          <div className='responsibilities'>
-            <hr />
+            <hr className='hr-grey' />
             <h4>Missions principales</h4>
             <ul>
                {responsibilities.map((e,index)=> {
@@ -32,7 +32,7 @@ function Experience({type , title , company , place , startDate , endDate
             </ul>
          </div>
          <div className='technologies'>
-            <hr />
+            <hr className='hr-grey' />
             <h4>Technologies & Skills</h4>
             <ul>
                {technologies.map((e,index)=> {

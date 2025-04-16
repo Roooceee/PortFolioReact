@@ -1,49 +1,30 @@
 .skill {
-   max-width: fit-content;
+   display: flex;
+   flex-direction: column;
+   justify-content: start;
+   gap: 1rem;
 }
 
 .skill h3 {
    display: flex;
    align-items: center;
    gap: 0.625rem;
-   font-family: var(--font-title);
-   color: var(--blue-principal);
 }
 
 .skill ul {
-   padding-top: 0.625rem;
+   padding-left: 0.75rem;
    display: grid;
+   gap: 0.25rem;
 }
 
-.skill li {
-   padding: 0.625rem 0 0 1.25rem;
-   list-style: none;
-   font-family: var(--font-classic);
-   color: var(--color-text-principal);
+.skill ul li {
+   color: var(--text-on-dark-bg);
+   font-size: var(--font-size-base);
 }
 
 .skill li::before {
    content: "■";
    margin-right: 0.625rem;
-   color: var(--blue-principal);
+   color: var(--color-blue-primary);
 }
 
-@media (max-width: 767px) {
-   #skills > div > article > h3 > svg {
-      width: 1.5625rem;
-   }
-
-   .skill h3 {
-      font-size: smaller;
-   }
-
-   .skill ul {
-      padding-top: 1.25rem;
-      gap: 0.3125rem;
-   }
-
-   .skill li {
-      padding: 0;
-      font-size: 0.875rem;
-   }
-}

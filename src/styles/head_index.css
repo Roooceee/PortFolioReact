@@ -1,6 +1,7 @@
+/* Début CSS Head_index */
 #head_index {
    scroll-margin-top: 6.25rem;
-   background-color: var(--background-color-second);
+   background-color: var(--color-bg-secondary);
    padding: 10rem 0 3.75rem 0;
    min-height: 31.25rem;
    display: grid;
@@ -21,16 +22,30 @@
 }
 
 #head_index>div>div:nth-child(2) {
+   margin: auto;
    display: flex;
    justify-content: center;
    gap: 1.875rem;
 }
 
 #head_index h1 {
-   color: var(--blue-principal);
+   color: var(--color-blue-primary);
    font-family: var(--font-title);
 }
 
+#head_index h2 {
+   color: var(--color-blue-secondary);
+   font-family: var(--font-title);
+}
+
+#head_index p {
+   font-family: var(--font-primary);
+   color: var(--text-on-dark-bg);
+   padding-bottom: 3.125rem;
+}
+
+
+/* Début CSS typing-text */
 .typing-text {
    display: inline-block;
    overflow: hidden; 
@@ -52,14 +67,5 @@
     from { width: 100%; }
     to { width: 0; }
 }
-
-#head_index h2 {
-   color: var(--blue-second);
-   font-family: var(--font-title);
-}
-
-#head_index p {
-   color: var(--color-text-principal);
-   font-family: var(--font-classic);
-   padding-bottom: 3.125rem;
-}
+/* Fin CSS typing-text */
+/* FIN CSS Head_index */

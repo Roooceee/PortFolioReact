@@ -1,5 +1,5 @@
 footer {
-   background-color: var(--background-color-principal);
+   background-color: var(--color-bg-primary);
 }
 
 footer>div {
@@ -21,11 +21,11 @@ footer>div>div a {
    align-items: center;
    text-decoration: none;
    font-family: var(--font-title);
-   color: var(--color-text-principal);
+   color: var(--text-on-dark-bg);
 }
 
 footer>div>div a:hover {
-   color: var(--blue-second);
+   color: var(--color-blue-secondary);
 }
 
 footer>div>div>ul {
@@ -34,17 +34,7 @@ footer>div>div>ul {
    gap: 1.25rem;
 }
 
-footer hr {
-   border: none;
-   height: 0.125rem; 
-   background-color: var(--background-color-third);
-   border-radius: 2.0625rem;
-}
-
 footer>div>p {
-   color: var(--color-white);
-   font-family: var(--font-title-2);
-   font-size: 0.875rem;
    text-align: center;
    padding: 1.25rem 0 3.125rem 0;
 }

@@ -26,7 +26,7 @@ function Experiences(props,ref){
       <section id="experiences">
          <div className="contain-1440">
             
-            <h2 ref={ref}>Mes Expériences Professionnelles</h2>
+            <h2 ref={ref} className='title-section'>Mes Expériences Professionnelles</h2>
 
             <>
             {experiences.length > 0 ? 

@@ -1,40 +1,19 @@
 #skills {
-   background-color: var(--background-color-second);
-   display: grid;
-   padding: 2.5rem 0 3.75rem 0;
+   background-color: var(--color-bg-secondary);
    scroll-margin-top: 6.25rem;
+   display: grid;
 }
 
 #skills>div {
    display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
+   gap: 1.875rem;;
+   margin: auto;
+   padding: 3.75rem 0 3.75rem 0;
+}
+
+
+#skills>div>div {
+   display: flex;
+   justify-content: space-around;
    gap: 6.25rem;
-   margin: auto;
-   max-width: fit-content;
-}
-
-#skills > div > article {  
-   height: 100%;
-}
-
-#skills h2 {
-   text-align: center;
-   font-family: var(--font-title);
-   color: var(--blue-principal);
-   padding-top: 1.25rem;
-   padding-bottom: 2.5rem;
-   margin: auto;
-}
-
-@media (max-width: 1024px){
-   #skills>div {
-      gap: 1.25rem;
-      margin: auto;
-   }
-}
-
-@media (max-width: 767px) {
-   #skills>div {
-      grid-template-columns: 1fr 1fr;
-   }
 }

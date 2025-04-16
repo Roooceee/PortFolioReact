@@ -12,7 +12,7 @@ function Footer(){
             <div>
                <Link to="/">
                <img src="/img/logo.png" className='logo' alt="logo du portfolio"/>
-               <p>Sébastien LUCAS</p>
+               Sébastien LUCAS
                </Link>
 
                <ul>
@@ -21,8 +21,8 @@ function Footer(){
                   <li><a target="_blank" href="mailto:sebastien.jose.lucas@gmail.com"><Mail/></a></li>
                </ul>
             </div>
-            <hr />
-            <p> ©2025 - Sébastien LUCAS - Tous droits réservé</p>
+            <hr className='hr-grey' />
+            <p> ©<span className='numeric'>2025</span> - Sébastien LUCAS - Tous droits réservé</p>
          </div>
       </footer>
 

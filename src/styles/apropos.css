@@ -1,5 +1,6 @@
+/* Début CSS apropos */
 #apropos {
-   background-color: var(--background-color-principal);
+   background-color: var(--color-bg-primary);
    scroll-margin-top: 6.25rem;
 }
 
@@ -7,8 +8,8 @@
    padding: 3.75rem 0 3.75rem 0;
    margin: auto;
    max-width: 56.25rem;
-   display: grid;
-   grid-template-columns: auto 1fr;
+   display: flex;
+   justify-content: space-between;
    align-items: center;
    gap: 3.125rem;
    margin: auto;
@@ -24,23 +25,9 @@
    gap: 1.875rem;
 }
 
-#apropos h2 {
-   font-family: var(--font-title);
-   color: var(--blue-principal);
-   text-align: center;
-}
-
-#apropos p {
-   color: var(--color-text-principal);
-}
-
+/* Début CSS Responsive Mobile */
 @media (max-width: 767px) {
    #apropos>div {
-      grid-template-columns: 1fr;
-   }
-
-   #apropos img {
-      margin: auto;
-      max-width: 60%;
+      flex-direction: column;
    }
 }

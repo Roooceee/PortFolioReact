@@ -34,16 +34,16 @@ function Formation({type , intitule , option , description , etablissement , lie
    
    return(
 
-      <article className='formation card'>
+      <article className='formation card-secondary'>
 
       <div className='head_formation'>
          <div>
-            <p className='type'>{type}</p>
+            <p className='type badge'>{type}</p>
             <h3>{intitule}</h3>
             {option != null ? <p className='option'>Option {option}</p> : ''}
             <p className='description'>{description}</p>
          </div>
-         {obtentionText ? <span className='obtention'>{obtentionLogo}{obtentionText}</span> : ''}
+         {obtentionText ? <span className='obtention badge'>{obtentionLogo}{obtentionText}</span> : ''}
       </div>
 
       <div className='formation-context'>
@@ -57,8 +57,8 @@ function Formation({type , intitule , option , description , etablissement , lie
       {competences.length > 0 ? 
 
       <div className='competences'>
-         <hr />
-         <h4>Compétences :</h4>
+         <hr className='hr-grey' />
+         <h4>Compétence{competences.length>1?'s':''}</h4>
             <ul>
                {
                competences.map((e,index)=> {

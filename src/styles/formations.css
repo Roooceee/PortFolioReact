@@ -1,19 +1,11 @@
 #formations {
-   background-color: var(--background-color-principal);
+   background-color: var(--color-bg-primary);
    scroll-margin-top: 6.25rem;
 }
 
 #formations>div {
-   padding: 3.125rem 0 6.25rem 0;
+   display: grid;
+   gap: 1.875rem;
+   padding: 3.75rem 0 3.75rem 0;
    margin: auto;
-}
-
-#formations>div h2 {
-   font-family: var(--font-title);
-   color: var(--blue-principal);
-   text-align: center;
-   margin: auto;
-   max-width: fit-content;
-   padding-top: 1.25rem;
-   padding-bottom: 2.5rem;
 }

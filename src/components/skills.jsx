@@ -24,14 +24,16 @@ useEffect( ()=>{
 return (
 
    <section  id='skills'>
-      <h2 ref={ref}>Compétences</h2>
-      <div>
-      {skills.map(element => {
+      <div className="contain-1440">
+         <h2 ref={ref} className="title-section">Compétences</h2>
+         <div>
+         {skills.map(element => {
 
-         return <Skill key={element.title} logo={element.logo} title={element.title} list={element.skills_details}/>
-         
-         })}
+            return <Skill key={element.title} logo={element.logo} title={element.title} list={element.skills_details}/>
+            
+            })}
 
+         </div>
       </div>
    </section>
 

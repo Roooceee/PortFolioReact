@@ -4,7 +4,7 @@ function ProgressBarLanguage({ListLanguagesPercent}){
 
 
    return (
-      <span className="Progress">
+      <span className="progress-bar">
          {ListLanguagesPercent.map((language)=> {
             return (
                <span key={language.language} className={language.language+'_progress'} style={{ width: language.percentLanguage+'%'}}></span>

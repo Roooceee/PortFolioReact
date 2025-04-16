@@ -1,5 +1,6 @@
+/* Début CSS Header */
 header {
-   background-color: var(--background-color-principal);
+   background-color: var(--color-bg-primary);
    position: fixed;
    top: 0;
    left: 0;
@@ -14,6 +15,7 @@ header>div {
    margin: auto;
 }
 
+/* Début CSS Logo */
 header>div>div>a {
    display: flex;
    justify-content: center;
@@ -21,19 +23,22 @@ header>div>div>a {
 }
 
 header>div>div a:hover {
-   color: var(--blue-second);
-}
-
-header>div>p {
-   font-family: var(--font-title);
-   color: var(--color-text-principal);
+   color: var(--color-blue-secondary);
 }
 
 .logo {
    max-width: 5.625rem;
    padding-top: 0.5rem;
 }
+/* Fin CSS Logo */
 
+header a {
+   text-decoration: none;
+   font-family: var(--font-title);
+   color: var(--text-on-dark-bg);
+}
+
+/* Début CSS Nav */
 header nav ul {
    display: flex;
    justify-content: end;
@@ -47,25 +52,18 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-   border-bottom: 0.3125rem solid var(--blue-second);
-}
-
-header a {
-   text-decoration: none;
-   font-family: var(--font-title);
-   color: var(--color-text-principal);
-}
-
-header nav ul a:hover {
-   color: var(--blue-second);
+   color: var(--color-blue-secondary);
+   border-bottom: 0.3125rem solid var(--color-blue-secondary);
 }
 
 header nav ul a.active {
-   color: var(--blue-second);
-   border-bottom: 0.3125rem solid var(--blue-second);
+   color: var(--color-blue-primary);
+   border-bottom: 0.3125rem solid var(--color-blue-primary);
 }
+/* Début CSS Nav */
 
-@media (max-width: 47.1875em) {
+/* Début CSS Responsive */
+@media (max-width: 1024px) {
 
    #root > header > div > nav > ul {
       display: none;
@@ -81,3 +79,5 @@ header nav ul a.active {
    }
 
 }
+
+/* FIN CSS Header */

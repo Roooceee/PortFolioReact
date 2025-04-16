@@ -1,28 +1,25 @@
 /* Début CSS Contact */
 #contact {
-   background-color: var(--background-color-second);
-   scroll-margin-top: 3.125rem; /* 50px */
+   background-color: var(--color-bg-secondary);
+   scroll-margin-top: 3.125rem;
 }
 
 #contact>div {
+   display: grid;
+   gap: 1.875rem;
+   padding: 3.75rem 0 3.75rem 0;
    margin: auto;
-   padding: 3.75rem 3.125rem 3.75rem 3.125rem; /* 60px 50px 60px 50px */
 }
 
 #contact>div>h2 {
-   font-family: var(--font-title);
-   color: var(--blue-principal);
-   text-align: center;
    margin: auto;
    max-width: fit-content;
-   padding-top: 1.25rem; /* 20px */
-   padding-bottom: 2.5rem; /* 40px */
 }
 
 #contact>div>div {
    display: flex;
    justify-content: center;
-   gap: 3.125rem; /* 50px */
+   gap: 3.125rem;
 }
 
 /* Début CSS contact_info */
@@ -30,26 +27,23 @@
    height: fit-content;
    display: flex;
    align-items: center;
-   list-style: none;
 }
 
 #contact>div>div .contact_info ul {
    display: grid;
-   gap: 0.625rem; /* 10px */
+   gap: 0.625rem;
 }
 
 #contact>div>div .contact_info ul li{
    list-style: none;
    display: flex;
-   gap: 0.3125rem; /* 5px */
+   gap: 0.3125rem;
    align-items: center;
-   font-family: var(--font-title-2);
-   color: var(--color-text-principal);
-   font-size: 0.875rem; /* 14px */
+   color: var(--text-on-dark-bg);
 }
 
 #contact>div>div .contact_info ul li svg {
-   color: var(--blue-principal);
+   color: var(--color-blue-primary);
 }
 
 #contact>div>div .contact_info ul li a {
@@ -63,13 +57,13 @@
    padding: 1.875rem;
    grid-template-columns: 1fr 1fr;
    align-items: start;
-   gap: 1.25rem; /* 20px */
+   gap: 1.25rem;
 }
 
 #contact>div>div>form>div {
-   display: grid;
-   gap: 0.625rem; /* 10px */
-   min-height: 5.625rem; /* 90px */
+   display: flex;
+   flex-direction: column;
+   gap: 0.25rem;
 }
 
 #contact .head_form , #contact .email_form , #contact .company_form , #contact .reason_form , #contact .message_form , #contact>div>div>form input[type=submit] {
@@ -77,54 +71,53 @@
 }
 
 #contact .head_form h3 {
-   color: var(--blue-principal);
-   font-family: var(--font-title-2);  
+   color: var(--color-blue-primary);
 }
 
 #contact .head_form p , #contact .required-legend{
-   font-family: var(--font-title-2);
-   font-size: 0.875rem; /* 14px */
+   font-size: var(--font-size-sm);
 }
 
 #contact>div>div>form>div>label {
-   font-family: var(--font-title-2);
-   font-size: 0.875rem; /* 14px */
+   color: var(--text-on-dark-bg);
+   font-family: var(--font-primary);
+   font-size: var(--font-size-sm);
 }
 
 form #name , form #lastname , form #lastname , form #email , #contact #company , form #reason, form #message  {
-   height: 1.875rem; /* 30px */
-   border-radius: 0.3125rem; /* 5px */
-   border: 0.125rem solid var(--blue-principal); /* 2px */
-   background-color: var(--background-color-second);
-   color: var(--color-white);
-   font-size: 0.875rem; /* 14px */
-   font-family: var(--font-title-2);
-   padding: 0px 0.625rem; /* 10px */
+   height: 1.875rem;
+   border-radius: 0.3125rem;
+   border: 0.125rem solid var(--color-blue-primary); 
+   background-color: var(--color-bg-secondary);
+   color: var(--text-on-dark-bg);
+   font-size: var(--font-size-sm);
+   font-family: var(--font-primary);
+   padding: 0 0.625rem;
 }
 
 #lastname::placeholder , #name::placeholder , #email::placeholder , #reason , #message::placeholder  {
-   font-size: 0.875rem; /* 14px */
-   font-family: var(--font-title-2);
+   font-size: 0.875rem;
+   font-family: var(--font-primary);
 }
 
 #contact > div > div > form > div.message_form {
-   min-height: 14.375rem; /* 230px */
+   min-height: 14.375rem;
 }
 
 #contact>div>div>form textarea {
    resize: none;
-   min-height: 10rem; /* 160px */
-   padding: 0.3125rem 0.625rem; /* 5px 10px */
+   min-height: 10rem;
+   padding: 0.3125rem 0.625rem;
 }
 
 #contact form input[type=submit]{
    text-decoration: none;
-   color: var(--color-white);
+   color: var(--text-on-dark-bg);
    font-family: var(--font-title);
-   font-size: 1.125rem; /* 18px */
-   border-radius: 0.625rem; /* 10px */
-   background-color: var(--blue-principal);
-   padding: 0.625rem 0.9375rem; /* 10px 15px */
+   font-size: 1.125rem;
+   border-radius: 0.625rem;
+   background-color: var(--color-blue-primary);
+   padding: 0.625rem 0.9375rem; 
    display: inline-block;
    text-align: center;
    border: none;
@@ -136,18 +129,26 @@ form #name , form #lastname , form #lastname , form #email , #contact #company ,
 }
 
 #contact .asterix {
-   color: var(--blue-principal);
+   color: var(--color-blue-primary);
    font-family: Arial, Helvetica, sans-serif;
-   font-size: 1.125rem; /* 18px */
+   font-size: 1.125rem;
    font-weight: 400;
 }
 
 #contact .error {
-   color: red;
-   font-family: var(--font-title-2);
-   font-size: 0.75rem; /* 12px */
+   color: var(--color-error);
+   font-family: var(--font-primary);
+   font-size: var(--font-size-xxs);
 }
 
 #contact .border-red {
-   border-color: red !important;
+   border-color: var(--color-error) !important;
+}
+
+#modal-root > div > div > div.modal-head .modal-contact-title svg.success {
+   color: var(--color-success);
+}
+
+#modal-root > div > div > div.modal-head .modal-contact-title svg.error {
+   color: var(--color-error);
 }

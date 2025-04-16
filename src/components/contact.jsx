@@ -1,13 +1,19 @@
-import { forwardRef, useState } from "react"
+import { forwardRef, useEffect, useState } from "react"
 import '../styles/contact.css'
-import { Github, Linkedin, Mail, MapPin } from "lucide-react"
+import { CircleCheckBig, CircleX, Github, Linkedin, Mail, MapPin } from "lucide-react"
 import emailjs from '@emailjs/browser';
+import Modal from "./modal";
+import Loading from "./loading";
+
 
 function Contact(props , ref){
 
+   const [isModalOpen,setIsModalOpen] = useState(false)
+   const [modalContent,setModalContent] = useState(null)
+   const [modalTitle,setModalTitle] = useState(null)
 
-   const [lastname,setLastname] = useState('')
-   const [lastnameError,setLastnameError] = useState('')
+   const [lastName,setLastName] = useState('')
+   const [lastNameError,setLastNameError] = useState('')
 
    const [name,setName] = useState('')
    const [nameError,setNameError] = useState('')
@@ -18,11 +24,20 @@ function Contact(props , ref){
    const [email,setEmail] = useState('')
    const [emailError,setEmailError] = useState('')
 
-   const [reasonId,setreasonId] = useState('')
+   const reasons = [
+      "Proposition d'alternance",
+      "Question (Profil / Alternance)",
+      "Autre"
+   ]
+
+   const [reasonId,setReasonId] = useState('')
    const [reasonError,setReasonError] = useState('')
 
    const [message,setMessage] = useState('')
    const [messageError,setMessageError] = useState('')
+
+   const [loadingSendMessage,setLoadingSendMessage] = useState(null)
+   const [canClose,setCanClose] = useState(false)
 
    const messagesError = {
       lastnameError : "Un nom ne peut contenir que des lettres, des tirets ou des apostrophes.",
@@ -58,7 +73,7 @@ function Contact(props , ref){
 
       let allFieldIsGood = true
 
-      if(!verifyField(/^[A-Za-zÀ-ÖØ-öø-ÿ'’-]+(?:[-' ][A-Za-zÀ-ÖØ-öø-ÿ'’-]+)*$/,2,40,lastname,setLastnameError,messagesError.lastnameError)){
+      if(!verifyField(/^[A-Za-zÀ-ÖØ-öø-ÿ'’-]+(?:[-' ][A-Za-zÀ-ÖØ-öø-ÿ'’-]+)*$/,2,40,lastName,setLastNameError,messagesError.lastnameError)){
          allFieldIsGood = false
       }
       if(!verifyField(/^[A-Za-zÀ-ÖØ-öø-ÿ'’-]+(?:[-' ][A-Za-zÀ-ÖØ-öø-ÿ'’-]+)*$/,2,40,name,setNameError,messagesError.nameError)){
@@ -84,157 +99,236 @@ function Contact(props , ref){
       return allFieldIsGood
    }
 
+   useEffect(()=>{
+
+      console.log('useEffect utilisé pour fermer la modale après 3s')
+      console.log('isModalOpen : '+isModalOpen)
+
+      if(isModalOpen){
+
+         setTimeout(()=>{
+            console.log('setTimeout')
+            closeModal()
+               },3000)
+      }
+         
+      return () => {
+         clearTimeout()
+      }
+   },[isModalOpen])
+
+
+   function closeModal(){
+      console.log(canClose)
+      if(canClose){
+         setIsModalOpen(false)
+      }
+   }
+
    function sendMail(e){
+
       e.preventDefault()
 
       if(verifyAllField()){
-         
-         const reasons = [
-            "Proposition d'alternance",
-            "Question (Profil / Alternance)",
-            "Autre"
-         ]
-   
+
+         setLoadingSendMessage(true)
+         setModalTitle(null)
+         setModalContent(<Loading textLoading={'Envoie du message en cours'}/>)
+         setIsModalOpen(true)
+
+         const delaiLoading = () => {
+            setTimeout(()=>{
+               console.log('délai pour afficher le message de chargement')
+            },4000)
+         }
+
+         delaiLoading
+
+         clearTimeout(delaiLoading)         
+      
          const templateParams = {
-            from_name : `${lastname} ${name}`,
+            from_name : `${lastName} ${name}`,
             from_email : `${email}`,
             company_name : `${company}`,
-            subject_reason : `${reasons[reasonId]}`,
+            subject_reason : `${reasons[reasonId-1]}`,
             message_content : `${message}`
          }
-   
+         
          const public_key = import.meta.env.VITE_EMAILJS_TOKEN;
    
          emailjs.send('Service_Portfolio_SL','Template_Portfolio_SL',templateParams,public_key).then((response) => {
-            
-            console.log('SUCCESS!', response.status, response.text);
-   
+
+            setLoadingSendMessage(false)
+            setModalTitle(<h2 className="modal-contact-title"><CircleCheckBig className="success" />Message envoyé avec succès !</h2>)
+            setModalContent(<p>Merci pour votre message, je vous répondrai dans les plus brefs délais.</p>)
+            setCanClose(true)
+            setIsModalOpen(true)
+
             })
             .catch((error) => {
-               console.error('FAILED...', error);
+
+               setLoadingSendMessage(false)
+               setModalTitle(<h2 className="modal-contact-title"><CircleX className="error" />Échec de l'envoi du message !</h2>)
+               setModalContent(
+                  <>
+                  <p>Une erreur est survenue lors de l'envoi. Veuillez réessayer dans quelques instants.</p>
+                  <p>Si le problème persiste, veuillez réessayer ultérieurement</p>
+                  </>
+               )
+               setCanClose(true)
+               setIsModalOpen(true)
+         
             })
+
+            setName('')
+            setLastName('')
+            setCompany('')
+            setEmail('')
+            setReasonId('')
+            setMessage('')
       }
 
    }
 
 
    return (
-      <section id="contact">
-         <div className="contain-1440">
-            <h2 ref={ref}>Contact</h2>
-            <div>
-               <div className="contact_info card-principal">
-                  <ul>
-                     <li><Mail/><a href="mailto:sebastien.jose.lucas@gmail.com" >sebastien.jose.lucas@gmail.com</a></li>
-                     <li><MapPin/>Région Aix / Marseille, France </li>
-                     <li><Linkedin/><a target="_blank" href="https://www.linkedin.com/in/sebastien-jose-lucas/">LinkedIn</a></li>
-                     <li><Github/><a target="_blank" href="https://github.com/Roooceee">Github</a></li>
-                  </ul>
+      <>
+         <section id="contact">
+            <div className="contain-1440">
+               <h2 ref={ref} className="title-section">Contact</h2>
+               <div>
+                  <div className="contact_info card-principal">
+                     <ul>
+                        <li><Mail/><a href="mailto:sebastien.jose.lucas@gmail.com" >sebastien.jose.lucas@gmail.com</a></li>
+                        <li><MapPin/>Région Aix / Marseille, France </li>
+                        <li><Linkedin/><a target="_blank" href="https://www.linkedin.com/in/sebastien-jose-lucas/">LinkedIn</a></li>
+                        <li><Github/><a target="_blank" href="https://github.com/Roooceee">Github</a></li>
+                     </ul>
+                  </div>
+
+                  <form action="" className="card-principal">
+                     
+                     <div className="head_form">
+                        <h3>Envoyez moi un message</h3>
+                        <p>Je suis à la recherche d'une alternance. Utilisez ce formulaire pour toute proposition ou question à ce sujet.</p>
+                     </div>
+                     
+                     <div className="lastname_form">
+                        <label htmlFor="lastname">Nom <span className="asterix">*</span></label>
+                        <input type="text" name="lastname" id="lastname" placeholder="ex : Dupont" value={lastName}
+                        className={lastNameError ? 'border-red' : ''} 
+                        onChange={(e) => {
+                           setLastName(e.target.value)
+                           if(lastNameError !== ''){
+                              setLastNameError('')
+                           }
+                        }
+                           }/>
+                        {lastNameError != '' ? <p className="error">{lastNameError}</p> : ''}
+                     </div>
+
+                     <div className="name_form">
+                        <label htmlFor="name">Prénom <span className="asterix">*</span></label>
+                        <input type="text" name="name" id="name" placeholder="ex : Jean"  value={name}
+                        className={nameError ? 'border-red':''}
+                        onChange={(e)=> {
+                           setName(e.target.value)
+                           if(nameError !== ''){
+                              setNameError('')
+                           }
+                        }
+                           }/>
+                        {nameError != '' ? <p className="error">{nameError}</p> : ''}
+                     </div>
+
+                     <div className="company_form">
+                        <label htmlFor="company">Nom de l'entreprise (facultatif)</label>
+                        <input type="text" name="company" id="company" placeholder="ex : Innovatech Solutions" value={company} 
+                        className={companyError ? 'border-red':''}
+                        onChange={(e)=> {
+                           setCompany(e.target.value)
+                           if(companyError !== ''){
+                              SetCompanyError('')
+                           }
+                        }
+                           }/>
+                        {companyError != '' ? <p className="error">{companyError}</p> : ''}
+                     </div>
+                     
+                     <div className="email_form">
+                        <label htmlFor="email">Email <span className="asterix">*</span></label>
+                        <input type="email" name="email" id="email" placeholder="ex : jean.dupont@exemple.fr" value={email} 
+                        className={emailError ? 'border-red':''}
+                        onChange={(e)=> {
+                           setEmail(e.target.value)
+                           if(emailError !== ''){
+                              setEmailError('')
+                           }
+                        }
+                        }/>
+                        {emailError != '' ? <p className="error">{emailError}</p> : ''}
+                     </div>
+
+                     <div className="reason_form">
+                        <label htmlFor="reason">Raison du contact <span className="asterix">*</span></label>
+                        <select name="reason" id="reason" value={reasonId}
+                        className={reasonError ? 'border-red':''}
+                        onChange={(e)=> {
+                           setReasonId(e.target.selectedIndex)
+                           if(reasonError !== ''){
+                              setReasonError('')
+                           }
+                        }
+                           } >
+                           <option value="" disabled selected>-- Séléctionnez un sujet --</option>
+                           <option value="alternance_offer">Proposition d'alternance</option>
+                           <option value="question_alternance">Question (Profil / Alternance)</option>
+                           <option value="other">Autre</option>
+                        </select>
+                        {reasonError != '' ? <p className="error">{reasonError}</p> : ''}
+                     </div>
+
+                     <div className="message_form">
+                        <label htmlFor="message">Message <span className="asterix">*</span></label>
+                        <textarea name="message" id="message" placeholder="Bonjour, je vous contacte au sujet de..." value={message} 
+                        className={messageError ? 'border-red':''}
+                        onChange={(e)=> {
+                           setMessage(e.target.value)
+                           if(messageError !== ''){
+                              setMessageError('')
+                           }
+                        }
+                           }>
+                        </textarea>
+                        {messageError != '' ? <p className="error">{messageError}</p> : ''}
+                     </div>
+
+                        <p className="required-legend"><small>Les champs marqués d'un <span className="asterix">*</span> sont requis.</small></p>
+                        <input type="submit" value="Envoyer le message" onClick={(e) => sendMail(e,lastname)}/>
+                  </form>
                </div>
-
-               <form action="" className="card-principal">
-                  
-                  <div className="head_form">
-                     <h3>Envoyez moi un message</h3>
-                     <p>Je suis à la recherche d'une alternance. Utilisez ce formulaire pour toute proposition ou question à ce sujet</p>
-                  </div>
-                  
-                  <div className="lastname_form">
-                     <label htmlFor="lastname">Votre nom <span className="asterix">*</span></label>
-                     <input type="text" name="lastname" id="lastname" placeholder="ex : Dupont"
-                     className={lastnameError ? 'border-red' : ''} 
-                     onChange={(e) => {
-                        setLastname(e.target.value)
-                        if(lastnameError !== ''){
-                           setLastnameError('')
-                        }
-                     }
-                        }/>
-                     {lastnameError != '' ? <p className="error">{lastnameError}</p> : ''}
-                  </div>
-
-                  <div className="name_form">
-                     <label htmlFor="name">Votre Prénom <span className="asterix">*</span></label>
-                     <input type="text" name="name" id="name" placeholder="ex : Jean" 
-                     className={nameError ? 'border-red':''}
-                     onChange={(e)=> {
-                        setName(e.target.value)
-                        if(nameError !== ''){
-                           setLastnameError('')
-                        }
-                     }
-                        }/>
-                     {nameError != '' ? <p className="error">{nameError}</p> : ''}
-                  </div>
-
-                  <div className="company_form">
-                     <label htmlFor="company">Nom de l'entreprise (facultatif)</label>
-                     <input type="text" name="company" id="company" placeholder="ex : Innovatech Solutions" 
-                     className={companyError ? 'border-red':''}
-                     onChange={(e)=> {
-                        setCompany(e.target.value)
-                        if(companyError !== ''){
-                           SetCompanyError('')
-                        }
-                     }
-                        }/>
-                     {companyError != '' ? <p className="error">{companyError}</p> : ''}
-                  </div>
-                  
-                  <div className="email_form">
-                     <label htmlFor="email">Votre Email <span className="asterix">*</span></label>
-                     <input type="email" name="email" id="email" placeholder="ex : jean.dupont@exemple.fr" 
-                     className={emailError ? 'border-red':''}
-                     onChange={(e)=> {
-                        setEmail(e.target.value)
-                        if(emailError !== ''){
-                           setEmailError('')
-                        }
-                     }
-                     }/>
-                     {emailError != '' ? <p className="error">{emailError}</p> : ''}
-                  </div>
-
-                  <div className="reason_form">
-                     <label htmlFor="reason">Votre raison du contact <span className="asterix">*</span></label>
-                     <select name="reason" id="reason" 
-                     className={reasonError ? 'border-red':''}
-                     onChange={(e)=> {
-                        setreasonId(e.target.selectedIndex)
-                        if(reasonError !== ''){
-                           setReasonError('')
-                        }
-                     }
-                        } >
-                        <option value="disabled" disabled selected>-- Séléctionnez un sujet --</option>
-                        <option value="alternance_offer">Proposition d'alternance</option>
-                        <option value="question_alternance">Question (Profil / Alternance)</option>
-                        <option value="other">Autre</option>
-                     </select>
-                     {reasonError != '' ? <p className="error">{reasonError}</p> : ''}
-                  </div>
-
-                  <div className="message_form">
-                     <label htmlFor="message">Votre Message <span className="asterix">*</span></label>
-                     <textarea name="message" id="message" placeholder="Bonjour, je vous contacte au sujet de..." 
-                     className={messageError ? 'border-red':''}
-                     onChange={(e)=> {
-                        setMessage(e.target.value)
-                        if(messageError !== ''){
-                           setMessageError('')
-                        }
-                     }
-                        }>
-                     </textarea>
-                     {messageError != '' ? <p className="error">{messageError}</p> : ''}
-                  </div>
-
-                     <p className="required-legend"><small>Les champs marqués d'un <span className="asterix">*</span> sont requis.</small></p>
-                     <input type="submit" value="Envoyer le message" onClick={(e) => sendMail(e,lastname)}/>
-               </form>
             </div>
-         </div>
-      </section>
+         </section>
+
+         {loadingSendMessage ? 
+            <Modal
+            isOpen={isModalOpen}
+            onClose={closeModal}
+            children={modalContent}
+            showButtonClose={false}
+            canClose={false}
+            />            
+         :
+            <Modal 
+            isOpen={isModalOpen}
+            onClose={closeModal}
+            title={modalTitle}
+            children={modalContent}
+            showButtonClose={false}
+            />
+         }
+      </>
+
    )
 
 }

@@ -1,0 +1,32 @@
+import { useEffect, useState } from 'react'
+import '../styles/loading.css'
+
+function Loading({textLoading}){
+
+   const [loadingDots,setLoadingDots] = useState('')
+
+   useEffect(()=>{
+
+      setTimeout(()=>{
+
+         if(loadingDots.length<3){
+            setLoadingDots(loadingDots+'.')
+         }
+         else {
+            setLoadingDots('')
+         }
+      
+      },2000)
+
+
+   },[loadingDots])
+
+   return (
+      <div className="loading">
+         <span className="loader"></span>
+         <p>{textLoading} <span className='loading-dots'>{loadingDots}</span></p>
+      </div>
+   )
+}
+
+export default Loading

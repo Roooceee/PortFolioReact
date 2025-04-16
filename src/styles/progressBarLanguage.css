@@ -42,12 +42,10 @@
    background-color: #083fa1;
 }
 
-.Progress {
-   background-color: var(--bgColor-neutral-muted);
-   border-radius: var(--borderRadius-medium);
+.progress-bar {
+   border-radius: 5px;
    display: flex;
    height: 0.5rem;
-   outline: 0.0625rem solid #0000;
    overflow: hidden;
    margin: 1.25rem 0 1.25rem 0;
 }

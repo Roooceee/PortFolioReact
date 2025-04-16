@@ -1,39 +1,21 @@
 #projects {
-   background-color: var(--background-color-principal);
+   background-color: var(--color-bg-primary);
    scroll-margin-top: 3.125rem;
 }
 
 #projects>div {
    margin: auto;
-   padding: 3.75rem 3.125rem 3.75rem 3.125rem;
-}
-
-#projects h2 {
-   font-family: var(--font-title);
-   color: var(--blue-principal);
-   text-align: center;
-   margin: auto;
-   max-width: fit-content;
-   padding: 0 0 2.5rem 0;
+   padding: 3.75rem 0 3.75rem 0;
+   display: grid;
+   gap: 1.875rem;
 }
 
 #projects>div>div:nth-child(2) {
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
-   gap: 4.375rem;
+   display: flex;
+   justify-content: space-around;
 }
 
 #projects > div > div:nth-child(3) {
    text-align: right;
-   padding-top: 1.25rem;
 }
 
-.linkAllProjects {
-   margin: 0;
-}
-
-@media screen and (max-width:1024px){
-   #projects>div>div:nth-child(2) {
-      grid-template-columns: 1fr;
-   }
-}

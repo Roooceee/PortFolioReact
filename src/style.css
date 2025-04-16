@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Code:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 * {
    scroll-behavior: smooth;
    margin: 0;
@@ -11,34 +9,63 @@ ul {
    padding: 0;
 }
 
+ul li {
+   font-family: var(--font-primary);
+   list-style: none;
+}
+
+p {
+   color: var(--text-on-dark-bg);
+   font-size: var(--font-size-sm);
+   font-family: var(--font-primary);
+}
+
 h1 {
-   font-size: 48px;
+   font-size: var(--font-size-4xl);
 }
 
 h2 {
-   font-size: 40px;
+   font-size: var(--font-size-3xl);
 }
 
 h3 {
-   font-size: 24px;
+   font-size: var(--font-size-xl);
+   font-family: var(--font-primary);
+}
+
+h4 {
+   font-size: var(--font-size-base);
+   font-family: var(--font-primary);
 }
 
 :root {
 
-   --font-title : 'Bebas Neue';
-   --font-title-2 : 'Raleway';
-   --font-classic : 'Fira Code';
+   --font-title : 'Bebas Neue';      /* Pour les titres de sections   */
+   --font-primary: 'Raleway';        /* Pour tout le reste : h2, h3, paragraphes, etc. */
+   --font-code: 'Fira Code';         /* Pour les blocs de code ou éléments techniques */
+   --font-numeric:'Inter';         /* Pour les nombres */
 
-   --background-color-principal : #1E1E1E;
-   --background-color-second : #252526 ;
-   --background-color-third : #5A5A5C ; 
-   --color-text-principal : #D4D4D4;
-   --color-white : #FFFF ; 
-   --blue-principal : #007ACC;
-   --blue-second : #569CD6;
+   --font-size-xxs: 0.6rem;   /* 10px */
+   --font-size-xs: 0.75rem;   /* 12px */
+   --font-size-sm: 0.875rem;  /* 14px */
+   --font-size-base: 1rem;    /* 16px */
+   --font-size-md: 1.125rem;  /* 18px */
+   --font-size-lg: 1.25rem;   /* 20px */
+   --font-size-xl: 1.5rem;    /* 24px */
+   --font-size-2xl: 2rem;     /* 32px */
+   --font-size-3xl: 2.5rem;   /* 40px */
+   --font-size-4xl: 3rem;     /* 48px */
 
-   --borderRadius-medium: 0.375rem;
-   --bgColor-neutral-muted: #656c7633;
+   --text-on-dark-bg: #FFFF; /* Texte pour fond sombre */
+
+   --color-bg-primary   : #1E1E1E;
+   --color-bg-secondary : #252526;
+   --color-bg-tertiary  : #5A5A5C;
+   --color-blue-primary   : #007ACC;
+   --color-blue-secondary : #569CD6;
+   --color-black:#000000;
+   --color-error: #E06C75;   /* Rouge doux mais bien visible */
+   --color-success: #4CAF50; /* Vert plus vif et dynamique */
 }
 
 .uppercase {
@@ -57,24 +84,39 @@ h3 {
    max-width: 1440px;
 }
 
-.button-blue {
-   text-decoration: none;
-   color: var(--color-white);
+.title-section {
+   font-size: var(--font-size-3xl);
    font-family: var(--font-title);
-   border-radius: 10px;
-   background-color: var(--blue-principal);
-   padding: 10px 15px;
-   display: inline-block;
+   color: var(--color-blue-primary);
    text-align: center;
 }
 
+.badge {
+   display: flex;
+   align-items: center;
+   border-radius: 1.375rem;
+   padding: 0.25rem 0.5rem;
+   max-width: fit-content;
+}
+
+.button-blue {
+   display: inline-block;
+   text-decoration: none;
+   text-align: center;
+   border: none;
+   background-color: var(--color-blue-primary);
+   color: var(--text-on-dark-bg);
+   font-family: var(--font-title);
+   border-radius: 10px;
+   padding: 10px 15px;
+}
+
 .button-blue:hover {
-   background-color: var(--blue-second );
+   background-color: var(--color-blue-secondary);
 }
 
 .card-principal {
-   background: var(--background-color-principal);
-   color: #ffffff;
+   background-color: var(--color-bg-primary);
    padding: 20px;
    border-radius: 10px;
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -82,12 +124,24 @@ h3 {
    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card {
-   background: var(--background-color-second);
-   color: #ffffff;
+.card-secondary {
+   background-color: var(--color-bg-secondary);
    padding: 20px;
    border-radius: 10px;
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
    position: relative;
    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.numeric {
+   font-family: var(--font-numeric);
+   font-weight: 300;
+}
+
+.hr-grey {
+   border: none;
+   height: 0.125rem;
+   background-color: var(--color-bg-tertiary);
+   border-radius: 2.0625rem;
 }

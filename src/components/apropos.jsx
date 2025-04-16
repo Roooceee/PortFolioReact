@@ -8,7 +8,7 @@ function APropos({id},ref) {
             <div>
                   <img src="/img/image_profil_SL.png" alt="image de profil" />
                <div>
-                  <h2 ref={ref}>A Propos</h2>
+                  <h2 ref={ref} className='title-section'>A Propos</h2>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil voluptatem corrupti eos voluptatibus eum fugit nam possimus adipisci sed eaque exercitationem et, fugiat excepturi expedita dicta aperiam delectus doloribus earum.</p>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil voluptatem corrupti eos voluptatibus eum fugit nam possimus adipisci sed eaque exercitationem et, fugiat excepturi expedita dicta aperiam delectus doloribus earum.</p>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil voluptatem corrupti eos voluptatibus eum fugit nam possimus adipisci sed eaque exercitationem et, fugiat excepturi expedita dicta aperiam delectus doloribus earum.</p>

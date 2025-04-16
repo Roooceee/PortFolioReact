@@ -26,7 +26,7 @@ function Formations(props,ref){
    
       <section id="formations">
          <div className="contain-1440">
-            <h2 ref={ref}>Mes études et formations</h2>
+            <h2 ref={ref} className="title-section">Mes études et formations</h2>
                {formations.length > 0 ?
                   <>
                      <Carousel items={formations} ItemComponent={Formation}/>

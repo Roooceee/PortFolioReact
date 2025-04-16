@@ -8,8 +8,8 @@ function ListLanguagePercent({listLanguagesPercent}){
       <ul>
          {listLanguagesPercent.map((language)=> {
             return (
-            <li key={language.language} className={language.language+'_before '+' list-style-none'}>
-               <span>{language.language}</span> <span className="percent">{language.percentLanguage}%</span>
+            <li key={language.language} className={language.language+'_before '+'badge'}>
+               <span>{language.language} <span className="numeric">{language.percentLanguage}</span>%</span>
             </li>
             )
          })}

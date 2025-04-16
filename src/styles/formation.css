@@ -1,5 +1,4 @@
 .formation {
-   max-width: 80%;
    margin: auto;
    display: grid;
    gap: 2.5rem;
@@ -17,13 +16,10 @@
 }
 
 .formation .head_formation div .type {
-   font-size: 1.125rem;
-   border-radius: 1.25rem;
-   background-color: var(--blue-principal);
+   font-size: var(--font-size-base);
+   background-color: var(--color-blue-primary);
    width: fit-content;
    height: fit-content;
-   padding: 0.3125rem 0.5rem;
-   font-family: var(--font-title-2);
 }
 
 .formation .head_formation>div>div {
@@ -33,31 +29,27 @@
 }
 
 .formation .head_formation div h3 {
-   color: var(--blue-principal);
-   font-family: var(--font-title-2);
+   color: var(--color-blue-primary);
 }
 
 .formation .head_formation div .option {
-   font-family: var(--font-title-2);
+   font-size: var(--font-size-base);
 }
 
 .formation .head_formation .description {
    padding-top: 1.25rem;
-   font-family: var(--font-title-2);
-   font-size: 0.875rem;
 }
 
 .formation .head_formation .obtention {
-   border-radius: 1.125rem;
-   background-color: var(--blue-principal);
-   font-family: var(--font-title-2);
+   color: var(--text-on-dark-bg);
+   font-size: var(--font-size-base);
+   font-family: var(--font-primary);
+   background-color: var(--color-blue-primary);
    width: fit-content;
    height: fit-content;
-   padding: 0.3125rem 0.5rem;
    display: flex;
    align-items: center;
-   gap: 0.3125rem;
-   white-space: nowrap;
+   gap: 0.25rem;
 }
 
 .formation .formation-context ul {
@@ -65,15 +57,16 @@
    gap: 0.3125rem;
 }
 
-.formation .formation-context .etablissement , .formation .formation-context .lieu , .formation .formation-context .periode {
+.formation .formation-context ul li {
+   color: var(--text-on-dark-bg);
+   font-size: var(--font-size-sm);
    display: flex;
    align-items: center;
-   gap: 0.3125rem;
-   font-family: var(--font-title-2);
+   gap: 0.25rem;
 }
 
-.formation .formation-context .etablissement svg, .formation .formation-context .lieu svg, .formation .formation-context .periode svg  {
-   color: var(--blue-principal);
+.formation .formation-context ul li svg {
+   color: var(--color-blue-primary);
 }
 
 .formation .competences {
@@ -82,15 +75,7 @@
 }
 
 .formation .competences h4 {
-   font-family: var(--font-title-2);
-   font-weight: 400;   
-}
-
-.formation .competences hr {
-   border: none;
-   height: 0.125rem;
-   background-color: var(--background-color-third);
-   border-radius: 2.0625rem;
+   color: var(--color-blue-primary);
 }
 
 .formation .competences a {
@@ -110,14 +95,13 @@
 }
 
 .formation .competences ul li {
-   list-style: none;
+   font-size: var(--font-size-sm);
+   color: var(--text-on-dark-bg);
    display: flex;
    gap: 0.3125rem;
    align-items: center;
-   font-family: var(--font-title-2);
-   font-size: 0.9375rem;
 }
 
 .formation .competences ul li svg {
-   color: green;
+   color: var(--color-success);
 }

@@ -33,19 +33,19 @@ function ProjectListItem({name , homepage , html_url , created , update}){
                <ListLanguagePercent listLanguagesPercent={calculPercentLanguages(languages)}/>
             </div>
                <div className="dates">
-               <div><Calendar size={18}/><p>Crée le : </p><p className="date">{changeDateFormat(created,false)}</p></div>
+               <div><Calendar size={18}/><p>Crée le : </p><p className="numeric">{changeDateFormat(created,false,false)}</p></div>
                {update ? 
-               <div><RefreshCcw size={18}/><p>Modifier le : </p><p className="date">{changeDateFormat(update,false)}</p></div>
+               <div><RefreshCcw size={18}/><p>Modifier le : </p><p className="numeric">{changeDateFormat(update,false,false)}</p></div>
                : ''}
             </div>
          </div>
 
          <div className="links">
             {homepage ? 
-            <a href={homepage} target="_blank" className="button-blue"><SquareArrowOutUpRight size={22} /> Visiter le site</a> : 
+            <a href={homepage} target="_blank" className="button-blue"><SquareArrowOutUpRight size={18} /> Visiter le site</a> : 
             ''}
-            <a href={html_url} target="_blank" className="button-blue"><Github size={24} />Voir le code</a>
-            <a href="" className="button-blue"><Info size={24}/>En savoir plus</a>
+            <a href={html_url} target="_blank" className="button-blue"><Github size={18} />Voir le code</a>
+            <a href="" className="button-blue"><Info size={18}/>En savoir plus</a>
          </div>
 
       </article>

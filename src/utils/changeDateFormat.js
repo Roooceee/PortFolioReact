@@ -1,6 +1,6 @@
 
 
-export function changeDateFormat(pDate , pFormatComplet , pshowDate = null){
+export function changeDateFormat(pDate , pFormatComplet , pshowDate){
 
    let date = new Date(pDate)
    let dateMonth = date.getMonth()

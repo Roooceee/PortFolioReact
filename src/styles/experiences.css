@@ -1,17 +1,11 @@
 #experiences {
-   background-color: var(--background-color-second);
+   background-color: var(--color-bg-secondary);
    scroll-margin-top: 3.125rem;
 }
 
 #experiences>div {
-   padding: 3.125rem 0 6.25rem 0;
+   display: grid;
+   gap: 1.875rem;
+   padding: 3.75rem 0 3.75rem 0;
    margin: auto;
-}
-
-#experiences h2 {
-   font-family: var(--font-title);
-   color: var(--blue-principal);
-   text-align: center;
-   padding-top: 1.25rem;
-   padding-bottom: 2.5rem;
 }
