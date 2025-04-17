@@ -11,7 +11,7 @@ function Footer(){
          <div className="contain-1440">
             <div>
                <Link to="/">
-               <img src="/img/logo.png" className='logo' alt="logo du portfolio"/>
+               <img src="/img/logo.webp" className='logo' alt="logo du portfolio"/>
                Sébastien LUCAS
                </Link>
 
