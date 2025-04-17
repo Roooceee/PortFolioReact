@@ -84,7 +84,7 @@ function Contact(props , ref){
             allFieldIsGood = false
          }
       }
-      if(!verifyField(/^[^\s@]+@[^\s@]+\.[^\s@]+$/,5,254,email,setEmailError,messagesError.emailError)){
+      if(!verifyField(/^[^\s@]+@[^\s@]+\.[^\s@]+$/,5,1000,email,setEmailError,messagesError.emailError)){
          allFieldIsGood = false
       }
       if(reasonId === ''){
@@ -101,13 +101,10 @@ function Contact(props , ref){
 
    useEffect(()=>{
 
-      console.log('useEffect utilisé pour fermer la modale après 3s')
-      console.log('isModalOpen : '+isModalOpen)
-
       if(isModalOpen){
 
          setTimeout(()=>{
-            console.log('setTimeout')
+
             closeModal()
                },3000)
       }
@@ -119,7 +116,6 @@ function Contact(props , ref){
 
 
    function closeModal(){
-      console.log(canClose)
       if(canClose){
          setIsModalOpen(false)
       }
@@ -138,7 +134,6 @@ function Contact(props , ref){
 
          const delaiLoading = () => {
             setTimeout(()=>{
-               console.log('délai pour afficher le message de chargement')
             },4000)
          }
 
@@ -158,7 +153,6 @@ function Contact(props , ref){
    
          emailjs.send('Service_Portfolio_SL','Template_Portfolio_SL',templateParams,public_key).then((response) => {
 
-            console.log(response)
             setLoadingSendMessage(false)
             setModalTitle(<h2 className="modal-contact-title"><CircleCheckBig className="success" />Message envoyé avec succès !</h2>)
             setModalContent(<p>Merci pour votre message, je vous répondrai dans les plus brefs délais.</p>)
@@ -168,7 +162,6 @@ function Contact(props , ref){
             })
             .catch((error) => {
 
-               console.log(error)
                setLoadingSendMessage(false)
                setModalTitle(<h2 className="modal-contact-title"><CircleX className="error" />Échec de l'envoi du message !</h2>)
                setModalContent(
