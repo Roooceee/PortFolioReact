@@ -115,7 +115,7 @@
 
 }
 
-@media (max-width: 370px) {
+@media (max-width: 380px) {
 
    #head_index h2 {
       font-size: var(--font-size-md);
