@@ -36,7 +36,7 @@ function Experience({type , title , company , place , startDate , endDate
             <h4>Technologies & Skills</h4>
             <ul>
                {technologies.map((e,index)=> {
-                  return <li key={index}>{e}</li>
+                  return <li className='badge' key={index}>{e}</li>
                })}
             </ul>
          </div>

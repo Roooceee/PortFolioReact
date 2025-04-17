@@ -25,9 +25,36 @@
    gap: 1.875rem;
 }
 
-/* Début CSS Responsive Mobile */
+
+@media (max-width: 1024px) {
+   
+   #apropos img {
+      padding: 0px 20px;
+   }
+
+   #apropos > div > div {
+      padding: 0px 20px;
+   }
+
+   #apropos > div > div > h2 {
+      text-align: left;
+   }
+}
+
 @media (max-width: 767px) {
    #apropos>div {
       flex-direction: column;
+   }
+
+   #apropos > div > div > h2 {
+      text-align: center;
+   }
+
+   #apropos > div > div > p {
+      font-size: var(--font-size-sm);
+   }
+
+   #apropos > div > img {
+      max-width: 50%;
    }
 }

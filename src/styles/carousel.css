@@ -2,21 +2,50 @@
    position: relative;
 }
 
-.carousel>article {
+.carousel article {
    max-width: 80%;
 }
 
-.carousel > a.previous , .carousel > a.next {
+.carousel  a.previous , .carousel  a.next {
    color: var(--color-blue-primary);
    position: absolute;
 }
 
-.carousel > .previous {
+.carousel  .previous {
    top: 3.125rem;
-   right: 93%;
+   left: 1rem;
 }
 
-.carousel > .next {
+.carousel  .next {
    top: 3.125rem;
-   left: 93%;
+   right: 1rem;
+}
+
+@media (max-width: 767px) {
+
+   .carousel {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+   }
+
+   .carousel .arrows {
+      display: flex;
+      justify-content: space-around;
+   }
+
+   .carousel  a.previous , .carousel  a.next {
+      position: relative;
+   }
+   
+   .carousel  .previous {
+      top: 0;
+      left: 0;
+   }
+   
+   .carousel  .next {
+      top: 0;
+      right: 0;
+   }
+
 }

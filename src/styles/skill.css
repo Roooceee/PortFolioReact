@@ -9,6 +9,7 @@
    display: flex;
    align-items: center;
    gap: 0.625rem;
+   font-size: var(--font-size-2xl);
 }
 
 .skill ul {
@@ -27,4 +28,18 @@
    margin-right: 0.625rem;
    color: var(--color-blue-primary);
 }
+
+@media (max-width: 767px) {
+
+   .skill h3 {
+      font-size: var(--font-size-lg);
+   }
+
+   .skill ul li {
+      font-size: var(--font-size-sm);
+   }
+
+}
+
+
 

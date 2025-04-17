@@ -38,12 +38,14 @@ function Formation({type , intitule , option , description , etablissement , lie
 
       <div className='head_formation'>
          <div>
-            <p className='type badge'>{type}</p>
+            <div>
+               <p className='type badge'>{type}</p>
+               {obtentionText ? <span className='obtention badge'>{obtentionLogo}{obtentionText}</span> : ''}
+            </div>
             <h3>{intitule}</h3>
             {option != null ? <p className='option'>Option {option}</p> : ''}
             <p className='description'>{description}</p>
          </div>
-         {obtentionText ? <span className='obtention badge'>{obtentionLogo}{obtentionText}</span> : ''}
       </div>
 
       <div className='formation-context'>

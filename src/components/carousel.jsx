@@ -34,9 +34,11 @@ function Carousel({items , ItemComponent}){
             <ItemComponent {...currentItemData}/>
             {/* operateur de décomposition passe toutes les clé/valeurs  de l'objet en props */}
          {/* Affiche le bouton "Précédent" uniquement si ce n'est pas la première formation chronologiquement[2] */}
-         {currentIndex < items.length-1 && <a className="previous" href="#" onClick={previous}><CircleArrowLeft size={48}/></a>}
-         {/* Affiche le bouton "Suivant" uniquement si ce n'est pas la derniere formation chronologiquement [0] */}
-         {currentIndex > 0 && <a className="next" href="#" onClick={next}><CircleArrowRight size={48}/></a>}
+         <div className="arrows">
+            {currentIndex < items.length-1 && <a className="previous" href="#" onClick={previous}><CircleArrowLeft size={48}/></a>}
+            {/* Affiche le bouton "Suivant" uniquement si ce n'est pas la derniere formation chronologiquement [0] */}
+            {currentIndex > 0 && <a className="next" href="#" onClick={next}><CircleArrowRight size={48}/></a>}
+         </div>
       </div>
       </>
 

@@ -69,9 +69,13 @@ header nav ul a.active {
       display: none;
    }
 
+   header>div {
+      padding: 0px 20px;
+   }
+
    .burger-icon span {
       display: block;
-      background-color: var(--color-text-principal);
+      background-color: var(--color-blue-primary);
       width: 2.1875rem;
       height: 0.3125rem;
       margin: 0.375rem 0;

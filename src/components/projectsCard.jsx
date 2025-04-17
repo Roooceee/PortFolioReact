@@ -36,9 +36,7 @@ function Projects(props,ref){
                : 
                <p>Chargement des données</p>}
 
-            <div>
-               <Link to='/Projets' className="button-blue">Voir tous mes Projets</Link>
-            </div>
+            <Link to='/Projets' className="button-blue">Voir tous mes Projets</Link>
          </div>
       </section>
    )

@@ -12,10 +12,32 @@
 
 #projects>div>div:nth-child(2) {
    display: flex;
-   justify-content: space-around;
+   justify-content: space-between;
 }
 
-#projects > div > div:nth-child(3) {
-   text-align: right;
+#projects > div > a {
+   max-width: fit-content;
+   margin: 0 0 0 auto;
+}
+
+@media (max-width: 1440px) {
+
+   #projects > div {
+      padding: 3.75rem 2rem 3.75rem 2rem;
+   }
+
+}
+
+@media (max-width: 950px) {
+
+   #projects > div > div {
+      flex-direction: column;
+      gap: 30px;
+   }
+
+   #projects > div > a {
+      margin: auto;
+   }
+
 }
 

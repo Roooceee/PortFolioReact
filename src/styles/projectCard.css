@@ -1,9 +1,9 @@
 .projectCard {
-   max-width: 380px;
+   max-width: 28%;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   min-height: 25rem;
+   min-height: 30rem;
 }
 
 /* CSS pour le head de la carte */
@@ -12,7 +12,6 @@
    display: flex;
    flex-direction: column;
    gap: 2rem;
-   min-height: 160px;
 }
 
 .projectCard .head_project h3 {
@@ -70,3 +69,59 @@
 .projectCard .dates_project svg {
    color: var(--color-blue-primary)
 }
+
+@media (max-width: 1090px) {
+
+   #projects .projectCard .dates_project>div p:nth-child(2) {
+      display: none;
+   }
+}
+
+@media (max-width: 1024px) {
+
+   #projects .projectCard {
+      max-width: 28%;
+   }
+
+   #projects .projectCard .head_project h3 {
+      font-size: var(--font-size-lg);
+   }
+
+   #projects .projectCard .links_project {
+      flex-wrap: wrap;
+      gap: 10px;
+   }
+
+   #projects .projectCard .links_project a {
+      padding: 5px 10px;
+      white-space: nowrap;
+   }
+}
+
+@media (max-width: 950px) {
+
+   #projects .projectCard {
+      max-width: 90%;
+      margin: auto;
+      min-height: 25rem;
+   }
+
+   #projects .projectCard .links_project a {
+      padding: 10px 15px;
+   }
+
+}
+
+@media (max-width: 767px) {
+
+   #projects .projectCard {
+      min-height: 28rem;
+   }
+
+   #projects .projectCard .head_project {
+      gap: 0.5rem;
+   }
+}
+
+
+

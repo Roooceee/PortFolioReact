@@ -145,3 +145,12 @@ h4 {
    background-color: var(--color-bg-tertiary);
    border-radius: 2.0625rem;
 }
+
+
+@media (max-width: 767px) {
+
+   .title-section {
+      font-size: var(--font-size-2xl);
+   }
+
+}

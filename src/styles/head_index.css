@@ -68,4 +68,62 @@
     to { width: 0; }
 }
 /* Fin CSS typing-text */
+
+/* Début CSS Responsive */
+@media (max-width: 1024px) {
+
+   #head_index h2 {
+      font-size: var(--font-size-2xl);
+   }
+   
+   #head_index h1 {
+      font-size: var(--font-size-3xl) ;
+   }
+
+}
+
+@media (max-width: 767px) {
+
+   
+   .typing-text {
+      margin: 5px auto;
+   }
+   
+   #head_index h2 {
+      font-size: var(--font-size-xl);
+   }
+   
+   #head_index h1 {
+      font-size: var(--font-size-2xl) ;
+   }
+
+}
+
+@media (max-width: 490px) {
+
+   #head_index h2 {
+      font-size: var(--font-size-md);
+   }
+
+   #head_index h1 {
+      font-size: var(--font-size-xl) ;
+   }
+
+   #head_index p {
+      font-size: var(--font-size-xs) ;
+   }
+
+}
+
+@media (max-width: 370px) {
+
+   #head_index h2 {
+      font-size: var(--font-size-md);
+   }
+   
+   #head_index h1 {
+      font-size: var(--font-size-lg) ;
+   }
+}
+
 /* FIN CSS Head_index */

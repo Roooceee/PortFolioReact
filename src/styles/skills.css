@@ -14,6 +14,22 @@
 
 #skills>div>div {
    display: flex;
-   justify-content: space-around;
+   justify-content: center;
    gap: 6.25rem;
+}
+
+@media (max-width: 767px) {
+
+   #skills > div > div {
+      gap: 2rem;
+   }
+
+}
+
+@media (max-width: 520px) {
+
+   #skills > div > div {
+      flex-direction: column;
+   }
+
 }

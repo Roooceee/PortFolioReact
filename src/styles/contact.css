@@ -152,3 +152,38 @@ form #name , form #lastname , form #lastname , form #email , #contact #company ,
 #modal-root > div > div > div.modal-head .modal-contact-title svg.error {
    color: var(--color-error);
 }
+
+@media (max-width: 1024px) {
+
+   #contact>div>div {
+      flex-direction: column;
+      padding: 0px 25px;
+   }
+
+   #contact>div>div .contact_info {
+      max-width: fit-content;
+      margin: auto;
+   }
+
+}
+
+@media (max-width: 767px) {
+
+   #contact>div>div .contact_info ul li {
+      font-size: var(--font-size-sm);
+   }
+
+   #contact > div > div > form > div.lastname_form, #contact > div > div > form > .name_form {
+      grid-column: 1/3;
+   }
+
+   #contact>div>div {
+      padding: 0px;
+   }
+
+   #contact > div > div > form {
+      max-width: 85%;
+      margin: auto;
+   }
+
+}

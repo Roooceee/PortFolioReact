@@ -81,17 +81,40 @@
 }
 
 .experience .technologies ul {
-   list-style-type: none;
    display: flex;
    flex-wrap: wrap;
    gap: 0.625rem;
 }
 
 .experience .technologies ul li {
-   font-size: 0.875rem;
-   border-radius: 1.25rem;
    color: var(--text-on-dark-bg);
+   font-size: var(--font-size-base);
+   font-family: var(--font-primary);
    background-color: var(--color-blue-primary);
-   width: fit-content;
-   padding: 0.3125rem 0.5rem;
+}
+
+@media (max-width: 1024px) {
+
+   .experience > div.head_experience > h3 {
+      font-size: var(--font-size-lg);
+   }
+
+   .experience > div.head_experience > p.description , .experience > div.experience_context > ul li , .experience > .responsibilities ul li {
+      font-size: var(--font-size-xs);
+   }
+
+}
+
+
+@media (max-width: 767px) {
+
+   .experience > div.responsibilities > ul > li > svg {
+      max-width: 20px;
+      min-width: 20px
+   }
+
+   .experience > div.technologies > ul li {
+      font-size: var(--font-size-xs);
+   }
+
 }
