@@ -19,6 +19,7 @@
 .modal {
    position: relative;
    min-width: 20%;
+   max-width: 80%;
    height: auto;
    padding: 1rem;
    border-radius: 5px;
@@ -53,3 +54,18 @@
 }
 
 
+@media (max-width:767px) {
+
+   .modal .modal-head h2 {
+      font-size: var(--font-size-md);
+   }   
+
+}
+
+@media (max-width:400px) {
+
+   .modal .modal-head h2 {
+      font-size: var(--font-size-base);
+   }   
+
+}

@@ -125,10 +125,6 @@
       font-size: var(--font-size-xs) ;
    }
 
-   #formations > div > div > article > div.head_formation > div > div {
-      flex-direction: column-reverse;
-   }
-
    .formation div.head_formation > div > div > .type , .formation .head_formation .obtention  {
       font-size: var(--font-size-xs);
    }

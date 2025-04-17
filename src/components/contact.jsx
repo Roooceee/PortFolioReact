@@ -44,14 +44,15 @@ function Contact(props , ref){
       nameError : "Un prénom ne peut contenir que des lettres, des tirets ou des apostrophes.",
       companyError: "Le nom de la société peut contenir lettres, chiffres, espaces et ponctuation classique (ex: @, &, -, ‘).",
       emailError:"L’adresse email saisie n’est pas valide. Merci de vérifier et de réessayer.",
-      messageError:"Le message contient des caractères interdits (les balises HTML ne sont pas autorisées)."
+      messageError:"Le message contient des caractères interdits (les balises HTML ne sont pas autorisées).",
+      noEmptyField:"Ce champ ne peut pas être vide"
    }
 
    
    function verifyField(pRegex,pSizeMin , pSizeMax,pValue, setError ,pMessageError){
 
       if(pValue.trim()===''){
-         setError('Ce champ ne peut pas être vide.')
+         setError(messagesError.noEmptyField)
       }
       else {
          if(pValue.length >= pSizeMin && pValue.length <= pSizeMax){
@@ -99,20 +100,20 @@ function Contact(props , ref){
       return allFieldIsGood
    }
 
-   useEffect(()=>{
+   // useEffect(()=>{
 
-      if(isModalOpen){
+   //    if(isModalOpen){
 
-         setTimeout(()=>{
+   //       setTimeout(()=>{
 
-            closeModal()
-               },3000)
-      }
+   //          closeModal()
+   //             },3000)
+   //    }
          
-      return () => {
-         clearTimeout()
-      }
-   },[isModalOpen])
+   //    return () => {
+   //       clearTimeout()
+   //    }
+   // },[isModalOpen])
 
 
    function closeModal(){
@@ -125,63 +126,69 @@ function Contact(props , ref){
 
       e.preventDefault()
 
-      if(verifyAllField()){
+      //       setLoadingSendMessage(false)
+      setModalTitle(<h2 className="modal-contact-title"><CircleCheckBig className="success" />Message envoyé avec succès !</h2>)
+      setModalContent(<p>Merci pour votre message, je vous répondrai dans les plus brefs délais.</p>)
+      setCanClose(true)
+      setIsModalOpen(true)
 
-         setLoadingSendMessage(true)
-         setModalTitle(null)
-         setModalContent(<Loading textLoading={'Envoie du message en cours'}/>)
-         setIsModalOpen(true)
+      // if(verifyAllField()){
 
-         const delaiLoading = () => {
-            setTimeout(()=>{
-            },4000)
-         }
+      //    setLoadingSendMessage(true)
+      //    setModalTitle(null)
+      //    setModalContent(<Loading textLoading={'Envoie du message en cours'}/>)
+      //    setIsModalOpen(true)
 
-         delaiLoading
+      //    const delaiLoading = () => {
+      //       setTimeout(()=>{
+      //       },4000)
+      //    }
 
-         clearTimeout(delaiLoading)         
+      //    delaiLoading
+
+      //    clearTimeout(delaiLoading)         
       
-         const templateParams = {
-            from_name : `${lastName} ${name}`,
-            from_email : `${email}`,
-            company_name : `${company}`,
-            subject_reason : `${reasons[reasonId-1]}`,
-            message_content : `${message}`
-         }
+      //    const templateParams = {
+      //       from_name : `${lastName} ${name}`,
+      //       from_email : `${email}`,
+      //       company_name : `${company}`,
+      //       subject_reason : `${reasons[reasonId-1]}`,
+      //       message_content : `${message}`
+      //    }
          
-         const public_key = import.meta.env.VITE_EMAILJS_TOKEN;
+      //    const public_key = import.meta.env.VITE_EMAILJS_TOKEN;
    
-         emailjs.send('Service_Portfolio_SL','Template_Portfolio_SL',templateParams,public_key).then((response) => {
+      //    emailjs.send('Service_Portfolio_SL','Template_Portfolio_SL',templateParams,public_key).then((response) => {
 
-            setLoadingSendMessage(false)
-            setModalTitle(<h2 className="modal-contact-title"><CircleCheckBig className="success" />Message envoyé avec succès !</h2>)
-            setModalContent(<p>Merci pour votre message, je vous répondrai dans les plus brefs délais.</p>)
-            setCanClose(true)
-            setIsModalOpen(true)
+      //       setLoadingSendMessage(false)
+      //       setModalTitle(<h2 className="modal-contact-title"><CircleCheckBig className="success" />Message envoyé avec succès !</h2>)
+      //       setModalContent(<p>Merci pour votre message, je vous répondrai dans les plus brefs délais.</p>)
+      //       setCanClose(true)
+      //       setIsModalOpen(true)
 
-            })
-            .catch((error) => {
+      //       })
+      //       .catch((error) => {
 
-               setLoadingSendMessage(false)
-               setModalTitle(<h2 className="modal-contact-title"><CircleX className="error" />Échec de l'envoi du message !</h2>)
-               setModalContent(
-                  <>
-                  <p>Une erreur est survenue lors de l'envoi. Veuillez réessayer dans quelques instants.</p>
-                  <p>Si le problème persiste, veuillez réessayer ultérieurement</p>
-                  </>
-               )
-               setCanClose(true)
-               setIsModalOpen(true)
+      //          setLoadingSendMessage(false)
+      //          setModalTitle(<h2 className="modal-contact-title"><CircleX className="error" />Échec de l'envoi du message !</h2>)
+      //          setModalContent(
+      //             <>
+      //             <p>Une erreur est survenue lors de l'envoi. Veuillez réessayer dans quelques instants.</p>
+      //             <p>Si le problème persiste, veuillez réessayer ultérieurement</p>
+      //             </>
+      //          )
+      //          setCanClose(true)
+      //          setIsModalOpen(true)
          
-            })
+      //       })
 
-            setName('')
-            setLastName('')
-            setCompany('')
-            setEmail('')
-            setReasonId('')
-            setMessage('')
-      }
+      //       setName('')
+      //       setLastName('')
+      //       setCompany('')
+      //       setEmail('')
+      //       setReasonId('')
+      //       setMessage('')
+      // }
 
    }
 
