@@ -126,12 +126,6 @@ function Contact(props , ref){
 
       e.preventDefault()
 
-      //       setLoadingSendMessage(false)
-      setModalTitle(<h2 className="modal-contact-title"><CircleCheckBig className="success" />Message envoyé avec succès !</h2>)
-      setModalContent(<p>Merci pour votre message, je vous répondrai dans les plus brefs délais.</p>)
-      setCanClose(true)
-      setIsModalOpen(true)
-
       if(verifyAllField()){
 
          setLoadingSendMessage(true)
