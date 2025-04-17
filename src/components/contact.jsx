@@ -124,65 +124,66 @@ function Contact(props , ref){
 
    function sendMail(e){
 
+      setLoadingSendMessage(true)
+      setModalTitle(null)
+      setModalContent(<Loading textLoading={'Envoie du message en cours'}/>)
+      setIsModalOpen(true)
+
       e.preventDefault()
 
-      if(verifyAllField()){
+      // if(verifyAllField()){
 
-         setLoadingSendMessage(true)
-         setModalTitle(null)
-         setModalContent(<Loading textLoading={'Envoie du message en cours'}/>)
-         setIsModalOpen(true)
 
-         const delaiLoading = () => {
-            setTimeout(()=>{
-            },4000)
-         }
+      //    const delaiLoading = () => {
+      //       setTimeout(()=>{
+      //       },4000)
+      //    }
 
-         delaiLoading
+      //    delaiLoading
 
-         clearTimeout(delaiLoading)         
+      //    clearTimeout(delaiLoading)         
       
-         const templateParams = {
-            from_name : `${lastName} ${name}`,
-            from_email : `${email}`,
-            company_name : `${company}`,
-            subject_reason : `${reasons[reasonId-1]}`,
-            message_content : `${message}`
-         }
+      //    const templateParams = {
+      //       from_name : `${lastName} ${name}`,
+      //       from_email : `${email}`,
+      //       company_name : `${company}`,
+      //       subject_reason : `${reasons[reasonId-1]}`,
+      //       message_content : `${message}`
+      //    }
          
-         const public_key = import.meta.env.VITE_EMAILJS_TOKEN;
+      //    const public_key = import.meta.env.VITE_EMAILJS_TOKEN;
    
-         emailjs.send('Service_Portfolio_SL','Template_Portfolio_SL',templateParams,public_key).then((response) => {
+      //    emailjs.send('Service_Portfolio_SL','Template_Portfolio_SL',templateParams,public_key).then((response) => {
 
-            setLoadingSendMessage(false)
-            setModalTitle(<h2 className="modal-contact-title"><CircleCheckBig className="success" />Message envoyé avec succès !</h2>)
-            setModalContent(<p>Merci pour votre message, je vous répondrai dans les plus brefs délais.</p>)
-            setCanClose(true)
-            setIsModalOpen(true)
+      //       setLoadingSendMessage(false)
+      //       setModalTitle(<h2 className="modal-contact-title"><CircleCheckBig className="success" />Message envoyé avec succès !</h2>)
+      //       setModalContent(<p>Merci pour votre message, je vous répondrai dans les plus brefs délais.</p>)
+      //       setCanClose(true)
+      //       setIsModalOpen(true)
 
-            })
-            .catch((error) => {
+      //       })
+      //       .catch((error) => {
 
-               setLoadingSendMessage(false)
-               setModalTitle(<h2 className="modal-contact-title"><CircleX className="error" />Échec de l'envoi du message !</h2>)
-               setModalContent(
-                  <>
-                  <p>Une erreur est survenue lors de l'envoi. Veuillez réessayer dans quelques instants.</p>
-                  <p>Si le problème persiste, veuillez réessayer ultérieurement</p>
-                  </>
-               )
-               setCanClose(true)
-               setIsModalOpen(true)
+      //          setLoadingSendMessage(false)
+      //          setModalTitle(<h2 className="modal-contact-title"><CircleX className="error" />Échec de l'envoi du message !</h2>)
+      //          setModalContent(
+      //             <>
+      //             <p>Une erreur est survenue lors de l'envoi. Veuillez réessayer dans quelques instants.</p>
+      //             <p>Si le problème persiste, veuillez réessayer ultérieurement</p>
+      //             </>
+      //          )
+      //          setCanClose(true)
+      //          setIsModalOpen(true)
          
-            })
+      //       })
 
-            setName('')
-            setLastName('')
-            setCompany('')
-            setEmail('')
-            setReasonId('')
-            setMessage('')
-      }
+      //       setName('')
+      //       setLastName('')
+      //       setCompany('')
+      //       setEmail('')
+      //       setReasonId('')
+      //       setMessage('')
+      // }
 
    }
 

@@ -1,18 +1,20 @@
 .loading {
    display: flex;
    flex-direction: column;
-}
+    gap: 1rem;
+  }
 
 .loading p {
    text-align: center;
+   position: relative;
 }
 
 .loading-dots {
-   display: ruby;
-   color: var(--color-blue-primary);
-   font-family: var(--font-numeric);
-   font-size: 30px;
-   width: 10px;
+  top: -15px;
+  position: absolute;
+  color: var(--color-blue-primary);
+  font-family: var(--font-numeric);
+  font-size: 30px;
 }
 
 .loader {

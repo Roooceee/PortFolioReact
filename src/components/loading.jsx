@@ -16,7 +16,7 @@ function Loading({textLoading}){
             setLoadingDots('')
          }
       
-      },2000)
+      },500)
 
 
    },[loadingDots])
@@ -24,7 +24,9 @@ function Loading({textLoading}){
    return (
       <div className="loading">
          <span className="loader"></span>
-         <p>{textLoading} <span className='loading-dots'>{loadingDots}</span></p>
+         {textLoading ? 
+            <p>{textLoading}<span className='loading-dots'>{loadingDots}</span></p>
+         : ''}
       </div>
    )
 }
