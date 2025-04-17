@@ -35,9 +35,9 @@ function Carousel({items , ItemComponent}){
             {/* operateur de décomposition passe toutes les clé/valeurs  de l'objet en props */}
          {/* Affiche le bouton "Précédent" uniquement si ce n'est pas la première formation chronologiquement[2] */}
          <div className="arrows">
-            {currentIndex < items.length-1 && <a className="previous" href="#" onClick={previous} aria-label="precedent"><CircleArrowLeft size={48}/></a>}
+            {currentIndex < items.length-1 && <a className="previous" href="#" onClick={previous} title="précédent" aria-label="precedent"><CircleArrowLeft size={48}/></a>}
             {/* Affiche le bouton "Suivant" uniquement si ce n'est pas la derniere formation chronologiquement [0] */}
-            {currentIndex > 0 && <a className="next" href="#" onClick={next}><CircleArrowRight size={48} aria-label="suivant"/></a>}
+            {currentIndex > 0 && <a className="next" href="#" onClick={next} title="suivant" aria-label="suivant"><CircleArrowRight size={48}/></a>}
          </div>
       </div>
       </>
