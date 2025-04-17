@@ -110,8 +110,8 @@ function Home() {
         <Experiences ref={refExperiences}/>
         <Formations ref={refFormations}/>
         <Contact ref={refContact}/>
-        <Footer/>
       </main>
+      <Footer/>
     </>
 )}
 
