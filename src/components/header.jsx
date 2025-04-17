@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom'
 import '../styles/header.css'
 import useStoreSectionVisible from '../storeSectionVisible'
+import { Menu,X } from 'lucide-react'
+import { useState } from 'react'
 
 function Header() {
 
+   const [isOpen,setIsOpen] = useState(false)
    
-   function showBurgerMenu(){
-      console.log('button burger afficher')
+   function toggleMenu(){
+    setIsOpen(prev=>!prev)  
    }
    
    const {activeSection} = useStoreSectionVisible()
@@ -20,13 +23,11 @@ function Header() {
                Sébastien LUCAS
                </Link>
             </div>
-            <nav>
-               <span className="burger-icon" onClick={showBurgerMenu}>
-                  <span></span>
-                  <span></span>
-                  <span></span>
+            <nav className={isOpen?'open':''}>
+               <span className="burger-icon" onClick={toggleMenu}>
+                  {!isOpen ?<Menu size={38}/> : <X size={38}/>}
                </span>
-               <ul>
+               <ul className={isOpen?'open':''}>
                   <li><a className={activeSection == 'apropos' ? 'active' : ''} href='/#apropos' id='aproposLink'>A Propos</a></li>
                   <li><a className={activeSection == 'skills' ? 'active' : ''} href='/#skills' id='skillsLink'>Compétences</a></li>
                   <li><a className={activeSection === 'projects' ? 'active' : ''} href='/#projects' id='projectsLink' >Projets</a></li>
