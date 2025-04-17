@@ -4,7 +4,7 @@ footer {
 
 footer>div {
    margin: auto;
-   padding: 0.625rem;
+   padding: 0.625rem 0;
    display: grid;
    gap: 0.625rem;
 }

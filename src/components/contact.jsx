@@ -124,11 +124,6 @@ function Contact(props , ref){
 
    function sendMail(e){
 
-      setLoadingSendMessage(true)
-      setModalTitle(null)
-      setModalContent(<Loading textLoading={'Envoie du message en cours'}/>)
-      setIsModalOpen(true)
-
       e.preventDefault()
 
       if(verifyAllField()){
