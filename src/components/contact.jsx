@@ -158,6 +158,7 @@ function Contact(props , ref){
    
          emailjs.send('Service_Portfolio_SL','Template_Portfolio_SL',templateParams,public_key).then((response) => {
 
+            console.log(response)
             setLoadingSendMessage(false)
             setModalTitle(<h2 className="modal-contact-title"><CircleCheckBig className="success" />Message envoyé avec succès !</h2>)
             setModalContent(<p>Merci pour votre message, je vous répondrai dans les plus brefs délais.</p>)
@@ -167,6 +168,7 @@ function Contact(props , ref){
             })
             .catch((error) => {
 
+               console.log(error)
                setLoadingSendMessage(false)
                setModalTitle(<h2 className="modal-contact-title"><CircleX className="error" />Échec de l'envoi du message !</h2>)
                setModalContent(

@@ -1,12 +1,12 @@
 [
   {
     "type": "Formation Professionnelle",
-    "intitule": "Langage Informatique à la carte",
+    "intitule": "Language Informatique à la carte",
     "option": null,
     "description":"Parcours débutant par les fondamentaux (HTML/CSS, Algo/Python), évoluant vers le JavaScript moderne (interactions DOM, appels API via fetch) et React.js, avec une initiation au côté serveur via PHP",
     "etablissement": "laPlateforme.io",
     "lieu": "Brignoles, France",
-    "debut": "2024-09-01",
+    "debut": "2024-12-16",
     "fin": "2025-04-11",
     "obtention":null,
 
