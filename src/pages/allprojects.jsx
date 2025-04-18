@@ -57,11 +57,11 @@ function Allprojects(){
          <main>
             <section id="allprojects">
                <div className="contain-1440">
-               <h1>Tous Mes Projets</h1>
+               <h1 className="title-section">Tous Mes Projets</h1>
                <div>
                   {projects.map(e=> {
                         if(e.name != 'Roooceee'){
-                           return <ProjectListItem key={e.name} name={e.name} description={e.description} languages={e.languages} homepage={e.homepage} html_url={e.html_url} created={e.created_at} update={e.updated_at} />
+                           return <ProjectListItem key={e.name} name={e.name} description={e.description} homepage={e.homepage} html_url={e.html_url} created={e.created_at} update={e.updated_at} />
                         }
                   })}
                </div>

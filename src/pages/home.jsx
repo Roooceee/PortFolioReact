@@ -51,7 +51,7 @@ function Home() {
     }
   },[location])
 
-  const {setActiveSection} = useStoreSectionVisible()
+  const setActiveSection = useStoreSectionVisible((state) => state.setActiveSection);
 
   const refAPropos = useRef(null)
   const refSkills = useRef(null)
@@ -94,7 +94,7 @@ function Home() {
           topId = sectionsRefs[i+1].id
         }
       }
-      setActiveSection(topId)
+      setActiveSection(topId);
     
     }
   }

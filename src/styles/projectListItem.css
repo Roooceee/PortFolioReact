@@ -44,4 +44,60 @@
    display: flex;
    align-items: center;
    gap: 0.3125rem;
+   white-space: nowrap;
+}
+
+@media (max-width:767px){
+
+   .projectListItem {
+      padding: 10px;
+   }
+
+   .projectListItem h2 {
+      font-size: var(--font-size-md);
+   }
+
+   .projectListItem > div.links > a {
+      padding: 5px 10px;
+      border-radius: 5px;
+      gap: 1px;
+   }
+
+   .projectListItem > div.links > a > svg {
+      width: 20px;
+      height: 20px;
+   }
+
+   .projectListItem > div > div.languages , .projectListItem > div > div.dates , .projectListItem > div.links > a > span {
+      display: none;
+   }
+
+}
+
+@media (max-width:420px){ 
+
+   .projectListItem h2 {
+      font-size: var(--font-size-sm);
+   }
+
+   .projectListItem .links {
+      gap: 0.25rem;
+   }
+
+   .projectListItem > div.links > a {
+      padding: 2.5px 5px;
+   }
+
+   .projectListItem > div.links > a > svg {
+      width: 15px;
+      height: 15px;
+   }
+}
+
+@media (max-width:380px){ 
+
+   .projectListItem h2 {
+      font-size: var(--font-size-xs);
+   }
+
 }

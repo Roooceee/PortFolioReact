@@ -7,10 +7,12 @@ import Loading from "./loading";
 
 
 function Contact(props , ref){
-
+   
    const [isModalOpen,setIsModalOpen] = useState(false)
    const [modalContent,setModalContent] = useState(null)
    const [modalTitle,setModalTitle] = useState(null)
+   const [loadingSendMessage,setLoadingSendMessage] = useState(null)
+   const [canClose,setCanClose] = useState(false)
 
    const [lastName,setLastName] = useState('')
    const [lastNameError,setLastNameError] = useState('')
@@ -36,8 +38,6 @@ function Contact(props , ref){
    const [message,setMessage] = useState('')
    const [messageError,setMessageError] = useState('')
 
-   const [loadingSendMessage,setLoadingSendMessage] = useState(null)
-   const [canClose,setCanClose] = useState(false)
 
    const messagesError = {
       lastnameError : "Un nom ne peut contenir que des lettres, des tirets ou des apostrophes.",
@@ -100,20 +100,20 @@ function Contact(props , ref){
       return allFieldIsGood
    }
 
-   // useEffect(()=>{
+   useEffect(()=>{
 
-   //    if(isModalOpen){
+      if(isModalOpen){
 
-   //       setTimeout(()=>{
+         setTimeout(()=>{
 
-   //          closeModal()
-   //             },3000)
-   //    }
+            closeModal()
+               },3000)
+      }
          
-   //    return () => {
-   //       clearTimeout()
-   //    }
-   // },[isModalOpen])
+      return () => {
+         clearTimeout()
+      }
+   },[isModalOpen])
 
 
    function closeModal(){
@@ -128,6 +128,10 @@ function Contact(props , ref){
 
       if(verifyAllField()){
 
+         setLoadingSendMessage(true)
+         setModalTitle(null)
+         setModalContent(<Loading textLoading={'Envoie du message en cours'}/>)
+         setIsModalOpen(true)
 
          const delaiLoading = () => {
             setTimeout(()=>{
@@ -308,7 +312,7 @@ function Contact(props , ref){
             onClose={closeModal}
             children={modalContent}
             showButtonClose={false}
-            canClose={false}
+            canClose={canClose}
             />            
          :
             <Modal 

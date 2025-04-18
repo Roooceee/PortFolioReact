@@ -84,6 +84,9 @@
 
 @media (max-width: 767px) {
 
+   #head_index > div > div:nth-child(1) {
+      justify-content: center;
+   }
    
    .typing-text {
       margin: 5px auto;
@@ -95,6 +98,10 @@
    
    #head_index h1 {
       font-size: var(--font-size-2xl) ;
+   }
+
+   #head_index > div > div:nth-child(1) > p {
+      padding-bottom: 0;
    }
 
 }

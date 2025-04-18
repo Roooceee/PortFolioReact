@@ -1,7 +1,6 @@
 .loading {
-   display: flex;
-   flex-direction: column;
-    gap: 1rem;
+  display: grid;
+  gap: 1rem;
   }
 
 .loading p {

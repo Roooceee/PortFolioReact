@@ -28,8 +28,8 @@ function Header() {
                   {!isOpen ?<Menu size={38}/> : <X size={38}/>}
                </span>
                <ul className={isOpen?'open':''}>
-                  <li><a className={activeSection == 'apropos' ? 'active' : ''} href='/#apropos' id='aproposLink'>A Propos</a></li>
-                  <li><a className={activeSection == 'skills' ? 'active' : ''} href='/#skills' id='skillsLink'>Compétences</a></li>
+                  <li><a className={activeSection === 'apropos' ? 'active' : ''} href='/#apropos' id='aproposLink'>A Propos</a></li>
+                  <li><a className={activeSection === 'skills' ? 'active' : ''} href='/#skills' id='skillsLink'>Compétences</a></li>
                   <li><a className={activeSection === 'projects' ? 'active' : ''} href='/#projects' id='projectsLink' >Projets</a></li>
                   <li><a className={activeSection === 'experiences' ? 'active' : ''} href='/#experiences' id='experiencesLink'>Expériences</a></li>
                   <li><a className={activeSection === 'formations' ? 'active' : ''} href='/#formations' id='formationsLink'>Formation</a></li>

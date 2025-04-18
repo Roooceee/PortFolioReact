@@ -6,16 +6,28 @@
 #projects>div {
    margin: auto;
    padding: 3.75rem 0 3.75rem 0;
-   display: grid;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
    gap: 1.875rem;
+   min-height: 500px;
 }
 
-#projects>div>div:nth-child(2) {
+#projects>div>div.last-projects {
    display: flex;
    justify-content: space-between;
 }
 
+#projects > div > div > .loading {
+   margin: auto;
+}
+
+#projects > div > p.error-loading {
+   margin: auto;
+}
+
 #projects > div > a {
+   max-height: fit-content;
    max-width: fit-content;
    margin: 0 0 0 auto;
 }

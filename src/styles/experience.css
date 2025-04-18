@@ -99,22 +99,13 @@
       font-size: var(--font-size-lg);
    }
 
-   .experience > div.head_experience > p.description , .experience > div.experience_context > ul li , .experience > .responsibilities ul li {
-      font-size: var(--font-size-xs);
-   }
-
 }
-
 
 @media (max-width: 767px) {
 
    .experience > div.responsibilities > ul > li > svg {
       max-width: 20px;
       min-width: 20px
-   }
-
-   .experience > div.technologies > ul li {
-      font-size: var(--font-size-xs);
    }
 
 }

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Suspense, useEffect, useState } from "react";
+
 import ReactDOM from 'react-dom';
 import '../styles/modal.css'
 import {X} from 'lucide-react';
@@ -23,9 +24,9 @@ function Modal({isOpen,onClose,children,showButtonClose,title=null,canClose=null
                      }
                </div>
             :''}
-            <div className='modal-content'>
-               {children}
-            </div>
+               <div className='modal-content'>
+                  {children}
+               </div>
          </div>
       </div>,
       document.querySelector('#modal-root')
