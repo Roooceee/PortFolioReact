@@ -19,7 +19,7 @@ function Allprojects(){
       behavior: 'smooth'
       })
       
-         document.title='Portfolio - Sébastien LUCAS - Mes Projets'
+         document.title='Portfolio de Sébastien LUCAS - Développeur Web Junior React & Node.js - Mes Projets'
          setActiveSection('projects')
          getProjects()
       

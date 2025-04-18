@@ -18,7 +18,7 @@ import Footer from "../components/footer"
 function Home() {
 
   useEffect(()=> {
-    document.title = 'Portfolio - Sébastien LUCAS'
+    document.title = 'Portfolio de Sébastien LUCAS - Développeur Web Junior React & Node.js'
 
     const handleScroll = () => {
       checkIsInView()
