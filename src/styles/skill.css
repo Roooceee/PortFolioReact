@@ -10,6 +10,7 @@
    align-items: center;
    gap: 0.625rem;
    font-size: var(--font-size-2xl);
+   white-space: nowrap;
 }
 
 .skill ul {
@@ -21,6 +22,7 @@
 .skill ul li {
    color: var(--text-on-dark-bg);
    font-size: var(--font-size-base);
+   white-space: nowrap;
 }
 
 .skill li::before {
@@ -30,6 +32,10 @@
 }
 
 @media (max-width: 767px) {
+
+   .skill h2 {
+      text-align: left;
+   }
 
    .skill h3 {
       font-size: var(--font-size-lg);

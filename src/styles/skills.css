@@ -13,23 +13,25 @@
 
 
 #skills>div>div {
-   display: flex;
-   justify-content: center;
-   gap: 6.25rem;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 3rem;
 }
 
 @media (max-width: 767px) {
 
    #skills > div > div {
-      gap: 2rem;
+      gap: 1rem;
    }
 
 }
 
-@media (max-width: 520px) {
+@media (max-width: 600px) {
 
    #skills > div > div {
+      display: flex;
       flex-direction: column;
+      justify-content: center;
    }
 
 }
