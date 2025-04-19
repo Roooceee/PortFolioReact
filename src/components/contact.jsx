@@ -85,7 +85,7 @@ function Contact(props , ref){
             allFieldIsGood = false
          }
       }
-      if(!verifyField(/^[^\s@]+@[^\s@]+\.[^\s@]+$/,5,1000,email,setEmailError,messagesError.emailError)){
+      if(!verifyField(/^[^\s@]+@[^\s@]+\.[^\s@]+$/,5,50,email,setEmailError,messagesError.emailError)){
          allFieldIsGood = false
       }
       if(reasonId === ''){
@@ -93,7 +93,7 @@ function Contact(props , ref){
          allFieldIsGood = false
       }
 
-      if(!verifyField(/^[^<>]+$/,10,254,message,setMessageError,messagesError.messageError)){
+      if(!verifyField(/^[^<>]+$/,10,1000,message,setMessageError,messagesError.messageError)){
          allFieldIsGood = false 
       }
 
