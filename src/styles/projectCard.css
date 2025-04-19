@@ -125,6 +125,10 @@
 
 @media (max-width: 767px) {
 
+   #modal-root .modal-project {
+      min-width: 100%;
+   }
+
    #projects .projectCard {
       min-height: 28rem;
    }

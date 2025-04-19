@@ -18,14 +18,15 @@
 
 .modal {
    position: relative;
+   max-width: 80%;
    padding: 1rem;
    border-radius: 5px;
-   display: grid;
+   display: flex;
+   flex-direction: column;
    gap: 2rem;
 }
 
 .modal .modal-head {
-   width: 100% ;
    display: flex;
    align-items: start;
    justify-content: space-between;
@@ -52,6 +53,7 @@
 
 
 @media (max-width:767px) {
+
 
    .modal .modal-head h2 {
       font-size: var(--font-size-md);
