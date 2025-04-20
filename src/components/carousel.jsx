@@ -91,7 +91,7 @@ function Carousel({items , ItemComponent}){
    return (
 
       <>
-      <div className="carousel" {...handlers} ref={carouselRef}>
+      <div className="carousel" {...handlers}>
          {/* Permet d'avoir une transition via motion quand currentIndex change */}
          <AnimatePresence mode="wait" custom={direction}>
          <motion.div
