@@ -10,26 +10,27 @@ function Carousel({items , ItemComponent}){
       const [direction,setDirection] = useState(null)
       const carouselRef = useRef(null);
 
-      useEffect(()=>{
 
-         setTimeout(()=>{
-            carouselRef.current.scrollIntoView({ behavior: "smooth" });
-         },700)
-
-      },[currentIndex])
+      function scrollIntoCarouselRef(){
+         // setTimeout(()=>{
+         //    carouselRef.current.scrollIntoView({ behavior: "smooth" });
+         // },700)
+      }
 
       // Permet via la bibliothèque useSwipeable de changer d'index si on swipe a droite ou a gauche
       const handlers = useSwipeable({
          onSwipedRight: () => {
            if (currentIndex < items.length - 1) {
             setDirection(-1)
-             SetCurrentIndex(currentIndex + 1)
+            SetCurrentIndex(currentIndex + 1)
+            scrollIntoCarouselRef()
            }
          },
          onSwipedLeft: () => {
            if (currentIndex > 0) {
             setDirection(1)
             SetCurrentIndex(currentIndex - 1)
+            scrollIntoCarouselRef()
            }
          },
          preventDefaultTouchmoveEvent: true,
@@ -57,6 +58,8 @@ function Carousel({items , ItemComponent}){
          // Si on est à la fin du item, on revient au début (indice 0)
          // Sinon on diminue l'indice pour afficher la formation précédente
          SetCurrentIndex(currentIndex === items.length-1 ? 0 : currentIndex+1)
+         setDirection(-1)
+         scrollIntoCarouselRef()
       }
    
       // Fonction pour aller à la formation suivante
@@ -65,6 +68,8 @@ function Carousel({items , ItemComponent}){
          // Si on est au début (indice 0), on revient à la fin (dernière formation)
          // Sinon on augmente l'indice pour afficher la formation suivante
          SetCurrentIndex(currentIndex === 0 ? items.length-1 : currentIndex-1)
+         setDirection(1)
+         scrollIntoCarouselRef()
          // Si on est a la fin du tableau revient a la taille du tableau aussi non -1 car JSON du plus recent au plus ancien
       }
 
@@ -104,6 +109,7 @@ function Carousel({items , ItemComponent}){
             {/* operateur de décomposition passe toutes les clé/valeurs  de l'objet en props */}
          <div className="dots">
             {items.map((dot,index)=>{
+               console.log(dot,index)
                return <a key={index} 
                className={`dot ${index === currentIndex ? "active" : ""}`}
                onClick={(e)=> changeCurrentIndex(e,index)}><CircleDot/></a>

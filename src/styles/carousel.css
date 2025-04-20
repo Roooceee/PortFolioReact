@@ -14,12 +14,12 @@
 
 .carousel  .previous {
    top: 3.125rem;
-   left: 50px;
+   left: 3%;
 }
 
 .carousel  .next {
    top: 3.125rem;
-   right: 50px;
+   right: 3%;
 }
 
 .dots {
