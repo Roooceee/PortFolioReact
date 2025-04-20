@@ -12,9 +12,9 @@ function Carousel({items , ItemComponent}){
 
 
       function scrollIntoCarouselRef(){
-         // setTimeout(()=>{
-         //    carouselRef.current.scrollIntoView({ behavior: "smooth" });
-         // },700)
+         setTimeout(()=>{
+            carouselRef.current.scrollIntoView({ behavior: "smooth" });
+         },700)
       }
 
       // Permet via la bibliothèque useSwipeable de changer d'index si on swipe a droite ou a gauche
@@ -91,21 +91,23 @@ function Carousel({items , ItemComponent}){
    return (
 
       <>
-      <div className="carousel" {...handlers}>
-         {/* Permet d'avoir une transition via motion quand currentIndex change */}
-         <AnimatePresence mode="wait" custom={direction}>
-         <motion.div
-            key={currentIndex}
-            custom={direction}
-            variants={variants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{ duration: 0.4 }}
-         >
-            <ItemComponent {...items[currentIndex]} />
-         </motion.div>
-         </AnimatePresence>
+      <div className="carousel" ref={carouselRef}>
+         <div className="carousel-swipe" {...handlers}>
+            {/* Permet d'avoir une transition via motion quand currentIndex change */}
+            <AnimatePresence mode="wait" custom={direction}>
+            <motion.div
+               key={currentIndex}
+               custom={direction}
+               variants={variants}
+               initial="enter"
+               animate="center"
+               exit="exit"
+               transition={{ duration: 0.4 }}
+            >
+               <ItemComponent {...items[currentIndex]} />
+            </motion.div>
+            </AnimatePresence>
+         </div>
             {/* operateur de décomposition passe toutes les clé/valeurs  de l'objet en props */}
          <div className="dots">
             {items.map((dot,index)=>{
