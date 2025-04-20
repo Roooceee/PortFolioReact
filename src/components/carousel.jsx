@@ -13,13 +13,13 @@ function Carousel({items , ItemComponent}){
       const handlers = useSwipeable({
          onSwipedRight: () => {
            if (currentIndex < items.length - 1) {
-            setDirection(1)
+            setDirection(-1)
              SetCurrentIndex(currentIndex + 1)
            }
          },
          onSwipedLeft: () => {
            if (currentIndex > 0) {
-            setDirection(-1)
+            setDirection(1)
             SetCurrentIndex(currentIndex - 1)
            }
          },
