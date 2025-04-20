@@ -84,6 +84,11 @@
 
 @media (max-width: 767px) {
 
+   #head_index {
+      min-height: 100dvh;
+      padding: 0;
+   }
+
    #head_index > div > div:nth-child(1) {
       justify-content: center;
    }

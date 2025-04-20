@@ -63,15 +63,16 @@ function Carousel({items , ItemComponent}){
       function changeCurrentIndex(e,pIndex){
          e.preventDefault()
          if(pIndex <= items.length && pIndex >= 0 ){
+            if(pIndex>currentIndex){
+               setDirection(-1)
+            }
+            else {
+               setDirection(1)
+            }
             SetCurrentIndex(pIndex)
          }
 
       }
-
-   console.log(currentIndex)
-
-
-
 
    return (
 
