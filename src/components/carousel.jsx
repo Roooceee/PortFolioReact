@@ -55,9 +55,7 @@ function Carousel({items , ItemComponent}){
       // Fonction pour aller à la formation précédente
       function previous(e){
          e.preventDefault()
-         // Si on est à la fin du item, on revient au début (indice 0)
-         // Sinon on diminue l'indice pour afficher la formation précédente
-         SetCurrentIndex(currentIndex === items.length-1 ? 0 : currentIndex+1)
+         SetCurrentIndex(currentIndex === items.length-1 ? items.length : currentIndex+1)
          setDirection(-1)
          scrollIntoCarouselRef()
       }
@@ -65,9 +63,7 @@ function Carousel({items , ItemComponent}){
       // Fonction pour aller à la formation suivante
       function next(e){
          e.preventDefault()
-         // Si on est au début (indice 0), on revient à la fin (dernière formation)
-         // Sinon on augmente l'indice pour afficher la formation suivante
-         SetCurrentIndex(currentIndex === 0 ? items.length-1 : currentIndex-1)
+         SetCurrentIndex(currentIndex === 0 ? 0 : currentIndex-1)
          setDirection(1)
          scrollIntoCarouselRef()
          // Si on est a la fin du tableau revient a la taille du tableau aussi non -1 car JSON du plus recent au plus ancien
@@ -83,6 +79,7 @@ function Carousel({items , ItemComponent}){
             else {
                setDirection(1)
             }
+            scrollIntoCarouselRef()
             SetCurrentIndex(pIndex)
          }
 
