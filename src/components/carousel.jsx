@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { CircleArrowLeft, CircleArrowRight, CircleDot } from "lucide-react"
 import { useSwipeable } from 'react-swipeable'
 import { motion, AnimatePresence } from "framer-motion"
@@ -8,6 +8,15 @@ function Carousel({items , ItemComponent}){
 
       const [currentIndex,SetCurrentIndex] = useState(0)
       const [direction,setDirection] = useState(null)
+      const carouselRef = useRef(null);
+
+      useEffect(()=>{
+
+         setTimeout(()=>{
+            carouselRef.current.scrollIntoView({ behavior: "smooth" });
+         },700)
+
+      },[currentIndex])
 
       // Permet via la bibliothèque useSwipeable de changer d'index si on swipe a droite ou a gauche
       const handlers = useSwipeable({
@@ -77,7 +86,7 @@ function Carousel({items , ItemComponent}){
    return (
 
       <>
-      <div className="carousel" {...handlers}>
+      <div className="carousel" {...handlers} ref={carouselRef}>
          {/* Permet d'avoir une transition via motion quand currentIndex change */}
          <AnimatePresence mode="wait" custom={direction}>
          <motion.div
