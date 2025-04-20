@@ -1,11 +1,46 @@
 import { useState } from "react"
-import { CircleArrowLeft, CircleArrowRight } from "lucide-react"
+import { CircleArrowLeft, CircleArrowRight, CircleDot } from "lucide-react"
+import { useSwipeable } from 'react-swipeable'
+import { motion, AnimatePresence } from "framer-motion"
 import '../styles/carousel.css'
 
 function Carousel({items , ItemComponent}){
 
       const [currentIndex,SetCurrentIndex] = useState(0)
-      const currentItemData = items[currentIndex]
+      const [direction,setDirection] = useState(null)
+
+      // Permet via la bibliothèque useSwipeable de changer d'index si on swipe a droite ou a gauche
+      const handlers = useSwipeable({
+         onSwipedRight: () => {
+           if (currentIndex < items.length - 1) {
+            setDirection(1)
+             SetCurrentIndex(currentIndex + 1)
+           }
+         },
+         onSwipedLeft: () => {
+           if (currentIndex > 0) {
+            setDirection(-1)
+            SetCurrentIndex(currentIndex - 1)
+           }
+         },
+         preventDefaultTouchmoveEvent: true,
+         trackMouse: true,
+       })
+
+      const variants = {
+      enter: (dir) => ({
+         x: dir > 0 ? 300 : -300,
+         opacity: 0,
+      }),
+      center: {
+         x: 0,
+         opacity: 1,
+      },
+      exit: (dir) => ({
+         x: dir > 0 ? -300 : 300,
+         opacity: 0,
+      }),
+      }
 
       // Fonction pour aller à la formation précédente
       function previous(e){
@@ -22,22 +57,53 @@ function Carousel({items , ItemComponent}){
          // Sinon on augmente l'indice pour afficher la formation suivante
          SetCurrentIndex(currentIndex === 0 ? items.length-1 : currentIndex-1)
          // Si on est a la fin du tableau revient a la taille du tableau aussi non -1 car JSON du plus recent au plus ancien
-   
       }
+
+      // Permet de changer 
+      function changeCurrentIndex(e,pIndex){
+         e.preventDefault()
+         if(pIndex <= items.length && pIndex >= 0 ){
+            SetCurrentIndex(pIndex)
+         }
+
+      }
+
+   console.log(currentIndex)
+
 
 
 
    return (
 
       <>
-      <div className="carousel">
-            <ItemComponent {...currentItemData}/>
+      <div className="carousel" {...handlers}>
+         {/* Permet d'avoir une transition via motion quand currentIndex change */}
+         <AnimatePresence mode="wait" custom={direction}>
+         <motion.div
+            key={currentIndex}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.4 }}
+         >
+            <ItemComponent {...items[currentIndex]} />
+         </motion.div>
+         </AnimatePresence>
             {/* operateur de décomposition passe toutes les clé/valeurs  de l'objet en props */}
-         {/* Affiche le bouton "Précédent" uniquement si ce n'est pas la première formation chronologiquement[2] */}
+         <div className="dots">
+            {items.map((dot,index)=>{
+               return <a key={index} 
+               className={`dot ${index === currentIndex ? "active" : ""}`}
+               onClick={(e)=> changeCurrentIndex(e,index)}><CircleDot/></a>
+            })}
+         </div>
          <div className="arrows">
-            {currentIndex < items.length-1 && <a className="previous" href="#" onClick={previous} title="précédent" aria-label="precedent"><CircleArrowLeft size={48}/></a>}
+            {/* Affiche le bouton "Précédent" uniquement si ce n'est pas la première formation chronologiquement[2] */}
+            {currentIndex < items.length-1 && <a className="previous" href="#" onClick={(e)=> previous(e)} title="précédent" aria-label="precedent"><CircleArrowLeft size={48}/></a>}
             {/* Affiche le bouton "Suivant" uniquement si ce n'est pas la derniere formation chronologiquement [0] */}
-            {currentIndex > 0 && <a className="next" href="#" onClick={next} title="suivant" aria-label="suivant"><CircleArrowRight size={48}/></a>}
+            {currentIndex > 0 && <a className="next" href="#" onClick={(e)=> next(e)} title="suivant" aria-label="suivant"><CircleArrowRight size={48}/></a>}
          </div>
       </div>
       </>

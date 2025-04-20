@@ -1,7 +1,7 @@
 [
    {
      "logo": "PanelTop",
-     "title": "Développement Frontend",
+     "title": "Frontend",
      "skills_details": [
        "JavaScript (ES6+)",
        "React.js",
@@ -13,7 +13,7 @@
    },
    {
      "logo": "Server",
-     "title": "Développement Backend & BDD",
+     "title": "Backend & BDD",
      "skills_details": [
        "Node.js (bases)",
        "PHP (bases)",

@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import '../styles/modal.css'
 import {X} from 'lucide-react';
 
-function Modal({isOpen,onClose,children,showButtonClose,title=null,canClose=null}){
+function Modal({isOpen,onClose,children,showButtonClose,title=null}){
 
    if(!isOpen){
       return null

@@ -13,20 +13,43 @@
 
 .carousel  .previous {
    top: 3.125rem;
-   left: 1rem;
+   left: 50px;
 }
 
 .carousel  .next {
    top: 3.125rem;
-   right: 1rem;
+   right: 50px;
+}
+
+.dots {
+   width: fit-content;
+   display: flex;
+   gap: 5px;
+   flex-direction: row-reverse;
+   margin: auto;
+   padding-top: 20px;
+}
+
+.dot svg {
+   color: var(--color-blue-secondary);
+}
+
+.dot.active svg {
+   color: var(--color-blue-primary);
 }
 
 @media (max-width: 767px) {
 
+   
    .carousel {
       display: flex;
       flex-direction: column;
       gap: 20px;
+   }
+
+   .carousel-card {
+      touch-action: pan-y;
+      user-select: none;
    }
 
    .carousel .arrows {
@@ -35,17 +58,7 @@
    }
 
    .carousel  a.previous , .carousel  a.next {
-      position: relative;
-   }
-   
-   .carousel  .previous {
-      top: 0;
-      left: 0;
-   }
-   
-   .carousel  .next {
-      top: 0;
-      right: 0;
+      display: none;
    }
 
 }

@@ -100,22 +100,6 @@ function Contact(props , ref){
       return allFieldIsGood
    }
 
-   useEffect(()=>{
-
-      if(isModalOpen){
-
-         setTimeout(()=>{
-
-            closeModal()
-               },3000)
-      }
-         
-      return () => {
-         clearTimeout()
-      }
-   },[isModalOpen])
-
-
    function closeModal(){
       if(canClose){
          setIsModalOpen(false)
@@ -126,21 +110,16 @@ function Contact(props , ref){
 
       e.preventDefault()
 
+      setCanClose(false)
+      
       if(verifyAllField()){
+
+         console.log(canClose)
 
          setLoadingSendMessage(true)
          setModalTitle(null)
-         setModalContent(<Loading textLoading={'Envoie du message en cours'}/>)
+         setModalContent(<Loading textLoading={'Envoi du message en cours'}/>)
          setIsModalOpen(true)
-
-         const delaiLoading = () => {
-            setTimeout(()=>{
-            },4000)
-         }
-
-         delaiLoading
-
-         clearTimeout(delaiLoading)         
       
          const templateParams = {
             from_name : `${lastName} ${name}`,
@@ -153,6 +132,11 @@ function Contact(props , ref){
          const public_key = import.meta.env.VITE_EMAILJS_TOKEN;
    
          emailjs.send('Service_Portfolio_SL','Template_Portfolio_SL',templateParams,public_key).then((response) => {
+
+            setCanClose(true)
+            setTimeout(()=>{
+               closeModal()
+            },3000)
 
             setLoadingSendMessage(false)
             setModalTitle(<h2 className="modal-contact-title"><CircleCheckBig className="success" />Message envoyé avec succès !</h2>)
@@ -266,22 +250,31 @@ function Contact(props , ref){
                      </div>
 
                      <div className="reason_form">
-                        <label htmlFor="reason">Raison du contact <span className="asterix">*</span></label>
-                        <select name="reason" id="reason" value={reasonId}
-                        className={reasonError ? 'border-red':''}
-                        onChange={(e)=> {
-                           setReasonId(e.target.selectedIndex)
-                           if(reasonError !== ''){
+                        <label htmlFor="reason">
+                           Raison du contact <span className="asterix">*</span>
+                        </label>
+
+                        <select
+                           name="reason"
+                           id="reason"
+                           value={reasonId}
+                           className={reasonError ? 'border-red' : ''}
+                           onChange={(e) => {
+                              setReasonId(e.target.selectedIndex)
+                              if (reasonError !== '') {
                               setReasonError('')
-                           }
-                        }
-                           } >
-                           <option value="" disabled selected>-- Séléctionnez un sujet --</option>
+                              }
+                           }}
+                        >
+                           <option value="" disabled>
+                              -- Séléctionnez un sujet --
+                           </option>
                            <option value="alternance_offer">Proposition d'alternance</option>
                            <option value="question_alternance">Question (Profil / Alternance)</option>
                            <option value="other">Autre</option>
                         </select>
-                        {reasonError != '' ? <p className="error">{reasonError}</p> : ''}
+
+                        {reasonError && <p className="error">{reasonError}</p>}
                      </div>
 
                      <div className="message_form">
@@ -312,7 +305,6 @@ function Contact(props , ref){
             onClose={closeModal}
             children={modalContent}
             showButtonClose={false}
-            canClose={canClose}
             />            
          :
             <Modal 
@@ -320,7 +312,7 @@ function Contact(props , ref){
             onClose={closeModal}
             title={modalTitle}
             children={modalContent}
-            showButtonClose={false}
+            showButtonClose={true}
             />
          }
       </>
