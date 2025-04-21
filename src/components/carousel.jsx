@@ -11,6 +11,7 @@ function Carousel({items , ItemComponent}){
       const carouselRef = useRef(null);
 
 
+      // Fonction permettant de faire un scroll vers carouselRef
       function scrollIntoCarouselRef(){
          setTimeout(()=>{
             carouselRef.current.scrollIntoView({ behavior: "smooth" });
@@ -37,6 +38,7 @@ function Carousel({items , ItemComponent}){
          trackMouse: true,
        })
 
+       
       const variants = {
       enter: (dir) => ({
          x: dir > 0 ? 300 : -300,
@@ -66,7 +68,6 @@ function Carousel({items , ItemComponent}){
          SetCurrentIndex(currentIndex === 0 ? 0 : currentIndex-1)
          setDirection(1)
          scrollIntoCarouselRef()
-         // Si on est a la fin du tableau revient a la taille du tableau aussi non -1 car JSON du plus recent au plus ancien
       }
 
       // Permet de changer 
@@ -108,7 +109,6 @@ function Carousel({items , ItemComponent}){
             {/* operateur de décomposition passe toutes les clé/valeurs  de l'objet en props */}
          <div className="dots">
             {items.map((dot,index)=>{
-               console.log(dot,index)
                return <a key={index} 
                className={`dot ${index === currentIndex ? "active" : ""}`}
                onClick={(e)=> changeCurrentIndex(e,index)}><CircleDot/></a>

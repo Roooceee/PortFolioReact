@@ -22,7 +22,7 @@ function Footer(){
                </ul>
             </div>
             <hr className='hr-grey' />
-            <p> ©<span className='numeric'>2025</span> - Sébastien LUCAS - Tous droits réservé</p>
+            <p> ©<span className='numeric'>2025</span> - Sébastien LUCAS - Tous droits réservé - <Link to='/mentions-legales'>Mentions légales</Link></p>
          </div>
       </footer>
 

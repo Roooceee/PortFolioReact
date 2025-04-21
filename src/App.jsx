@@ -1,6 +1,7 @@
 import { BrowserRouter as Rooter, Route, Routes } from "react-router-dom";
 import Home from "./pages/home";
 import Allprojects from "./pages/allprojects";
+import RGPD from "./pages/legalmentions";
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
 
         <Route path = "/" element={<Home/>} />
         <Route path = "/tous-mes-projets" element={<Allprojects/>} />
+        <Route path = "/mentions-legales" element={<RGPD/>} />
 
 
       </Routes>

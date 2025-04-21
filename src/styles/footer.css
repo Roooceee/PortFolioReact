@@ -19,12 +19,17 @@ footer>div>div a {
    display: flex;
    justify-content: center;
    align-items: center;
-   text-decoration: none;
    font-family: var(--font-title);
    color: var(--text-on-dark-bg);
 }
 
-footer>div>div a:hover {
+footer  a {
+   text-decoration: none;
+   font-family: var(--font-primary);
+   color: var(--text-on-dark-bg);
+}
+
+footer a:hover {
    color: var(--color-blue-secondary);
 }
 
