@@ -1,4 +1,4 @@
-import '../../../styles/shared/languagesPercent/ProgressBarLanguage.css'
+import '../../../styles/shared/languagesPercent/progressBarLanguage.css'
 
 function ProgressBarLanguage({ListLanguagesPercent}){
 
