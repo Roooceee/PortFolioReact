@@ -1,7 +1,7 @@
 
-import Header from "../components/header"
-import Footer from "../components/footer"
-import '../styles/legalmentions.css'
+import Header from "../components/shared/header"
+import Footer from "../components/shared/footer"
+import '../styles/shared/legalmentions.css'
 
 function LegalMentions(){
 
@@ -34,7 +34,7 @@ function LegalMentions(){
                <p>Sébastien Lucas – <a href="mailto:sebastien.jose.lucas@gmail.com">sebastien.jose.lucas@gmail.com</a></p>
 
                <h3>Finalité du traitement :</h3>
-               <p>Le formulaire de contact permet de recueillir votre nom et votre adresse e-mail dans le seul but de vous recontacter suite à votre message. Ces informations sont transmises directement via le service EmailJS, sans stockage local sur le site ou dans une base de données.</p>
+               <p>Le formulaire de contact permet de recueillir votre nom,prénom et votre adresse e-mail dans le seul but de vous recontacter suite à votre message. Ces informations sont transmises directement via le service EmailJS, sans stockage local sur le site ou dans une base de données.</p>
 
                <h3>Destinataire :</h3>
                <p>Les données sont exclusivement destinées à Sébastien Lucas vers sebastien.jose.lucas@gmail.com. Elles ne sont ni revendues, ni partagées avec des tiers.</p>

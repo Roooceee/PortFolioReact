@@ -1,0 +1,109 @@
+.projectListItem {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   min-height: 100px;
+}
+
+.projectListItem div:nth-child(1) {
+   display: grid;
+   gap: 0.625rem;
+}
+
+.projectListItem h2 {
+   color: var(--color-blue-primary);
+   font-size: 1.5rem;
+   font-family: var(--font-primary);
+}
+
+.projectListItem .dates {
+   display: grid;
+}
+
+.projectListItem .dates div p:nth-child(2) {
+   font-family: var(--font-primary);
+   font-size: 0.875rem;
+}
+
+
+.projectListItem .dates div {
+   display: flex;
+   align-items: center;
+   gap: 0.3125rem;
+}
+
+.projectListItem .dates svg {
+   color: var(--color-blue-primary);
+}
+
+.projectListItem .links {
+   display: flex;
+   gap: 0.625rem;
+}
+
+.projectListItem .links a {
+   display: flex;
+   align-items: center;
+   gap: 0.3125rem;
+   white-space: nowrap;
+}
+
+.projectListItem .loading {
+   margin: auto;
+}
+
+@media (max-width:767px){
+
+   .projectListItem {
+      padding: 10px;
+      min-height: fit-content;
+   }
+
+   .projectListItem h2 {
+      font-size: var(--font-size-md);
+   }
+
+   .projectListItem > div.links > a {
+      padding: 5px 10px;
+      border-radius: 5px;
+      gap: 1px;
+   }
+
+   .projectListItem > div.links > a > svg {
+      width: 20px;
+      height: 20px;
+   }
+
+   .projectListItem > div > div.languages , .projectListItem > div > div.dates , .projectListItem > div.links > a > span {
+      display: none;
+   }
+
+}
+
+@media (max-width:420px){ 
+
+   .projectListItem h2 {
+      font-size: var(--font-size-sm);
+   }
+
+   .projectListItem .links {
+      gap: 0.25rem;
+   }
+
+   .projectListItem > div.links > a {
+      padding: 2.5px 5px;
+   }
+
+   .projectListItem > div.links > a > svg {
+      width: 15px;
+      height: 15px;
+   }
+}
+
+@media (max-width:380px){ 
+
+   .projectListItem h2 {
+      font-size: var(--font-size-xs);
+   }
+
+}

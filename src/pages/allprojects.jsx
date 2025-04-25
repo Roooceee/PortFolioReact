@@ -1,17 +1,21 @@
 import { useEffect, useState } from "react";
 
-import Header from "../components/header";
-import ProjectListItem from "../components/projectListItem";
+import ProjectListItem from "../components/allprojects/projectListItem";
+import Header from '../components/shared/header.jsx';
+import Footer from "../components/shared/footer";
 
-import useStoreSectionVisible from '../storeSectionVisible'
-import '../styles/allprojects.css';
-import Footer from "../components/footer";
+import useStoreSectionVisible from '../storeSectionVisible';
+
+import '../styles/pages/allprojects.css';
 
 function Allprojects(){
 
       const {setActiveSection} = useStoreSectionVisible()
       const [projects,setProjects] = useState([])
    
+      const [isReady, setIsReady] = useState(false);
+      const [error, setError] = useState(false);
+
       useEffect(()=>{
 
       window.scrollTo({
@@ -38,11 +42,14 @@ function Allprojects(){
                })
    
             const res = await req.json()
-            setProjects(res)
-   
-            // Log le nombre de requêtes restantes
-            const remainingRequests = req.headers.get('X-RateLimit-Remaining');
-            console.log(`Il te reste ${remainingRequests} requêtes avant de dépasser la limite.`);
+            if(res){
+               setProjects(res)
+               setIsReady(true)
+            }
+            else {
+               console.warn('Aucun projets recupéré')
+               setError(true)
+            }
          }
          catch(e){
             console.log('Erreur '+e)
@@ -57,14 +64,26 @@ function Allprojects(){
          <main>
             <section id="allprojects">
                <div className="contain-1440">
-               <h1 className="title-section">Tous Mes Projets</h1>
-               <div>
-                  {projects.map(e=> {
-                        if(e.name != 'Roooceee'){
-                           return <ProjectListItem key={e.name} name={e.name} description={e.description} homepage={e.homepage} html_url={e.html_url} created={e.created_at} update={e.updated_at} />
-                        }
-                  })}
-               </div>
+                  <h1 className="title-section">Tous Mes Projets</h1>
+                  <div className="projects-list-items">
+                     {isReady && !error && (
+
+                        <>
+                           {projects.map(e=> {
+                                 if(e.name != 'Roooceee'){
+                                    return <ProjectListItem key={e.name} name={e.name} description={e.description} homepage={e.homepage} html_url={e.html_url} created={e.created_at} update={e.updated_at} />
+                                 }
+                           })}
+                        </>
+
+                     )}
+
+                     {!isReady && error && (
+                        <div className="error">
+                           <p>Erreur lors du chargement des projets</p>
+                        </div>
+                     )}
+                     </div>
                </div>
             </section>
          </main>

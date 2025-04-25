@@ -1,47 +1,46 @@
 [
-   {
-     "logo": "PanelTop",
-     "title": "Frontend",
-     "skills_details": [
-       "JavaScript (ES6+)",
-       "React.js",
-       "HTML5 & CSS3",
-       "Responsive Design",
-       "Manipulation du DOM",
-       "Appels API avec fetch"
-     ]
-   },
-   {
-     "logo": "Server",
-     "title": "Backend & BDD",
-     "skills_details": [
-       "Node.js (bases)",
-       "PHP (bases)",
-       "MySQL (modélisation, requêtes)",
-       "Notions de REST API",
-       "SQL (bases)"
-     ]
-   },
-   {
-     "logo": "Settings",
-     "title": "Outils & Environnements",
-     "skills_details": [
-       "Git & GitHub",
-       "Visual Studio Code",
-       "LogMeIn Rescue",
-       "Environnements Windows 10/11"
-     ]
-   },
-   {
-     "logo": "User",
-     "title": "Compétences Transverses",
-     "skills_details": [
-       "Communication pédagogique",
-       "Esprit d'équipe",
-       "Autonomie",
-       "Gestion du temps",
-       "Adaptabilité"
-     ]
-   }
- ]
- 
+  {
+    "logo": "PanelTop",
+    "title": "Frontend",
+    "skills_details": [
+      "JavaScript (ES6+)",
+      "React.js",
+      "HTML5 & CSS3",
+      "Responsive Design",
+      "Manipulation du DOM",
+      "Appels API avec fetch"
+    ]
+  },
+  {
+    "logo": "Server",
+    "title": "Backend & BDD",
+    "skills_details": [
+      "Node.js (bases)",
+      "PHP (bases)",
+      "MySQL (modélisation, requêtes)",
+      "Notions de REST API",
+      "SQL (bases)"
+    ]
+  },
+  {
+    "logo": "Settings",
+    "title": "Outils",
+    "skills_details": [
+      "Git & GitHub",
+      "Visual Studio Code",
+      "LogMeIn Rescue",
+      "Environnements Windows 10/11"
+    ]
+  },
+  {
+    "logo": "User",
+    "title": "Transverses",
+    "skills_details": [
+      "Communication pédagogique",
+      "Esprit d'équipe",
+      "Autonomie",
+      "Gestion du temps",
+      "Adaptabilité"
+    ]
+  }
+]

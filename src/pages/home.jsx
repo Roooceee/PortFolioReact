@@ -1,19 +1,19 @@
 import { useEffect, useRef} from "react"
 
-import Header from "../components/header"
-import Head_Index from "../components/head_index"
-import APropos from "../components/apropos"
-import Skills from "../components/skills"
-import ProjectsCard from "../components/projectsCard"
-import Experiences from "../components/experiences"
-import Formations from "../components/formations"
-import Footer from "../components/footer"
+import Header from '../components/shared/header.jsx';
+import Head_Index from "../components/home/section/headIndex/head_index.jsx"
+import APropos from "../components/home/section/apropos/apropos.jsx"
+import Skills from "../components/home/section/skills/skills.jsx"
+import ProjectsCard from "../components/home/section/projectsCard/projectsCard.jsx"
+import Experiences from "../components/home/section/experiences/experiences.jsx"
+import Formations from "../components/home/section/formations/formations.jsx"
+import Contact from "../components/home/section/contact/contact.jsx"
+import Footer from "../components/shared/footer.jsx"
 
 import '../style.css'
 
 import useStoreSectionVisible from '../storeSectionVisible'
 import { useLocation } from "react-router-dom"
-import Contact from "../components/contact"
 
 function Home() {
 

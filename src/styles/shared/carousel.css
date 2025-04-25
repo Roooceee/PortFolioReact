@@ -1,0 +1,58 @@
+.carousel {
+   position: relative;
+   scroll-margin-top: 12.5rem;
+}
+
+.carousel article {
+   max-width: 80%;
+}
+
+.carousel  a.previous , .carousel  a.next {
+   color: var(--color-blue-primary);
+   position: absolute;
+}
+
+.carousel  .previous {
+   top: 3.125rem;
+   left: 3%;
+}
+
+.carousel  .next {
+   top: 3.125rem;
+   right: 3%;
+}
+
+.dots {
+   width: fit-content;
+   display: flex;
+   gap: 5px;
+   flex-direction: row-reverse;
+   margin: auto;
+   padding-top: 20px;
+}
+
+.dot svg {
+   color: var(--color-blue-secondary);
+}
+
+.dot.active svg {
+   color: var(--color-blue-primary);
+}
+
+@media (max-width: 1024px) {
+
+   .carousel  a.previous , .carousel  a.next {
+      display: none;
+   }
+
+}
+
+@media (max-width: 767px) {
+
+   
+   .carousel {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+   }
+}

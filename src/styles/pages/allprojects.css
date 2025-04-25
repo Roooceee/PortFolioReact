@@ -1,0 +1,60 @@
+#allprojects {
+   background-color: var(--color-bg-secondary);
+   padding-top: 3rem;
+   min-height: 100dvh;
+}
+
+#allprojects> .contain-1440 {
+   padding: 5rem 3.125rem 2.5rem 3.125rem;
+   margin: auto;
+}
+
+#allprojects .projects-list-items {
+   padding: 3.125rem 0 3.125rem 0;
+   gap: 1.875rem;
+   min-height: 50dvh;
+   display: grid;
+}
+
+#allprojects .projects-list-items .error {
+   margin: auto;
+}
+
+.modal-content .modal-project .projectCard {
+   max-width: 100%;
+   min-height: 30rem;
+}
+
+#modal-root > div > div > div.modal-content > div {
+   margin: auto;
+   max-width: 440px;
+}
+
+
+@media (max-width:1024px){
+
+   #allprojects .contain-1440 {
+      padding: 100px 10px 10px 10px;
+   }
+}
+
+@media (max-width:767px){
+
+   #allprojects>div>div {
+      gap: 1rem;
+   }
+
+   .modal-content .modal-project .projectCard .head_project {
+      gap: 1rem;
+   }
+
+   .modal-content .modal-project .projectCard > div.links_project {
+      flex-wrap: wrap;
+      gap: 1rem;
+   }
+
+   .modal-content .modal-project .projectCard > div.dates_project p:nth-child(2) {
+      display: none;
+   }
+
+}
