@@ -21,7 +21,9 @@ function Projects(props,ref){
          const result = await getDatas('https://api.github.com/users/Roooceee/repos?sort=created&direction=desc',token)
          if(result){
             setProjects(result)
-            setIsReady(true)
+            setTimeout(()=>{
+               setIsReady(true)
+            },500)
          }
          else {
             console.warn('Aucun projet recupéré')

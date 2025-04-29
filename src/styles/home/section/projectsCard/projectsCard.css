@@ -1,6 +1,6 @@
 #projects {
    background-color: var(--color-bg-primary);
-   scroll-margin-top: 3.125rem;
+   scroll-margin-top: 50px
 }
 
 #projects>div {

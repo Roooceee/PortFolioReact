@@ -41,7 +41,7 @@ function Home() {
       setTimeout(()=>{
         const target = document.querySelector(location.hash)
         target.scrollIntoView({behavior : 'smooth'})
-      },500)
+      },1000)
     }
     else {
       window.scrollTo({

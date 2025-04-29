@@ -1,6 +1,6 @@
 #formations {
    background-color: var(--color-bg-primary);
-   scroll-margin-top: 6.25rem;
+   scroll-margin-top: 50px;
 }
 
 #formations>div {
