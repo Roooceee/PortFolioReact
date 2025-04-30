@@ -18,9 +18,7 @@ useEffect( ()=>{
       const result = await getDatas('/datas/skills.json')
       if(result){
          setSkills(result)
-         setTimeout(()=> {
-            setIsReady(true)
-         },500)
+         setIsReady(true)
       }
       else {
          console.warn('Erreur lors du chargement des compétences')

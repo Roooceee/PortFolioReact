@@ -19,9 +19,7 @@ function Experiences(props,ref){
          const result = await getDatas('/datas/experiences.json')
          if(result){
             setExperiences(result)
-            setTimeout(()=>{
-               setIsReady(true)
-            },500)
+            setIsReady(true)
          }
          else {
             setError(true)

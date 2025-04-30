@@ -20,10 +20,7 @@ function Formations(props,ref){
          const result = await getDatas('/datas/formations.json')
          if(result){
             setFormations(result)
-            setTimeout(()=>{
-               setIsReady(true)
-            },500)
-         
+            setIsReady(true)
          }
          else {
             console.warn('Erreur lors du chargement des formations')

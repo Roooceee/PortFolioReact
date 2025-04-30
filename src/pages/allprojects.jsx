@@ -6,6 +6,8 @@ import Footer from "../components/shared/footer";
 
 import useStoreSectionVisible from '../storeSectionVisible';
 
+import { getDatas } from '../utils/getDatas.js';
+
 import '../styles/pages/allprojects.css';
 
 function Allprojects(){
@@ -25,37 +27,26 @@ function Allprojects(){
       
          document.title='Portfolio de Sébastien LUCAS - Développeur Web Junior React & Node.js - Mes Projets'
          setActiveSection('projects')
-         getProjects()
-      
-      },[])
-      // lorsqu'on fais des requetes réseaux via fetch dans un useEffect il faut utiliser un tableau de dépendance vide [] pour que la requete ne s'envoie que a la création du component
-   
-      async function getProjects(){
-   
-         const token = import.meta.env.VITE_GITHUB_TOKEN;
-         try {         
-            const req = await fetch('https://api.github.com/users/Roooceee/repos?sort=created&direction=desc',{
-   
-               headers:{
-                  Authorization: `token ${token}`,
-               }
-               })
-   
-            const res = await req.json()
-            if(res){
-               setProjects(res)
+
+         const loadData = async () => {
+
+            const token = import.meta.env.VITE_GITHUB_TOKEN;
+            const result = await getDatas('https://api.github.com/users/Roooceee/repos?sort=created&direction=desc',token)
+            if(result){
+               setProjects(result)
                setIsReady(true)
             }
             else {
-               console.warn('Aucun projets recupéré')
+               console.warn('Aucun projet recupéré')
                setError(true)
             }
          }
-         catch(e){
-            console.log('Erreur '+e)
-         }
-      }
+         
+         loadData()
+      
+      },[])
 
+        
 
    return (
       <>
