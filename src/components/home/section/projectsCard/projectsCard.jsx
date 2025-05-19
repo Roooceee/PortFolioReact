@@ -6,6 +6,7 @@ import '../../../../styles/home/section/projectsCard/projectsCard.css'
 import { getDatas } from '../../../../utils/getDatas.js';
 
 import ProjectCard from "../../../shared/projectCard.jsx";
+import { Cpu } from "lucide-react";
 
 function Projects(props,ref){
 
@@ -21,6 +22,13 @@ function Projects(props,ref){
          const result = await getDatas('https://api.github.com/users/Roooceee/repos?sort=created&direction=desc',token)
          if(result){
             setProjects(result)
+            let resultFilter = []
+            result.map((e,index)=>{
+               if(e.name !== 'Roooceee'){
+                  resultFilter[index] = e
+               }
+            })
+            setProjects(resultFilter)
             setIsReady(true)
          }
          else {
@@ -31,8 +39,25 @@ function Projects(props,ref){
       
       loadData()
 
-
    },[])
+
+   useEffect(()=>{
+
+   const projectFilter = () => {
+
+      if(projects > 0){
+         projects.forEach((e)=>{
+            console.log(e)
+         })
+      }
+
+   }
+
+   projectFilter()
+
+   },[projects])
+
+
 
    return (
       <section id="projects" ref={ref}>

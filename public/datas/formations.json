@@ -1,7 +1,34 @@
 [
+
+  {
+  "type": "Formation diplômante",
+  "intitule": "Développeur d'application JavaScript React",
+  "lien":"https://openclassrooms.com/fr/paths/877-developpeur-dapplication-javascript-react",
+  "option": null,
+  "description": "Titre RNCP niveau 6 (Bac+3/4). Formation professionnalisante en alternance orientée front-end moderne, incluant React.js, la gestion d’état, la collaboration en équipe Agile et l’initiation au back-end avec Node.js. Démarrage prévu après signature d’un contrat d’alternance.",
+  "etablissement": "OpenClassrooms",
+  "lieu": "100% en ligne",
+  "debut": null,
+  "fin": null,
+  "obtention": null,
+  "competences": [
+    "Concevoir des sites web accessibles et responsives à partir de maquettes",
+    "Développer des applications web dynamiques en JavaScript (ES6+)",
+    "Créer une application avec React.js en structurant les composants, les hooks et le routing",
+    "Utiliser des API REST et manipuler les données en JSON",
+    "Gérer l'état de l'application avec Redux ou Context",
+    "Réaliser des tests unitaires et fonctionnels avec Jest et React Testing Library",
+    "Optimiser la performance d'une application React",
+    "Mettre en œuvre une architecture back-end simple avec Node.js, Express.js et MongoDB",
+    "Collaborer efficacement en équipe grâce aux méthodes agiles (Scrum)",
+    "Utiliser Git et GitHub dans un flux de travail professionnel"
+  ]
+},
+
   {
     "type": "Formation Professionnelle",
     "intitule": "Language Informatique à la carte",
+    "lien":"https://laplateforme.io/prf-var-langage-informatique/",
     "option": null,
     "description":"Parcours débutant par les fondamentaux (HTML/CSS, Algo/Python), évoluant vers le JavaScript moderne (interactions DOM, appels API via fetch) et React.js, avec une initiation au côté serveur via PHP",
     "etablissement": "laPlateforme.io",
@@ -10,19 +37,20 @@
     "fin": "2025-04-11",
     "obtention":null,
 
-"competences": [
-      "Intégration web avec HTML et CSS (création de sites, design responsive)",
-      "Initiation à l'algorithmique (application avec Python)",
-      "Manipulation du DOM et interactivité en JavaScript",
-      "Utilisation d'API via fetch en JavaScript",
-      "Développement d'interfaces utilisateur avec React.js",
-      "Introduction aux concepts serveur avec PHP", 
-      "Notions de bases de données relationnelles et SQL"
-    ]
+    "competences": [
+          "Intégration web avec HTML et CSS (création de sites, design responsive)",
+          "Initiation à l'algorithmique (application avec Python)",
+          "Manipulation du DOM et interactivité en JavaScript",
+          "Utilisation d'API via fetch en JavaScript",
+          "Développement d'interfaces utilisateur avec React.js",
+          "Introduction aux concepts serveur avec PHP", 
+          "Notions de bases de données relationnelles et SQL"
+        ]
   },
   {
     "type": "Brevet Technicien Supérieur",
     "intitule": "Services Informatiques aux Organisations",
+    "lien":"https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-services-informatiques-aux-organisations-option-b-solutions-logicielles-et-applications-metiers",
     "option": "Solutions Logicielles et Applications Métier",
     "description":"Diplôme de technicien supérieur (Bac+2) spécialisé dans la conception, le développement et la maintenance d'applications logicielles métier.",
     "etablissement": "Lycée Charles Peguy",
@@ -45,6 +73,7 @@
   {
     "type": "Baccalauréat",
     "intitule": "Sciences et Technologies de l'Industrie et du Développement Durable",
+    "lien":"https://www.onisep.fr/ressources/univers-formation/formations/lycees/bac-techno-sti2d-sciences-et-technologies-de-l-industrie-et-du-developpement-durable-enseignement-specifique-systemes-d-information-et-numerique",
     "option": "Système d'Information et Numérique",
     "description":"Baccalauréat technologique préparant aux études supérieures et métiers du numérique, axé sur les systèmes d'information et les réseaux.",
     "etablissement": "Lycée Jean Perrin",

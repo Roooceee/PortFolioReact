@@ -1,7 +1,7 @@
 .formation {
    margin: auto;
    display: grid;
-   gap: 2.5rem;
+   gap: 1.5rem;
 }
 
 
@@ -30,8 +30,12 @@
    gap: 0.625rem;
 }
 
-.formation .head_formation div h3 {
+.formation .head_formation div h3 a {
    color: var(--color-blue-primary);
+}
+
+.formation .head_formation div h3 a:hover {
+   color: var(--color-blue-secondary)
 }
 
 .formation .head_formation div .option {
@@ -40,6 +44,7 @@
 
 .formation .head_formation .description {
    padding-top: 1.25rem;
+   max-width: 90%;
 }
 
 .formation .head_formation .obtention {
@@ -106,6 +111,8 @@
 
 .formation .competences ul li svg {
    color: var(--color-success);
+   max-width: 20px;
+   min-width: 20px;
 }
 
 @media (max-width: 1024px) {
@@ -127,9 +134,8 @@
       align-items: start;
    }
 
-   .formation .competences ul li svg {
-      max-width: 20px;
-      min-width: 20px;
-   }
+   .formation .competences ul li {
+   align-items: start;
+}
 
 }

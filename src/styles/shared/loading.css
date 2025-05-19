@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
+  max-height: 90px;
   }
 
 .loading p {

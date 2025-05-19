@@ -14,7 +14,7 @@
       "Escalade documentée des incidents complexes ou hors périmètre (N2, prestataires externes).",
       "Gestion et suivi des tickets (~30/jour) via PSoft ITSM, avec approche pédagogique."
     ],
-    "description": "Support N1 pour études notariales (Windows 10/11) : installation, dépannage logiciels ADSN (SignActe, AWR), gestion CLE REAL, configuration Outlook (POP) et accès réseau (proxy). Diagnostic à distance (LogMeIn Rescue), assistance plateformes web (Mon Espace Real, ANF), suivi tickets via PSoft (~30/jour) et communication pédagogique.",
+    "description": "Support N1 pour études notariales (Windows 10/11) : Installation, dépannage logiciels ADSN (SignActe, AWR), gestion CLE REAL, configuration Outlook (POP) et accès réseau (proxy). Diagnostic à distance (LogMeIn Rescue), assistance plateformes web (Mon Espace Real, ANF), suivi tickets via PSoft (~30/jour) et communication pédagogique.",
     "technologies": [
       "Windows 10/11",
       "Logiciels ADSN",
@@ -62,7 +62,7 @@
       "Ajout et configuration d'imprimantes réseau dans les services.",
       "Prise de connaissance et suivi des tickets d'incidents via l'outil interne."
     ],
-    "description": "Premier stage pratique en support technique réalisé en milieu hospitalier. Accompagnement d'un technicien expérimenté sur des interventions de proximité : gestion du matériel (installation, remplacement), configuration de postes utilisateurs (y compris VM), et maintenance de base des imprimantes. Découverte des processus de suivi d'incidents.",
+    "description": "Premier stage pratique en support technique réalisé en milieu hospitalier. Accompagnement d'un technicien expérimenté sur des interventions de proximité : Gestion du matériel (installation, remplacement), configuration de postes utilisateurs (y compris VM), et maintenance de base des imprimantes. Découverte des processus de suivi d'incidents.",
     "technologies": [
       "Windows 8/10",
       "Matériel Informatique (Postes, Écrans, Périphériques)",

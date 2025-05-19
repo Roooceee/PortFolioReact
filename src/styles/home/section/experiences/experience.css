@@ -3,7 +3,7 @@
    min-height: 650px;
    margin: auto;
    display: flex;
-   gap: 2rem;
+   gap: 1.5rem;
    flex-direction: column;
    justify-content: space-between;
 }
@@ -22,6 +22,11 @@
 
 .experience .head_experience h3 {
    color: var(--color-blue-primary);
+}
+
+.experience .head_experience .description {
+   padding-top: 1.25rem;
+   max-width: 90%;
 }
 
 /* Début CSS experience_context */
@@ -67,9 +72,12 @@
 
 .experience .responsibilities ul li svg {
    color: var(--color-success);
+   max-width: 20px;
+   min-width: 20px
 }
 
-/* Début CSS responsabilities */
+
+/* Début CSS technologies */
 
 .experience .technologies {
    display: grid;
@@ -103,9 +111,8 @@
 
 @media (max-width: 767px) {
 
-   .experience > div.responsibilities > ul > li > svg {
-      max-width: 20px;
-      min-width: 20px
+   .experience .responsibilities ul li {
+      align-items: start;
    }
 
 }

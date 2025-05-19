@@ -36,9 +36,6 @@
       padding: 0px 20px;
    }
 
-   #apropos > div > div > h2 {
-      text-align: left;
-   }
 }
 
 @media (max-width: 767px) {

@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef} from "react"
 import { CircleArrowLeft, CircleArrowRight, CircleDot } from "lucide-react"
 import { useSwipeable } from 'react-swipeable'
 import { motion, AnimatePresence } from "framer-motion"

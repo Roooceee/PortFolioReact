@@ -1,6 +1,7 @@
 import '../../../../styles/home/section/experiences/experience.css'
 import {changeDateFormat} from '../../../../utils/changeDateFormat'
 import { Building2, CalendarDays, ClipboardCheck, MapPin } from 'lucide-react'
+import ParseTextWithBreaks from '../../../shared/parseTextWithBreaks'
 
 
 function Experience({type , title , company , place , startDate , endDate 
@@ -13,7 +14,9 @@ function Experience({type , title , company , place , startDate , endDate
          <div className='head_experience'>
             <p className='type badge'>{type}</p>
             <h3 className='title'>{title}</h3>
-            <p className='description'>{description}</p>
+            {description && (
+               <p className='description'>{<ParseTextWithBreaks text={description}/>}</p>
+            )}
          </div>
          <div className='experience_context'>
             <ul>

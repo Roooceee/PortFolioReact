@@ -9,6 +9,7 @@ import useStoreSectionVisible from '../storeSectionVisible';
 import { getDatas } from '../utils/getDatas.js';
 
 import '../styles/pages/allprojects.css';
+import Loading from "../components/shared/loading.jsx";
 
 function Allprojects(){
 
@@ -33,8 +34,8 @@ function Allprojects(){
             const token = import.meta.env.VITE_GITHUB_TOKEN;
             const result = await getDatas('https://api.github.com/users/Roooceee/repos?sort=created&direction=desc',token)
             if(result){
-               setProjects(result)
-               setIsReady(true)
+                  setProjects(result)
+                  setIsReady(true)
             }
             else {
                console.warn('Aucun projet recupéré')
@@ -57,6 +58,11 @@ function Allprojects(){
                <div className="contain-1440">
                   <h1 className="title-section">Tous Mes Projets</h1>
                   <div className="projects-list-items">
+
+                     {!isReady && !error && (
+                        <Loading textLoading={'Chargement des projets'}/>
+                     )}
+
                      {isReady && !error && (
 
                         <>

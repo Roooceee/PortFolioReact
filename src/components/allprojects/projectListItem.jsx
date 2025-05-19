@@ -49,19 +49,14 @@ function ProjectListItem({name , description , homepage , html_url , created , u
    }
 
    function closeModal(){
-         setIsModalOpen(false)
+      setIsModalOpen(false)
    }
 
    return (
 
       <>
-      <article className="card-principal projectListItem">
-
-      {!isReady && !error && (
-         <Loading textLoading={'Chargement des détails du projets'}/>
-      )}
-
       {isReady && !error && (
+      <article className="card-principal projectListItem">
          <>
          <div>
             <h2>{name}</h2>
@@ -83,16 +78,19 @@ function ProjectListItem({name , description , homepage , html_url , created , u
             <a href={html_url} target="_blank" aria-label="Voir le code" title="Voir le code" className="button-blue"><Github/><span>Voir le code</span></a>
             <a href="#" aria-label="En savoir plus" title="En savoir plus" className="button-blue" onClick={(e)=> {openModal(e)}}><Info/><span>En savoir plus</span></a>
          </div>
-         </>)}
+         </>
+         </article>
+         )}
 
          {!isReady && error && (
-            <div className="error">
-               <p className="error-loading">Erreur lors du chargement du projet</p>
-               {/*Remplacer par le suite par un composant Error */}
-            </div>
+            <article className="card-principal projectListItem">
+               <div className="error">
+                  <p className="error-loading">Erreur lors du chargement du projet</p>
+                  {/*Remplacer par le suite par un composant Error */}
+               </div>
+            </article>
             )}
 
-      </article>
             <Modal 
             isOpen={isModalOpen}
             onClose={closeModal}
