@@ -36,7 +36,7 @@
 
 #mentions-legales > div  a {
    text-decoration: none;
-   color: var(--text-on-dark-bg);
+   color: var(--color-text);
    font-family: var(--font-primary);
    font-size: var(--font-size-sm);
 }

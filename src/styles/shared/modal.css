@@ -42,11 +42,11 @@
    font-size: var(--font-size-lg);
    font-family: var(--font-primary);
    font-weight: 400;
-   color: var(--text-on-dark-bg);
+   color: var(--color-text);
 }
 
 .modal .modal-close-button {
-   color: var(--text-on-dark-bg);
+   color: var(--color-text);
    padding: 0;
    max-width: fit-content;
    max-height: fit-content;

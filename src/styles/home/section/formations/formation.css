@@ -48,7 +48,6 @@
 }
 
 .formation .head_formation .obtention {
-   color: var(--text-on-dark-bg);
    font-size: var(--font-size-base);
    font-family: var(--font-primary);
    background-color: var(--color-blue-primary);
@@ -65,7 +64,7 @@
 }
 
 .formation .formation-context ul li {
-   color: var(--text-on-dark-bg);
+   color: var(--color-text);
    font-size: var(--font-size-sm);
    display: flex;
    align-items: center;
@@ -103,7 +102,7 @@
 
 .formation .competences ul li {
    font-size: var(--font-size-sm);
-   color: var(--text-on-dark-bg);
+   color: var(--color-text);
    display: flex;
    gap: 0.3125rem;
    align-items: center;

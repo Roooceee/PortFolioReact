@@ -41,7 +41,7 @@
 
 #head_index p {
    font-family: var(--font-primary);
-   color: var(--text-on-dark-bg);
+   color: var(--color-text);
    padding-bottom: 3.125rem;
 }
 

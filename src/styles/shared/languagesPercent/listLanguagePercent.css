@@ -5,14 +5,11 @@
 }
 
 .languages ul li {
-   color: var(--text-on-dark-bg);
-   background-color: var(--color-black);
+   color: var(--color-text);
+   background-color: var(--color-bg-fourth);
    font-size: var(--font-size-xs);
 }
 
-.languages ul li .percent {
-   color: var(--color-text-principal);
-}
 
 .HTML_before::before {
    content: "●";

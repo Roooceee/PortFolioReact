@@ -36,7 +36,7 @@ header>div>div:nth-child(1) a:hover {
 header a {
    text-decoration: none;
    font-family: var(--font-title);
-   color: var(--text-on-dark-bg);
+   color: var(--color-text);
 }
 
 /* Début CSS div */

@@ -39,7 +39,7 @@
    display: flex;
    gap: 0.3125rem;
    align-items: center;
-   color: var(--text-on-dark-bg);
+   color: var(--color-text);
 }
 
 #contact>div>div .contact_info ul li svg {
@@ -79,7 +79,7 @@
 }
 
 #contact>div>div>form>div>label {
-   color: var(--text-on-dark-bg);
+   color: var(--color-text);
    font-family: var(--font-primary);
    font-size: var(--font-size-sm);
 }
@@ -89,7 +89,7 @@ form #name , form #lastname , form #lastname , form #email , #contact #company ,
    border-radius: 0.3125rem;
    border: 0.125rem solid var(--color-blue-primary); 
    background-color: var(--color-bg-secondary);
-   color: var(--text-on-dark-bg);
+   color: var(--color-text);
    font-size: var(--font-size-sm);
    font-family: var(--font-primary);
    padding: 0 0.625rem;
@@ -111,8 +111,8 @@ form #name , form #lastname , form #lastname , form #email , #contact #company ,
 }
 
 #contact form input[type=submit]{
+   color: var(--color-white);
    text-decoration: none;
-   color: var(--text-on-dark-bg);
    font-family: var(--font-title);
    font-size: 1.125rem;
    border-radius: 0.625rem;

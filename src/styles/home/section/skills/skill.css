@@ -20,7 +20,7 @@
 }
 
 .skill ul li {
-   color: var(--text-on-dark-bg);
+   color: var(--color-text);
    font-size: var(--font-size-base);
    white-space: nowrap;
 }

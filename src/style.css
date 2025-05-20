@@ -1,7 +1,6 @@
 * {
    scroll-behavior: smooth;
    margin: 0;
-   /* background-color: var(--background-color-principal); */
 }
 
 ul {
@@ -14,7 +13,7 @@ ul li {
 }
 
 p {
-   color: var(--text-on-dark-bg);
+   color: var(--color-text);
    font-size: var(--font-size-sm);
    font-family: var(--font-primary);
 }
@@ -55,16 +54,28 @@ h4 {
    --font-size-3xl: 2.5rem;   /* 40px */
    --font-size-4xl: 3rem;     /* 48px */
 
-   --text-on-dark-bg: #FFFF; /* Texte pour fond sombre */
-
-   --color-bg-primary   : #1E1E1E;
-   --color-bg-secondary : #252526;
-   --color-bg-tertiary  : #5A5A5C;
    --color-blue-primary   : #007ACC;
    --color-blue-secondary : #569CD6;
+   --color-white : #FFFF ; 
    --color-black:#000000;
    --color-error: #E06C75;   /* Rouge doux mais bien visible */
    --color-success: #4CAF50; /* Vert plus vif et dynamique */
+}
+
+:root[data-theme="dark"] {
+   --color-bg-primary   : #1E1E1E;
+   --color-bg-secondary : #252526;
+   --color-bg-tertiary  : #5A5A5C;
+   --color-bg-fourth : #000 ; 
+   --color-text : #FFFF;
+}
+
+:root[data-theme="light"] {
+  --color-bg-primary   : #F3F3F3;
+  --color-bg-secondary : #E8E8E8;
+  --color-bg-tertiary  : #CCCCCC;
+  --color-bg-fourth : #CCCCCC;
+  --color-text: #000; /* Texte pour fond sombre */
 }
 
 .uppercase {
@@ -96,6 +107,7 @@ h4 {
    border-radius: 1.375rem;
    padding: 0.25rem 0.5rem;
    max-width: fit-content;
+   color: var(--color-white);
 }
 
 .button-blue {
@@ -104,7 +116,7 @@ h4 {
     text-align: center;
     border: none;
     background-color: var(--color-blue-primary);
-    color: var(--text-on-dark-bg);
+    color: var(--color-white);
     font-family: var(--font-title);
     border-radius: 10px;
     padding: 10px 15px !important;

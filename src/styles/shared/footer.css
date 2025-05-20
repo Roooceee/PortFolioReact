@@ -21,13 +21,13 @@ footer>div>div a {
    justify-content: center;
    align-items: center;
    font-family: var(--font-title);
-   color: var(--text-on-dark-bg);
+   color: var(--color-text);
 }
 
 footer  a {
    text-decoration: none;
    font-family: var(--font-primary);
-   color: var(--text-on-dark-bg);
+   color: var(--color-text);
 }
 
 footer a:hover {
