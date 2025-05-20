@@ -42,7 +42,7 @@ function Header() {
                      <li><a className={activeSection === 'formations' ? 'active' : ''} onClick={closeMenu} href='/#formations' id='formationsLink'>Formation</a></li>
                      <li><a className={activeSection === 'contact' ? 'active' : ''} onClick={closeMenu} href='/#contact' id='contactLink'>Contact</a></li>
                      <li><a href='/datas/CV_Sebastien_LUCAS.pdf' className='button-blue CV' target='_blank'>Télécharger mon CV</a></li>
-                     <ChangeTheme/>
+                     <li><ChangeTheme/></li>
                   </ul>
                </nav>
             </div>

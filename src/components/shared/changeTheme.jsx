@@ -23,7 +23,7 @@ function ChangeTheme(){
    return (
       <div className="change-theme">
          {isOpen && (
-            <p>Changement de thème :</p>
+            <p>Changer de thème :</p>
          )}
          <a className={`change-theme-button ${theme}`} href="#" onClick={(e) => toggleTheme(e)}>{theme==='dark' ? <Moon/> : <Sun/>}</a>
       </div>
