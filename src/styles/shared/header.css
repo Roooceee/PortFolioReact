@@ -71,6 +71,10 @@ header nav ul li a:hover {
    border-bottom: 0.3125rem solid var(--color-blue-secondary);
 }
 
+header nav ul li .CV:hover {
+   color: white;
+}
+
 header nav ul a.active {
    color: var(--color-blue-primary);
    border-bottom: 0.3125rem solid var(--color-blue-primary);
