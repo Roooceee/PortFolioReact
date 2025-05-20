@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Calendar, Code, Github, RefreshCcw, SquareArrowOutUpRight } from 'lucide-react'
 import { useEffect, useState } from "react"
 
@@ -12,6 +10,7 @@ import ListLanguage from "./languagesPercent/listLanguagePercent.jsx"
 
 import '../../styles/shared/projectCard.css'
 import Loading from "./loading.jsx";
+import ParseTextWithBreaks from './parseTextWithBreaks.jsx'
 
 function ProjectCard({name, description,created, homepage, update , html_url}){
    
@@ -53,7 +52,9 @@ function ProjectCard({name, description,created, homepage, update , html_url}){
                   <>
                   <div className='head_project'>
                      <h3>{name}</h3>
-                     <p>{description}</p>
+                     {description && (
+                        <p><ParseTextWithBreaks text={description}/></p>
+                     )}
                   </div>
                   
                   <hr className='hr-grey' />

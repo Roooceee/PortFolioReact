@@ -1,10 +1,12 @@
 #mentions-legales {
    background-color: var(--color-bg-secondary);
+   min-height: 100svh;
 }
 
 #mentions-legales>div {
    margin: auto;
-   padding: 150px 0px;
+   padding: 150px 20px;
+   max-width: 900px;
 }
 
 #mentions-legales>div>h1 {

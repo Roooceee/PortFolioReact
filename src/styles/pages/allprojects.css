@@ -1,7 +1,7 @@
 #allprojects {
    background-color: var(--color-bg-secondary);
    padding-top: 3rem;
-   min-height: 50dvh;
+   min-height: 100svh;
 }
 
 #allprojects> .contain-1440 {

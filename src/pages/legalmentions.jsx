@@ -1,7 +1,7 @@
 
 import Header from "../components/shared/header"
 import Footer from "../components/shared/footer"
-import '../styles/shared/legalmentions.css'
+import '../styles/pages/legalmentions.css'
 
 function LegalMentions(){
 
@@ -11,9 +11,8 @@ function LegalMentions(){
    return (
 
       <>
-         <Header/>
+         <Header/>  
 
-            
          <section id="mentions-legales">
             <div className="contain-1440">
                <h1>Mentions Légales</h1>

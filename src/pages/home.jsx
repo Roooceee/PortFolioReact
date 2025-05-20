@@ -15,8 +15,10 @@ import '../style.css'
 import useStoreSectionVisible from '../storeSectionVisible'
 import { useLocation } from "react-router-dom"
 
-function Home() {
 
+
+function Home() {
+  
   useEffect(()=> {
     document.title = 'Portfolio de Sébastien LUCAS - Développeur Web Junior React & Node.js'
 

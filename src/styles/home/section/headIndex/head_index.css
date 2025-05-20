@@ -45,6 +45,10 @@
    padding-bottom: 3.125rem;
 }
 
+#head_index > div > div > a {
+   min-width: 100px;
+}
+
 
 /* Début CSS typing-text */
 .typing-text {

@@ -11,7 +11,6 @@ function Head_Index() {
 
    useEffect(()=> {
       
-
       if(currentText === 'h1'){
             setIsTypingDoneH1(true)
             setCurrentText('p')
@@ -33,7 +32,7 @@ function Head_Index() {
                <p className={`typing-text typing-text ${isTypingDoneP ? "active" : ""}`}>Actuellement à la recherche d’une alternance</p>
             </div>
             <div>
-               <a href="#projects" className="button-blue">Découvrir mon travail</a>
+               <a href="#projects" className="button-blue">Mes Projets</a>
                <a href="#contact" className="button-blue">Me Contacter</a>
             </div>
          </div>

@@ -1,22 +1,22 @@
 import { Link } from 'react-router-dom'
 import '../../styles/shared/header.css'
-import useStoreSectionVisible from '../../storeSectionVisible'
 import { Menu,X } from 'lucide-react'
-import { useState } from 'react'
+
+import useStoreSectionVisible from '../../storeSectionVisible'
+import useStoreBurgerMenu from '../../storeBurgerMenu'
+import { useEffect } from 'react'
 
 function Header() {
 
-   const [isOpen,setIsOpen] = useState(false)
-   
-   function toggleMenu(){
-    setIsOpen(prev=>!prev)  
-   }
 
-   const handleLinkClick = () => {
-      setIsOpen(prev => !prev)
-   }
-   
+   const {isOpen,closeMenu,toggleMenu} = useStoreBurgerMenu()
+
    const {activeSection} = useStoreSectionVisible()
+
+      useEffect(()=>{
+      document.body.style.overflow = isOpen ? "hidden" : "auto"
+   },[isOpen])
+
 
    return (
      <header>
@@ -27,19 +27,23 @@ function Header() {
                Sébastien LUCAS
                </Link>
             </div>
-            <nav className={isOpen?'open':''}>
+            
+            <div>
                <span className="burger-icon" onClick={toggleMenu}>
                   {!isOpen ?<Menu size={38}/> : <X size={38}/>}
                </span>
-               <ul className={isOpen?'open':''}>
-                  <li><a className={activeSection === 'apropos' ? 'active' : ''} onClick={handleLinkClick} href='/#apropos' id='aproposLink'>A Propos</a></li>
-                  <li><a className={activeSection === 'skills' ? 'active' : ''} onClick={handleLinkClick} href='/#skills' id='skillsLink'>Compétences</a></li>
-                  <li><a className={activeSection === 'projects' ? 'active' : ''} onClick={handleLinkClick} href='/#projects' id='projectsLink' >Projets</a></li>
-                  <li><a className={activeSection === 'experiences' ? 'active' : ''} onClick={handleLinkClick} href='/#experiences' id='experiencesLink'>Expériences</a></li>
-                  <li><a className={activeSection === 'formations' ? 'active' : ''} onClick={handleLinkClick} href='/#formations' id='formationsLink'>Formation</a></li>
-                  <li><a className={activeSection === 'contact' ? 'active' : ''} onClick={handleLinkClick} href='/#contact' id='contactLink'>Contact</a></li>
-               </ul>
-            </nav>
+               <nav className={isOpen?'open':'close'}>
+                  <ul>
+                     <li><a className={activeSection === 'apropos' ? 'active' : ''} onClick={closeMenu} href='/#apropos' id='aproposLink'>A Propos</a></li>
+                     <li><a className={activeSection === 'skills' ? 'active' : ''} onClick={closeMenu} href='/#skills' id='skillsLink'>Compétences</a></li>
+                     <li><a className={activeSection === 'projects' ? 'active' : ''} onClick={closeMenu} href='/#projects' id='projectsLink' >Projets</a></li>
+                     <li><a className={activeSection === 'experiences' ? 'active' : ''} onClick={closeMenu} href='/#experiences' id='experiencesLink'>Expériences</a></li>
+                     <li><a className={activeSection === 'formations' ? 'active' : ''} onClick={closeMenu} href='/#formations' id='formationsLink'>Formation</a></li>
+                     <li><a className={activeSection === 'contact' ? 'active' : ''} onClick={closeMenu} href='/#contact' id='contactLink'>Contact</a></li>
+                     <li><a href='/datas/CV_Sebastien_LUCAS.pdf' className='button-blue CV' target='_blank'>Télécharger mon CV</a></li>
+                  </ul>
+               </nav>
+            </div>
          </div>
      </header>
  )}

@@ -1,6 +1,5 @@
 .projectCard {
    max-width: 28%;
-   min-width: 28%;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
@@ -19,7 +18,7 @@
    display: flex;
    flex-direction: column;
    gap: 2rem;
-   min-height: 140px;
+   min-height: 190px;
 }
 
 .projectCard .head_project h3 {
@@ -113,9 +112,12 @@
 @media (max-width: 950px) {
 
    #projects .projectCard {
-      max-width: 90%;
+      max-width: 440px;
       margin: auto;
-      min-height: 50svh;
+   }
+
+   .projectCard .head_project {
+      min-height: auto;
    }
 
    #projects .projectCard .links_project a {
@@ -132,10 +134,6 @@
 
    .projectCard {
       gap: 1rem;
-   }
-
-   #projects .projectCard .head_project {
-      gap: 0.5rem;
    }
 }
 
