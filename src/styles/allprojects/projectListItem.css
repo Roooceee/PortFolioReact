@@ -3,6 +3,7 @@
    justify-content: space-between;
    align-items: center;
    min-height: 100px;
+   gap: 50px;
 }
 
 .projectListItem div:nth-child(1) {
@@ -14,6 +15,10 @@
    color: var(--color-blue-primary);
    font-size: 1.5rem;
    font-family: var(--font-primary);
+}
+
+.projectListItem .description {
+   color: var(--color-text);
 }
 
 .projectListItem .dates {
@@ -34,11 +39,6 @@
 
 .projectListItem .dates svg {
    color: var(--color-blue-primary);
-}
-
-.projectListItem .links {
-   display: flex;
-   gap: 0.625rem;
 }
 
 .projectListItem .links a {
@@ -64,10 +64,13 @@
       font-size: var(--font-size-md);
    }
 
+   .projectListItem .description {
+      font-size: var(--font-size-xs);
+   }
+
    .projectListItem > div.links > a {
       padding: 5px 10px;
       border-radius: 5px;
-      gap: 1px;
    }
 
    .projectListItem > div.links > a > svg {
@@ -79,6 +82,7 @@
       display: none;
    }
 
+
 }
 
 @media (max-width:420px){ 
@@ -87,8 +91,8 @@
       font-size: var(--font-size-sm);
    }
 
-   .projectListItem .links {
-      gap: 0.25rem;
+   .projectListItem .description {
+      font-size: var(--font-size-xxs);
    }
 
    .projectListItem > div.links > a {

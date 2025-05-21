@@ -120,7 +120,7 @@ header nav ul a.active {
       justify-content: start;
       height: 600px;
       flex-direction: column;
-      gap: 40px;
+      gap: 20px;
       padding-top: 40px;
    }
 
@@ -131,14 +131,11 @@ header nav ul a.active {
       border-bottom: 1px solid grey;
    }
 
-   header nav.open ul li:nth-child(7) {
-      border-bottom: none;
-   }
-
    header nav.open ul li .CV {
       margin: auto;
       display: grid;
       max-width: fit-content;
+      padding: 10px 15px;
    }
 
    header nav ul li a:hover {
@@ -160,5 +157,6 @@ header nav ul a.active {
    }
 
 }
+
 
 /* FIN CSS Header */

@@ -4,18 +4,44 @@ import { Menu,X } from 'lucide-react'
 
 import useStoreSectionVisible from '../../storeSectionVisible'
 import useStoreBurgerMenu from '../../storeBurgerMenu'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import ChangeTheme from './changeTheme'
 
 function Header() {
 
 
    const {isOpen,closeMenu,toggleMenu} = useStoreBurgerMenu()
-
    const {activeSection} = useStoreSectionVisible()
 
+   const [widthScreen,setWidthScreen] = useState(window.innerWidth) 
+
+
+   useEffect(()=>{
+
+      const handleWidth = () => {
+
+         setWidthScreen(window.innerWidth)
+         window.addEventListener("resize", handleWidth);
+      }
+
+      handleWidth()
+
+      return () => {
+         window.removeEventListener('resize',handleWidth)
+      }
+
+   })
+
+   useEffect(()=>{
+
+      if(widthScreen > 1024){
+         closeMenu()
+      }
+
+   },[widthScreen])
+
       useEffect(()=>{
-      document.body.style.overflow = isOpen ? "hidden" : "auto"
+            document.body.style.overflow = (isOpen) ? "hidden" : "auto"
    },[isOpen])
 
 

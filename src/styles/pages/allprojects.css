@@ -9,11 +9,80 @@
    margin: auto;
 }
 
-#allprojects .projects-list-items {
+#allprojects > div > div.filter-order {
    padding: 3.125rem 0 3.125rem 0;
-   gap: 1.875rem;
-   display: grid;
-   min-height: 60dvh;
+   display: flex;
+   justify-content: space-between;
+   align-items: end;
+   gap: 20px;
+}
+
+#allprojects > div > div.filter-order > div.filter > h2 {
+   font-size: var(--font-size-lg);
+   color: var(--color-blue-primary);
+   flex-wrap: wrap;
+}
+
+#allprojects > div > div.filter-order > div.filter {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+#allprojects > div > div.filter-order > div.filter ul {
+   display: flex;
+   gap: 10px;
+}
+
+#allprojects > div > div.filter-order > div.order {
+   max-width: 390px;
+   display: flex;
+   justify-content: space-between;
+   flex-direction: row-reverse;
+   align-items: center;
+}
+
+#allprojects > div > div.filter-order > div.order > a {
+   color: var(--color-blue-primary);
+}
+
+#allprojects > div > div.filter-order > div.order > select {
+   max-width: 360px;
+   height: 1.875rem;
+   border-radius: 0.3125rem;
+   border: 0.125rem solid var(--color-blue-primary);
+   background-color: var(--color-bg-secondary);
+   color: var(--color-text);
+   font-size: var(--font-size-sm);
+   font-family: var(--font-primary);
+}
+
+#allprojects > div > div.filter-order > div.filter > ul li a {
+   text-decoration: none;
+   font-size: var(--font-size-base);
+   font-family: var(--font-primary);
+   cursor: pointer;
+}
+
+#allprojects > div > div.filter-order > div.filter > ul > li > a > svg {
+   max-width: 20px;
+}
+ 
+#allprojects > div > div.filter-order > div.filter > ul li a:hover, #allprojects > div > div.filter-order > div.filter > ul li a.active:hover {
+   background-color: var(--color-blue-secondary);
+}
+
+#allprojects > div > div.filter-order > div.filter > ul li a.active {
+   background-color: var(--color-blue-tertiary);
+}
+
+#allprojects .projects-list-items {
+   display: flex;
+   flex-direction: column;
+   justify-content: start;
+   gap: 1rem;
+   min-height: 60svh;
+   padding-bottom: 50px;
 }
 
 #allprojects .projects-list-items .error {
@@ -61,4 +130,26 @@
       display: none;
    }
 
+   #allprojects > div > div.filter-order {
+      flex-direction: column;
+      align-items: start;
+      padding: 20px 0px;
+   }
+
+   #allprojects > div > div.filter-order > div.filter > ul > li > a {
+      font-size: var(--font-size-xs);
+   }
+
+   #allprojects > div > div.filter-order > div.order {
+      flex-direction: row;
+      flex-wrap: wrap;
+   }
+
+}
+
+@media (max-width:430px){
+
+   #allprojects > div > div.filter-order > div.order > select {
+      width: 80%;
+   }
 }

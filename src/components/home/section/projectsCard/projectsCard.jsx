@@ -7,6 +7,7 @@ import { getDatas } from '../../../../utils/getDatas.js';
 
 import ProjectCard from "../../../shared/projectCard.jsx";
 import { Cpu } from "lucide-react";
+import Loading from "../../../shared/loading.jsx";
 
 function Projects(props,ref){
 
@@ -16,28 +17,38 @@ function Projects(props,ref){
 
    useEffect(()=>{
 
-      const loadData = async () => {
+         const loadData = async () => {
 
-         const token = import.meta.env.VITE_GITHUB_TOKEN;
-         const result = await getDatas('https://api.github.com/users/Roooceee/repos?sort=created&direction=desc',token)
-         if(result){
-            setProjects(result)
-            let resultFilter = []
-            result.map((e,index)=>{
-               if(e.name !== 'Roooceee'){
-                  resultFilter[index] = e
-               }
-            })
-            setProjects(resultFilter)
-            setIsReady(true)
+            const token = import.meta.env.VITE_GITHUB_TOKEN;
+            const result = await getDatas('https://api.github.com/users/Roooceee/repos?sort=created&direction=desc',token)
+            if(result){
+
+               const projectsWithLanuages = await Promise.all (
+                  result.map(async(project)=>{
+                        const languagesRes = await getDatas(`https://api.github.com/repos/Roooceee/${project.name}/languages`,token)
+
+                        return {
+                           ...project,
+                           languages: languagesRes ? languagesRes : {},
+                        };     
+                        
+                  })
+               )
+               projectsWithLanuages.map((e,index)=>{
+                  if(e.name !== 'Roooceee'){
+                     projectsWithLanuages[index] = e
+                  }
+               })
+               setProjects(projectsWithLanuages)
+               setIsReady(true)
+            }
+            else {
+               console.warn('Aucun projet recupéré')
+               setError(true)
+            }
          }
-         else {
-            console.warn('Aucun projet recupéré')
-            setError(true)
-         }
-      }
-      
-      loadData()
+         
+         loadData()
 
    },[])
 
@@ -63,6 +74,10 @@ function Projects(props,ref){
       <section id="projects" ref={ref}>
          <div className="contain-1440">
             <h2 className="title-section">Mes Derniers Projets</h2>
+
+            {!isReady && !error && (
+               <Loading textLoading={'Chargement des projets en cours'}/>
+            )}
    
             { isReady && !error && (
                <div className="last-projects">
@@ -72,6 +87,7 @@ function Projects(props,ref){
                         name={proj.name}
                         created={proj.created_at}
                         description={proj.description}
+                        languages = {proj.languages}
                         homepage={proj.homepage}
                         update={proj.updated_at}
                         html_url={proj.html_url}

@@ -10,12 +10,19 @@ import { getDatas } from '../utils/getDatas.js';
 
 import '../styles/pages/allprojects.css';
 import Loading from "../components/shared/loading.jsx";
+import { ArrowDownWideNarrow, ArrowUpNarrowWide, FunnelPlus, FunnelX } from "lucide-react";
 
 function Allprojects(){
 
       const {setActiveSection} = useStoreSectionVisible()
       const [projects,setProjects] = useState([])
-   
+      const [languagesFilter,setLanguagesFilter] = useState([])
+      const [activeLanguagesFilter,setActiveLanguagesFilter] = useState([])
+
+      const [projectsOriginal,setProjectsOriginal] = useState([])
+      const [order,setOrder] = useState('asc')
+      const [sort,setSort] = useState('')
+
       const [isReady, setIsReady] = useState(false);
       const [error, setError] = useState(false);
 
@@ -34,8 +41,27 @@ function Allprojects(){
             const token = import.meta.env.VITE_GITHUB_TOKEN;
             const result = await getDatas('https://api.github.com/users/Roooceee/repos?sort=created&direction=desc',token)
             if(result){
-                  setProjects(result)
-                  setIsReady(true)
+
+               const projectsWithLanuages = await Promise.all (
+                  result.map(async(project)=>{
+                        const languagesRes = await getDatas(`https://api.github.com/repos/Roooceee/${project.name}/languages`,token)
+
+                        Object.keys(languagesRes).map((key)=>{
+                              setLanguagesFilter(prev => [...new Set([...prev, key])])
+                              
+                        })
+
+                        return {
+                           ...project,
+                           languages: languagesRes ? languagesRes : {},
+                        };     
+                        
+                  })
+               )
+
+               setProjects(projectsWithLanuages)
+               setProjectsOriginal(projectsWithLanuages)
+               setIsReady(true)
             }
             else {
                console.warn('Aucun projet recupéré')
@@ -44,10 +70,38 @@ function Allprojects(){
          }
          
          loadData()
-      
       },[])
 
-        
+
+      const handleSort= (pCriteria,pOrder) => {
+
+         setSort(pCriteria)
+
+         let sorted = [...projects].sort((a,b)=>{
+
+            const getValue = (item) => {
+                  if (pCriteria === 'name') return item.name.toLowerCase();
+                  if (pCriteria === 'date_created') return item.created_at;
+                  if (pCriteria === 'date_updated') return item.updated_at;
+            }
+
+            if(pCriteria !==''){
+
+               const valueA = getValue(a)
+               const valueB = getValue(b)
+   
+               return pOrder === 'asc' ? valueA.localeCompare(valueB) : valueB.localeCompare(valueA)
+            }
+         })
+
+         if(pCriteria !==''){
+            setProjects(sorted)
+         }
+         else {
+            setProjects(projectsOriginal)
+         }
+      }
+
 
    return (
       <>
@@ -57,6 +111,52 @@ function Allprojects(){
             <section id="allprojects">
                <div className="contain-1440">
                   <h1 className="title-section">Tous Mes Projets</h1>
+
+                  {isReady && !error && (
+                     <div className="filter-order">
+                        <div className="filter">
+                           <ul>
+                              {languagesFilter.map((languageFilter,i)=>{
+                                 const isActive = activeLanguagesFilter.includes(languageFilter);
+                                    return <li><a href="#" 
+                                             onClick={(e)=> {
+                                                setActiveLanguagesFilter(prev => isActive
+                                                      ? prev.filter(l => l !== languageFilter) 
+                                                      : [...prev, languageFilter])
+                                             }} 
+                                             className={`badge ${isActive ? 'active' : ''}`}
+                                             key={i}>
+                                             {isActive ? <FunnelX/> : <FunnelPlus/>}{languageFilter}
+                                             </a></li>
+                              })}
+                           </ul>
+                        </div>
+
+                        <div className="order">
+                           <select onChange={(e)=> handleSort(e.target.value,order)}>
+                              <option value=''>---Séléctionner un tri---</option>
+                              <option value='name'>{order === 'asc' ? 'Nom (A à Z)' : 'Nom (Z à A)'}</option>
+                              <option value='date_created'>{order === 'asc' ? 'Date de création (plus ancien → au plus récent)' : 'Date de création (plus récent → au plus ancien)'}</option>
+                              <option value='date_updated'>{order === 'asc' ? 'Date de modification (plus ancien → au plus récent)' : 'Date de création (plus récent → au plus ancien)'}</option>
+                           </select>
+
+                           {sort !== '' && (
+                              <a className="order" 
+                              onClick={(e)=> {
+                                 e.preventDefault();
+                                 const newOrder = order === 'desc' ? 'asc' : 'desc';
+                                 setOrder(newOrder);
+                                 handleSort(sort,newOrder);
+                              }
+                              }>
+                                 {order ==='desc' ? <ArrowDownWideNarrow /> : <ArrowUpNarrowWide/>}
+                              </a>
+                           )}
+                        </div>
+                     </div>
+                  )}
+
+
                   <div className="projects-list-items">
 
                      {!isReady && !error && (
@@ -66,11 +166,19 @@ function Allprojects(){
                      {isReady && !error && (
 
                         <>
-                           {projects.map(e=> {
-                                 if(e.name != 'Roooceee'){
-                                    return <ProjectListItem key={e.name} name={e.name} description={e.description} homepage={e.homepage} html_url={e.html_url} created={e.created_at} update={e.updated_at} />
-                                 }
-                           })}
+                        {
+                           projects.filter(project => {
+                              if (activeLanguagesFilter.length === 0) return true;
+                              const projectLangs = Object.keys(project.languages || {});
+                              return activeLanguagesFilter.every(lang => projectLangs.includes(lang));
+
+                           })
+                           .map(e => {
+                              if(e.name !== 'Roooceee'){
+                                 return <ProjectListItem key={e.name} name={e.name} description={e.description} languages={e.languages} homepage={e.homepage} html_url={e.html_url} created={e.created_at} update={e.updated_at} />
+                              }
+                           })
+                        }
                         </>
 
                      )}
