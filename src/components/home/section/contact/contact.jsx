@@ -179,10 +179,10 @@ function Contact(props , ref){
                <div>
                   <div className="contact_info card-principal">
                      <ul>
-                        <li><Mail/><a href="mailto:sebastien.jose.lucas@gmail.com" >sebastien.jose.lucas@gmail.com</a></li>
+                        <li><a href="mailto:sebastien.jose.lucas@gmail.com" ><Mail/>sebastien.jose.lucas@gmail.com</a></li>
                         <li><MapPin/>Région Aix / Marseille, France </li>
-                        <li><Linkedin/><a target="_blank" href="https://www.linkedin.com/in/sebastien-jose-lucas/">LinkedIn</a></li>
-                        <li><Github/><a target="_blank" href="https://github.com/Roooceee">Github</a></li>
+                        <li><a target="_blank" href="https://www.linkedin.com/in/sebastien-jose-lucas/"><Linkedin/>LinkedIn</a></li>
+                        <li><a target="_blank" href="https://github.com/Roooceee"><Github/>Github</a></li>
                      </ul>
                   </div>
 

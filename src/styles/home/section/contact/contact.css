@@ -34,7 +34,15 @@
    gap: 0.625rem;
 }
 
-#contact>div>div .contact_info ul li{
+#contact>div>div .contact_info ul li {
+      list-style: none;
+   display: flex;
+   gap: 0.3125rem;
+   align-items: center;
+   color: var(--color-text);
+}
+
+#contact>div>div .contact_info ul li a{
    list-style: none;
    display: flex;
    gap: 0.3125rem;
@@ -49,6 +57,10 @@
 #contact>div>div .contact_info ul li a {
    text-decoration: none;
    color: var(--color-text-principal);
+}
+
+#contact>div>div .contact_info ul li a:hover {
+   color: var(--color-blue-secondary);
 }
 
 /* Début CSS contact form */

@@ -48,7 +48,7 @@ function Header() {
    return (
      <header>
          <div className='contain-1440'>
-            <div>
+            <div onClick={closeMenu}>
                <Link to="/">
                <img src="/img/logo.webp" className='logo' alt="logo du portfolio"/>
                Sébastien LUCAS

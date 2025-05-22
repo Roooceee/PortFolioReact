@@ -138,6 +138,10 @@ header nav ul a.active {
       padding: 10px 15px;
    }
 
+   header > div > div:nth-child(2) > nav > ul > li:nth-child(8) a {
+      border-bottom: none;
+   }
+
    header nav ul li a:hover {
       color: var(--color-blue-secondary);
       border-bottom: 1px solid var(--color-blue-secondary);
@@ -155,7 +159,6 @@ header nav ul a.active {
    .burger-icon svg{
       color: var(--color-blue-primary);
    }
-
 }
 
 

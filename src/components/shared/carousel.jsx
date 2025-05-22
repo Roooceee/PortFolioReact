@@ -109,9 +109,12 @@ function Carousel({items , ItemComponent}){
             {/* operateur de décomposition passe toutes les clé/valeurs  de l'objet en props */}
          <div className="dots">
             {items.map((dot,index)=>{
-               return <a key={index} 
+               return <a key={index}
+               href="#" 
                className={`dot ${index === currentIndex ? "active" : ""}`}
-               onClick={(e)=> changeCurrentIndex(e,index)}><CircleDot/></a>
+               title={'slide numéro '+(index+1)} aria-label={'slide numéro '+(index+1)}
+               onClick={(e)=> changeCurrentIndex(e,index)}><CircleDot/>
+               </a>
             })}
          </div>
          <div className="arrows">

@@ -1,7 +1,6 @@
 .change-theme {
    display: flex;
    flex-direction: column;
-   justify-content: center;
    text-align: center;
    gap: 10px;
 }
@@ -12,15 +11,12 @@
 }
 
 .change-theme-button {
-   padding: 0;
-   border-bottom: none!important;
    display: flex;
    justify-content: center;
 }
 
 .change-theme-button:hover {
-   border-bottom
-   : none;
+   border-bottom: none;
 }
 
 @media (max-width:1024px){
