@@ -135,6 +135,11 @@ form #name , form #lastname , form #lastname , form #email , #contact #company ,
    border: none;
 }
 
+#contact form input[type=submit]:hover {
+   background-color: var(--color-blue-secondary);
+   cursor: pointer;
+}
+
 #contact .required-legend {
    text-align: right;
    grid-column: 1/3;

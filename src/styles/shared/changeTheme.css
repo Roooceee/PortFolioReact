@@ -11,8 +11,8 @@
 }
 
 .change-theme-button {
-   display: flex;
-   justify-content: center;
+   max-width: fit-content;
+   margin: auto;
 }
 
 .change-theme-button:hover {

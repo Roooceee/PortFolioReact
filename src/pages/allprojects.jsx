@@ -118,14 +118,14 @@ function Allprojects(){
                            <ul>
                               {languagesFilter.map((languageFilter,i)=>{
                                  const isActive = activeLanguagesFilter.includes(languageFilter);
-                                    return <li><a href="#" 
+                                    return <li key={i}><a href="#" 
                                              onClick={(e)=> {
                                                 setActiveLanguagesFilter(prev => isActive
                                                       ? prev.filter(l => l !== languageFilter) 
                                                       : [...prev, languageFilter])
                                              }} 
                                              className={`badge ${isActive ? 'active' : ''}`}
-                                             key={i}>
+                                             >
                                              {isActive ? <FunnelX/> : <FunnelPlus/>}{languageFilter}
                                              </a></li>
                               })}
@@ -137,7 +137,7 @@ function Allprojects(){
                               <option value=''>---Séléctionner un tri---</option>
                               <option value='name'>{order === 'asc' ? 'Nom (A à Z)' : 'Nom (Z à A)'}</option>
                               <option value='date_created'>{order === 'asc' ? 'Date de création (plus ancien → au plus récent)' : 'Date de création (plus récent → au plus ancien)'}</option>
-                              <option value='date_updated'>{order === 'asc' ? 'Date de modification (plus ancien → au plus récent)' : 'Date de création (plus récent → au plus ancien)'}</option>
+                              <option value='date_updated'>{order === 'asc' ? 'Date de modification (plus ancien → au plus récent)' : 'Date de modification (plus récent → au plus ancien)'}</option>
                            </select>
 
                            {sort !== '' && (

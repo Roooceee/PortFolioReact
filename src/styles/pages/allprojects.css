@@ -37,9 +37,10 @@
 #allprojects > div > div.filter-order > div.order {
    max-width: 390px;
    display: flex;
-   justify-content: space-between;
+   justify-content: start;
+   gap: 5px;
    flex-direction: row-reverse;
-   align-items: center;
+   align-items: end;
 }
 
 #allprojects > div > div.filter-order > div.order > a {
@@ -47,7 +48,7 @@
 }
 
 #allprojects > div > div.filter-order > div.order > select {
-   max-width: 360px;
+   width: 360px;
    height: 1.875rem;
    border-radius: 0.3125rem;
    border: 0.125rem solid var(--color-blue-primary);
@@ -73,7 +74,7 @@
 }
 
 #allprojects > div > div.filter-order > div.filter > ul li a.active {
-   background-color: var(--color-blue-tertiary);
+   background-color: var(--color-purple-primary);
 }
 
 #allprojects .projects-list-items {
