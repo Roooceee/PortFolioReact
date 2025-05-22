@@ -18,7 +18,7 @@
    justify-content: space-between;
 }
 
-#projects > div > div > .loading {
+#projects > div > div.loading {
    margin: auto;
 }
 
