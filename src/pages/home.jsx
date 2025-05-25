@@ -43,7 +43,7 @@ function Home() {
       setTimeout(()=>{
         const target = document.querySelector(location.hash)
         target.scrollIntoView({behavior : 'smooth'})
-      },500)
+      },200)
     }
     else {
       window.scrollTo({
@@ -52,6 +52,7 @@ function Home() {
      })
     }
   },[location])
+
 
   const setActiveSection = useStoreSectionVisible((state) => state.setActiveSection);
 
@@ -77,6 +78,7 @@ function Home() {
     let topRefHeight = null
     let topId = null
 
+    if(!sectionsRefs.current) return
     if(sectionsRefs){
 
       if(sectionsRefs[0].ref.current.getBoundingClientRect().top > 0 && sectionsRefs[0].ref.current.getBoundingClientRect().top < window.innerHeight){
@@ -103,6 +105,7 @@ function Home() {
   
   return (
     <>
+      <link rel="preload" as="image" href="/img/image_profil_SL.webp"></link>
       <Header/>
       <main>
         <Head_Index/> 

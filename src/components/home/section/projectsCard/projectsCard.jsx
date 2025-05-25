@@ -6,14 +6,18 @@ import '../../../../styles/home/section/projectsCard/projectsCard.css'
 import { getDatas } from '../../../../utils/getDatas.js';
 
 import ProjectCard from "../../../shared/projectCard.jsx";
-import { Cpu } from "lucide-react";
 import Loading from "../../../shared/loading.jsx";
+import Carousel from "../../../shared/carousel.jsx";
+
+import useStoreDevice from "../../../../storeDevice.js";
 
 function Projects(props,ref){
 
    const [projects,setProjects] = useState([])
    const [isReady, setIsReady] = useState(false);
    const [error, setError] = useState(false);
+
+   const {device} = useStoreDevice()
 
    useEffect(()=>{
 
@@ -52,24 +56,6 @@ function Projects(props,ref){
 
    },[])
 
-   useEffect(()=>{
-
-   const projectFilter = () => {
-
-      if(projects > 0){
-         projects.forEach((e)=>{
-            console.log(e)
-         })
-      }
-
-   }
-
-   projectFilter()
-
-   },[projects])
-
-
-
    return (
       <section id="projects" ref={ref}>
          <div className="contain-1440">
@@ -81,18 +67,24 @@ function Projects(props,ref){
    
             { isReady && !error && (
                <div className="last-projects">
-                  {projects.slice(0, 3).map((proj) => (
-                     <ProjectCard
-                        key={proj.name}
-                        name={proj.name}
-                        created={proj.created_at}
-                        description={proj.description}
-                        languages = {proj.languages}
-                        homepage={proj.homepage}
-                        update={proj.updated_at}
-                        html_url={proj.html_url}
-                     />
-                  ))}
+                  {device === 'desktop' ? (
+                     <>
+                     {projects.slice(0, 3).map((proj) => (
+                        <ProjectCard
+                           key={proj.name}
+                           name={proj.name}
+                           created_at={proj.created_at}
+                           description={proj.description}
+                           languages = {proj.languages}
+                           homepage={proj.homepage}
+                           updated_at={proj.updated_at}
+                           html_url={proj.html_url}
+                        />
+                     ))}
+                     </>
+                  ) : 
+                  <Carousel items={projects.slice(0, 3)} ItemComponent={ProjectCard}/>
+                  }
                </div>
             )}
    

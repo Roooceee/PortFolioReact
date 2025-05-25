@@ -4,25 +4,25 @@ import { Menu,X } from 'lucide-react'
 
 import useStoreSectionVisible from '../../storeSectionVisible'
 import useStoreBurgerMenu from '../../storeBurgerMenu'
-import { useEffect, useState } from 'react'
+import useStoreDevice from '../../storeDevice'
+import { useEffect } from 'react'
 import ChangeTheme from './changeTheme'
 
 function Header() {
 
 
+   const {device,handleDevice} = useStoreDevice()
    const {isOpen,closeMenu,toggleMenu} = useStoreBurgerMenu()
    const {activeSection} = useStoreSectionVisible()
-
-   const [widthScreen,setWidthScreen] = useState(window.innerWidth) 
-
 
    useEffect(()=>{
 
       const handleWidth = () => {
 
-         setWidthScreen(window.innerWidth)
-         window.addEventListener("resize", handleWidth);
-      }
+         handleDevice()
+         }
+         
+      window.addEventListener("resize", handleWidth);
 
       handleWidth()
 
@@ -30,20 +30,11 @@ function Header() {
          window.removeEventListener('resize',handleWidth)
       }
 
-   })
+   },[])
 
    useEffect(()=>{
-
-      if(widthScreen > 1024){
-         closeMenu()
-      }
-
-   },[widthScreen])
-
-      useEffect(()=>{
-            document.body.style.overflow = (isOpen) ? "hidden" : "auto"
-   },[isOpen])
-
+         document.body.style.overflow = (isOpen && device!=='desktop') ? "hidden" : "auto"
+   })
 
    return (
      <header>

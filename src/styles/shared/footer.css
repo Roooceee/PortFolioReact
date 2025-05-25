@@ -20,8 +20,12 @@ footer>div>div a {
    display: flex;
    justify-content: center;
    align-items: center;
+}
+
+footer > div > div > a > p {
    font-family: var(--font-title);
    color: var(--color-text);
+   font-size: var(--font-size-base);
 }
 
 footer  a {
@@ -43,4 +47,12 @@ footer>div>div>ul {
 footer>div>p {
    text-align: center;
    padding: 1.25rem 0 3.125rem 0;
+}
+
+@media(max-width : 400px) {
+
+   footer > div > div > a {
+      flex-direction: column;
+    }
+
 }

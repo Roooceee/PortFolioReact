@@ -72,7 +72,6 @@ function Allprojects(){
          loadData()
       },[])
 
-
       const handleSort= (pCriteria,pOrder) => {
 
          setSort(pCriteria)
@@ -175,7 +174,7 @@ function Allprojects(){
                            })
                            .map(e => {
                               if(e.name !== 'Roooceee'){
-                                 return <ProjectListItem key={e.name} name={e.name} description={e.description} languages={e.languages} homepage={e.homepage} html_url={e.html_url} created={e.created_at} update={e.updated_at} />
+                                 return <ProjectListItem key={e.name} name={e.name} description={e.description} languages={e.languages} homepage={e.homepage} html_url={e.html_url} created_at={e.created_at} updated_at={e.updated_at} />
                               }
                            })
                         }

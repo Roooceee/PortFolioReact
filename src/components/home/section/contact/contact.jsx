@@ -21,18 +21,12 @@ function Contact(props , ref){
    const [nameError,setNameError] = useState('')
 
    const [company,setCompany] = useState('')
-   const [companyError,SetCompanyError] = useState('')
+   const [companyError,setCompanyError] = useState('')
 
    const [email,setEmail] = useState('')
    const [emailError,setEmailError] = useState('')
 
-   const reasons = [
-      "Proposition d'alternance",
-      "Question (Profil / Alternance)",
-      "Autre"
-   ]
-
-   const [reasonId,setReasonId] = useState('')
+   const [reason,setReason] = useState('')
    const [reasonError,setReasonError] = useState('')
 
    const [message,setMessage] = useState('')
@@ -48,22 +42,32 @@ function Contact(props , ref){
       noEmptyField:"Ce champ ne peut pas être vide"
    }
 
-   
+   function resetForm() {
+      setName('')
+      setLastName('')
+      setCompany('')
+      setEmail('')
+      setReason('')
+      setMessage('')
+   }
+      
    function verifyField(pRegex,pSizeMin , pSizeMax,pValue, setError ,pMessageError){
 
       if(pValue.trim()===''){
          setError(messagesError.noEmptyField)
       }
       else {
-         if(pValue.length >= pSizeMin && pValue.length <= pSizeMax){
-            if(pRegex.test(pValue)){
+         if(pRegex.test(pValue)){
+            if(pValue.length >= pSizeMin && pValue.length <= pSizeMax){
                setError('')
                return true
             }
-            setError(pMessageError)
+            else {
+               setError(`Doit contenir entre ${pSizeMin} et ${pSizeMax} caractère${pSizeMax>1?'s':''}`)
+            }
          }
          else {
-            setError(`Doit contenir entre ${pSizeMin} et ${pSizeMax} caractère${pSizeMax>1?'s':''}`)
+            setError(pMessageError)
          }
       }
       return false
@@ -80,20 +84,20 @@ function Contact(props , ref){
       if(!verifyField(/^[A-Za-zÀ-ÖØ-öø-ÿ'’-]+(?:[-' ][A-Za-zÀ-ÖØ-öø-ÿ'’-]+)*$/,2,40,name,setNameError,messagesError.nameError)){
          allFieldIsGood = false
       }
-      if(company.trim() != ""){
-         if(!verifyField(/^[A-Za-zÀ-ÖØ-öø-ÿ0-9@&'’\-.(),+ ]+$/,2,60,company,SetCompanyError,messagesError.companyError)){
+      if(company.trim() !== ""){
+         if(!verifyField(/^[A-Za-zÀ-ÖØ-öø-ÿ0-9@&'’\-.(),+ ]+$/,2,60,company,setCompanyError,messagesError.companyError)){
             allFieldIsGood = false
          }
       }
       if(!verifyField(/^[^\s@]+@[^\s@]+\.[^\s@]+$/,5,50,email,setEmailError,messagesError.emailError)){
          allFieldIsGood = false
       }
-      if(reasonId === ''){
+      if(reason === ''){
          setReasonError('Veuillez sélectionner une raison de votre message.')
          allFieldIsGood = false
       }
 
-      if(!verifyField(/^[^<>]+$/,10,1000,message,setMessageError,messagesError.messageError)){
+      if(!verifyField(/^(?!.*<\/?[a-z][\s\S]*?>).*$/i,10,1000,message,setMessageError,messagesError.messageError)){
          allFieldIsGood = false 
       }
 
@@ -114,8 +118,6 @@ function Contact(props , ref){
       
       if(verifyAllField()){
 
-         console.log(canClose)
-
          setLoadingSendMessage(true)
          setModalTitle(null)
          setModalContent(<Loading textLoading={'Envoi du message en cours'}/>)
@@ -125,7 +127,7 @@ function Contact(props , ref){
             from_name : `${lastName} ${name}`,
             from_email : `${email}`,
             company_name : `${company}`,
-            subject_reason : `${reasons[reasonId-1]}`,
+            subject_reason : `${reason}`,
             message_content : `${message}`
          }
          
@@ -144,6 +146,8 @@ function Contact(props , ref){
             setCanClose(true)
             setIsModalOpen(true)
 
+            resetForm()
+
             })
             .catch((error) => {
 
@@ -159,13 +163,6 @@ function Contact(props , ref){
                setIsModalOpen(true)
          
             })
-
-            setName('')
-            setLastName('')
-            setCompany('')
-            setEmail('')
-            setReasonId('')
-            setMessage('')
       }
 
    }
@@ -196,57 +193,71 @@ function Contact(props , ref){
                      <div className="lastname_form">
                         <label htmlFor="lastname">Nom <span className="asterix">*</span></label>
                         <input type="text" name="lastname" id="lastname" placeholder="ex : Dupont" value={lastName}
-                        className={lastNameError ? 'border-red' : ''} 
+                        className={lastNameError && 'border-red'} 
                         onChange={(e) => {
                            setLastName(e.target.value)
                            if(lastNameError !== ''){
                               setLastNameError('')
                            }
-                        }
-                           }/>
-                        {lastNameError != '' ? <p className="error">{lastNameError}</p> : ''}
+                        }}
+                        onBlur={(e)=> {
+                           verifyField(/^[A-Za-zÀ-ÖØ-öø-ÿ'’-]+(?:[-' ][A-Za-zÀ-ÖØ-öø-ÿ'’-]+)*$/,2,40,lastName,setLastNameError,messagesError.lastnameError)
+                        }}
+                        />
+                        {lastNameError && <p className="error">{lastNameError}</p>}
                      </div>
 
                      <div className="name_form">
                         <label htmlFor="name">Prénom <span className="asterix">*</span></label>
                         <input type="text" name="name" id="name" placeholder="ex : Jean"  value={name}
-                        className={nameError ? 'border-red':''}
+                        className={nameError && 'border-red'}
                         onChange={(e)=> {
                            setName(e.target.value)
                            if(nameError !== ''){
                               setNameError('')
                            }
-                        }
-                           }/>
-                        {nameError != '' ? <p className="error">{nameError}</p> : ''}
+                        }}
+                        onBlur={(e)=> {
+                           verifyField(/^[A-Za-zÀ-ÖØ-öø-ÿ'’-]+(?:[-' ][A-Za-zÀ-ÖØ-öø-ÿ'’-]+)*$/,2,40,name,setNameError,messagesError.nameError)
+                        }}
+                        />
+                        {nameError && <p className="error">{nameError}</p>}
                      </div>
 
                      <div className="company_form">
                         <label htmlFor="company">Nom de l'entreprise (facultatif)</label>
                         <input type="text" name="company" id="company" placeholder="ex : Innovatech Solutions" value={company} 
-                        className={companyError ? 'border-red':''}
+                        className={companyError && 'border-red'}
                         onChange={(e)=> {
                            setCompany(e.target.value)
                            if(companyError !== ''){
-                              SetCompanyError('')
+                              setCompanyError('')
                            }
-                        }
-                           }/>
-                        {companyError != '' ? <p className="error">{companyError}</p> : ''}
+                        }}
+                        onBlur={(e)=> {
+                           if(company.trim()!==''){
+                              verifyField(/^[A-Za-zÀ-ÖØ-öø-ÿ0-9@&'’\-.(),+ ]+$/,2,60,company,setCompanyError,messagesError.companyError)
+                           }
+                        }}
+                        />
+                        {companyError && <p className="error">{companyError}</p>}
                      </div>
                      
                      <div className="email_form">
                         <label htmlFor="email">Email <span className="asterix">*</span></label>
                         <input type="email" name="email" id="email" placeholder="ex : jean.dupont@exemple.fr" value={email} 
-                        className={emailError ? 'border-red':''}
+                        className={emailError && 'border-red'}
                         onChange={(e)=> {
                            setEmail(e.target.value)
                            if(emailError !== ''){
                               setEmailError('')
                            }
-                        }
-                        }/>
-                        {emailError != '' ? <p className="error">{emailError}</p> : ''}
+                        }}
+                        onBlur={(e)=>{
+                           verifyField(/^[^\s@]+@[^\s@]+\.[^\s@]+$/,5,50,email,setEmailError,messagesError.emailError)
+                        }}
+                        />
+                        {emailError && <p className="error">{emailError}</p>}
                      </div>
 
                      <div className="reason_form">
@@ -257,14 +268,20 @@ function Contact(props , ref){
                         <select
                            name="reason"
                            id="reason"
-                           value={reasonId}
-                           className={reasonError ? 'border-red' : ''}
+                           value={reason}
+                           className={reasonError && 'border-red'}
                            onChange={(e) => {
-                              setReasonId(e.target.selectedIndex)
+                              setReason(e.target.value)
                               if (reasonError !== '') {
                               setReasonError('')
                               }
                            }}
+
+                           onBlur={(e)=>{
+                              if(reason === ''){
+                                 setReasonError('Veuillez sélectionner une raison de votre message.')
+                              }
+                        }}
                         >
                            <option value="" disabled>
                               -- Séléctionnez un sujet --
@@ -280,20 +297,24 @@ function Contact(props , ref){
                      <div className="message_form">
                         <label htmlFor="message">Message <span className="asterix">*</span></label>
                         <textarea name="message" id="message" placeholder="Bonjour, je vous contacte au sujet de..." value={message} 
-                        className={messageError ? 'border-red':''}
+                        className={messageError && 'border-red'}
                         onChange={(e)=> {
                            setMessage(e.target.value)
                            if(messageError !== ''){
                               setMessageError('')
                            }
-                        }
-                           }>
+                        }}
+                        onBlur={(e)=>{
+                           verifyField(/^(?!.*<\/?[a-z][\s\S]*?>).*$/i,10,1000,message,setMessageError,messagesError.messageError)
+                        }}
+                        
+                        >
                         </textarea>
-                        {messageError != '' ? <p className="error">{messageError}</p> : ''}
+                        {messageError && <p className="error">{messageError}</p>}
                      </div>
 
                         <p className="required-legend"><small>Les champs marqués d'un <span className="asterix">*</span> sont requis.</small></p>
-                        <input type="submit" value="Envoyer le message" onClick={(e) => sendMail(e,lastname)}/>
+                        <input type="submit" value="Envoyer le message" onClick={(e) => sendMail(e)}/>
                   </form>
                </div>
             </div>

@@ -11,7 +11,7 @@ import ProjectCard from "../shared/projectCard.jsx"
 import '../../styles/allprojects/projectListItem.css'
 import { text } from "motion/react-client"
 
-function ProjectListItem({name , description , languages , homepage , html_url , created , update}){
+function ProjectListItem({name , description , languages , homepage , html_url , created_at , updated_at}){
 
 
    const [isModalOpen,setIsModalOpen] = useState(false)
@@ -52,9 +52,9 @@ function ProjectListItem({name , description , languages , homepage , html_url ,
                <ListLanguagePercent listLanguagesPercent={calculPercentLanguages(languages)}/>
             </div>
                <div className="dates">
-               <div><Calendar size={18}/><p>Crée le : </p><p className="numeric">{changeDateFormat(created,false,false)}</p></div>
-               {update ? 
-               <div><RefreshCcw size={18}/><p>Modifier le : </p><p className="numeric">{changeDateFormat(update,false,false)}</p></div>
+               <div><Calendar size={18}/><p>Crée le : </p><p className="numeric">{changeDateFormat(created_at,false,false)}</p></div>
+               {updated_at ? 
+               <div><RefreshCcw size={18}/><p>Modifier le : </p><p className="numeric">{changeDateFormat(updated_at,false,false)}</p></div>
                : ''}
             </div>
          </div>
@@ -78,8 +78,8 @@ function ProjectListItem({name , description , languages , homepage , html_url ,
                languages={languages}
                homepage={homepage} 
                html_url={html_url} 
-               update={update} 
-               created={created}/>
+               updated_at={updated_at} 
+               created_at={created_at}/>
             </div>
 
          </Modal>

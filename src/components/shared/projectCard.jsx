@@ -1,9 +1,7 @@
 import { Calendar, Code, Github, RefreshCcw, SquareArrowOutUpRight } from 'lucide-react'
-import { useEffect, useState } from "react"
 
 import { calculPercentLanguages } from '../../utils/calculPercentLangages.js'
 import { changeDateFormat } from '../../utils/changeDateFormat.js'
-import {getDatas} from '../../utils/getDatas.js'
 
 import ProgressBarLanguage from "./languagesPercent/progressBarLanguage.jsx";
 import ListLanguage from "./languagesPercent/listLanguagePercent.jsx"
@@ -12,7 +10,7 @@ import '../../styles/shared/projectCard.css'
 import Loading from "./loading.jsx";
 import ParseTextWithBreaks from './parseTextWithBreaks.jsx'
 
-function ProjectCard({name, description,created, languages, homepage, update , html_url}){
+function ProjectCard({name, description,created_at, languages, homepage, updated_at , html_url}){
    
    const percentLanguages = calculPercentLanguages(languages)
 
@@ -45,9 +43,9 @@ function ProjectCard({name, description,created, languages, homepage, update , h
             </div>
             <hr className='hr-grey' />
             <div className='dates_project'>
-               <div><Calendar size={18}/><p>Crée le : </p><p className='numeric'>{changeDateFormat(created,false,false)}</p></div> 
-               {update ? 
-               <div><RefreshCcw size={18}/><p>Modifier le : </p><p className='numeric'>{changeDateFormat(update,false,false)}</p></div> 
+               <div><Calendar size={18}/><p>Crée le : </p><p className='numeric'>{changeDateFormat(created_at,false,false)}</p></div> 
+               {updated_at ? 
+               <div><RefreshCcw size={18}/><p>Modifier le : </p><p className='numeric'>{changeDateFormat(updated_at,false,false)}</p></div> 
                : ''}
             </div>
          </article>

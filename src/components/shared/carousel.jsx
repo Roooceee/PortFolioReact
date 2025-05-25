@@ -2,6 +2,9 @@ import { useState, useRef} from "react"
 import { CircleArrowLeft, CircleArrowRight, CircleDot } from "lucide-react"
 import { useSwipeable } from 'react-swipeable'
 import { motion, AnimatePresence } from "framer-motion"
+
+import useStoreDevice from '../../storeDevice'
+
 import '../../styles/shared/carousel.css'
 
 function Carousel({items , ItemComponent}){
@@ -9,9 +12,9 @@ function Carousel({items , ItemComponent}){
       const [currentIndex,SetCurrentIndex] = useState(0)
       const [direction,setDirection] = useState(null)
       const carouselRef = useRef(null);
+      const {device} = useStoreDevice()
 
-
-      // Fonction permettant de faire un scroll vers carouselRef
+      // Fonction permettant de remonter après un scroll vers carouselRef
       function scrollIntoCarouselRef(){
          setTimeout(()=>{
             carouselRef.current.scrollIntoView({ behavior: "smooth" });
@@ -21,14 +24,14 @@ function Carousel({items , ItemComponent}){
       // Permet via la bibliothèque useSwipeable de changer d'index si on swipe a droite ou a gauche
       const handlers = useSwipeable({
          onSwipedRight: () => {
-           if (currentIndex < items.length - 1) {
+           if (currentIndex < items.length - 1 && device !== 'desktop') {
             setDirection(-1)
             SetCurrentIndex(currentIndex + 1)
             scrollIntoCarouselRef()
            }
          },
          onSwipedLeft: () => {
-           if (currentIndex > 0) {
+           if (currentIndex > 0 && device !== 'desktop') {
             setDirection(1)
             SetCurrentIndex(currentIndex - 1)
             scrollIntoCarouselRef()
@@ -54,7 +57,7 @@ function Carousel({items , ItemComponent}){
       }),
       }
 
-      // Fonction pour aller à la formation précédente
+      // Fonction pour aller a la slide précédente
       function previous(e){
          e.preventDefault()
          SetCurrentIndex(currentIndex === items.length-1 ? items.length : currentIndex+1)
@@ -62,7 +65,7 @@ function Carousel({items , ItemComponent}){
          scrollIntoCarouselRef()
       }
    
-      // Fonction pour aller à la formation suivante
+      // Fonction pour aller a la slide suivante
       function next(e){
          e.preventDefault()
          SetCurrentIndex(currentIndex === 0 ? 0 : currentIndex-1)
@@ -70,7 +73,7 @@ function Carousel({items , ItemComponent}){
          scrollIntoCarouselRef()
       }
 
-      // Permet de changer 
+      // Permet de changer de currentIndex via un pIndex
       function changeCurrentIndex(e,pIndex){
          e.preventDefault()
          if(pIndex <= items.length && pIndex >= 0 ){

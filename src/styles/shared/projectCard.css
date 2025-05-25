@@ -3,7 +3,8 @@
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   min-height: 28rem;
+   min-height: 30rem;
+   gap: 10px;
 }
 
 /* Début CSS projectCard loading */
@@ -18,7 +19,7 @@
    display: flex;
    flex-direction: column;
    gap: 2rem;
-   min-height: 200px;
+   min-height: 260px;
 }
 
 .projectCard .head_project h3 {
@@ -91,7 +92,7 @@
 @media (max-width: 1024px) {
 
    #projects .projectCard {
-      max-width: 28%;
+      margin: auto;
    }
 
    #projects .projectCard .head_project h3 {
@@ -107,9 +108,10 @@
       padding: 5px 10px;
       white-space: nowrap;
    }
-}
 
-@media (max-width: 950px) {
+   #projects .projectCard .dates_project>div p:nth-child(2) {
+      display: block;
+   }
 
    #projects .projectCard {
       max-width: 440px;
@@ -126,6 +128,7 @@
 
 }
 
+
 @media (max-width: 767px) {
 
    #modal-root .modal-project {
@@ -134,6 +137,13 @@
 
    .projectCard {
       gap: 1rem;
+   }
+}
+
+@media (max-width: 440px) {
+
+   #projects .projectCard .dates_project>div p:nth-child(2) {
+      display: none;
    }
 }
 

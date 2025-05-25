@@ -12,7 +12,7 @@ function Footer(){
             <div>
                <Link to="/">
                <img src="/img/logo.webp" className='logo' alt="logo du portfolio"/>
-               Sébastien LUCAS
+               <p>Sébastien LUCAS</p>
                </Link>
 
                <ul>
