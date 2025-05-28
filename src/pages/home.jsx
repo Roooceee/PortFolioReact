@@ -78,7 +78,6 @@ function Home() {
     let topRefHeight = null
     let topId = null
 
-    if(!sectionsRefs.current) return
     if(sectionsRefs){
 
       if(sectionsRefs[0].ref.current.getBoundingClientRect().top > 0 && sectionsRefs[0].ref.current.getBoundingClientRect().top < window.innerHeight){
