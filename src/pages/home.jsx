@@ -80,7 +80,7 @@ function Home() {
 
     if(sectionsRefs){
 
-      if(sectionsRefs[0].ref.current.getBoundingClientRect().top > 0 && sectionsRefs[0].ref.current.getBoundingClientRect().top < window.innerHeight){
+      if(sectionsRefs[0].ref.current.getBoundingClientRect().top > 0 && sectionsRefs[0].ref.current.getBoundingClientRect().top < window.innerHeight/2){
         topRefHeight = sectionsRefs[0].ref.current.getBoundingClientRect().top
         topId = sectionsRefs[0].id
       }
@@ -92,7 +92,7 @@ function Home() {
         const rectPlusOne = sectionsRefs[i+1].ref.current.getBoundingClientRect()
         const rectTopPlusOne = rectPlusOne.top
   
-        if(rectTop < 0 && i < sectionsRefs.length-1 && rectTopPlusOne < window.innerHeight ){
+        if(rectTop < 0 && i < sectionsRefs.length-1 && rectTopPlusOne < window.innerHeight/2){
           topRefHeight = rectTopPlusOne
           topId = sectionsRefs[i+1].id
         }
