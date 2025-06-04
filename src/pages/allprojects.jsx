@@ -8,8 +8,7 @@ import useStoreSectionVisible from '../storeSectionVisible';
 
 import { getDatas } from '../utils/getDatas.js';
 
-import '../styles/pages/allprojects.css';
-import Loading from "../components/shared/loading.jsx";
+import Loading from "../components/shared/loading/loading.jsx";
 import { ArrowDownWideNarrow, ArrowUpNarrowWide, FunnelPlus, FunnelX } from "lucide-react";
 
 function Allprojects(){
@@ -107,14 +106,14 @@ function Allprojects(){
          <Header/>
 
          <main>
-            <section id="allprojects">
-               <div className="contain-1440">
-                  <h1 className="title-section">Tous Mes Projets</h1>
+            <section id="allprojects" className="background-secondary min-h-[100svh] pt-20">
+               <div className="contain-1440 mx-auto section min-h-[400px] flex flex-col">
+                  <h1 className="title-section pb-10 text-2xl sm:text-3xl font-bold">Tous Mes Projets</h1>
 
                   {isReady && !error && (
-                     <div className="filter-order">
-                        <div className="filter">
-                           <ul>
+                     <div className="flex flex-col gap-2.5 max-w-fit md:max-w-full md:flex-row-reverse md:justify-between px-5 pb-5 lg:px-10">
+                        <div>
+                           <ul className="flex flex-row flex-wrap gap-2.5 items-start max-w-full">
                               {languagesFilter.map((languageFilter,i)=>{
                                  const isActive = activeLanguagesFilter.includes(languageFilter);
                                     return <li key={i}><a href="#" 
@@ -123,16 +122,19 @@ function Allprojects(){
                                                       ? prev.filter(l => l !== languageFilter) 
                                                       : [...prev, languageFilter])
                                              }} 
-                                             className={`badge ${isActive ? 'active' : ''}`}
+                                             className={`flex items-center rounded-3xl px-2 py-1 text-white max-w-fit 
+                                                text-xxs sm:text-xs lg:text-sm 
+                                                ${isActive ? 'bg-purple-primary' : 'bg-blue-primary hover:bg-blue-secondary'}`}
                                              >
-                                             {isActive ? <FunnelX/> : <FunnelPlus/>}{languageFilter}
+                                             {isActive ? <FunnelX className="max-w-[16px] sm:max-w-[20px] md:max-w-[24px]"/> : <FunnelPlus className="max-w-[16px] sm:max-w-[20px] md:max-w-[24px]"/>}{languageFilter}
                                              </a></li>
                               })}
                            </ul>
                         </div>
 
-                        <div className="order">
-                           <select onChange={(e)=> handleSort(e.target.value,order)}>
+                        <div className="flex lg:flex-row gap-2 items-start justify-start">
+                           <select className="input-form w-[100%] lg:w-[355px]" 
+                              onChange={(e)=> handleSort(e.target.value,order)}>
                               <option value=''>---Séléctionner un tri---</option>
                               <option value='name'>{order === 'asc' ? 'Nom (A à Z)' : 'Nom (Z à A)'}</option>
                               <option value='date_created'>{order === 'asc' ? 'Date de création (plus ancien → au plus récent)' : 'Date de création (plus récent → au plus ancien)'}</option>
@@ -140,7 +142,7 @@ function Allprojects(){
                            </select>
 
                            {sort !== '' && (
-                              <a className="order" 
+                              <a className="text-blue-primary hover:text-blue-secondary cursor-pointer" 
                               onClick={(e)=> {
                                  e.preventDefault();
                                  const newOrder = order === 'desc' ? 'asc' : 'desc';
@@ -156,7 +158,7 @@ function Allprojects(){
                   )}
 
 
-                  <div className="projects-list-items">
+                  <div className={`px-5 lg:px-10 grid gap-5 lg:gap-10 ${!isReady && 'margin-auto'}`}>
 
                      {!isReady && !error && (
                         <Loading textLoading={'Chargement des projets'}/>

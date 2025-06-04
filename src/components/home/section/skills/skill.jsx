@@ -1,4 +1,4 @@
-import '../../../../styles/home/section/skills/skill.css'
+// import '../../../../styles/home/section/skills/skill.css'
 import { useEffect, useState } from 'react';
 
 function Skill({title,list,logo=null}){
@@ -36,12 +36,12 @@ function Skill({title,list,logo=null}){
 
    return (
 
-      <article className='skill'>
+      <article className='skill flex flex-col justify-start gap-4'>
          {/* Affiche l'icone si Icon à chargé sinon affiche rien */}
-         <h3 className='title-section'>{Icon != null? <Icon size={36}/> : ''}{title}</h3>
-         <ul>
+         <h3 className='title-section text-lg md:text-2xl flex items-center gap-2.5'>{Icon != null? <Icon size={36}/> : ''}{title}</h3>
+         <ul className='grid pl-3 gap-1'>
             {list.map(element => {
-            return <li key={element}>{element}</li> 
+            return <li className='text-[var(--color-text)] text-xs md:text-sm before:content-["■"] before:text-blue-primary before:mr-3' key={element}>{element}</li> 
             })}
          </ul>
       </article>

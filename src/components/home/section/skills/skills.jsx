@@ -1,8 +1,7 @@
 import { forwardRef, useEffect, useState } from "react";
-import '../../../../styles/home/section/skills/skills.css'
 import Skill from "./skill.jsx";
 import {getDatas} from '../../../../utils/getDatas.js'
-import Loading from "../../../shared/loading.jsx";
+import Loading from "../../../shared/loading/loading.jsx";
 
 
 function Skills(props , ref){
@@ -33,14 +32,14 @@ useEffect( ()=>{
 
 return (
 
-   <section  id='skills'>
-      <div className="contain-1440">
+   <section  id='mes-competences' className="section background-secondary">
+      <div className="contain-1440 margin-auto grid gap-8 min-h-[500px]">
          <h2 ref={ref} className="title-section">Compétences</h2>
             {!isReady && !error && (
                <Loading textLoading={'Chargement des compétences en cours'}/>
             )}
             {isReady && !error && (
-               <div className="skill-items">
+               <div className="flex flex-col md:grid grid-cols-2 gap-8 margin-auto">
                   {
                      skills.map(element => {
                         

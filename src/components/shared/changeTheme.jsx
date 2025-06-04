@@ -1,6 +1,5 @@
 import { Moon, Sun } from "lucide-react"
 import { useEffect, useState } from "react"
-import '../../styles/shared/changeTheme.css'
 import useStoreBurgerMenu from '../../storeBurgerMenu'
 
 function ChangeTheme(){
@@ -21,11 +20,11 @@ function ChangeTheme(){
    },[theme])
 
    return (
-      <div className="change-theme">
+      <div className="change-theme flex flex-col text-center items-center gap-2.5">
          {isOpen &&(
             <p>Changer de thème :</p>
          )}
-         <a className={`change-theme-button ${theme}`} href="#" onClick={(e) => toggleTheme(e)}>{theme==='dark' ? <Moon/> : <Sun/>}</a>
+         <a className={`max-w-fit margin-auto hover:blue-secondary text-[var(--color-text)] hover:text-blue-secondary`} href="#" onClick={(e) => toggleTheme(e)}>{theme==='dark' ? <Moon/> : <Sun/>}</a>
       </div>
    )
 }

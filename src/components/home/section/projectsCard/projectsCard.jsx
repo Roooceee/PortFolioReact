@@ -1,12 +1,10 @@
 import { forwardRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import '../../../../styles/home/section/projectsCard/projectsCard.css'
-
 import { getDatas } from '../../../../utils/getDatas.js';
 
 import ProjectCard from "../../../shared/projectCard.jsx";
-import Loading from "../../../shared/loading.jsx";
+import Loading from "../../../shared/loading/loading.jsx";
 import Carousel from "../../../shared/carousel.jsx";
 
 import useStoreDevice from "../../../../storeDevice.js";
@@ -57,8 +55,8 @@ function Projects(props,ref){
    },[])
 
    return (
-      <section id="projects" ref={ref}>
-         <div className="contain-1440">
+      <section id="mes-derniers-projets" ref={ref} className="section background-primary">
+         <div className="contain-1440 margin-auto flex flex-col justify-between lg:justify-around flex-wrap min-h-[760px] gap-8 lg:px-8">
             <h2 className="title-section">Mes Derniers Projets</h2>
 
             {!isReady && !error && (
@@ -66,7 +64,7 @@ function Projects(props,ref){
             )}
    
             { isReady && !error && (
-               <div className="last-projects">
+               <div className="flex justify-between margin-auto">
                   {device === 'desktop' ? (
                      <>
                      {projects.slice(0, 3).map((proj) => (
@@ -93,7 +91,7 @@ function Projects(props,ref){
                // Remplacer par le suite par un composant Error
             )}
    
-            <Link to="/tous-mes-projets" className="button-blue">
+            <Link to="/tous-mes-projets" className="mx-auto button-blue lg:mr-0">
                Voir tous mes Projets
             </Link>
          </div>

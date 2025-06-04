@@ -4,8 +4,8 @@ import Carousel from "../../../shared/carousel.jsx";
 import Formation from "./formation.jsx";
 
 import { getDatas } from '../../../../utils/getDatas.js';
-import '../../../../styles/home/section/formations/formations.css';
-import Loading from "../../../shared/loading.jsx";
+// import '../../../../styles/home/section/formations/formations.css';
+import Loading from "../../../shared/loading/loading.jsx";
 
 function Formations(props,ref){
 
@@ -34,8 +34,8 @@ function Formations(props,ref){
 
    return (
    
-      <section id="formations">
-         <div className="contain-1440">
+      <section id="mes-etudes-et-formations" className="background-primary section">
+         <div className="contain-1440 grid gap-8 margin-auto min-h-[570px]">
             <h2 ref={ref} className="title-section">Mes études et formations</h2>
 
                {!isReady && !error && (

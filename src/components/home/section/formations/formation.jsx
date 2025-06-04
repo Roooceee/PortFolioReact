@@ -1,7 +1,6 @@
 import { CalendarCheck, CalendarClock, CalendarDays, CircleCheckBig, GraduationCap, MapPin, School } from 'lucide-react'
 
 import { changeDateFormat } from '../../../../utils/changeDateFormat.js'
-import '../../../../styles/home/section/formations/formation.css'
 import ParseTextWithBreaks from '../../../shared/parseTextWithBreaks.jsx'
 
 function Formation({type , intitule , lien ,  option , description , etablissement , lieu ,  
@@ -35,41 +34,39 @@ function Formation({type , intitule , lien ,  option , description , etablisseme
    
    return(
 
-      <article className='formation card-secondary'>
+      <article className='card-secondary margin-auto grid gap-6'>
 
-      <div className='head_formation'>
-         <div>
-            <div>
-               <p className='type badge'>{type}</p>
-               {obtentionText ? <span className='obtention badge'>{obtentionLogo}{obtentionText}</span> : ''}
-            </div>
-            <h3><a href={lien} target='_blank'>{intitule}</a></h3>
-            {option != null ? <p className='option'>Option {option}</p> : ''}
-            {description && (
-               <p className='description'>{<ParseTextWithBreaks text={description}/>}</p>
-            )}
+      <div className='grid gap-1'>
+         <div className='flex flex-col-reverse gap-2.5 items-start md:flex-row justify-between md:items-center'>
+            <p className='badge'>{type}</p>
+            {obtentionText ? <span className='badge'>{obtentionLogo}{obtentionText}</span> : ''}
          </div>
+         <h3 className='text-blue-primary hover:text-blue-secondary font-bold text-lg sm:text-xl underline'><a href={lien} target='_blank'>{intitule}</a></h3>
+         {option != null ? <p className='text-primary text-md md:text-lg'>Option {option}</p> : ''}
+         {description && (
+            <p className='pt-5 max-w-[90%] text-sm'>{<ParseTextWithBreaks text={description}/>}</p>
+         )}
       </div>
 
       <div className='formation-context'>
-         <ul>
-            <li className='etablissement'><School/>{etablissement}</li>
-            <li className='lieu'><MapPin/>{lieu}</li>
+         <ul className='grid gap-1 text-[var(--color-text)]'>
+            <li className='flex items-center gap-1 text-sm'><School className='text-blue-primary'/>{etablissement}</li>
+            <li className='flex items-center gap-1 text-sm'><MapPin className='text-blue-primary'/>{lieu}</li>
             {(debut && fin) && (
-               <li className='periode'><CalendarDays/>Du {changeDateFormat(debut,true,true)} au {changeDateFormat(fin,true,true)}</li>
+               <li className='flex items-center gap-1 text-sm'><CalendarDays className='text-blue-primary'/>Du {changeDateFormat(debut,true,true)} au {changeDateFormat(fin,true,true)}</li>
             )}
          </ul>
       </div>
 
       {competences.length > 0 ? 
 
-      <div className='competences'>
+      <div className='grid gap-5'>
          <hr className='hr-grey' />
-         <h4>Compétence{competences.length>1?'s':''}</h4>
-            <ul>
+         <h4 className='text-blue-primary font-bold'>Compétence{competences.length>1?'s':''}</h4>
+            <ul className='grid grid-cols-1 gap-2.5 lg:grid-cols-[auto_auto] lg:gap-0 text-[var(--color-text)]'>
                {
                competences.map((e,index)=> {
-                  return <li key={index}><CircleCheckBig/>{e}</li>
+                  return <li className='flex gap-1 text-xs sm:text-sm' key={index}><CircleCheckBig className='text-success items-start lg:items:center min-w-[20px] max-w-[20px]'/>{e}</li>
                })
             }
             </ul>

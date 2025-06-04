@@ -2,8 +2,7 @@ import emailjs from '@emailjs/browser';
 import { CircleCheckBig, CircleX, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { forwardRef, useState } from "react";
 import Modal from "../../../shared/modal.jsx";
-import Loading from "../../../shared/loading";
-import '../../../../styles/home/section/contact/contact.css';
+import Loading from "../../../shared/loading/loading.jsx";
 
 
 function Contact(props , ref){
@@ -141,7 +140,7 @@ function Contact(props , ref){
             },3000)
 
             setLoadingSendMessage(false)
-            setModalTitle(<h2 className="modal-contact-title"><CircleCheckBig className="success" />Message envoyé avec succès !</h2>)
+            setModalTitle(<h2 className="flex items-center gap-1 text-lg text-primary font-normal text-[var(--color-text)]"><CircleCheckBig className="text-success" />Message envoyé avec succès !</h2>)
             setModalContent(<p>Merci pour votre message, je vous répondrai dans les plus brefs délais.</p>)
             setCanClose(true)
             setIsModalOpen(true)
@@ -170,30 +169,30 @@ function Contact(props , ref){
 
    return (
       <>
-         <section id="contact">
-            <div className="contain-1440">
+         <section id="contact" className='background-secondary section'>
+            <div className="contain-1440 margin-auto grid gap-8">
                <h2 ref={ref} className="title-section">Contact</h2>
-               <div>
-                  <div className="contact_info card-principal">
-                     <ul>
-                        <li><a href="mailto:sebastien.jose.lucas@gmail.com" ><Mail/>sebastien.jose.lucas@gmail.com</a></li>
-                        <li><MapPin/>Région Aix / Marseille, France </li>
-                        <li><a target="_blank" href="https://www.linkedin.com/in/sebastien-jose-lucas/"><Linkedin/>LinkedIn</a></li>
-                        <li><a target="_blank" href="https://github.com/Roooceee"><Github/>Github</a></li>
+               <div className='flex flex-col lg:flex-row gap-12 justify-center'>
+                  <div className="card-principal h-fit w-fit margin-auto lg:m-0">
+                     <ul className='grid gap-2.5'>
+                        <li><a href="mailto:sebastien.jose.lucas@gmail.com" className='flex gap-1 text-[var(--color-text)] hover:text-blue-primary' ><Mail className='text-blue-primary'/>sebastien.jose.lucas@gmail.com</a></li>
+                        <li className='flex gap-1 text-[var(--color-text)]'><MapPin className='text-blue-primary'/>Région Aix / Marseille, France </li>
+                        <li><a target="_blank" href="https://www.linkedin.com/in/sebastien-jose-lucas/" className='flex gap-1 text-[var(--color-text)] hover:text-blue-primary'><Linkedin className='text-blue-primary'/>LinkedIn</a></li>
+                        <li><a target="_blank" href="https://github.com/Roooceee" className='flex gap-1 text-[var(--color-text)] hover:text-blue-primary'><Github className='text-blue-primary'/>Github</a></li>
                      </ul>
                   </div>
 
-                  <form action="" className="card-principal">
+                  <form action="" className="card-principal grid grid-cols-2 items-start gap-6 max-w-[80%] md:max-w-[750px] margin-auto lg:mx-0">
                      
-                     <div className="head_form">
-                        <h3>Envoyez moi un message</h3>
-                        <p>Je suis à la recherche d'une alternance. Utilisez ce formulaire pour toute proposition ou question à ce sujet.</p>
+                     <div className="col-start-1 col-end-3">
+                        <h3 className='text-blue-primary text-primary font-bold col-start-1 col-end-2'>Envoyez moi un message</h3>
+                        <p className='text-primary col-span-2'>Je suis à la recherche d'une alternance. Utilisez ce formulaire pour toute proposition ou question à ce sujet.</p>
                      </div>
                      
-                     <div className="lastname_form">
-                        <label htmlFor="lastname">Nom <span className="asterix">*</span></label>
-                        <input type="text" name="lastname" id="lastname" placeholder="ex : Dupont" value={lastName}
-                        className={lastNameError && 'border-red'} 
+                     <div className='col-start-1 col-end-3 md:col-span-1 grid'>
+                        <label htmlFor="lastname" className='label-form'>Nom <span className="asterix">*</span></label>
+                        <input  type="text" name="lastname" id="lastname" placeholder="ex : Dupont" value={lastName}
+                        className={`input-form ${lastNameError && 'border-error'} `}
                         onChange={(e) => {
                            setLastName(e.target.value)
                            if(lastNameError !== ''){
@@ -207,10 +206,10 @@ function Contact(props , ref){
                         {lastNameError && <p className="error">{lastNameError}</p>}
                      </div>
 
-                     <div className="name_form">
-                        <label htmlFor="name">Prénom <span className="asterix">*</span></label>
-                        <input type="text" name="name" id="name" placeholder="ex : Jean"  value={name}
-                        className={nameError && 'border-red'}
+                     <div className='col-start-1 col-end-3 md:col-span-1 grid'>
+                        <label className='label-form' htmlFor="name">Prénom <span className="asterix">*</span></label>
+                        <input  type="text" name="name" id="name" placeholder="ex : Jean"  value={name}
+                        className={`input-form ${nameError && 'border-error'} `}
                         onChange={(e)=> {
                            setName(e.target.value)
                            if(nameError !== ''){
@@ -224,10 +223,10 @@ function Contact(props , ref){
                         {nameError && <p className="error">{nameError}</p>}
                      </div>
 
-                     <div className="company_form">
-                        <label htmlFor="company">Nom de l'entreprise (facultatif)</label>
-                        <input type="text" name="company" id="company" placeholder="ex : Innovatech Solutions" value={company} 
-                        className={companyError && 'border-red'}
+                     <div className="col-start-1 col-end-3 grid">
+                        <label className='label-form' htmlFor="company">Nom de l'entreprise (facultatif)</label>
+                        <input  type="text" name="company" id="company" placeholder="ex : Innovatech Solutions" value={company} 
+                        className={`input-form ${companyError && 'border-error'} `}
                         onChange={(e)=> {
                            setCompany(e.target.value)
                            if(companyError !== ''){
@@ -243,10 +242,10 @@ function Contact(props , ref){
                         {companyError && <p className="error">{companyError}</p>}
                      </div>
                      
-                     <div className="email_form">
-                        <label htmlFor="email">Email <span className="asterix">*</span></label>
+                     <div className="col-start-1 col-end-3 grid">
+                        <label className='label-form' htmlFor="email">Email <span className="asterix">*</span></label>
                         <input type="email" name="email" id="email" placeholder="ex : jean.dupont@exemple.fr" value={email} 
-                        className={emailError && 'border-red'}
+                        className={`input-form ${emailError && 'border-error'} `}
                         onChange={(e)=> {
                            setEmail(e.target.value)
                            if(emailError !== ''){
@@ -260,8 +259,8 @@ function Contact(props , ref){
                         {emailError && <p className="error">{emailError}</p>}
                      </div>
 
-                     <div className="reason_form">
-                        <label htmlFor="reason">
+                     <div className="col-start-1 col-end-3 grid">
+                        <label className='label-form' htmlFor="reason">
                            Raison du contact <span className="asterix">*</span>
                         </label>
 
@@ -269,7 +268,7 @@ function Contact(props , ref){
                            name="reason"
                            id="reason"
                            value={reason}
-                           className={reasonError && 'border-red'}
+                           className={`col-start-1 col-end-3 input-form ${reasonError && 'border-error'}`}
                            onChange={(e) => {
                               setReason(e.target.value)
                               if (reasonError !== '') {
@@ -283,9 +282,7 @@ function Contact(props , ref){
                               }
                         }}
                         >
-                           <option value="" disabled>
-                              -- Séléctionnez un sujet --
-                           </option>
+                           <option value="" disabled>-- Séléctionnez un sujet --</option>
                            <option value="alternance_offer">Proposition d'alternance</option>
                            <option value="question_alternance">Question (Profil / Alternance)</option>
                            <option value="other">Autre</option>
@@ -294,10 +291,10 @@ function Contact(props , ref){
                         {reasonError && <p className="error">{reasonError}</p>}
                      </div>
 
-                     <div className="message_form">
-                        <label htmlFor="message">Message <span className="asterix">*</span></label>
+                     <div className="col-start-1 col-end-3 grid">
+                        <label className='label-form' htmlFor="message">Message <span className="asterix">*</span></label>
                         <textarea name="message" id="message" placeholder="Bonjour, je vous contacte au sujet de..." value={message} 
-                        className={messageError && 'border-red'}
+                        className={`input-form resize-none min-h-[200px] ${messageError && 'border-error'} `}
                         onChange={(e)=> {
                            setMessage(e.target.value)
                            if(messageError !== ''){
@@ -313,12 +310,12 @@ function Contact(props , ref){
                         {messageError && <p className="error">{messageError}</p>}
                      </div>
 
-                        <p className="required-legend"><small>Les champs marqués d'un <span className="asterix">*</span> sont requis.</small></p>
-                        <input type="submit" value="Envoyer le message" onClick={(e) => sendMail(e)}/>
+                        <p className="col-start-1 col-end-3 ml-auto"><small>Les champs marqués d'un <span className="asterix">*</span> sont requis.</small></p>
+                        <input type="submit" value="Envoyer le message" className='button-blue col-start-1 col-end-3 cursor-pointer' onClick={(e) => sendMail(e)}/>
                   </form>
                </div>
             </div>
-         </section>
+         </section> 
 
          {loadingSendMessage ? 
             <Modal

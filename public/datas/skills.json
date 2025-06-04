@@ -17,7 +17,7 @@
     "skills_details": [
       "Node.js (bases)",
       "PHP (bases)",
-      "MySQL (modélisation, requêtes)",
+      "MySQL",
       "Notions de REST API",
       "SQL (bases)"
     ]
@@ -29,14 +29,14 @@
       "Git & GitHub",
       "Visual Studio Code",
       "LogMeIn Rescue",
-      "Environnements Windows 10/11"
+      "Windows 10/11"
     ]
   },
   {
     "logo": "User",
     "title": "Transverses",
     "skills_details": [
-      "Communication pédagogique",
+      "Communication",
       "Esprit d'équipe",
       "Autonomie",
       "Gestion du temps",

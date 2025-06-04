@@ -64,11 +64,11 @@ function Home() {
   const refContact = useRef(null)
 
   const sectionsRefs = [
-    {id:'apropos' , ref:refAPropos},
-    {id:'skills', ref:refSkills},
-    {id:'projects', ref:refProjects},
-    {id:'experiences', ref:refExperiences},
-    {id:'formations', ref:refFormations},
+    {id:'a-propos' , ref:refAPropos},
+    {id:'mes-competences', ref:refSkills},
+    {id:'mes-derniers-projets', ref:refProjects},
+    {id:'mes-experiences-professionnelles', ref:refExperiences},
+    {id:'mes-etudes-et-formations', ref:refFormations},
     {id:'contact',ref:refContact}
   ]
 

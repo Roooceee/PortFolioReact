@@ -5,8 +5,6 @@ import { motion, AnimatePresence } from "framer-motion"
 
 import useStoreDevice from '../../storeDevice'
 
-import '../../styles/shared/carousel.css'
-
 function Carousel({items , ItemComponent}){
 
       const [currentIndex,SetCurrentIndex] = useState(0)
@@ -76,7 +74,7 @@ function Carousel({items , ItemComponent}){
       // Permet de changer de currentIndex via un pIndex
       function changeCurrentIndex(e,pIndex){
          e.preventDefault()
-         if(pIndex <= items.length && pIndex >= 0 ){
+         if(pIndex <= items.length && pIndex >= 0 && pIndex !== currentIndex ){
             if(pIndex>currentIndex){
                setDirection(-1)
             }
@@ -92,7 +90,7 @@ function Carousel({items , ItemComponent}){
    return (
 
       <>
-      <div className="carousel" ref={carouselRef}>
+      <div className="relative max-w-[85%] margin-auto scroll-mt-60" ref={carouselRef}>
          <div className="carousel-swipe" {...handlers}>
             {/* Permet d'avoir une transition via motion quand currentIndex change */}
             <AnimatePresence mode="wait" custom={direction}>
@@ -105,27 +103,29 @@ function Carousel({items , ItemComponent}){
                exit="exit"
                transition={{ duration: 0.4 }}
             >
-               <ItemComponent {...items[currentIndex]} />
+            <ItemComponent {...items[currentIndex]} />
             </motion.div>
             </AnimatePresence>
          </div>
             {/* operateur de décomposition passe toutes les clé/valeurs  de l'objet en props */}
-         <div className="dots">
+         <div className="flex flex-row-reverse gap-1.5 w-fit margin-auto pt-5 text-blue-primary">
             {items.map((dot,index)=>{
                return <a key={index}
                href="#" 
-               className={`dot ${index === currentIndex ? "active" : ""}`}
+               className={`${index === currentIndex && "text-purple-primary"} ${index !== currentIndex && "hover:text-blue-secondary"}`}
                title={'slide numéro '+(index+1)} aria-label={'slide numéro '+(index+1)}
                onClick={(e)=> changeCurrentIndex(e,index)}><CircleDot/>
                </a>
             })}
          </div>
-         <div className="arrows">
-            {/* Affiche le bouton "Précédent" uniquement si ce n'est pas la première formation chronologiquement[2] */}
-            {currentIndex < items.length-1 && <a className="previous" href="#" onClick={(e)=> previous(e)} title="précédent" aria-label="precedent"><CircleArrowLeft size={48}/></a>}
-            {/* Affiche le bouton "Suivant" uniquement si ce n'est pas la derniere formation chronologiquement [0] */}
-            {currentIndex > 0 && <a className="next" href="#" onClick={(e)=> next(e)} title="suivant" aria-label="suivant"><CircleArrowRight size={48}/></a>}
-         </div>
+         {device === 'desktop' && (
+            <div className="text-blue-primary">
+               {/* Affiche le bouton "Précédent" uniquement si ce n'est pas la première formation chronologiquement[2] */}
+               {currentIndex < items.length-1 && <a className="absolute top-[3rem] left-[-7%]" href="#" onClick={(e)=> previous(e)} title="précédent" aria-label="precedent"><CircleArrowLeft size={48}/></a>}
+               {/* Affiche le bouton "Suivant" uniquement si ce n'est pas la derniere formation chronologiquement [0] */}
+               {currentIndex > 0 && <a className="absolute top-[3rem] right-[-7%]" href="#" onClick={(e)=> next(e)} title="suivant" aria-label="suivant"><CircleArrowRight size={48}/></a>}
+            </div>
+         )}
       </div>
       </>
 

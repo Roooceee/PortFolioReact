@@ -1,7 +1,4 @@
-import React from "react";
-
 import ReactDOM from 'react-dom';
-import '../../styles/shared/modal.css'
 import {X} from 'lucide-react';
 
 function Modal({isOpen,onClose,children,showButtonClose,title=null}){
@@ -12,14 +9,14 @@ function Modal({isOpen,onClose,children,showButtonClose,title=null}){
 
 
    return ReactDOM.createPortal(
-      <div className='modal-outside' onClick={onClose}>
-         <div className='modal card-principal' onClick={(e)=>e.stopPropagation()}>
+      <div className='fixed inset-0 bg-[var(--background-semi-transparent)] flex justify-center items-center z-50' onClick={onClose}>
+         <div className='card-principal relative flex flex-col gap-8 max-h-[90svh] overflow-y-auto min-w-[200px] max-w-[75%] p-4 rounded-md' onClick={(e)=>e.stopPropagation()}>
             {title || showButtonClose ? 
 
-               <div className='modal-head'>
+               <div className='flex items-start justify-between'>
                   {title?title:''}
                   {showButtonClose ? 
-                        <button href="#" className='modal-close-button' onClick={onClose}><X size={18}/></button>
+                        <button href="#" className='text-[var(--color-text)] p-0 max-w-fit max-h-fit border-none' onClick={onClose}><X size={18}/></button>
                         : ''
                      }
                </div>

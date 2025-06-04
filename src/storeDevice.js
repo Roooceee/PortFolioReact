@@ -5,11 +5,12 @@ const DEVICE_TYPE = ['desktop','tablet','mobile']
 const useStoreDevice = create((set , get)=> ({
 
    device : null,
-
+   widthScreen : null ,
 
    handleDevice : () => {
 
       const width = window.innerWidth
+      set({widthScreen: width})
 
       if(width > 1025){
          set({device : (DEVICE_TYPE[0])})

@@ -4,8 +4,7 @@ import Carousel from "../../../shared/carousel.jsx";
 import Experience from './experience.jsx'
 
 import { getDatas } from '../../../../utils/getDatas.js';
-import '../../../../styles/home/section/experiences/experiences.css'
-import Loading from '../../../shared/loading.jsx';
+import Loading from '../../../shared/loading/loading.jsx';
 
 function Experiences(props,ref){
 
@@ -34,13 +33,13 @@ function Experiences(props,ref){
 
    return (
 
-      <section id="experiences">
-         <div className="contain-1440">
+      <section id="mes-experiences-professionnelles" className='background-secondary section'>
+         <div className="contain-1440 grid gap-8 margin-auto min-h-[740px]">
             
-            <h2 ref={ref} className='title-section'>Mes Expériences Professionnelles</h2>
+            <h2 ref={ref} className='title-section max-h-fit'>Mes Expériences Professionnelles</h2>
 
             {!isReady && !error && (
-               <Loading textLoading={'Chargements des expériences professionnelles en cours'}/>
+               <Loading textLoading={'Chargements des expériences en cours'}/>
             )}
 
             {isReady && !error && (
@@ -49,7 +48,7 @@ function Experiences(props,ref){
 
             {!isReady && error && (
                <div className='error'>
-                  <p>Erreur lors du chargement des expériences professionnelles</p>
+                  <p>Erreur lors du chargement des expériences</p>
                </div>
             )}
          </div>

@@ -1,6 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
    scroll-behavior: smooth;
    margin: 0;
+}
+
+*, ::before, ::after {
+   box-sizing: content-box;
 }
 
 ul {
@@ -12,10 +20,19 @@ ul li {
    list-style: none;
 }
 
+p, ul , li, h1, h2, h3 , span,a {
+   line-height: normal;
+}
+
 p {
    color: var(--color-text);
    font-size: var(--font-size-sm);
    font-family: var(--font-primary);
+}
+
+ul {
+   list-style: none;
+   margin-left: 0;
 }
 
 h1 {
@@ -35,6 +52,7 @@ h4 {
    font-size: var(--font-size-base);
    font-family: var(--font-primary);
 }
+
 
 :root {
 
@@ -61,6 +79,8 @@ h4 {
    --color-black:#000000;
    --color-error: #E06C75;   /* Rouge doux mais bien visible */
    --color-success: #4CAF50; /* Vert plus vif et dynamique */
+
+   --background-semi-transparent: rgba(0, 0, 0, 0.6);
 }
 
 :root[data-theme="dark"] {
@@ -95,11 +115,31 @@ h4 {
    max-width: 1440px;
 }
 
+.section {
+   scroll-margin-top: 50px;
+   padding: 3.75rem 0 3.75rem 0;
+}
+
+.margin-auto {
+   margin: auto;
+}
+
+.background-primary {
+   background-color: var(--color-bg-primary);
+}
+
+.background-secondary {
+   background-color: var(--color-bg-secondary);
+}
+
 .title-section {
-   font-size: var(--font-size-3xl);
    font-family: var(--font-title);
    color: var(--color-blue-primary);
    text-align: center;
+} 
+
+h2.title-section {
+   font-size: var(--font-size-3xl);
 }
 
 .badge {
@@ -113,7 +153,6 @@ h4 {
 }
 
 .button-blue {
-    display: inline-block;
     text-decoration: none;
     text-align: center;
     border: none;
@@ -164,11 +203,44 @@ h4 {
    overflow: hidden;
 }
 
+.error {
+   color: var(--color-error);
+}
 
-@media (max-width: 767px) {
+.border-error {
+   border: 1px solid var(--color-error)!important;
+}
 
-   .title-section {
-      font-size: var(--font-size-2xl);
-   }
+.label-form {
+   color: var(--color-text);
+   font-family: var(--font-primary);
+   font-size: var(--font-size-sm);  
+   padding-bottom: 5px;
+}
+
+.input-form {
+   height: 1.875rem;
+   border-radius: 0.3125rem;
+   border: 0.125rem solid var(--color-blue-primary); 
+   background-color: var(--color-bg-secondary);
+   color: var(--color-text);
+   font-size: var(--font-size-sm);
+   font-family: var(--font-primary);
+   padding: 0 0.625rem;
+}
+
+.asterix {
+   color: var(--color-blue-primary);
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 1.125rem;
+   font-weight: 400;
+}
+
+@media (max-width:767px) {
+
+   h2.title-section {
+   font-size: var(--font-size-2xl);
+}
+
 
 }

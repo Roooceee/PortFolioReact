@@ -1,15 +1,15 @@
 
-import '../../../styles/shared/languagesPercent/listLanguagePercent.css'
-
-function ListLanguagePercent({listLanguagesPercent}){
+function ListLanguagePercent({ListLanguagesWithPercent}){
 
    return (
 
-      <ul>
-         {listLanguagesPercent.map((language)=> {
+      <ul className='flex flex-wrap gap-2'>
+         {ListLanguagesWithPercent.map((objectLanguage)=> {
             return (
-            <li key={language.language} className={language.language+'_before '+'badge'}>
-               <span>{language.language} <span className="numeric">{language.percentLanguage}</span>%</span>
+            <li key={objectLanguage.language} 
+            className={`bg-[var(--color-bg-fourth)] text-xs text-[var(--color-text)] rounded-xl px-2 py-1 
+            flex gap-1 items-center before:content-['●'] before:text-${(objectLanguage.language).toLowerCase()}`}>
+               <span>{objectLanguage.language} <span className="numeric">{objectLanguage.percent}</span>%</span>
             </li>
             )
          })}

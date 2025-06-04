@@ -1,14 +1,9 @@
-import '../../../styles/shared/languagesPercent/progressBarLanguage.css'
-
-function ProgressBarLanguage({ListLanguagesPercent}){
-
+function ProgressBarLanguage({ListLanguagesWithPercent}){
 
    return (
-      <span className="progress-bar">
-         {ListLanguagesPercent.map((language)=> {
-            return (
-               <span key={language.language} className={language.language+'_progress'} style={{ width: language.percentLanguage+'%'}}></span>
-            )
+      <span className="rounded-[5px] flex h-2 overflow-hidden my-5">
+         {ListLanguagesWithPercent.map((objectLanguage)=> {
+            return <span key={objectLanguage.language} className={`bg-${(objectLanguage.language).toLowerCase()}`} style={{ width: objectLanguage.percent+'%'}}></span>
          })}
       </span>
    )

@@ -8,13 +8,15 @@ import ListLanguagePercent from "../shared/languagesPercent/listLanguagePercent.
 import Modal from "../shared/modal.jsx"
 import ProjectCard from "../shared/projectCard.jsx"
 
-import '../../styles/allprojects/projectListItem.css'
+import useStoreDevice from "../../storeDevice.js"
+
 import { text } from "motion/react-client"
 
 function ProjectListItem({name , description , languages , homepage , html_url , created_at , updated_at}){
 
 
    const [isModalOpen,setIsModalOpen] = useState(false)
+   const {device} = useStoreDevice()
    
    function openModal(e){
       e.preventDefault()
@@ -41,38 +43,42 @@ function ProjectListItem({name , description , languages , homepage , html_url ,
    return (
 
       <>
-      <article className="card-principal projectListItem">
+      <article className="card-principal flex justify-between items-center gap-10 !p-2.5 max-h-[50px] min-h-fit md:min-h-[150px]">
          <>
-         <div>
-            <h2>{name}</h2>
+         <div className="grid gap-2.5">
+            <h3 className="text-blue-primary text-base sm:text-lg lg:text-xl font-bold">{name}</h3>
             {description && (
-               <p className="description">{sliceDescription(description)}</p>
+               <p className="text-xxs sm:text-sm">{sliceDescription(description)}</p>
             )}
-            <div className="languages">
-               <ListLanguagePercent listLanguagesPercent={calculPercentLanguages(languages)}/>
-            </div>
-               <div className="dates">
-               <div><Calendar size={18}/><p>Crée le : </p><p className="numeric">{changeDateFormat(created_at,false,false)}</p></div>
-               {updated_at ? 
-               <div><RefreshCcw size={18}/><p>Modifier le : </p><p className="numeric">{changeDateFormat(updated_at,false,false)}</p></div>
-               : ''}
-            </div>
+            {(device === 'desktop' || device === 'tablet')  && (
+               <>
+                  <div>
+                     <ListLanguagePercent ListLanguagesWithPercent={calculPercentLanguages(languages)}/>
+                  </div>
+                  <div className="grid">
+                     <div className="flex items-center gap-1"><Calendar className="text-blue-primary" size={18}/><p>Crée le : </p><p className="numeric">{changeDateFormat(created_at,false,false)}</p></div>
+                     {updated_at ? 
+                     <div className="flex items-center gap-1"><RefreshCcw className="text-blue-primary" size={18}/><p>Modifier le : </p><p className="numeric">{changeDateFormat(updated_at,false,false)}</p></div>
+                     : ''}
+                  </div>
+               </>
+            )}
          </div>
 
-         <div className="links">
-            <a href="#" aria-label="En savoir plus" title="En savoir plus" className="button-blue" onClick={(e)=> {openModal(e)}}><Info/><span>En savoir plus</span></a>
+         <div>
+            <a href="#" aria-label="En savoir plus" title="En savoir plus" 
+            className="button-blue flex items-center gap-1 !py-[1px] !px-[5px] md:!py-[10px] md:!px-[15px] rounded-[5px]" 
+            onClick={(e)=> {openModal(e)}}><Info className="max-w-[16px] md:max-w-[36px]"/>{(device === 'desktop' || device==='tablet') && (<span>En savoir plus</span>)}</a>
          </div>
          </>
          </article>
 
          <Modal 
-         isOpen={isModalOpen}
-         onClose={closeModal}
-         title={<h2>Détail du projet </h2>}
-         showButtonClose={true}>
-
-            <div className="modal-project">
-               <ProjectCard 
+            isOpen={isModalOpen}
+            onClose={closeModal}
+            title={<h2 className="text-sm sm:text-base lg:text-lg font-primary font-normal text-[var(--color-text)]">Détail du projet </h2>}
+            showButtonClose={true}>
+            <ProjectCard 
                name={name} 
                description={description} 
                languages={languages}
@@ -80,8 +86,6 @@ function ProjectListItem({name , description , languages , homepage , html_url ,
                html_url={html_url} 
                updated_at={updated_at} 
                created_at={created_at}/>
-            </div>
-
          </Modal>
       </>
 
