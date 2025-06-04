@@ -13,12 +13,14 @@ import ParseTextWithBreaks from './parseTextWithBreaks.jsx'
 function ProjectCard({name, description,created_at, languages, homepage, updated_at , html_url}){
    
    const percentLanguages = calculPercentLanguages(languages)
+   const location = window.location.pathname
+   const {widthScreen} = useStoreDevice()
 
-   const {device,widthScreen} = useStoreDevice()
+   console.log(location)
 
    return(
       <>
-         <article className='card-secondary projectCard flex flex-col justify-between min-h-[30rem] gap-2.5 md:max-w-[440px] margin-auto lg:max-w-[28%] '>
+         <article className={`card-secondary projectCard flex flex-col justify-between min-h-[30rem] gap-2.5 md:max-w-[440px] margin-auto ${location ==='/' && 'lg:max-w-[28%]'}`}>
             <div className='min-h-0 head_project flex flex-col gap-8 lg:min-h-[260px]'>
                <h3 className='text-blue-primary font-bold text-lg md:text-xl'>{name}</h3>
                {description && (
