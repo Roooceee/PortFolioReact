@@ -53,7 +53,7 @@ function Head_Index() {
 
             </div>
             <div className='flex justify-center gap-2.5 pt-2.5 lg:gap-8 lg:pt-12'>
-               <a href="#projects" className="button-blue min-w-[100px]">Mes Projets</a>
+               <a href="#mes-derniers-projets" className="button-blue min-w-[100px]">Mes Projets</a>
                <a href="#contact" className="button-blue min-w-[100px]">Me Contacter</a>
             </div>
          </div>
