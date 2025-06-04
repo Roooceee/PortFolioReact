@@ -3,7 +3,7 @@ import { forwardRef } from "react";
 function APropos({id},ref) {
       
       return (
-         <section id='apropos' className="background-primary section">      
+         <section id='a-propos' className="background-primary section">      
             <div className="flex flex-col p-5 lg:flex-row justify-between gap-12 max-w-[900px] margin-auto items-center">
                   <img src="/img/image_profil_SL.webp" alt="image de profil" className="rounded-[100%] max-w-[200px] sm:max-w-[300px]" />
                <div className="grid gap-8">
