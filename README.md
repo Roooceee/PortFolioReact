@@ -19,7 +19,7 @@ Consultez la version en ligne ici : [https://port-folio-react-lime.vercel.app/](
 
 ## Technologies 🛠️
 
-React.js, Vite, JavaScript ES6+, CSS, React Router, Zustand, API GitHub REST, déployé sur Vercel
+React.js, Vite, JavaScript ES6+, CSS,Tailwind, React Router, Zustand, API GitHub REST, déployé sur Vercel
 
 ## Statut du projet 🚧
 

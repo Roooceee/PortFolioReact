@@ -39,7 +39,7 @@ function Formation({type , intitule , lien ,  option , description , etablisseme
       <div className='grid gap-1'>
          <div className='flex flex-col-reverse gap-2.5 items-start md:flex-row justify-between md:items-center'>
             <p className='badge'>{type}</p>
-            {obtentionText ? <span className='badge'>{obtentionLogo}{obtentionText}</span> : ''}
+            {obtentionText ? <span className='badge gap-2'>{obtentionLogo}{obtentionText}</span> : ''}
          </div>
          <h3 className='text-blue-primary hover:text-blue-secondary font-bold text-lg sm:text-xl underline'><a href={lien} target='_blank'>{intitule}</a></h3>
          {option != null ? <p className='text-primary text-md md:text-lg'>Option {option}</p> : ''}
@@ -48,7 +48,7 @@ function Formation({type , intitule , lien ,  option , description , etablisseme
          )}
       </div>
 
-      <div className='formation-context'>
+      <div>
          <ul className='grid gap-1 text-[var(--color-text)]'>
             <li className='flex items-center gap-1 text-sm'><School className='text-blue-primary'/>{etablissement}</li>
             <li className='flex items-center gap-1 text-sm'><MapPin className='text-blue-primary'/>{lieu}</li>
@@ -63,10 +63,10 @@ function Formation({type , intitule , lien ,  option , description , etablisseme
       <div className='grid gap-5'>
          <hr className='hr-grey' />
          <h4 className='text-blue-primary font-bold'>Compétence{competences.length>1?'s':''}</h4>
-            <ul className='grid grid-cols-1 gap-2.5 lg:grid-cols-[auto_auto] lg:gap-0 text-[var(--color-text)]'>
+            <ul className='grid grid-cols-1 lg:grid-cols-[auto,auto] gap-2.5 text-[var(--color-text)]'>
                {
                competences.map((e,index)=> {
-                  return <li className='flex gap-1 text-xs sm:text-sm' key={index}><CircleCheckBig className='text-success items-start lg:items:center min-w-[20px] max-w-[20px]'/>{e}</li>
+                  return <li className='flex gap-1 text-xs sm:text-sm items-center' key={index}><CircleCheckBig className='text-success min-w-[20px] max-w-[20px]'/>{e}</li>
                })
             }
             </ul>
