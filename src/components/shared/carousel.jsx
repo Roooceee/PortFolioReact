@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect} from "react"
+import { useState, useRef} from "react"
 import { CircleArrowLeft, CircleArrowRight, CircleDot } from "lucide-react"
 import { motion } from "framer-motion"
 
@@ -70,37 +70,43 @@ function Carousel({items , ItemComponent}){
       <>
          <div className="relative max-w-[85%] margin-auto scroll-mt-60" ref={carouselRef}>
 
-         <motion.div
-            key={currentIndex}
-            custom={direction}
-            variants={variants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{ duration: 0.4 }}
-            drag="x"
-            dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={0.2} // ajoute un rebond doux
-            onDragEnd={(event, info) => {
+         {device === 'desktop' ? 
+         
+            <div>
+               <ItemComponent {...items[currentIndex]} />
+            </div> 
+               
+            :<motion.div
+               key={currentIndex}
+               custom={direction}
+               variants={variants}
+               initial="enter"
+               animate="center"
+               exit="exit"
+               transition={{ duration: 0.4 }}
+               drag="x"
+               dragConstraints={{ left: 0, right: 0 }}
+               dragElastic={0.2} // ajoute un rebond doux
+               onDragEnd={(event, info) => {
 
-               if (info.offset.x > widthScreen*0.5 && currentIndex < items.length - 1) {
-                  // Swipe vers la gauche -> slide precedente
-                  setDirection(-1);
-                  SetCurrentIndex(currentIndex + 1);
-                  scrollIntoCarouselRef();
-               } else if (info.offset.x < -(widthScreen*0.5) && currentIndex > 0) {
-                  // Swipe vers la droite -> slide suivante
-                  setDirection(1);
-                  SetCurrentIndex(currentIndex - 1);
-                  scrollIntoCarouselRef();
-               }
-               // Sinon on ne change rien : le motion.div revient au centre
-            }}
-            >
-            <ItemComponent {...items[currentIndex]} />
-         </motion.div>
+                  if (info.offset.x > widthScreen*0.5 && currentIndex < items.length - 1) {
+                     // Swipe vers la gauche -> slide precedente
+                     setDirection(-1);
+                     SetCurrentIndex(currentIndex + 1);
+                     scrollIntoCarouselRef();
+                  } else if (info.offset.x < -(widthScreen*0.5) && currentIndex > 0) {
+                     // Swipe vers la droite -> slide suivante
+                     setDirection(1);
+                     SetCurrentIndex(currentIndex - 1);
+                     scrollIntoCarouselRef();
+                  }
+                  // Sinon on ne change rien : le motion.div revient au centre
+               }}
+               >
+               <ItemComponent {...items[currentIndex]} />
+               {/* operateur de décomposition passe toutes les clé/valeurs  de l'objet en props */}
+            </motion.div> }
 
-            {/* operateur de décomposition passe toutes les clé/valeurs  de l'objet en props */}
          <div className="flex flex-row-reverse gap-1.5 w-fit margin-auto pt-5 text-blue-primary">
             {items.map((dot,index)=>{
                return <a key={index}
