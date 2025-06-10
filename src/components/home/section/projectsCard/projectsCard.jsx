@@ -47,6 +47,7 @@ function Projects(props,ref){
          }
          
          loadData()
+         console.log(projects)
 
    },[])
 

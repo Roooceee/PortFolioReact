@@ -2,16 +2,16 @@
 
   {
   "type": "Formation diplômante",
-  "intitule": "Développeur d'application JavaScript React",
-  "lien":"https://openclassrooms.com/fr/paths/877-developpeur-dapplication-javascript-react",
+  "name": "Développeur d'application JavaScript React",
+  "itemLink":"https://openclassrooms.com/fr/paths/877-developpeur-dapplication-javascript-react",
   "option": null,
   "description": "Titre RNCP niveau 6 (Bac+3/4). Formation professionnalisante en alternance orientée front-end moderne, incluant React.js, la gestion d’état, la collaboration en équipe Agile et l’initiation au back-end avec Node.js. Démarrage prévu après signature d’un contrat d’alternance.",
-  "etablissement": "OpenClassrooms",
-  "lieu": "100% en ligne",
-  "debut": null,
-  "fin": null,
+  "organization": "OpenClassrooms",
+  "location": "100% en ligne",
+  "startDate": null,
+  "endDate": null,
   "obtention": null,
-  "competences": [
+  "skills": [
     "Concevoir des sites web accessibles et responsives à partir de maquettes",
     "Développer des applications web dynamiques en JavaScript (ES6+)",
     "Créer une application avec React.js en structurant les composants, les hooks et le routing",
@@ -27,17 +27,17 @@
 
   {
     "type": "Formation Professionnelle",
-    "intitule": "Language Informatique à la carte",
-    "lien":"https://laplateforme.io/prf-var-langage-informatique/",
+    "name": "Language Informatique à la carte",
+    "itemLink":"https://laplateforme.io/prf-var-langage-informatique/",
     "option": null,
     "description":"Parcours débutant par les fondamentaux (HTML/CSS, Algo/Python), évoluant vers le JavaScript moderne (interactions DOM, appels API via fetch) et React.js, avec une initiation au côté serveur via PHP",
-    "etablissement": "laPlateforme.io",
-    "lieu": "Brignoles, France",
-    "debut": "2024-12-16",
-    "fin": "2025-04-11",
+    "organization": "laPlateforme.io",
+    "location": "Brignoles, France",
+    "startDate": "2024-12-16",
+    "endDate": "2025-04-11",
     "obtention":null,
 
-    "competences": [
+    "skills": [
           "Intégration web avec HTML et CSS (création de sites, design responsive)",
           "Initiation à l'algorithmique (application avec Python)",
           "Manipulation du DOM et interactivité en JavaScript",
@@ -49,17 +49,17 @@
   },
   {
     "type": "Brevet Technicien Supérieur",
-    "intitule": "Services Informatiques aux Organisations",
-    "lien":"https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-services-informatiques-aux-organisations-option-b-solutions-logicielles-et-applications-metiers",
+    "name": "Services Informatiques aux Organisations",
+    "itemLink":"https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-services-informatiques-aux-organisations-option-b-solutions-logicielles-et-applications-metiers",
     "option": "Solutions Logicielles et Applications Métier",
     "description":"Diplôme de technicien supérieur (Bac+2) spécialisé dans la conception, le développement et la maintenance d'applications logicielles métier.",
-    "etablissement": "Lycée Charles Peguy",
-    "lieu": "Marseille, France", 
-    "debut": "2016-09-01",
-    "fin": "2018-06-30",
+    "organization": "Lycée Charles Peguy",
+    "location": "Marseille, France", 
+    "startDate": "2016-09-01",
+    "endDate": "2018-06-30",
     "obtention":true,
 
-"competences": [
+"skills": [
       "Conception et développement de solutions logicielles et applications métier",
       "Programmation Orientée Objet (Java)",
       "Modélisation et gestion de bases de données relationnelles (MySQL)",
@@ -72,16 +72,16 @@
   },
   {
     "type": "Baccalauréat",
-    "intitule": "Sciences et Technologies de l'Industrie et du Développement Durable",
-    "lien":"https://www.onisep.fr/ressources/univers-formation/formations/lycees/bac-techno-sti2d-sciences-et-technologies-de-l-industrie-et-du-developpement-durable-enseignement-specifique-systemes-d-information-et-numerique",
+    "name": "Sciences et Technologies de l'Industrie et du Développement Durable",
+    "itemLink":"https://www.onisep.fr/ressources/univers-formation/formations/lycees/bac-techno-sti2d-sciences-et-technologies-de-l-industrie-et-du-developpement-durable-enseignement-specifique-systemes-d-information-et-numerique",
     "option": "Système d'Information et Numérique",
     "description":"Baccalauréat technologique préparant aux études supérieures et métiers du numérique, axé sur les systèmes d'information et les réseaux.",
-    "etablissement": "Lycée Jean Perrin",
-    "lieu": "Marseille, France",
-    "debut": "2010-09-01",
-    "fin": "2013-06-30",
+    "organization": "Lycée Jean Perrin",
+    "location": "Marseille, France",
+    "startDate": "2010-09-01",
+    "endDate": "2013-06-30",
     "obtention":true,
 
-    "competences": []
+    "skills": []
   }
 ]

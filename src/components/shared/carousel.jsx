@@ -112,20 +112,20 @@ function Carousel({items , ItemComponent}){
          </motion.div>
 
          <div className="flex flex-row-reverse gap-1.5 w-fit margin-auto pt-5 text-blue-primary">
-            {items.map((dot,index)=>{
+            {items.map((item,index)=>{
                return <a key={index}
                href="#" 
                className={`${index === currentIndex && "text-purple-primary"} ${index !== currentIndex && "hover:text-blue-secondary"}`}
-               title={'slide numéro '+(index+1)} aria-label={'slide numéro '+(index+1)}
+               title={item.name} aria-label={item.name}
                onClick={(e)=> changeCurrentIndex(e,index)}><CircleDot/>
                </a>
             })}
          </div>
             <div className="text-blue-primary hidden lg:inline">
                {/* Affiche le bouton "Précédent" uniquement si ce n'est pas la première formation chronologiquement[2] */}
-               {currentIndex < items.length-1 && <a className="absolute top-[3rem] left-[-7%]" href="#" onClick={(e)=> previous(e)} title="précédent" aria-label="precedent"><CircleArrowLeft size={48}/></a>}
+               {currentIndex < items.length-1 && <a className="absolute top-[3rem] left-[-7%]" href="#" onClick={(e)=> previous(e)} title={"Aller vers : "+items[currentIndex+1].name} aria-label={"Aller vers : "+items[currentIndex+1].name}><CircleArrowLeft size={48}/></a>}
                {/* Affiche le bouton "Suivant" uniquement si ce n'est pas la derniere formation chronologiquement [0] */}
-               {currentIndex > 0 && <a className="absolute top-[3rem] right-[-7%]" href="#" onClick={(e)=> next(e)} title="suivant" aria-label="suivant"><CircleArrowRight size={48}/></a>}
+               {currentIndex > 0 && <a className="absolute top-[3rem] right-[-7%]" href="#" onClick={(e)=> next(e)} title={"Aller vers : "+items[currentIndex-1].name} aria-label={"Aller vers : "+items[currentIndex-1].name}><CircleArrowRight size={48}/></a>}
             </div>
       </div>
 

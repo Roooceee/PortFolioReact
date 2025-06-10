@@ -1,12 +1,12 @@
 [
   {
     "type":"Interim",
-    "title": "Technicien Helpdesk N1",
-    "company": "Groupe ADSN",
-    "place":"Venelles, France",
+    "name": "Technicien Helpdesk N1",
+    "organization": "Groupe ADSN",
+    "location":"Venelles, France",
     "startDate": "2023-03-01",
     "endDate": "2024-07-31",
-    "responsibilities": [
+    "missions": [
       "Support technique N1 sur applications métier ADSN (SignActe, AWR) et gestion du cycle de vie des clés CLE REAL.",
       "Installation, configuration et mise à jour à distance des logiciels ADSN sur postes clients Windows 10/11.",
       "Diagnostic et résolution d'incidents (via LogMeIn Rescue) : applicatifs ADSN, configuration Microsoft Outlook (POP), paramétrage proxy, connectivité de base.",
@@ -15,7 +15,7 @@
       "Gestion et suivi des tickets (~30/jour) via PSoft ITSM, avec approche pédagogique."
     ],
     "description": "Support N1 pour études notariales (Windows 10/11) : Installation, dépannage logiciels ADSN (SignActe, AWR), gestion CLE REAL, configuration Outlook (POP) et accès réseau (proxy). Diagnostic à distance (LogMeIn Rescue), assistance plateformes web (Mon Espace Real, ANF), suivi tickets via PSoft (~30/jour) et communication pédagogique.",
-    "technologies": [
+    "skills": [
       "Windows 10/11",
       "Logiciels ADSN",
       "LogMeIn Rescue",
@@ -27,12 +27,12 @@
   },
   {
       "type":"Stage",
-      "title": "Développeur Front-end AngularJS",
-      "company": "Calinda Software",
-      "place":"Marseille, France",
+      "name": "Développeur Front-end AngularJS",
+      "organization": "Calinda Software",
+      "location":"Marseille, France",
       "startDate": "2018-01-01",
       "endDate": "2018-02-01",
-      "responsibilities": [
+      "missions": [
         "Développement de formulaires web multi-étapes (AngularJS) pour automatiser la génération de PDF.",
         "Analyse de modèles PDF pour extraction des variables et définition des logiques de calcul.",
         "Implémentation de la logique front-end AngularJS (validation, data-binding, calculs).",
@@ -40,7 +40,7 @@
         "Utilisation de l'IDE WebStorm en environnement de test."
       ],
       "description": "Stage de développement front-end AngularJS axé sur l'automatisation. Conception et réalisation de plusieurs formulaires web dynamiques pour la collecte de données, s'intégrant en amont de la solution de signature électronique SELL&SIGN. Montée en compétence sur AngularJS (v1.x), la manipulation de données client et les tests fonctionnels.",
-      "technologies": [
+      "skills": [
         "AngularJS (v1.x)",
         "JavaScript (ES5)",
         "HTML5",
@@ -50,12 +50,12 @@
   },
   {
     "type":"Stage",
-    "title": "Technicien Support de Proximité",
-    "company": "AP-HM Institut Paoli Calmette",
-    "place":"Marseille, France",
+    "name": "Technicien Support de Proximité",
+    "organization": "AP-HM Institut Paoli Calmette",
+    "location":"Marseille, France",
     "startDate": "2017-06-01",
     "endDate": "2017-07-01",
-    "responsibilities": [
+    "missions": [
       "Interventions de support informatique de proximité en accompagnement du technicien référent, en milieu hospitalier.",
       "Installation, remplacement et configuration de matériel informatique : postes de travail, écrans (y compris configurations multi-écrans), périphériques.",
       "Configuration initiale de postes de travail utilisateurs en environnement virtualisé (VM).",
@@ -63,7 +63,7 @@
       "Prise de connaissance et suivi des tickets d'incidents via l'outil interne."
     ],
     "description": "Premier stage pratique en support technique réalisé en milieu hospitalier. Accompagnement d'un technicien expérimenté sur des interventions de proximité : Gestion du matériel (installation, remplacement), configuration de postes utilisateurs (y compris VM), et maintenance de base des imprimantes. Découverte des processus de suivi d'incidents.",
-    "technologies": [
+    "skills": [
       "Windows 8/10",
       "Matériel Informatique (Postes, Écrans, Périphériques)",
       "Environnements Virtualisés (VM)",
