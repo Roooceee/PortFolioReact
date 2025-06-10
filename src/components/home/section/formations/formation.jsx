@@ -6,8 +6,6 @@ import ParseTextWithBreaks from '../../../shared/parseTextWithBreaks.jsx'
 function Formation({type , intitule , lien ,  option , description , etablissement , lieu ,  
    debut , fin , obtention , competences} ){
 
-   
-
    let obtentionText = null
    let obtentionLogo = null
 

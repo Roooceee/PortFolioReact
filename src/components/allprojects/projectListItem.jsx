@@ -8,15 +8,11 @@ import ListLanguagePercent from "../shared/languagesPercent/listLanguagePercent.
 import Modal from "../shared/modal.jsx"
 import ProjectCard from "../shared/projectCard.jsx"
 
-import useStoreDevice from "../../storeDevice.js"
-
-import { text } from "motion/react-client"
 
 function ProjectListItem({name , description , languages , homepage , html_url , created_at , updated_at}){
 
 
    const [isModalOpen,setIsModalOpen] = useState(false)
-   const {device} = useStoreDevice()
    
    function openModal(e){
       e.preventDefault()
@@ -50,25 +46,21 @@ function ProjectListItem({name , description , languages , homepage , html_url ,
             {description && (
                <p className="text-xxs sm:text-sm">{sliceDescription(description)}</p>
             )}
-            {(device === 'desktop' || device === 'tablet')  && (
-               <>
-                  <div>
-                     <ListLanguagePercent ListLanguagesWithPercent={calculPercentLanguages(languages)}/>
-                  </div>
-                  <div className="grid">
-                     <div className="flex items-center gap-1"><Calendar className="text-blue-primary" size={18}/><p>Crée le : </p><p className="numeric">{changeDateFormat(created_at,false,false)}</p></div>
-                     {updated_at ? 
-                     <div className="flex items-center gap-1"><RefreshCcw className="text-blue-primary" size={18}/><p>Modifier le : </p><p className="numeric">{changeDateFormat(updated_at,false,false)}</p></div>
-                     : ''}
-                  </div>
-               </>
-            )}
+            <div className="hidden md:inline">
+               <ListLanguagePercent ListLanguagesWithPercent={calculPercentLanguages(languages)}/>
+            </div>
+            <div className="hidden md:grid">
+               <div className="flex items-center gap-1"><Calendar className="text-blue-primary" size={18}/><p>Crée le : </p><p className="numeric">{changeDateFormat(created_at,false,false)}</p></div>
+               {updated_at ? 
+               <div className="flex items-center gap-1"><RefreshCcw className="text-blue-primary" size={18}/><p>Modifier le : </p><p className="numeric">{changeDateFormat(updated_at,false,false)}</p></div>
+               : ''}
+            </div>
          </div>
 
          <div>
             <a href="#" aria-label="En savoir plus" title="En savoir plus" 
-            className="button-blue flex items-center gap-1 !py-[1px] !px-[5px] md:!py-[10px] md:!px-[15px] rounded-[5px]" 
-            onClick={(e)=> {openModal(e)}}><Info className="max-w-[16px] md:max-w-[36px]"/>{(device === 'desktop' || device==='tablet') && (<span>En savoir plus</span>)}</a>
+            className="button-blue flex items-center justify-center md:gap-1 !py-[1px] !px-[5px] md:!py-[10px] md:!px-[15px] rounded-[10px]" 
+            onClick={(e)=> {openModal(e)}}><Info className="max-w-[16px] md:max-w-[36px]"/><span className="hidden md:inline">En savoir plus</span></a>
          </div>
          </>
          </article>

@@ -7,15 +7,11 @@ import ProjectCard from "../../../shared/projectCard.jsx";
 import Loading from "../../../shared/loading/loading.jsx";
 import Carousel from "../../../shared/carousel.jsx";
 
-import useStoreDevice from "../../../../storeDevice.js";
-
 function Projects(props,ref){
 
    const [projects,setProjects] = useState([])
    const [isReady, setIsReady] = useState(false);
    const [error, setError] = useState(false);
-
-   const {device} = useStoreDevice()
 
    useEffect(()=>{
 
@@ -64,26 +60,24 @@ function Projects(props,ref){
             )}
    
             { isReady && !error && (
-               <div className="flex justify-between margin-auto">
-                  {device === 'desktop' ? (
-                     <>
-                     {projects.slice(0, 3).map((proj) => (
-                        <ProjectCard
-                           key={proj.name}
-                           name={proj.name}
-                           created_at={proj.created_at}
-                           description={proj.description}
-                           languages = {proj.languages}
-                           homepage={proj.homepage}
-                           updated_at={proj.updated_at}
-                           html_url={proj.html_url}
-                        />
-                     ))}
-                     </>
-                  ) : 
-                  <Carousel items={projects.slice(0, 3)} ItemComponent={ProjectCard}/>
-                  }
-               </div>
+               <>
+                  <div className="hidden lg:flex justify-between margin-auto">
+                        {projects.slice(0, 3).map((proj) => (
+                           <ProjectCard
+                              key={proj.name}
+                              name={proj.name}
+                              created_at={proj.created_at}
+                              description={proj.description}
+                              languages = {proj.languages}
+                              homepage={proj.homepage}
+                              updated_at={proj.updated_at}
+                              html_url={proj.html_url}
+                           />))}
+                  </div>
+                  <div className="flex justify-between margin-auto lg:hidden">
+                     <Carousel items={projects.slice(0, 3)} ItemComponent={ProjectCard}/>
+                  </div>
+               </>
             )}
    
             {!isReady && error && (

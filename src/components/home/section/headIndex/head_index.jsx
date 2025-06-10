@@ -1,13 +1,10 @@
 import { CircleArrowDown } from 'lucide-react'
 
-import useStoreDevice from '../../../../storeDevice';
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from "motion/react"
 import { useEffect, useState } from 'react';
 
 function Head_Index() {
-
-   const {device} = useStoreDevice()
 
    const [isFirstDone,setIsFirstDone] = useState(false)
 
@@ -58,17 +55,15 @@ function Head_Index() {
             </div>
          </div>
 
-         {device !== 'desktop' && (
-            <motion.a href='#a-propos'
-               animate={{ scale: [1, 1.2, 1] }}
-               transition={{
-               duration: 2,
-               repeat: Infinity,
-               }}
-            className='mx-auto max-w-fit'>
-               <CircleArrowDown className='text-blue-primary hover:text-blue-secondary'/>
-            </motion.a>
-         )}
+         <motion.a href='#a-propos'
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{
+            duration: 2,
+            repeat: Infinity,
+            }}
+         className='mx-auto max-w-fit lg:hidden'>
+            <CircleArrowDown className='text-blue-primary hover:text-blue-secondary'/>
+         </motion.a>
       </section>
  )}
  

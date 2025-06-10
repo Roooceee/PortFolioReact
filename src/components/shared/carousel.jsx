@@ -1,15 +1,16 @@
-import { useState, useRef} from "react"
+import { useState, useRef, useEffect} from "react"
 import { CircleArrowLeft, CircleArrowRight, CircleDot } from "lucide-react"
 import { motion } from "framer-motion"
 
-import useStoreDevice from '../../storeDevice'
+import useStoreWidthScreen from '../../storeWidthScreen'
 
 function Carousel({items , ItemComponent}){
 
       const [currentIndex,SetCurrentIndex] = useState(0)
       const [direction,setDirection] = useState(null)
       const carouselRef = useRef(null);
-      const {widthScreen,device} = useStoreDevice()
+      const {widthScreen} = useStoreWidthScreen()
+      let isDraggable = widthScreen <= 1024 ? true : false
 
       // Fonction permettant de remonter après un scroll vers carouselRef
       function scrollIntoCarouselRef(){
@@ -65,47 +66,50 @@ function Carousel({items , ItemComponent}){
 
       }
 
+      function handleDragEnd(info){
+
+         console.log(isDraggable)
+
+         if(!isDraggable) {
+            return
+         }
+         if (info.offset.x > widthScreen*0.5 && currentIndex < items.length - 1) {
+            // Swipe vers la gauche -> slide precedente
+            setDirection(-1);
+            SetCurrentIndex(currentIndex + 1);
+            scrollIntoCarouselRef();
+         } else if (info.offset.x < -(widthScreen*0.5) && currentIndex > 0) {
+            // Swipe vers la droite -> slide suivante
+            setDirection(1);
+            SetCurrentIndex(currentIndex - 1);
+            scrollIntoCarouselRef();
+         }
+
+      }
+
    return (
 
       <>
-         <div className="relative max-w-[85%] margin-auto scroll-mt-60" ref={carouselRef}>
-
-         {device === 'desktop' ? 
+         <div className="relative max-w-[85%] margin-auto scroll-mt-60" ref={carouselRef}>         
          
-            <div>
-               <ItemComponent {...items[currentIndex]} />
-            </div> 
-               
-            :<motion.div
-               key={currentIndex}
-               custom={direction}
-               variants={variants}
-               initial="enter"
-               animate="center"
-               exit="exit"
-               transition={{ duration: 0.4 }}
-               drag="x"
-               dragConstraints={{ left: 0, right: 0 }}
-               dragElastic={0.2} // ajoute un rebond doux
-               onDragEnd={(event, info) => {
-
-                  if (info.offset.x > widthScreen*0.5 && currentIndex < items.length - 1) {
-                     // Swipe vers la gauche -> slide precedente
-                     setDirection(-1);
-                     SetCurrentIndex(currentIndex + 1);
-                     scrollIntoCarouselRef();
-                  } else if (info.offset.x < -(widthScreen*0.5) && currentIndex > 0) {
-                     // Swipe vers la droite -> slide suivante
-                     setDirection(1);
-                     SetCurrentIndex(currentIndex - 1);
-                     scrollIntoCarouselRef();
-                  }
-                  // Sinon on ne change rien : le motion.div revient au centre
-               }}
-               >
-               <ItemComponent {...items[currentIndex]} />
-               {/* operateur de décomposition passe toutes les clé/valeurs  de l'objet en props */}
-            </motion.div> }
+         <motion.div
+            key={currentIndex}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.8 }}
+            drag={isDraggable ? "x" : false}
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.2} // ajoute un rebond doux
+            onDragEnd={(event, info) => {
+               handleDragEnd(info)
+            }}
+            >
+            <ItemComponent {...items[currentIndex]} />
+            {/* operateur de décomposition passe toutes les clé/valeurs  de l'objet en props */}
+         </motion.div>
 
          <div className="flex flex-row-reverse gap-1.5 w-fit margin-auto pt-5 text-blue-primary">
             {items.map((dot,index)=>{
@@ -117,14 +121,12 @@ function Carousel({items , ItemComponent}){
                </a>
             })}
          </div>
-         {device === 'desktop' && (
-            <div className="text-blue-primary">
+            <div className="text-blue-primary hidden lg:inline">
                {/* Affiche le bouton "Précédent" uniquement si ce n'est pas la première formation chronologiquement[2] */}
                {currentIndex < items.length-1 && <a className="absolute top-[3rem] left-[-7%]" href="#" onClick={(e)=> previous(e)} title="précédent" aria-label="precedent"><CircleArrowLeft size={48}/></a>}
                {/* Affiche le bouton "Suivant" uniquement si ce n'est pas la derniere formation chronologiquement [0] */}
                {currentIndex > 0 && <a className="absolute top-[3rem] right-[-7%]" href="#" onClick={(e)=> next(e)} title="suivant" aria-label="suivant"><CircleArrowRight size={48}/></a>}
             </div>
-         )}
       </div>
 
       </>

@@ -1,4 +1,3 @@
-// import '../../../../styles/home/section/skills/skill.css'
 import { useEffect, useState } from 'react';
 
 function Skill({title,list,logo=null}){

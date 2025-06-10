@@ -68,7 +68,12 @@ safelist: [
         '2xl': '2rem',      // 32px
         '3xl': '2.5rem',    // 40px
         '4xl': '3rem',      // 48px
-      }
+      },
+      screens: {
+        'xs': '520px',
+        'xl': '1280px',
+      },
+
     }
   },
   plugins: [],
