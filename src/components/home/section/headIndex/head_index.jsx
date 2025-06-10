@@ -59,7 +59,7 @@ function Head_Index() {
          </div>
 
          {device !== 'desktop' && (
-            <motion.a href='#apropos'
+            <motion.a href='#a-propos'
                animate={{ scale: [1, 1.2, 1] }}
                transition={{
                duration: 2,

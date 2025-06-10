@@ -3,6 +3,8 @@ import Home from "./pages/home";
 import Allprojects from "./pages/allprojects";
 import RGPD from "./pages/legalmentions";
 
+import './style.css'
+
 function App() {
 
   return (

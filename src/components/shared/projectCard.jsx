@@ -16,8 +16,6 @@ function ProjectCard({name, description,created_at, languages, homepage, updated
    const location = window.location.pathname
    const {widthScreen} = useStoreDevice()
 
-   console.log(location)
-
    return(
       <>
          <article className={`card-secondary projectCard flex flex-col justify-between min-h-[30rem] gap-2.5 md:max-w-[440px] margin-auto ${location ==='/' && 'lg:max-w-[28%]'}`}>

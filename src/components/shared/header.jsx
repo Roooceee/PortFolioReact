@@ -31,7 +31,7 @@ function Header() {
    },[])
 
    useEffect(()=>{
-         document.body.style.overflow = (isOpen && device!=='desktop') ? "hidden" : "auto"
+         document.body.style.overflow = (isOpen && device==='tablet' || isOpen && device==='mobile') ? "hidden" : "auto"
    })
 
    return (

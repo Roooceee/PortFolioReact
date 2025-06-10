@@ -10,8 +10,6 @@ import Formations from "../components/home/section/formations/formations.jsx"
 import Contact from "../components/home/section/contact/contact.jsx"
 import Footer from "../components/shared/footer.jsx"
 
-import '../style.css'
-
 import useStoreSectionVisible from '../storeSectionVisible'
 import { useLocation } from "react-router-dom"
 

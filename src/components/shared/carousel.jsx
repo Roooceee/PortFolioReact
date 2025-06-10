@@ -1,7 +1,6 @@
-import { useState, useRef} from "react"
+import { useState, useRef, useEffect} from "react"
 import { CircleArrowLeft, CircleArrowRight, CircleDot } from "lucide-react"
-import { useSwipeable } from 'react-swipeable'
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 
 import useStoreDevice from '../../storeDevice'
 
@@ -10,7 +9,7 @@ function Carousel({items , ItemComponent}){
       const [currentIndex,SetCurrentIndex] = useState(0)
       const [direction,setDirection] = useState(null)
       const carouselRef = useRef(null);
-      const {device} = useStoreDevice()
+      const {widthScreen,device} = useStoreDevice()
 
       // Fonction permettant de remonter après un scroll vers carouselRef
       function scrollIntoCarouselRef(){
@@ -18,27 +17,6 @@ function Carousel({items , ItemComponent}){
             carouselRef.current.scrollIntoView({ behavior: "smooth" });
          },700)
       }
-
-      // Permet via la bibliothèque useSwipeable de changer d'index si on swipe a droite ou a gauche
-      const handlers = useSwipeable({
-         onSwipedRight: () => {
-           if (currentIndex < items.length - 1 && device !== 'desktop') {
-            setDirection(-1)
-            SetCurrentIndex(currentIndex + 1)
-            scrollIntoCarouselRef()
-           }
-         },
-         onSwipedLeft: () => {
-           if (currentIndex > 0 && device !== 'desktop') {
-            setDirection(1)
-            SetCurrentIndex(currentIndex - 1)
-            scrollIntoCarouselRef()
-           }
-         },
-         preventDefaultTouchmoveEvent: true,
-         trackMouse: true,
-       })
-
        
       const variants = {
       enter: (dir) => ({
@@ -90,23 +68,38 @@ function Carousel({items , ItemComponent}){
    return (
 
       <>
-      <div className="relative max-w-[85%] margin-auto scroll-mt-60" ref={carouselRef}>
-         <div className="carousel-swipe" {...handlers}>
-            {/* Permet d'avoir une transition via motion quand currentIndex change */}
-            <AnimatePresence mode="wait" custom={direction}>
-            <motion.div
-               key={currentIndex}
-               custom={direction}
-               variants={variants}
-               initial="enter"
-               animate="center"
-               exit="exit"
-               transition={{ duration: 0.4 }}
+         <div className="relative max-w-[85%] margin-auto scroll-mt-60" ref={carouselRef}>
+
+         <motion.div
+            key={currentIndex}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.4 }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.2} // ajoute un rebond doux
+            onDragEnd={(event, info) => {
+
+               if (info.offset.x > widthScreen*0.5 && currentIndex < items.length - 1) {
+                  // Swipe vers la gauche -> slide precedente
+                  setDirection(-1);
+                  SetCurrentIndex(currentIndex + 1);
+                  scrollIntoCarouselRef();
+               } else if (info.offset.x < -(widthScreen*0.5) && currentIndex > 0) {
+                  // Swipe vers la droite -> slide suivante
+                  setDirection(1);
+                  SetCurrentIndex(currentIndex - 1);
+                  scrollIntoCarouselRef();
+               }
+               // Sinon on ne change rien : le motion.div revient au centre
+            }}
             >
             <ItemComponent {...items[currentIndex]} />
-            </motion.div>
-            </AnimatePresence>
-         </div>
+         </motion.div>
+
             {/* operateur de décomposition passe toutes les clé/valeurs  de l'objet en props */}
          <div className="flex flex-row-reverse gap-1.5 w-fit margin-auto pt-5 text-blue-primary">
             {items.map((dot,index)=>{
@@ -127,6 +120,7 @@ function Carousel({items , ItemComponent}){
             </div>
          )}
       </div>
+
       </>
 
 
