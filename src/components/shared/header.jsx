@@ -36,7 +36,7 @@ function Header() {
 
    return (
       <>
-         <header className='background-primary z-10 fixed top-0 left-0 w-[100%]'>
+         <header className='background-primary z-10 fixed top-0 left-0 w-[100%] min-h-[100px]'>
             <div className='contain-1440 flex justify-between items-center margin-auto px-3 lg:px-6'>
                <div onClick={closeMenu}>
                   <Link to="/" className='flex justify-center items-center font-title text-[var(--color-text)] hover:text-blue-secondary'>
@@ -50,7 +50,7 @@ function Header() {
                         {!isOpen ?<Menu size={38}/> : <X size={38}/>}
                      </span>
 
-                  <nav className={`${isOpen ? ' mx-auto' : 'hidden'} lg:flex lg:relative lg:h-auto lg:top-auto lg:border-t-0 absolute h-[100dvh] z-10 top-full right-0 left-0 bottom-0 overflow-y-auto border-t border-t-gray-400 background-primary`}>
+                  <nav className={`${isOpen ? 'fixed top-[100px] h-[calc(100dvh-100px)]' : 'hidden'} lg:flex lg:relative lg:h-auto lg:top-auto lg:border-t-0 z-50 right-0 left-0 bottom-0 overflow-y-auto border-t border-t-[var(--color-text)] background-primary`}>
                      <ul className="flex flex-col gap-5 pt-10 lg:flex-row lg:items-center lg:pt-0">
                         <li><a className={`font-title text-[var(--color-text)] hover:text-blue-secondary flex w-[280px] pb-2.5 border-b border-b-gray-400 hover:border-b-blue-secondary margin-auto lg:py-10 lg:px-3 lg:border-b-4 lg:w-auto ${activeSection === 'a-propos' ? 'border-b-blue-primary text-blue-primary' : 'lg:border-transparent lg:hover:border-b-blue-secondary' }`} onClick={closeMenu} href='/#a-propos' id='aproposLink'>A Propos</a></li>
                         <li><a className={`font-title text-[var(--color-text)] hover:text-blue-secondary flex w-[280px] pb-2.5 border-b border-b-gray-400 hover:border-b-blue-secondary margin-auto lg:py-10 lg:px-3 lg:border-b-4 lg:w-auto ${activeSection === 'mes-competences' ? 'border-b-blue-primary text-blue-primary' : 'lg:border-transparent lg:hover:border-b-blue-secondary' }`} onClick={closeMenu} href='/#mes-competences' id='skillsLink'>Compétences</a></li>
