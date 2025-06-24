@@ -90,7 +90,7 @@ function Carousel({items , ItemComponent}){
    return (
 
       <>
-         <div className="relative max-w-[85%] margin-auto scroll-mt-60" ref={carouselRef}>         
+         <div className="relative max-w-[80%] margin-auto scroll-mt-60" ref={carouselRef}>         
          
          <motion.div
             key={currentIndex}
