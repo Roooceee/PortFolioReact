@@ -13,10 +13,10 @@ function Modal({isOpen,onClose,children,showButtonClose,title=null}){
          <div className='card-principal relative flex flex-col gap-8 max-h-[90svh] overflow-y-auto min-w-[200px] max-w-[75%] p-4 rounded-md' onClick={(e)=>e.stopPropagation()}>
             {title || showButtonClose ? 
 
-               <div className='flex items-start justify-between'>
+               <div className={`${!title ? 'flex justify-end' : 'justify-between'} flex items-start`}>
                   {title?title:''}
                   {showButtonClose ? 
-                        <button href="#" className='text-[var(--color-text)] p-0 max-w-fit max-h-fit border-none' onClick={onClose}><X size={18}/></button>
+                        <button href="#" className='text-[var(--color-text)] p-0 max-w-fit max-h-fit' onClick={onClose}><X size={18}/></button>
                         : ''
                      }
                </div>

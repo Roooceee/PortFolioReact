@@ -3,11 +3,23 @@ import { Menu,X } from 'lucide-react'
 
 import useStoreSectionVisible from '../../storeSectionVisible'
 import useStoreBurgerMenu from '../../storeBurgerMenu'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import ChangeTheme from './changeTheme'
 import useStoreWidthScreen from '../../storeWidthScreen'
+import Modal from "../shared/modal.jsx"
 
 function Header() {
+
+   const [isModalOpen,setIsModalOpen] = useState(false)
+
+   function openModal(e){
+      e.preventDefault()
+      setIsModalOpen(true)
+   }
+
+   function closeModal(){
+      setIsModalOpen(false)
+   }
 
    const {isOpen,closeMenu,toggleMenu} = useStoreBurgerMenu()
    const {activeSection} = useStoreSectionVisible()
@@ -58,13 +70,33 @@ function Header() {
                         <li><a className={`font-title text-[var(--color-text)] hover:text-blue-secondary flex w-[280px] pb-2.5 border-b border-b-gray-400 hover:border-b-blue-secondary margin-auto lg:py-10 lg:px-3 lg:border-b-4 lg:w-auto ${activeSection === 'mes-experiences-professionnelles' ? 'border-b-blue-primary text-blue-primary' : 'lg:border-transparent lg:hover:border-b-blue-secondary' }`} onClick={closeMenu} href='/#mes-experiences-professionnelles' id='experiencesLink'>Expériences</a></li>
                         <li><a className={`font-title text-[var(--color-text)] hover:text-blue-secondary flex w-[280px] pb-2.5 border-b border-b-gray-400 hover:border-b-blue-secondary margin-auto lg:py-10 lg:px-3 lg:border-b-4 lg:w-auto ${activeSection === 'mes-etudes-et-formations' ? 'border-b-blue-primary text-blue-primary' : 'lg:border-transparent lg:hover:border-b-blue-secondary' }`} onClick={closeMenu} href='/#mes-etudes-et-formations' id='formationsLink'>Formation</a></li>
                         <li><a className={`font-title text-[var(--color-text)] hover:text-blue-secondary flex w-[280px] pb-2.5 border-b border-b-gray-400 hover:border-b-blue-secondary margin-auto lg:py-10 lg:px-3 lg:border-b-4 lg:w-auto ${activeSection === 'contact' ? 'border-b-blue-primary text-blue-primary' : 'lg:border-transparent lg:hover:border-b-blue-secondary' }`} onClick={closeMenu} href='/#contact' id='contactLink'>Contact</a></li>
-                        <li><a href='/datas/CV_Sebastien_LUCAS.pdf' className={` ${isOpen && 'flex w-fit pb-2.5 margin-auto'} button-blue CV`} target='_blank'>Télécharger mon CV</a></li>
+                        <li><a href='#' onClick={(e) => {openModal(e)}} className={` ${isOpen && 'flex w-fit pb-2.5 margin-auto'} button-blue CV`} >Télécharger mon CV</a></li>
                         <li className={`${isOpen && 'w-fit mx-auto'}`}><ChangeTheme/></li>
                      </ul>
                   </nav>
                </div>
             </div>
          </header>
+
+         <Modal 
+            isOpen={isModalOpen}
+            onClose={closeModal}
+            showButtonClose={true}
+            title={<h2 className="text-sm sm:text-base lg:text-lg font-primary font-normal text-[var(--color-text)]">Télécharger mon CV</h2>}
+            children=
+            {
+               <div className='max-w-xs md:max-w-md lg:max-w-xl grid gap-2'>
+                  <p className='text-xs'>La version <span className='text-[var(--color-blue-primary)]'>ATS</span> est un document épuré, optimisé pour tous les systèmes de suivi des candidatures.</p>
+                  <p className='text-xs pb-5'>La version <span className='text-[var(--color-blue-primary)]'>Graphique</span> est conçue pour une expérience de lecture visuelle optimale.</p>
+                  <div className='grid gap-5'>
+                  <a href='/datas/CV_LUCAS_Sebastien_ATS.pdf' target='_blank' className='button-blue'>Télécharger la version ATS</a>
+                  <a href='/datas/CV_Sebastien_LUCAS.pdf' target='_blank' className='button-blue' >Télécharger la version Graphique</a>
+                  </div>
+               </div>
+            }
+            >
+         </Modal>
+
       </>
    )
 }
