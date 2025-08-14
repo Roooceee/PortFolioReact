@@ -8,7 +8,7 @@
     "description": "Objectif d'alternance de 18 mois pour obtenir le Titre RNCP 'Développeur Concepteur Logiciel' (Niveau 6 - Bac+3/4). Parcours de pointe axé sur la maîtrise de React, Next.js et TypeScript pour créer des applications web modernes, performantes et intégrant l'IA générative.",
     "organization": "OpenClassrooms",
     "location": "100% en ligne",
-    "startDate": "",
+    "startDate": null,
     "endDate": null,
     "obtention": null,
     "skills": [
