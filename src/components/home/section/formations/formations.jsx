@@ -34,8 +34,8 @@ function Formations(props,ref){
    return (
    
       <section id="mes-etudes-et-formations" className="background-primary section">
-         <div className="contain-1440 grid gap-8 margin-auto min-h-[570px]">
-            <h2 ref={ref} className="title-section">Mes études et formations</h2>
+         <div className="contain-1440 margin-auto min-h-[570px]">
+            <h2 ref={ref} className="title-section pb-8">Mes études et formations</h2>
 
                {!isReady && !error && (
                   <Loading textLoading={'Chargement des formations en cours'}/>
