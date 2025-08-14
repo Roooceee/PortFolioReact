@@ -1,30 +1,30 @@
 [
 
   {
-  "type": "Formation diplômante",
-  "name": "Développeur d'application JavaScript React",
-  "itemLink":"https://openclassrooms.com/fr/paths/2288-developpeur-dapplication-react",
-  "option": null,
-  "description": "Titre RNCP niveau 6 (Bac+3/4). Formation professionnalisante en alternance orientée front-end moderne, incluant React.js, la gestion d’état, la collaboration en équipe Agile et l’initiation au back-end avec Node.js. Démarrage prévu après signature d’un contrat d’alternance.",
-  "organization": "OpenClassrooms",
-  "location": "100% en ligne",
-  "startDate": null,
-  "endDate": null,
-  "obtention": null,
-  "skills": [
-    "Concevoir des sites web accessibles et responsives à partir de maquettes",
-    "Développer des applications web dynamiques en JavaScript (ES6+)",
-    "Créer une application avec React.js en structurant les composants, les hooks et le routing",
-    "Utiliser des API REST et manipuler les données en JSON",
-    "Gérer l'état de l'application avec Redux ou Context",
-    "Réaliser des tests unitaires et fonctionnels avec Jest et React Testing Library",
-    "Optimiser la performance d'une application React",
-    "Mettre en œuvre une architecture back-end simple avec Node.js, Express.js et MongoDB",
-    "Collaborer efficacement en équipe grâce aux méthodes agiles (Scrum)",
-    "Utiliser Git et GitHub dans un flux de travail professionnel"
-  ]
-},
-
+    "type": "Formation diplômante",
+    "name": "Développeur d'application React",
+    "itemLink": "https://openclassrooms.com/fr/paths/2288-developpeur-dapplication-react",
+    "option": null,
+    "description": "Objectif d'alternance de 18 mois pour obtenir le Titre RNCP 'Développeur Concepteur Logiciel' (Niveau 6 - Bac+3/4). Parcours de pointe axé sur la maîtrise de React, Next.js et TypeScript pour créer des applications web modernes, performantes et intégrant l'IA générative.",
+    "organization": "OpenClassrooms",
+    "location": "100% en ligne",
+    "startDate": "Dès signature d'un contrat",
+    "endDate": null,
+    "obtention": null,
+    "skills": [
+      "Maîtriser React pour construire des interfaces utilisateur complexes et dynamiques",
+      "Développer des applications web modernes et optimisées avec Next.js (SSR, SSG)",
+      "Garantir la robustesse et la maintenabilité du code grâce à TypeScript",
+      "Intégrer des fonctionnalités d'intelligence artificielle via des API LLM (ex: Mistral)",
+      "Assurer la qualité des applications avec des tests automatisés via Cypress",
+      "Mettre en place une stratégie de déploiement continu sur des plateformes comme Vercel",
+      "Concevoir et planifier un projet en méthode Agile (user stories, sprints)",
+      "Développer des interfaces accessibles (WCAG) et responsives à partir de maquettes (Figma)",
+      "Gérer l'état global et le routage avec les outils de l'écosystème React (Context API, React Router)",
+      "Collaborer efficacement dans un environnement professionnel avec Git et GitHub"
+    ]
+  },
+  
   {
     "type": "Formation Professionnelle",
     "name": "Language Informatique à la carte",
