@@ -9,7 +9,11 @@ function Formation({type , name , itemLink ,  option , description , organizatio
    let obtentionText = null
    let obtentionLogo = null
 
-   if((new Date(startDate) > new Date) || startDate === null ){
+   console.log('name : '+name)
+   console.log('startDate : '+startDate)
+   console.log('new Date(startDate) : '+new Date(startDate))
+
+   if((new Date(startDate) > new Date) || startDate === null || new Date(startDate) === null || startDate ===''){
       obtentionText = 'A Venir'
       obtentionLogo = <CalendarClock/>
    }
