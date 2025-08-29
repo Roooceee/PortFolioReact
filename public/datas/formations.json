@@ -5,24 +5,24 @@
     "name": "Développeur d'application React",
     "itemLink": "https://openclassrooms.com/fr/paths/2288-developpeur-dapplication-react",
     "option": null,
-    "description": "Objectif d'alternance de 18 mois pour obtenir le Titre RNCP 'Développeur Concepteur Logiciel' (Niveau 6 - Bac+3/4). Parcours de pointe axé sur la maîtrise de React, Next.js et TypeScript pour créer des applications web modernes, performantes et intégrant l'IA générative.",
+    "description": "Objectif d'alternance de 18 mois pour obtenir le Titre RNCP Développeur d'application React (Niveau 6 - Bac+3/4). Parcours de pointe axé sur la maîtrise de React, Next.js et TypeScript pour créer des applications web modernes, performantes et intégrant l'IA générative.",
     "organization": "OpenClassrooms",
     "location": "100% en ligne",
     "startDate": null,
     "endDate": null,
     "obtention": null,
     "skills": [
-      "Maîtriser React pour construire des interfaces utilisateur complexes et dynamiques",
-      "Développer des applications web modernes et optimisées avec Next.js (SSR, SSG)",
-      "Garantir la robustesse et la maintenabilité du code grâce à TypeScript",
-      "Intégrer des fonctionnalités d'intelligence artificielle via des API LLM (ex: Mistral)",
-      "Assurer la qualité des applications avec des tests automatisés via Cypress",
-      "Mettre en place une stratégie de déploiement continu sur des plateformes comme Vercel",
-      "Concevoir et planifier un projet en méthode Agile (user stories, sprints)",
-      "Développer des interfaces accessibles (WCAG) et responsives à partir de maquettes (Figma)",
-      "Gérer l'état global et le routage avec les outils de l'écosystème React (Context API, React Router)",
-      "Collaborer efficacement dans un environnement professionnel avec Git et GitHub"
-    ]
+          "Création d'interfaces dynamiques avec React",
+          "Développement d'applications avec Next.js (SSR, SSG)",
+          "Code robuste et maintenable avec TypeScript",
+          "Intégration d'API d'IA (LLM, Mistral)",
+          "Tests automatisés d'applications avec Cypress",
+          "Déploiement continu (CI/CD) sur Vercel",
+          "Gestion de projet Agile (User Stories, Sprints)",
+          "Interfaces accessibles (WCAG) et responsives",
+          "Gestion d'état (Context API) et routage (Router)",
+          "Collaboration et versioning avec Git & GitHub"
+        ]
   },
   
   {
