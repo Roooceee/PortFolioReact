@@ -8,9 +8,11 @@ function APropos({id},ref) {
                   <img src="/img/image_profil_SL.webp" alt="image de profil" className="rounded-[100%] max-w-[200px] sm:max-w-[300px]" />
                <div className="grid gap-8">
                   <h2 ref={ref} className='title-section'>A Propos</h2>
-                     <p>Développeur web junior passionné, j’ai obtenu un BTS Services Informatiques aux Organisations avant d’évoluer dans le support technique, notamment en tant que technicien Helpdesk chez ADSN. Ces expériences m'ont permis de développer rigueur, écoute utilisateur et sens du détail, tout en me familiarisant avec des environnements techniques exigeants.</p>
-                     <p>Début <span className='numeric'>2025</span>, j’ai suivi une formation professionnelle pour consolider mes bases en HTML, CSS, JavaScript et découvrir React.js ainsi que les fondamentaux côté serveur avec PHP. J’y ai renforcé ma logique de développement, appris à manipuler des APIs et à créer des interfaces réactives et modernes.</p>
-                     <p>Aujourd’hui, je me prépare à suivre une formation diplômante pour aller encore plus loin avec React.js et Node.js. Mon objectif : continuer à progresser, créer des interfaces utiles et intuitives, et intégrer une équipe tech où je pourrai contribuer tout en apprenant. Vous cherchez un profil motivé, curieux, et prêt à relever des défis ?<br/><br/>Je suis votre développeur !</p>
+                     <p>Développeur web passionné, mon parcours a commencé par un BTS SIO qui m'a donné des bases techniques solides, consolidées ensuite dans le support applicatif chez ADSN où j'ai développé ma rigueur et ma compréhension des besoins utilisateurs.</p>
+                     <p>Pour faire de ma passion mon métier, début <span className='numeric'>2025</span>, j’ai suivi une formation professionnelle pour consolider mes bases en HTML, CSS, JavaScript et découvrir React.js ainsi que les fondamentaux côté serveur avec PHP. J’y ai renforcé ma logique de développement, appris à manipuler des APIs et à créer des interfaces réactives et modernes.</p>
+                     <p>Aujourd'hui, je suis à la recherche d'une alternance pour valider un Titre RNCP de niveau <span className='numeric'>6</span>, (Bac+<span className='numeric'>3</span>/<span className='numeric'>4</span>) et transformer mes compétences en une véritable expertise professionnelle. Mon objectif est simple : intégrer une équipe, contribuer concrètement à ses projets grâce à mes acquis, et m'investir pour maîtriser les technologies et les méthodes qui font votre succès.</p>
+                     <p>Vous cherchez un profil curieux, déjà opérationnel sur la création d'interfaces et prêt à grandir avec vous ?</p>
+                     <p>Je suis votre alternant !</p>
                </div>
             </div>
          </section>
