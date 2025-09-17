@@ -1,7 +1,7 @@
 import { useEffect, useRef} from "react"
 
 import Header from '../components/shared/header.jsx';
-import Head_Index from "../components/home/section/headIndex/head_index.jsx"
+import Head_Index from "../components/home/section/hero/hero.jsx";
 import APropos from "../components/home/section/apropos/apropos.jsx"
 import Skills from "../components/home/section/skills/skills.jsx"
 import ProjectsCard from "../components/home/section/projectsCard/projectsCard.jsx"
