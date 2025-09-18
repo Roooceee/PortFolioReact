@@ -51,6 +51,35 @@ const variantsLink = {
    },
 }
 
+const projectCardVariant = {
+  hidden: { y: 50, opacity: 0, scale: 0.8 },
+   initial: { 
+   y:0,
+   scale:1,
+   transition: {
+      duration: 0.2,
+      ease: "easeIn"
+   },
+   },
+   hover: {
+      y:[-10],
+      scale:[1.05],
+      transition: {
+         duration:0.2,
+         ease:"easeIn",
+      }
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut"
+    },
+  },
+};
+
 
 function Projects(props,ref){
 
@@ -117,7 +146,8 @@ function Projects(props,ref){
    
             { isReady && !error && (
                <>
-                  <div className="hidden lg:flex justify-between margin-auto">
+                  <div
+                  className="hidden lg:flex justify-between margin-auto">
                         {projects.slice(0, 3).map((proj) => (
                            <ProjectCard
                               key={proj.name}
@@ -128,6 +158,7 @@ function Projects(props,ref){
                               homepage={proj.homepage}
                               updated_at={proj.updated_at}
                               html_url={proj.html_url}
+                              variants={projectCardVariant}
                            />))}
                   </div>
                   <div className="flex justify-between margin-auto lg:hidden">

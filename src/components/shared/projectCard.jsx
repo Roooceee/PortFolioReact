@@ -11,35 +11,6 @@ import { motion , useAnimation } from 'motion/react';
 import useStoreWidthScreen from '../../storeWidthScreen.js';
 
 
-const variantPojectCard = {
-   hidden: { y: 50, opacity: 0 , scale:0.5 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    scale:1,
-    transition: {
-      duration: 0.5,
-      ease: "easeIn"
-    },
-  },
-   initial: { 
-      y:0,
-      scale:1,
-      transition: {
-         duration: 0.2,
-         ease: "easeIn"
-      },
-   },
-   hover: {
-      y:[-10],
-      scale:[1.05],
-      transition: {
-         duration:0.2,
-         ease:"easeIn",
-      }
-  }
-}
-
 const variantsLink = {
    initial: { 
       x:0,
@@ -67,27 +38,27 @@ const variantsLink = {
    }
 }
 
-function ProjectCard({name, description,created_at, languages, homepage, updated_at , html_url}){
+
+function ProjectCard({name, description,created_at, languages, homepage, updated_at , html_url , variants}){
 
    const {widthScreen} = useStoreWidthScreen()
    
    const percentLanguages = calculPercentLanguages(languages)
    const location = window.location.pathname
 
-   const controls  = useAnimation();
+   const controls = useAnimation()
    const controlLinkWebSite = useAnimation();
    const controlLinkGitHub = useAnimation();
 
 
    return(
-      <>
-         <motion.article variants={variantPojectCard}
+         <motion.article variants={variants}
          initial='hidden'
          whileInView='visible'
-         viewport={{ once: true }}    
+         viewport={{ once: true }}
          animate={controls}
-         onHoverStart={() => location === '/' && (controls.start('hover'))}
-         onHoverEnd={() => controls.start('initial')}    
+         onHoverStart={() => location !== '/tous-mes-projets' && controls.start('hover')}
+         onHoverEnd={() => controls.start('initial')}  
          className={`card-secondary projectCard flex flex-col justify-between
           border-[1px] border-neutral-500 hover:border-blue-primary  
           min-h-[33rem] gap-2.5 md:max-w-[440px] margin-auto ${location ==='/' && 'lg:max-w-[28%]'}`}>
@@ -135,7 +106,6 @@ function ProjectCard({name, description,created_at, languages, homepage, updated
 
             </div>
          </motion.article>
-      </>
    )
 }
 
