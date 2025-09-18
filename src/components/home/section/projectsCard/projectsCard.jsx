@@ -1,17 +1,66 @@
 import { forwardRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { motion, useAnimation } from 'framer-motion';
 
 import { getDatas } from '../../../../utils/getDatas.js';
 
 import ProjectCard from "../../../shared/projectCard.jsx";
 import Loading from "../../../shared/loading/loading.jsx";
 import Carousel from "../../../shared/carousel.jsx";
+import useStoreWidthScreen from "../../../../storeWidthScreen.js";
+
+const variants = {
+  hidden: { y: 50, opacity: 0 , scale:0.5 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    scale:1,
+    transition: {
+      duration: 0.5,
+      ease: "easeIn"
+    },
+  }
+}
+
+const variantsLink = {
+  hidden: { y: 50, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.2,
+      ease: "easeIn"
+    },
+  },
+   initial: { x:0 , scale:1 },
+   left: {
+      x: -10,
+      scale: 1.2,
+      transition: {
+         duration: 0.2,
+         ease: "easeIn"
+      },
+   },
+   middle: {
+      x: 0,
+      scale: 1.2,
+      transition: {
+         duration: 0.2,
+         ease: "easeIn"
+      },
+   },
+}
+
 
 function Projects(props,ref){
 
    const [projects,setProjects] = useState([])
    const [isReady, setIsReady] = useState(false);
    const [error, setError] = useState(false);
+
+   const controlsLink = useAnimation()
+   const {widthScreen} = useStoreWidthScreen()
+
 
    useEffect(()=>{
 
@@ -39,22 +88,28 @@ function Projects(props,ref){
                })
                setProjects(projectsWithLanuages)
                setIsReady(true)
+               controlsLink.start('visible')
             }
             else {
                console.warn('Aucun projet recupéré')
                setError(true)
             }
          }
-         
-         loadData()
-         console.log(projects)
 
+         setTimeout(()=>{
+            loadData()
+         },1000)
+         
    },[])
 
    return (
       <section id="mes-derniers-projets" ref={ref} className="section background-primary">
-         <div className="contain-1440 margin-auto flex flex-col justify-between lg:justify-around flex-wrap min-h-[760px] gap-8 lg:px-8">
-            <h2 className="title-section">Mes Derniers Projets</h2>
+         <div className="contain-1440 margin-auto flex flex-col justify-between flex-wrap min-h-[760px] gap-8 lg:px-8">
+            <motion.h2 variants={variants}          
+            initial='hidden'
+            whileInView='visible' 
+            viewport={{ once: true }}   
+            className="title-section">Mes Derniers Projets</motion.h2>
 
             {!isReady && !error && (
                <Loading textLoading={'Chargement des projets en cours'}/>
@@ -86,9 +141,20 @@ function Projects(props,ref){
                // Remplacer par le suite par un composant Error
             )}
    
-            <Link to="/tous-mes-projets" className="mx-auto button-blue lg:mr-0">
-               Voir tous mes Projets
-            </Link>
+            <motion.div variants={variantsLink}
+            initial='hidden'
+            whileInView='visible'
+            animate={controlsLink}
+            viewport={{ once: true }}   
+            onHoverStart={() => widthScreen > 1024 ? controlsLink.start('left') : controlsLink.start('middle')}
+            onHoverEnd={() => controlsLink.start('initial') } 
+            className="mx-auto lg:mr-4">
+               <Link
+               to="/tous-mes-projets" className="mx-auto button-blue" title="Voir tous mes projets"> 
+                  Voir tous mes Projets
+               </Link>
+            </motion.div>
+
          </div>
       </section>
    );
