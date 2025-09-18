@@ -1,6 +1,39 @@
 import { useEffect, useState } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+
+const variantSkill = {
+  hidden: { y: 50, opacity: 0 , scale:0.8 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    scale:1,
+    transition: {
+      duration: 0.5,
+      ease: "easeIn"
+    },
+  },
+  initiale: {
+    scale:1,
+    transition: {
+      duration: 0.1,
+      ease: "easeIn"
+    },
+  },
+  hover: {
+   y:[-5],
+   scale:[1.05],
+   transition: {
+      duration:0.1,
+      ease:"easeIn",
+   }
+  }
+}
+
 
 function Skill({title,list,logo=null}){
+
+   const controls  = useAnimation();
+
 
    const [Icon,setIcon] = useState(null)
    // UseState Icon qui va contenir le composant de l'icone a afficher (lucide-react)
@@ -32,18 +65,29 @@ function Skill({title,list,logo=null}){
       }
    },[logo])
 
-
    return (
 
-      <article className='skill flex flex-col justify-start gap-4'>
-         {/* Affiche l'icone si Icon à chargé sinon affiche rien */}
-         <h3 className='title-section text-lg md:text-2xl flex items-center gap-2.5'>{Icon != null? <Icon size={36}/> : ''}{title}</h3>
-         <ul className='grid pl-3 gap-1'>
-            {list.map(element => {
-            return <li className='text-[var(--color-text)] text-xs md:text-sm before:content-["■"] before:text-blue-primary before:mr-3' key={element}>{element}</li> 
+      <motion.article variants={variantSkill}
+      initial='hidden'
+      whileInView='visible' 
+      animate={controls}
+      viewport={{ once: true }}  
+      onHoverStart={() => controls.start('hover')}
+      onHoverEnd={() => controls.start('initiale')}
+      className='skill card-principal flex flex-col justify-start 
+      border-[1px] border-neutral-500 hover:border-blue-primary rounded-xl p-5 bg-[var(--color-bg-primary)] 
+      max-w-[220px] sm:max-w-[280px] 2xl:max-w-[300px]'>
+         <div className='flex flex-col gap-2.5 justify-center'>
+            <span className='mx-auto text-blue-primary'>{Icon != null? <Icon size={44}/> : ''}</span>
+            <h3 className='text-[var(--color-text)] text-base font-semibold text-center md:text-lg gap-2.5'>{title}</h3>
+         </div>
+         <ul className='flex flex-wrap justify-center gap-2 pt-10'>
+            {list.map((element , index)  => {
+            return <li className='badge text-xs' key={element}>{element}</li>
             })}
          </ul>
-      </article>
+      </motion.article>
+
 
    )
 
