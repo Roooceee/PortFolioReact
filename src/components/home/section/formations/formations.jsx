@@ -1,59 +1,45 @@
-import { forwardRef, useEffect, useState } from "react";
+import {forwardRef, useEffect, useState} from 'react';
 
-import Carousel from "../../../shared/carousel.jsx";
-import Formation from "./formation.jsx";
+import Carousel from '../../../shared/carousel.jsx';
+import Formation from './formation.jsx';
 
-import { getDatas } from '../../../../utils/getDatas.js';
-import Loading from "../../../shared/loading/loading.jsx";
+import {getDatas} from '../../../../utils/getDatas.js';
+import Loading from '../../../shared/loading/loading.jsx';
 
-function Formations(props,ref){
+export const Formations = ({sectionId}) => {
+  const [formations, setFormations] = useState([]);
+  const [isReady, setIsReady] = useState(false);
+  const [error, setError] = useState(false);
 
-   const [formations,setFormations] = useState([])
-   const [isReady,setIsReady] = useState(false)
-   const [error,setError] = useState(false)
-
-   useEffect(()=> {
-
-      const loadData = async () => {
-
-         const result = await getDatas('/datas/formations.json')
-         if(result){
-            setFormations(result)
-            setIsReady(true)
-         }
-         else {
-            console.warn('Erreur lors du chargement des formations')
-            setError(true)
-         }
+  useEffect(() => {
+    const loadData = async () => {
+      const result = await getDatas('/datas/formations.json');
+      if (result) {
+        setFormations(result);
+        setIsReady(true);
+      } else {
+        console.warn('Erreur lors du chargement des formations');
+        setError(true);
       }
-      
-      loadData()
+    };
 
-   },[])
+    loadData();
+  }, []);
 
-   return (
-   
-      <section id="mes-etudes-et-formations" className="background-primary section">
-         <div className="contain-1440 margin-auto min-h-[570px]">
-            <h2 ref={ref} className="title-section pb-8">Mes études et formations</h2>
+  return (
+    <section id="mes-etudes-et-formations" className="background-primary section">
+      <div className="contain-1440 margin-auto min-h-[570px]">
+        <h2 className="title-section pb-8">Mes études et formations</h2>
 
-               {!isReady && !error && (
-                  <Loading textLoading={'Chargement des formations en cours'}/>
-               )}
+        {!isReady && !error && <Loading textLoading={'Chargement des formations en cours'} />}
 
-               {isReady && !error && (
-                  <Carousel items={formations} ItemComponent={Formation}/>
-               )}
-               {!isReady && error && (
-                  <div className="error">
-                     <p>Erreur lors du chargement des formations</p>
-                  </div>
-               )}
-         </div>
-      </section>
-   
-   )
-}
-
-
-export default forwardRef(Formations)
+        {isReady && !error && <Carousel items={formations} ItemComponent={Formation} />}
+        {!isReady && error && (
+          <div className="error">
+            <p>Erreur lors du chargement des formations</p>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
