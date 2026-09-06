@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Portfolio de Sébastien LUCAS, développeur web junior React et Node.js. Découvrez mes projets, compétences et expériences.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio de Sébastien LUCAS - Développeur Web Junior React & Node.js</title>
+    <link rel="icon" href="/img/logo.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <meta name="google-site-verification" content="ZrxPmlsZw5eraOATkgc8y_w6ImlQIXL1REoOn8m5YOk" />
+    
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    
+    <!-- SCRIPT ANTI-FOUC -->
+    <script>
+      (function() {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark' || (!theme)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="modal-root" class="relative z-50"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

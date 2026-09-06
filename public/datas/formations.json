@@ -1,0 +1,87 @@
+[
+
+  {
+    "type": "Formation diplômante",
+    "name": "Développeur d'application React",
+    "itemLink": "https://openclassrooms.com/fr/paths/2288-developpeur-dapplication-react",
+    "option": null,
+    "description": "Objectif d'alternance de 18 mois pour obtenir le Titre RNCP Développeur d'application React (Niveau 6 - Bac+3/4). Parcours de pointe axé sur la maîtrise de React, Next.js et TypeScript pour créer des applications web modernes, performantes et intégrant l'IA générative.",
+    "organization": "OpenClassrooms",
+    "location": "100% en ligne",
+    "startDate": null,
+    "endDate": null,
+    "obtention": null,
+    "skills": [
+          "Création d'interfaces dynamiques avec React",
+          "Développement d'applications avec Next.js (SSR, SSG)",
+          "Code robuste et maintenable avec TypeScript",
+          "Intégration d'API d'IA (LLM, Mistral)",
+          "Tests automatisés d'applications avec Cypress",
+          "Déploiement continu (CI/CD) sur Vercel",
+          "Gestion de projet Agile (User Stories, Sprints)",
+          "Interfaces accessibles (WCAG) et responsives",
+          "Gestion d'état (Context API) et routage (Router)",
+          "Collaboration et versioning avec Git & GitHub"
+        ]
+  },
+  
+  {
+    "type": "Formation Professionnelle",
+    "name": "Language Informatique à la carte",
+    "itemLink":"https://laplateforme.io/prf-var-langage-informatique/",
+    "option": null,
+    "description":"Parcours débutant par les fondamentaux (HTML/CSS, Algo/Python), évoluant vers le JavaScript moderne (interactions DOM, appels API via fetch) et React.js, avec une initiation au côté serveur via PHP",
+    "organization": "laPlateforme.io",
+    "location": "Brignoles, France",
+    "startDate": "2024-12-16",
+    "endDate": "2025-04-11",
+    "obtention":null,
+
+    "skills": [
+          "Intégration web avec HTML et CSS (création de sites, design responsive)",
+          "Initiation à l'algorithmique (application avec Python)",
+          "Manipulation du DOM et interactivité en JavaScript",
+          "Utilisation d'API via fetch en JavaScript",
+          "Développement d'interfaces utilisateur avec React.js",
+          "Introduction aux concepts serveur avec PHP", 
+          "Notions de bases de données relationnelles et SQL"
+        ]
+  },
+  {
+    "type": "Brevet Technicien Supérieur",
+    "name": "Services Informatiques aux Organisations",
+    "itemLink":"https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-services-informatiques-aux-organisations-option-b-solutions-logicielles-et-applications-metiers",
+    "option": "Solutions Logicielles et Applications Métier",
+    "description":"Diplôme de technicien supérieur (Bac+2) spécialisé dans la conception, le développement et la maintenance d'applications logicielles métier.",
+    "organization": "Lycée Charles Peguy",
+    "location": "Marseille, France", 
+    "startDate": "2016-09-01",
+    "endDate": "2018-06-30",
+    "obtention":true,
+
+"skills": [
+      "Conception et développement de solutions logicielles et applications métier",
+      "Programmation Orientée Objet (Java)",
+      "Modélisation et gestion de bases de données relationnelles (MySQL)",
+      "Maintenance corrective et évolutive des applications",
+      "Développement d'interfaces utilisateur (Desktop, Web, Mobile)",
+      "Analyse des besoins utilisateurs et rédaction de spécifications techniques",
+      "Tests et intégration des composants logiciels",
+      "Gestion du cycle de vie des applications (versioning, documentation)"
+    ]
+  },
+  {
+    "type": "Baccalauréat",
+    "name": "Sciences et Technologies de l'Industrie et du Développement Durable",
+    "itemLink":"https://www.onisep.fr/ressources/univers-formation/formations/lycees/bac-techno-sti2d-sciences-et-technologies-de-l-industrie-et-du-developpement-durable-enseignement-specifique-systemes-d-information-et-numerique",
+    "option": "Système d'Information et Numérique",
+    "description":"Baccalauréat technologique préparant aux études supérieures et métiers du numérique, axé sur les systèmes d'information et les réseaux.",
+    "organization": "Lycée Jean Perrin",
+    "location": "Marseille, France",
+    "startDate": "2010-09-01",
+    "endDate": "2013-06-30",
+    "obtention":true,
+
+    "skills": []
+  }
+]
