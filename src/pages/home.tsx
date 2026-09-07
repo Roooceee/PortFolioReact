@@ -1,6 +1,6 @@
 import Header from '@/components/shared/header.jsx';
 import {Hero} from '@/components/home/section/hero/hero';
-import {APropos} from '@/components/home/section/apropos/apropos.jsx';
+import {APropos} from '@/components/home/section/about/about.jsx';
 import {Skills} from '@/components/home/section/skills/skills.jsx';
 import {ProjectsCards} from '@/components/home/section/projectsCard/projectsCard.jsx';
 import {Experiences} from '@/components/home/section/experiences/experiences.jsx';

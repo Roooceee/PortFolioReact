@@ -1,27 +1,33 @@
 import {ArrowDown} from 'lucide-react';
-import {motion, useAnimation} from 'framer-motion';
+import {motion, TargetAndTransition, useAnimation} from 'framer-motion';
 import {useEffect} from 'react';
 
-const arrowVariants = {
-  appear: {
-    y: 0,
-    opacity: 1,
-    transition: {duration: 1, delay: 4, ease: 'easeOut'},
-  },
-  bouncing: {
-    y: [0, 10, 0],
-    scale: [1, 1],
-    transition: {duration: 2, repeat: Infinity, ease: 'easeInOut'},
-  },
-  hover: {
-    y: 0,
-    scale: 1.5,
-    transition: {duration: 0.2, ease: 'easeOut'},
-  },
-};
+interface ScrollDownArrowProps {
+  href: string;
+  appearDelay?: number;
+}
 
-export const ScrollDownArrow = () => {
+export const ScrollDownArrow = (props: ScrollDownArrowProps) => {
+  const {href, appearDelay = 0} = props;
   const arrowControls = useAnimation();
+
+  const arrowVariants = {
+    appear: {
+      y: 0,
+      opacity: 1,
+      transition: {duration: 1, delay: appearDelay, ease: 'easeOut'},
+    },
+    bouncing: {
+      y: [0, 10, 0],
+      scale: [1, 1],
+      transition: {duration: 2, repeat: Infinity, ease: 'easeInOut'},
+    },
+    hover: {
+      y: 0,
+      scale: 1.5,
+      transition: {duration: 0.2, ease: 'easeOut'},
+    },
+  };
 
   useEffect(() => {
     const sequence = async () => {
@@ -33,7 +39,7 @@ export const ScrollDownArrow = () => {
 
   return (
     <motion.a
-      href="#a-propos"
+      href={`#${href}`}
       variants={arrowVariants}
       initial={{opacity: 0, y: 20}}
       animate={arrowControls}
