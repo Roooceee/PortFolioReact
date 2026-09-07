@@ -1,23 +1,12 @@
 import {Github, Linkedin, Mail} from 'lucide-react';
 import {motion, useAnimation} from 'framer-motion';
-import {useMemo} from 'react';
 import {ButtonLink} from '@/components/ui/button-link';
 import {ScrollDownArrow} from '@/components/ui/animated/scroll-down-arrow';
 import {TypedTextSequence} from '@/components/ui/animated/typed-text-sequence';
 import {linkContainerVariants, linkItemsVariants} from '@/components/home/section/hero/constants/animated.constants';
 
 export const Hero = () => {
-  const arrowControls = useAnimation();
   const linkControls = useAnimation();
-
-  const sequence = useMemo(() => {
-    const sequence = async () => {
-      await arrowControls.start('appear');
-      arrowControls.start('bouncing');
-    };
-
-    sequence();
-  }, []);
 
   return (
     <section id="hero" className="section background-secondary min-h-[calc(99svh-168px)] flex flex-col mt-12">
@@ -60,7 +49,7 @@ export const Hero = () => {
               title="Mon Github"
               isAnimated={true}
               variant="transparent"
-              target="to_blank"
+              target="blank"
               className="hover:text-blue-secondary">
               <Github />
             </ButtonLink>
@@ -69,7 +58,7 @@ export const Hero = () => {
               title="Mon Linkedin"
               isAnimated={true}
               variant="transparent"
-              target="to_blank"
+              target="blank"
               className="hover:text-blue-secondary">
               <Linkedin />
             </ButtonLink>
@@ -78,7 +67,7 @@ export const Hero = () => {
               title="M'envoyer un e-mail"
               isAnimated={true}
               variant="transparent"
-              target="to_blank"
+              target="blank"
               className="hover:text-blue-secondary">
               <Mail />
             </ButtonLink>
