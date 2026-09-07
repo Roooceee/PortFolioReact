@@ -41,3 +41,16 @@ export const paragraphVariant = {
     },
   },
 };
+
+const variants = {
+  hidden: {y: 50, opacity: 0, scale: 0.5},
+  visible: {
+    y: 0,
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.2,
+      ease: 'easeIn',
+    },
+  },
+};
