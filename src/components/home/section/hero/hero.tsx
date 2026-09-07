@@ -4,6 +4,8 @@ import {ButtonLink} from '@/components/ui/button-link';
 import {ScrollDownArrow} from '@/components/ui/animated/scroll-down-arrow';
 import {TypedTextSequence} from '@/components/ui/animated/typed-text-sequence';
 import {linkContainerVariants, linkItemsVariants} from '@/components/home/section/hero/constants/animated.constants';
+import {UnAuthRoutes} from '@/constants/route.constants';
+import {HomeSection} from '@/constants/home-section.constants';
 
 export const Hero = () => {
   const linkControls = useAnimation();
@@ -75,7 +77,7 @@ export const Hero = () => {
         </motion.div>
       </div>
 
-      <ScrollDownArrow />
+      <ScrollDownArrow href={HomeSection.ABOUT_US} />
     </section>
   );
 };
