@@ -2,7 +2,7 @@ import {Calendar, Github, Info, RefreshCcw} from 'lucide-react';
 import {useState} from 'react';
 
 import {calculPercentLanguages} from '@/utils/calculPercentLangages';
-import {changeDateFormat} from '../../utils/changeDateFormat.js';
+import {changeDateFormat} from '@/utils/changeDateFormat';
 
 import ListLanguagePercent from '../shared/languagesPercent/listLanguagePercent.jsx';
 import Modal from '../shared/modal.jsx';
