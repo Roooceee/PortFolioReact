@@ -4,7 +4,7 @@ import {APropos} from '@/components/home/section/about/about';
 import {Skills} from '@/components/home/section/skills/skills';
 import {Projects} from '@/components/home/section/projects/Projects';
 import {Experiences} from '@/components/home/section/experiences/experiences';
-import {Formations} from '@/components/home/section/formations/formations.jsx';
+import {Formations} from '@/components/home/section/formations/formations';
 import {Contact} from '@/components/home/section/contact/contact.jsx';
 import Footer from '@/components/shared/footer.jsx';
 

@@ -1,7 +1,7 @@
 import {Building2, CalendarDays, ClipboardCheck, MapPin} from 'lucide-react';
-import {changeDateFormat} from '@/utils/changeDateFormat';
 import ParseTextWithBreaks from '@/components/shared/parseTextWithBreaks';
 import {ExperienceDto} from '@/store/experience/experience.model';
+import {changeDateFormat} from '@/utils/changeDateFormat';
 
 interface ExperienceProps {
   experience?: ExperienceDto;

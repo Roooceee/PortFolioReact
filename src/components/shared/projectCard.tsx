@@ -1,7 +1,7 @@
 import {Calendar, Code, Github, RefreshCcw, SquareArrowOutUpRight} from 'lucide-react';
 
 import {calculPercentLanguages} from '@/utils/calculPercentLangages.js';
-import {changeDateFormat} from '@/utils/changeDateFormat.js';
+import {changeDateFormat} from '@/utils/changeDateFormat';
 
 import ProgressBarLanguage from '@/components/shared/languagesPercent/progressBarLanguage.jsx';
 import ListLanguage from '@/components/shared/languagesPercent/listLanguagePercent.jsx';
