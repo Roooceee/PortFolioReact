@@ -1,5 +1,5 @@
 import {ArrowDown} from 'lucide-react';
-import {motion, TargetAndTransition, useAnimation} from 'framer-motion';
+import {motion, useAnimation} from 'framer-motion';
 import {useEffect} from 'react';
 
 interface ScrollDownArrowProps {
