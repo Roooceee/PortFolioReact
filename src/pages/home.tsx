@@ -2,7 +2,7 @@ import Header from '@/components/shared/header.jsx';
 import {Hero} from '@/components/home/section/hero/hero';
 import {APropos} from '@/components/home/section/about/about';
 import {Skills} from '@/components/home/section/skills/skills.tsx';
-import {ProjectsCards} from '@/components/home/section/projectsCard/projectsCard.jsx';
+import {Projects} from '@/components/home/section/projects/Projects.js';
 import {Experiences} from '@/components/home/section/experiences/experiences.jsx';
 import {Formations} from '@/components/home/section/formations/formations.jsx';
 import {Contact} from '@/components/home/section/contact/contact.jsx';
@@ -30,7 +30,7 @@ export const Home = () => {
         </SectionObserverWrapper>
 
         <SectionObserverWrapper sectionId={HomeSection.MY_LATEST_PROJECT} onIntersect={(id) => setActiveSection(id)}>
-          <ProjectsCards sectionId={HomeSection.MY_LATEST_PROJECT} />
+          <Projects sectionId={HomeSection.MY_LATEST_PROJECT} />
         </SectionObserverWrapper>
 
         <SectionObserverWrapper
