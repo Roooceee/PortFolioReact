@@ -42,15 +42,15 @@ export const Projects = (props: ProjectsProps) => {
           Mes Derniers Projets
         </motion.h2>
 
-        {isLoading && <Loading textLoading={'Chargement des projets en cours'} />}
+        {gitHubProjects.length === 0 && isLoading && <Loading textLoading={'Chargement des projets en cours'} />}
 
         {error !== null && <p className="error-loading">{error}</p>}
 
-        {!isLoading && (
+        {gitHubProjects.length > 0 && (
           <>
             <div className="hidden lg:flex justify-between margin-auto">
               {gitHubProjects.slice(0, 3).map((proj) => (
-                <ProjectCard key={proj.id} gitHubProject={proj} />
+                <ProjectCard key={proj.id} gitHubProject={proj} isAnimated={true} />
               ))}
             </div>
 
