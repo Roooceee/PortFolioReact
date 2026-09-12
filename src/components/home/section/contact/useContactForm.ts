@@ -7,7 +7,7 @@ import emailjs from '@emailjs/browser';
 
 const messagesError = {
   sizeMin2andMax50: `Doit contenir entre 2 et 50 caractère`,
-  sizeMin10andMax1000: `Doit contenir entre 2 et 50 caractère`,
+  sizeMin10andMax1000: `Doit contenir entre 10 et 1000 caractère`,
   lastnameError: 'Un nom ne peut contenir que des lettres, des tirets ou des apostrophes.',
   nameError: 'Un prénom ne peut contenir que des lettres, des tirets ou des apostrophes.',
   companyError:

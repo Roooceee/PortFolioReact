@@ -1,7 +1,8 @@
-import {CircleCheckBig, CircleX, Github, Linkedin, Mail, MapPin} from 'lucide-react';
+import {CircleCheckBig, CircleX, Github, Linkedin, Mail} from 'lucide-react';
 import Modal from '@/components/shared/modal.jsx';
 import Loading from '@/components/shared/loading/loading';
 import {useContactForm} from '@/components/home/section/contact/useContactForm.js';
+import {ButtonLink} from '@/components/ui/button-link';
 
 interface ContactProps {
   sectionId: string;
@@ -22,33 +23,49 @@ export const Contact = (props: ContactProps) => {
           <div className="flex flex-col lg:flex-row gap-12 justify-center">
             <div className="card-principal h-fit w-fit margin-auto lg:m-0">
               <ul className="grid gap-2.5">
-                <li>
+                <li className="flex gap-1.5 items-center">
+                  <ButtonLink
+                    href="mailto:sebastien.jose.lucas@gmail.com"
+                    title="Mon Github"
+                    isAnimated={true}
+                    variant="transparent"
+                    target="blank"
+                    className="text-blue-primary hover:text-blue-secondary">
+                    <Mail />
+                  </ButtonLink>
                   <a
                     href="mailto:sebastien.jose.lucas@gmail.com"
-                    className="flex gap-1 text-[var(--color-text)] hover:text-blue-primary">
-                    <Mail className="text-blue-primary" />
+                    className="text-[var(--color-text)] hover:text-blue-primary">
                     sebastien.jose.lucas@gmail.com
                   </a>
                 </li>
-                <li className="flex gap-1 text-[var(--color-text)]">
-                  <MapPin className="text-blue-primary" />
-                  Région Aix / Marseille, France{' '}
-                </li>
-                <li>
-                  <a
-                    target="_blank"
+                <li className="flex gap-1.5 items-center">
+                  <ButtonLink
                     href="https://www.linkedin.com/in/sebastien-jose-lucas/"
-                    className="flex gap-1 text-[var(--color-text)] hover:text-blue-primary">
-                    <Linkedin className="text-blue-primary" />
+                    title="Mon LinkedIn"
+                    isAnimated={true}
+                    variant="transparent"
+                    target="blank"
+                    className="text-blue-primary hover:text-blue-secondary">
+                    <Linkedin />
+                  </ButtonLink>
+                  <a
+                    href="https://www.linkedin.com/in/sebastien-jose-lucas/"
+                    className="text-[var(--color-text)] hover:text-blue-primary">
                     LinkedIn
                   </a>
                 </li>
-                <li>
-                  <a
-                    target="_blank"
+                <li className="flex gap-1.5 items-center">
+                  <ButtonLink
                     href="https://github.com/Roooceee"
-                    className="flex gap-1 text-[var(--color-text)] hover:text-blue-primary">
-                    <Github className="text-blue-primary" />
+                    title="Mon Github"
+                    isAnimated={true}
+                    variant="transparent"
+                    target="blank"
+                    className="text-blue-primary hover:text-blue-secondary">
+                    <Github />
+                  </ButtonLink>
+                  <a href="https://github.com/Roooceee" className="text-[var(--color-text)] hover:text-blue-primary">
                     Github
                   </a>
                 </li>
