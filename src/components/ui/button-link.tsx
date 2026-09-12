@@ -1,4 +1,4 @@
-import {cn} from '@/utils/cn';
+import {cn} from '@/_utils/cn';
 import {HTMLMotionProps, motion} from 'framer-motion';
 import {Link} from 'react-router-dom';
 

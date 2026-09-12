@@ -1,4 +1,5 @@
 export interface FormationDto {
+  id: string;
   type: string;
   name: string;
   itemLink?: string;
