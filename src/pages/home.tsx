@@ -5,12 +5,12 @@ import {Skills} from '@/components/home/section/skills/skills';
 import {Projects} from '@/components/home/section/projects/Projects';
 import {Experiences} from '@/components/home/section/experiences/experiences';
 import {Formations} from '@/components/home/section/formations/formations';
-import {Contact} from '@/components/home/section/contact/contact.jsx';
 import Footer from '@/components/shared/footer.jsx';
 
 import {SectionObserverWrapper} from '@/components/ui/section-observer-wrapper.js';
 import {HomeSection} from '@/constants/home-section.constants.js';
 import useStoreSectionVisible from '@/storeSectionVisible';
+import {Contact} from '@/components/home/section/contact/contact';
 
 export const Home = () => {
   const setActiveSection = useStoreSectionVisible((state) => state.setActiveSection);
