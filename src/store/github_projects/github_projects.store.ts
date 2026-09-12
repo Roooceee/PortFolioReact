@@ -1,9 +1,11 @@
 import {create} from 'zustand';
-import {GitHubProjectDto} from '@/store/github_projects/github_projects.model';
+import {GithubLanguagesDto, GitHubProjectDto} from '@/store/github_projects/github_projects.model';
 
 interface GitHubState {
   gitHubProjects: GitHubProjectDto[];
   setGitHubProjects: (gitHubProjects: GitHubProjectDto[]) => void;
+  allLanguages: any[];
+  setAllLanguages: (languages: any[]) => void;
   isLoading: boolean;
   setIsLoading: (isLoading: boolean) => void;
   error: string | null;
@@ -14,6 +16,8 @@ interface GitHubState {
 export const useGitHubProjectStore = create<GitHubState>((set) => ({
   gitHubProjects: [],
   setGitHubProjects: (gitHubProjects) => set({gitHubProjects}),
+  allLanguages: [],
+  setAllLanguages: (allLanguages) => set({allLanguages}),
   isLoading: true,
   setIsLoading: (isLoading) => set({isLoading}),
   error: null,

@@ -12,9 +12,14 @@ export class GitHubProjectService {
         console.error('Failed to fetch GitHubProjects');
         return;
       }
+
+      let allLanguages: string[] = [];
+
       const projectsWithLanuages = await Promise.all(
         response.map(async (r) => {
           const languagesRes = await GitHubProjectApiConfigService.getProjectLanguage(r.name);
+
+          Object.keys(languagesRes).map((key) => (allLanguages = [...new Set([...allLanguages, key])]));
 
           return {
             ...r,
@@ -23,6 +28,7 @@ export class GitHubProjectService {
         }),
       );
       const finalProjects = projectsWithLanuages.filter((project) => project.name !== 'Roooceee');
+      useGitHubProjectStore.getState().setAllLanguages(allLanguages);
       useGitHubProjectStore.getState().setGitHubProjects(finalProjects);
     } catch (error) {
       useGitHubProjectStore.getState().setError('Erreur lors du chargement des projets');

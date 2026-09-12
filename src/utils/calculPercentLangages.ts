@@ -1,11 +1,13 @@
-import {GithubLanguagesDto} from '@/store/github_projects/github_projects.model';
+import {GithubLanguagesDto, GitHubProjectLanguageDto} from '@/store/github_projects/github_projects.model';
 
 export interface LanguagePercent {
   language: string;
   percent: number;
 }
 
-export function calculPercentLanguages(listLanguages: GithubLanguagesDto): LanguagePercent[] {
+export function calculPercentLanguages(
+  listLanguages: GithubLanguagesDto | GitHubProjectLanguageDto,
+): LanguagePercent[] {
   let totalLanguages = 0;
   const listLanguagesWithPercent: LanguagePercent[] = [];
 

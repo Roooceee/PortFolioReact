@@ -1,45 +1,33 @@
-import {Calendar, Github, Info, RefreshCcw} from 'lucide-react';
+import {Calendar, Info, RefreshCcw} from 'lucide-react';
 import {useState} from 'react';
 
 import {calculPercentLanguages} from '@/utils/calculPercentLangages';
 import {changeDateFormat} from '@/utils/changeDateFormat';
 
-import ListLanguagePercent from '../shared/languagesPercent/listLanguagePercent.jsx';
 import Modal from '../shared/modal.jsx';
 import {ProjectCard} from '@/components/shared/projectCard.js';
+import {GitHubProjectDto} from '@/store/github_projects/github_projects.model.js';
+import {sliceTxt} from '@/utils/slideTxt.js';
+import {ListLanguagePercent} from '@/components/shared/languagesPercent/listLanguagePercent.js';
 
-function ProjectListItem({name, description, languages, homepage, html_url, created_at, updated_at}) {
+interface ProjectListItemProps {
+  gitHubProject: GitHubProjectDto;
+}
+
+function ProjectListItem(props: ProjectListItemProps) {
+  const {gitHubProject} = props;
+  const {name, description, created_at, languages, homepage, updated_at, html_url} = gitHubProject;
+
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  function openModal(e) {
-    e.preventDefault();
-    setIsModalOpen(true);
-  }
-
-  function closeModal() {
-    setIsModalOpen(false);
-  }
-
-  function sliceDescription(description) {
-    const maxLength = 80;
-    const regex = new RegExp(`^(.{0,${maxLength}})(\\s|$)`);
-    const match = description.match(regex);
-    if (description.length < maxLength) {
-      return description;
-    } else {
-      return match ? match[1].trim() + '...' : text.slice(0, maxLength) + '...';
-    }
-  }
-
   return (
     <>
       <article className="card-principal flex justify-between items-center gap-10 !p-2.5 max-h-[50px] min-h-fit md:min-h-[150px]">
         <>
           <div className="grid gap-2.5">
             <h3 className="text-blue-primary text-base sm:text-lg lg:text-xl font-bold">{name}</h3>
-            {description && <p className="text-xxs sm:text-sm">{sliceDescription(description)}</p>}
+            {description && <p className="text-xxs sm:text-sm">{sliceTxt(description, 80)}</p>}
             <div className="hidden md:inline">
-              <ListLanguagePercent ListLanguagesWithPercent={calculPercentLanguages(languages)} />
+              {languages && <ListLanguagePercent listLanguagesWithPercent={calculPercentLanguages(languages)} />}
             </div>
             <div className="hidden md:grid">
               <div className="flex items-center gap-1">
@@ -66,7 +54,8 @@ function ProjectListItem({name, description, languages, homepage, html_url, crea
               title="En savoir plus"
               className="button-blue flex items-center justify-center md:gap-1 !py-[1px] !px-[5px] md:!py-[10px] md:!px-[15px] rounded-[10px]"
               onClick={(e) => {
-                openModal(e);
+                e.preventDefault();
+                setIsModalOpen(true);
               }}>
               <Info className="max-w-[16px] md:max-w-[36px]" />
               <span className="hidden md:inline">En savoir plus</span>
@@ -77,10 +66,10 @@ function ProjectListItem({name, description, languages, homepage, html_url, crea
 
       <Modal
         isOpen={isModalOpen}
-        onClose={closeModal}
+        onClose={() => setIsModalOpen(false)}
         title={
           <h2 className="text-sm sm:text-base lg:text-lg font-primary font-normal text-[var(--color-text)]">
-            Détail du projet{' '}
+            Détail du projet
           </h2>
         }
         showButtonClose={true}>
