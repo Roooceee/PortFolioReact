@@ -1,6 +1,7 @@
 export type GithubLanguagesDto = Record<string, number>;
 
 export interface ExperienceDto {
+  id: string;
   type: string;
   name: string;
   organization: string;

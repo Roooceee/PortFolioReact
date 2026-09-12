@@ -1,18 +1,17 @@
 import {Calendar, Code, Github, RefreshCcw, SquareArrowOutUpRight} from 'lucide-react';
 
-import {calculPercentLanguages} from '@/utils/calculPercentLangages.js';
-import {changeDateFormat} from '@/utils/changeDateFormat';
+import {calculPercentLanguages} from '@/_utils/calculPercentLangages.js';
+import {changeDateFormat} from '@/_utils/changeDateFormat';
 
-import ProgressBarLanguage from '@/components/shared/languagesPercent/progressBarLanguage.jsx';
+import ProgressBarLanguage from '@/components/ui/languagesPercent/progressBarLanguage.js';
 
-import ParseTextWithBreaks from '@/components/shared/parseTextWithBreaks';
+import ParseTextWithBreaks from '@/components/ui/parseTextWithBreaks';
 import {motion} from 'motion/react';
-import useStoreWidthScreen from '@/storeWidthScreen';
 import {GitHubProjectDto} from '@/store/github_projects/github_projects.model.js';
-import {variants} from '@/components/home/section/projects/constants/animated.constant.js';
 import {CardHoverWrapper} from '@/components/ui/animated/card-hover-wrapper.js';
 import {ButtonLink} from '@/components/ui/button-link';
-import {ListLanguagePercent} from '@/components/shared/languagesPercent/listLanguagePercent';
+import {ListLanguagePercent} from '@/components/ui/languagesPercent/listLanguagePercent';
+import {variants} from '@/constants/animation.constants';
 
 interface ProjectCardProps {
   gitHubProject?: GitHubProjectDto;
@@ -24,7 +23,6 @@ export const ProjectCard = (props: ProjectCardProps) => {
   const {isAnimated = false} = props;
   const project = props.gitHubProject || props;
   const {name, description, created_at, languages, homepage, updated_at, html_url} = project;
-  const {widthScreen} = useStoreWidthScreen();
   let percentLanguages = null;
   if (languages) {
     percentLanguages = calculPercentLanguages(languages);
@@ -74,7 +72,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
         <ButtonLink
           href={html_url}
           isAnimated={true}
-          whileHover={{x: widthScreen > 370 ? -10 : 10, scale: 1.2}}
+          whileHover={{x: 10, scale: 1.2}}
           whileTap={{scale: 0.95}}
           target="_blank"
           className="flex items-center gap-1 text-sm">
@@ -89,14 +87,12 @@ export const ProjectCard = (props: ProjectCardProps) => {
           <p className="hidden xs:inline lg:hidden xl:inline text-xs md:text-sm">Crée le : </p>
           <p className="numeric text-xs md:text-sm">{changeDateFormat(created_at, false, false)}</p>
         </div>
-        {updated_at ? (
+        {updated_at && (
           <div className="flex gap-1 items-center">
             <RefreshCcw size={18} className="text-blue-primary" />
             <p className="hidden xs:inline lg:hidden xl:inline text-xs md:text-sm">Modifier le : </p>
             <p className="numeric text-xs md:text-sm">{changeDateFormat(updated_at, false, false)}</p>
           </div>
-        ) : (
-          ''
         )}
       </div>
     </>
